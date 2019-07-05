@@ -378,6 +378,9 @@ blockquote {
     opacity: 1;
 }
 
+.folioItemPic{
+    width:100%;
+}
 
 /* Start: Recommended Isotope styles */
 
@@ -640,6 +643,27 @@ ul.tag-cloud li {
 /*  Navigation
 /*-----------------------------------------------------------------------------------*/
 
+
+#navContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+}
+.lang{
+    float:right;
+    color:white;
+}
+.lang a{
+    color:white;
+    transition: .3s;
+}
+
+.lang a:hover{
+    color:rgb(247, 222, 0);
+}
+
+
 .navbar-inverse {
     background-color: #202020;
     border: none;
@@ -812,10 +836,12 @@ ul.tag-cloud li {
 
 .navbar-brand h1 {
     margin: 0;
-    font-weight: 700;
+    font-weight: 300;
     font-size: 30px;
     margin-top: 4px;
 }
+
+
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -1327,6 +1353,18 @@ textarea#message {
 
 .widget {
     margin-bottom: 30px;
+}
+
+.widget.categories ul{
+    list-style: none;
+}
+
+.tech img{
+    width:50px;
+}
+.fa-chevron-right{
+    font-size: 10px;
+    margin-right:5px;
 }
 
 ul.gallery {
@@ -2026,6 +2064,33 @@ img.author-box-image {
     background: #f5f5f5 url('../images/loading.gif') no-repeat center center;
 }
 
+
+.successModal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.successModal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.successModal-content p {
+    text-align: center;
+    line-height: 25px;
+    font-size: 15px;
+}
 
 .mb0 {
   margin-bottom: 0 !important;
