@@ -1352,9 +1352,14 @@ textarea#message {
 }
 
 .widget {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
-
+.widget-resp{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+}
 .widget.categories ul{
     list-style: none;
     padding-left:0px;
@@ -1423,7 +1428,9 @@ ul.faq li > div h3 {
 
 .responsiveMockup{
     width:300px;
+    margin-bottom: 10px;
 }
+
 
 /*-----------------------------------------------------------------------------------*/
 
@@ -1514,7 +1521,6 @@ img.author-box-image {
 .widget-title {
     font-size: 18px;
     text-transform: uppercase;
-    margin-top:60px !important;
     margin-bottom : 10px !important;
 }
 
