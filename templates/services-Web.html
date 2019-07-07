@@ -7,7 +7,8 @@
     <meta name="author" content="">
     <title>About Us | Impact By Distinctive Themes</title>
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../public/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font Awesome Icon -->
+    <script src="https://kit.fontawesome.com/0e45521ec5.js"></script>
     <link href="../public/css/pe-icons.css" rel="stylesheet">
     <link href="../public/css/prettyPhoto.css" rel="stylesheet">
     <link href="../public/css/animate.css" rel="stylesheet">
@@ -27,70 +28,14 @@
     jQuery(document).ready(function($){
     'use strict';
         jQuery('body').backstretch([
-            "http://placehold.it/800x600",
-            "http://placehold.it/800x600",
-            "http://placehold.it/800x600"
+            "../public/../public/images/bg/bg5.jpg"
         ], {duration: 5000, fade: 500});
-
-        $("#mapwrapper").gMap({ controls: false,
-            scrollwheel: false,
-            markers: [{
-                latitude:40.7566,
-                longitude: -73.9863,
-            icon: { image: "images/marker.png",
-                iconsize: [44,44],
-                iconanchor: [12,46],
-                infowindowanchor: [12, 0] } }],
-            icon: {
-                image: "images/marker.png",
-                iconsize: [26, 46],
-                iconanchor: [12, 46],
-                infowindowanchor: [12, 0] },
-            latitude:40.7566,
-            longitude: -73.9863,
-            zoom: 14 });
     });
     </script>
 </head><!--/head-->
 <body>
-<div id="preloader"></div>
-    <header class="navbar navbar-inverse navbar-fixed-top opaqued" role="banner">
-    <div id="search-wrapper">
-        <div class="container">
-            <input id="search-box" placeholder="Search">
-        </div>
-    </div>
-    </div>
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="index.html"><h1><span class="pe-7s-gleam bounce-in"></span> IMPACT</h1></a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact-us.html">Contact</a></li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="project-item.html">Project Single</a></li>
-                            <li><a href="blog-item.html">Blog Single</a></li>
-                            <li class="active"><a href="404.html">404</a></li>
-                        </ul>
-                    </li>
-                    <li><span class="search-trigger"><i class="fa fa-search"></i></span></li>
-                </ul>
-            </div>
-        </div>
-    </header><!--/header-->
 
+        <!--- FIXME : probleme de défillement horizontal-->
     <section id="single-page-slider" class="no-margin">
         <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -99,9 +44,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="center gap fade-down section-heading">
-                                    <h2 class="main-title">Our Services</h2>
+                                    <h2 class="main-title">WEB DEVELOPMENT IS WHAT I DO</h2>
                                     <hr>
-                                    <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
+                                    <p>WEBSITE | WEBSTORE | BLOG</p>
                                 </div>
                             </div>
                         </div>
@@ -112,6 +57,8 @@
     </section><!--/#main-slider-->
 
     <div id="content-wrapper">
+        <!-- FIXME : duplicate content entre page d'accueil et page Services-->
+
         <section id="services" class="white">
             <div class="container">
             <div class="gap"></div>
@@ -119,33 +66,33 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <i class="fa fa-windows fa fa-md"></i>
+                                <span class="fa fas fa-laptop-code fa-md"></span>
                             </div>
                             <div class="media-body fade-up">
-                                <h3 class="media-heading">Windows Apps</h3>
-                                <p>Unfeeling so rapturous discovery he exquisite. Reasonably so middletons or impression by terminated. Old pleasure required removing elegance him had. Down she bore sing saw calm high.</p>
+                                <h3 class="media-heading">Website</h3>
+                                <p>Need a brand new website or to revamp your old one ? Either for the brand you just started, your company, local association or anything else : I can offer you the kind of services you need. </p>
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <i class="fa fa-android fa fa-md"></i>
+                                <span class="fas fa-cart-arrow-down fa fa-md"></span>
                             </div>
                             <div class="media-body fade-up">
-                                <h3 class="media-heading">Facebook Marketing</h3>
-                                <p>The who arrival end how fertile enabled. Brother she add yet see minuter natural smiling article painted. Themselves at dispatched interested insensible am be prosperous reasonably it. </p>
+                                <h3 class="media-heading">Webstore</h3>
+                                <p>You want to sell your products online ? Only a few items or a very large catalogue, it doesn't make a difference. I will create the webstore that suits your needs and help you boost these sales!</p>
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <i class="fa fa-apple fa fa-md"></i>
+                                <span class="fas fa-book-reader fa fa-md"></span>
                             </div>
                             <div class="media-body fade-up">
-                                <h3 class="media-heading">iOS Development</h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                                <h3 class="media-heading">Blog</h3>
+                                <p>Food enthusiast, sports maniac, music lover ? Yes, there are millions of people who share your passion. I can develop the blog you dream of for all kinds of topics.</p>
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
@@ -155,33 +102,33 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <i class="fa fa-linux fa fa-md"></i>
+                                <span class="fas fa-question fa fa-md"></span>
                             </div>
                             <div class="media-body fade-up">
-                                <h3 class="media-heading">Linux Development</h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                                <h3 class="media-heading">Consulting</h3>
+                                <p>You have a business or personal idea but are lost with what online solution you need? I am here to help you make the right decision that will lead you to success!</p>
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <i class="fa fa-dribbble fa fa-md"></i>
+                                <span class="fas fa-pencil-ruler fa fa-md"></span>
                             </div>
                             <div class="media-body fade-up">
-                                <h3 class="media-heading">Graphic Design</h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                                <h3 class="media-heading">Webdesign</h3>
+                                <p>No idea about how you want your website to look like? I can help you with the whole design, creating a logo or tips about new trends in webdesign.</p>
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <i class="fa fa-google-plus fa fa-md"></i>
+                                <span class="fas fa-search-dollar fa fa-md"></span>
                             </div>
                             <div class="media-body fade-up">
                                 <h3 class="media-heading">SEO Services</h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                                <p>I will make sure to enhance your website, webstore or blog with the right SEO optimisations so it shows up in search engines' top results</p>
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
@@ -193,52 +140,20 @@
                     <div class="center gap fade-down section-heading">
                         <h2 class="main-title">Our Skills</h2>
                         <hr>
-                        <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
+                        <p>My day to day tools to create everything you can think about</p>
                     </div>
                 </div>
             </div>
             <div class="container">
-            <div class="row">
+            <div class="row"> <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
                     <div class="col-md-3">
                         <div class="tile-progress tile-red bounce-in">
                             <div class="tile-header">
-                                <h3>Video Editing</h3>
-                                <span>Our cutting room floor is messy.</span>
+                                <h3>HTML5</h3>
+                                <span>The absolute basic, this is how your website in structured</span>
                             </div>
                             <div class="tile-progressbar">
-                                <span data-fill="65.5%" style="width: 65.5%;"></span>
-                            </div>
-                            <div class="tile-footer">
-                                <h4>
-                                    <span class="pct-counter counter">65.5</span>%
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="tile-progress tile-cyan bounce-in">
-                            <div class="tile-header">
-                                <h3>Marketing</h3>
-                                <span>How well we can sell you and your brand.</span>
-                            </div>
-                            <div class="tile-progressbar">
-                                <span data-fill="98.5%" style="width: 98.5%;"></span>
-                            </div>
-                            <div class="tile-footer">
-                                <h4>
-                                    <span class="pct-counter counter">98.5</span>%
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="tile-progress tile-primary bounce-in">
-                            <div class="tile-header">
-                                <h3>Web Development</h3>
-                                <span>We love servers and stuff.</span>
-                            </div>
-                            <div class="tile-progressbar">
-                                <span data-fill="90%" style="width: 90%;"></span>
+                                <div id="myBarHTML" ></div>
                             </div>
                             <div class="tile-footer">
                                 <h4>
@@ -248,23 +163,121 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="tile-progress tile-pink bounce-in">
+                        <div class="tile-progress tile-cyan bounce-in">
                             <div class="tile-header">
-                                <h3>Coffee</h3>
-                                <span>We done make good joe, though.</span>
+                                <h3>CSS3</h3>
+                                <span>How about the look ? CSS3 handles that like no one else</span>
                             </div>
                             <div class="tile-progressbar">
-                                <span data-fill="10%" style="width: 10%;"></span>
+                                <div id="myBarCSS" ></div>
                             </div>
                             <div class="tile-footer">
                                 <h4>
-                                    <span class="pct-counter counter">10</span>%
+                                    <span class="pct-counter counter">85</span>%
                                 </h4>
                             </div>
                         </div>
                     </div>
-                </div><!--/.row-->
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-primary bounce-in">
+                            <div class="tile-header">
+                                <h3>Javascript</h3>
+                                <span>Wow, everything is interactive. Say thanks to Javascript</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarJS" ></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">70</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-pink bounce-in">
+                            <div class="tile-header">
+                                <h3>PHP/MYSLQ</h3>
+                                <span>Storing and managing datas? This power couple does the job</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarPHP" ></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">60</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="gap"></div>
+                <div class="row"> <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-blue bounce-in">
+                            <div class="tile-header">
+                                <h3>Wordpress</h3>
+                                <span>EVERYTHING you can think about can be made with it</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarWP" ></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">65</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                            <div class="tile-progress tile-purple bounce-in">
+                                <div class="tile-header">
+                                    <h3>Bootstrap</h3>
+                                    <span>Helps me creating your beautiful design in a blink of an eye</span>
+                                </div>
+                                <div class="tile-progressbar">
+                                    <div id="myBarBS" ></div>
+                                </div>
+                                <div class="tile-footer">
+                                    <h4>
+                                        <span class="pct-counter counter">55</span>%
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-lightblue bounce-in">
+                            <div class="tile-header">
+                                <h3>Photoshop</h3>
+                                <span>I use #1 graphic design software to beautify your project</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarPS" ></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">80</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-orange bounce-in">
+                            <div class="tile-header">
+                                <h3>Illustrator</h3>
+                                <span>The best tool and a great idea : all I need to create your logo</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarAI" ></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">70</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="pricing" class="white">
@@ -272,131 +285,141 @@
                 <div class="center gap fade-down section-heading">
                     <h2 class="main-title">So, How Much?</h2>
                     <hr>
-                    <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
+                    <p>I have several packs that should suit all your needs.
+                        <bR>Otherwise, ask for a custom quote!</p>
                 </div>
                 <div class="gap"></div>
                 <div id="pricing-table" class="row">
-                    <div class="col-md-3 col-xs-6 flip-in">
+                    <div class="col-md-3 flip-in">
                         <ul class="plan plan1">
                             <li class="plan-name">
-                                <h3>Basic</h3>
+                                <h3>Website</h3>
                             </li>
                             <li class="plan-price">
                                 <div>
-                                    <span class="price"><sup>$</sup>10</span>
-                                    <small>month</small>
+                                    <span class="price">1000 <sup>€</sup></span>
+                                    <small>all included</small>
                                 </div>
                             </li>
                             <li>
-                                <strong>5GB</strong> Storage
+                                For <strong>small to medium</strong> projects
                             </li>
                             <li>
-                                <strong>1GB</strong> RAM
+                                Fast <strong>turnaround</strong>
                             </li>
                             <li>
-                                <strong>400GB</strong> Bandwidth
+                                <strong>Administration</strong> tools
                             </li>
                             <li>
-                                <strong>10</strong> Email Address
+                                <strong>Responsive</strong> design
                             </li>
                             <li>
-                                <strong>Forum</strong> Support
+                                Up to <strong>20 pages</strong>
                             </li>
                             <li class="plan-action">
-                                <a href="#" class="btn btn-outlined btn-primary btn-md btn-white">Signup</a>
+                                <a href="#" class="btn btn-outlined btn-primary btn-md btn-white">I want this!</a>
                             </li>
                         </ul>
                     </div><!--/.col-md-3-->
-                    <div class="col-md-3 col-xs-6 flip-in">
+                    <div class="col-md-3 flip-in">
                         <ul class="plan plan2 featured">
                             <li class="plan-name">
-                                <h3>Standard</h3>
+                                <h3>Webstore</h3>
                             </li>
                             <li class="plan-price">
                                 <div>
-                                    <span class="price"><sup>$</sup>20</span>
-                                    <small>month</small>
+                                    <span class="price">2000 <sup>€</sup></span>
+                                    <small>all included</small>
                                 </div>
                             </li>
                             <li>
-                                <strong>5GB</strong> Storage
+                                <strong>Easy</strong> to use
                             </li>
                             <li>
-                                <strong>1GB</strong> RAM
+                                <strong>Boots</strong> your sales
                             </li>
                             <li>
-                                <strong>400GB</strong> Bandwidth
+                                Various <strong>payments options</strong>
                             </li>
                             <li>
-                                <strong>10</strong> Email Address
+                                Configurable <strong>shipping</strong> system
                             </li>
                             <li>
-                                <strong>Forum</strong> Support
+                                Complete customer <strong>database</strong>
+                            </li>
+                            <li>
+                                <strong>Administration</strong> tools
+                            </li>
+                            <li>
+                                <strong>Responsive</strong> design
+                            </li>
+                            <li>
+                                Up to <strong>200</strong> products
                             </li>
                             <li class="plan-action">
-                                <a href="#" class="btn btn-outlined btn-primary btn-md">Signup</a>
+                                <a href="#" class="btn btn-outlined btn-primary btn-md">I want this!</a>
                             </li>
                         </ul>
                     </div><!--/.col-md-3-->
-                    <div class="col-md-3 col-xs-6 flip-in">
+                    <div class="col-md-3 flip-in">
                         <ul class="plan plan3">
                             <li class="plan-name">
-                                <h3>Advanced</h3>
+                                <h3>Website + Webstore</h3>
                             </li>
                             <li class="plan-price">
                                 <div>
-                                    <span class="price"><sup>$</sup>40</span>
-                                    <small>month</small>
+                                    <span class="price">2500 <sup>€</sup></span>
+                                    <small>all included</small>
                                 </div>
                             </li>
                             <li>
-                                <strong>50GB</strong> Storage
+                                <strong>Website</strong> and <strong>Webstore</strong> <br>features included
                             </li>
                             <li>
-                                <strong>8GB</strong> RAM
+                                Get your brand / compagny <br>a <strong>full online presence</strong>
                             </li>
                             <li>
-                                <strong>1024GB</strong> Bandwidth
+                                Various <strong>payments options</strong>
                             </li>
                             <li>
-                                <strong>Unlimited</strong> Email Address
+                                Configurable <strong>shipping</strong> system
                             </li>
                             <li>
-                                <strong>Forum</strong> Support
+                                Complete customer <strong>database</strong>
+                            </li>
+                            <li>
+                                <strong>Administration</strong> tools
                             </li>
                             <li class="plan-action">
-                                <a href="#" class="btn btn-outlined btn-primary btn-md btn-white">Signup</a>
+                                <a href="#" class="btn btn-outlined btn-primary btn-md btn-white ">I want this!</a>
                             </li>
                         </ul>
                     </div><!--/.col-md-3-->
-                    <div class="col-md-3 col-xs-6 flip-in">
+                    <div class="col-md-3 flip-in">
                         <ul class="plan plan4">
                             <li class="plan-name">
-                                <h3>Mighty</h3>
+                                <h3>Custom quote</h3>
                             </li>
                             <li class="plan-price">
                                 <div>
-                                    <span class="price"><sup>$</sup>100</span>
-                                    <small>month</small>
+                                    <span class="price">Ask for a quote!</span>
+                                    <small>various options available</small>
                                 </div>
                             </li>
                             <li>
-                                <strong>50GB</strong> Storage
-                            </li>
+                                I can do pretty much <br>
+                                <strong>everything you want</strong><br>
+                            </li><br>
                             <li>
-                                <strong>8GB</strong> RAM
-                            </li>
+                                Use my automatic <br>
+                                <strong>custom quote</strong> system<br>
+                                to get an accurate price to fit with what you need.<br>
+                            </li><br>
                             <li>
-                                <strong>1024GB</strong> Bandwidth
-                            </li>
-                            <li>
-                                <strong>Unlimited</strong> Email Address
-                            </li>
-                            <li>
-                                <strong>Forum</strong> Support
+                                I got you covered!
                             </li>
                             <li class="plan-action">
-                                <a href="#" class="btn btn-outlined btn-primary btn-md btn-white">Signup</a>
+                                <a href="quote-Web.html" class="btn btn-outlined btn-primary btn-md btn-white">I want this!</a>
                             </li>
                         </ul>
                     </div><!--/.col-md-3-->
@@ -405,83 +428,14 @@
             </div>
         </section>
     </div>
-    <div id="footer-wrapper">
-        <section id="bottom" class="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 about-us-widget">
-                        <h4>Global Coverage</h4>
-                        <p>Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin.</p>
-                    </div><!--/.col-md-3-->
-
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Company</h4>
-                        <div>
-                            <ul class="arrow">
-                                <li><a href="#">Company Overview</a></li>
-                                <li><a href="#">Meet The Team</a></li>
-                                <li><a href="#">Our Awesome Partners</a></li>
-                                <li><a href="#">Our Services</a></li>
-                            </ul>
-                        </div>
-                    </div><!--/.col-md-3-->
-
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Latest Articles</h4>
-                        <div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="http://placehold.it/800x600" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">Blog Post A</a></span>
-                                    <small class="muted">Posted 14 April 2014</small>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="http://placehold.it/800x600" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">Blog Post B</a></span>
-                                    <small class="muted">Posted 14 April 2014</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-3-->
-
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Come See Us</h4>
-                        <address>
-                            <strong>Ace Towers</strong><br>
-                            New York Ave,<br>
-                            New York, 215648<br>
-                            <abbr title="Phone"><i class="fa fa-phone"></i></abbr> 546 840654 05
-                        </address>
-                    </div> <!--/.col-md-3-->
-                </div>
-            </div>
-        </section><!--/#bottom-->
-
-        <footer id="footer" class="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8">
-                        &copy; 2019 Your Site Name. All Rights Reserved. <a href="https://templatemag.com/bootstrap-templates/">Bootstrap templates</a> by TemplateMag.
-                    </div>
-                    <div class="col-sm-4">
-                        <ul class="pull-right">
-                            <li><a id="gototop" class="gototop" href="#"><i class="fa fa-chevron-up"></i></a></li><!--#gototop-->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer><!--/#footer-->
-    </div>
 
     <script src="../public/js/bootstrap.min.js"></script>
     <script src="../public/js/jquery.prettyPhoto.js"></script>
     <script src="../public/js/plugins.js"></script>
     <script src="../public/js/init.js"></script>
+
+    <!-- My Scripts-->
+    <script src="../public/js/main.js"></script>
+
 </body>
 </html>
