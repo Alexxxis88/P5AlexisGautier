@@ -2139,6 +2139,9 @@ img.author-box-image {
     border-radius: 0;
 }
 
+.contactIcons {
+    margin-right : 10px;
+}
 
 /* PRELOADER */
 
