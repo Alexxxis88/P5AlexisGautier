@@ -605,6 +605,15 @@ ul.tag-cloud li {
     padding: 0;
 }
 
+.btn-social.btn-email {
+    border: 2px solid #dc422b;
+    color: #dc422b;
+}
+
+.btn-social.btn-email:hover {
+    background: #dc422b;
+}
+
 .btn-social.btn-facebook {
     border: 2px solid #4f7dd4;
     color: #4f7dd4;
@@ -630,15 +639,6 @@ ul.tag-cloud li {
 
 .btn-social.btn-linkedin:hover {
     background: #21a6d8;
-}
-
-.btn-social.btn-google-plus {
-    border: 2px solid #dc422b;
-    color: #dc422b;
-}
-
-.btn-social.btn-google-plus:hover {
-    background: #dc422b;
 }
 
 .btn-social:hover {
@@ -850,6 +850,17 @@ ul.tag-cloud li {
     margin-top: 4px;
 }
 
+
+
+/*-----------------------------------------------------------------------------------*/
+
+
+/*  SERVICE
+/*-----------------------------------------------------------------------------------*/
+
+.modal-title{
+    text-align: center;
+}
 
 
 
@@ -1066,15 +1077,31 @@ ul.tag-cloud li {
 }
 
 .modal .modal-body {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .modal input[type=text],
-.modal input[type=password] {
+.modal input[type=password],
+.modal input[type=email],
+.modal input[type=tel],
+.modal input[type=date],
+.modal select {
     padding: 5px 10px;
-    min-height: 30px;
-    width: 130px;
+    height: 35px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
     margin-right: 10px;
+    background:rgb(241, 241, 241);
+}
+
+.modal textarea {
+    padding: 5px 10px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    margin-right: 10px;
+    background:rgb(241, 241, 241);
 }
 
 .modal .fa-remove {
