@@ -58,6 +58,7 @@ a {
     color: #222;
     -webkit-transition: 300ms;
     transition: 300ms;
+    cursor: pointer;
 }
 
 hr {
@@ -256,6 +257,21 @@ blockquote {
     position: relative;
     margin: 0;
 }
+
+
+.modal-lead{
+    text-align: center;
+}
+
+.rightColPortfolio{
+    border-right : 1px solid rgb(194, 194, 194);
+    padding: 0 50px 0 50px;
+}
+
+.leftColPortfolio{
+    padding-left:50px;
+}
+
 
 .portfolio-items,
 .portfolio-filter {
