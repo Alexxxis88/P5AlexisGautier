@@ -898,6 +898,11 @@ Quote
     margin-right:30px;
 }
 
+
+#paymentMethShowcase, #deadlineBlock, #showcaseSection, #webstoreSection{
+    display: none;
+}
+
 /*
 Pricing Section style
 =======================*/
