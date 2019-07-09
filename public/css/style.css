@@ -914,7 +914,7 @@ Pricing Section style
     font-size:20px !important;
 }
 
-.text-customQuote{
+#text-customQuote{
     color:#fff !important;
     margin-top:10px !important;
 }
