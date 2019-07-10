@@ -908,7 +908,6 @@ Quote
     padding-bottom: 10px !important; 
 }
 
-
 /*
 Pricing Section style
 =======================*/
@@ -933,7 +932,6 @@ Pricing Section style
     overflow: hidden;
     width:100%;
     font-weight: 400;
-    font-family: 'Raleway', sans-serif;
     font-size: 13px;
 }
 .main_pricing h3{
