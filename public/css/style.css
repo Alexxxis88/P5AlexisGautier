@@ -899,9 +899,15 @@ Quote
 }
 
 
-#paymentMethShowcase, #deadlineBlock, #showcaseSection, #webstoreSection{
+#paymentMethShowcase, #deadlineBlock, #showcaseSection, #webstoreSection, #extensionBlock{
     display: none;
 }
+
+#yourWebsite, #showcaseSection, #webstoreSection, #aboutYou{
+    padding-top: 50px !important;
+    padding-bottom: 10px !important; 
+}
+
 
 /*
 Pricing Section style

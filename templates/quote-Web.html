@@ -18,6 +18,13 @@
     <script src="../public/js/html5shiv.js"></script>
     <script src="../public/js/respond.min.js"></script>
     <![endif]-->
+
+
+    <!-- A GARDER !!! car fichier modifiés pour les menus bootstrap-->
+    <link href="../public/css/dropdowns-enhancement.css" rel="stylesheet">
+
+
+
     <script src="../public/js/jquery.js"></script>
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144x144.png">
@@ -35,29 +42,28 @@
             <div class="col-md-10 center gap fade-down section-heading">
                 <h2 class="main-title">Custom Quote</h2>
                 <hr>
-                <p>Everything you need. Right here. Right Now.</p>
             </div>
         </div>
         <div class="container">
-            <div class="gap"></div>
             <div class="row " id="quoteForm">
                 <div class="col-md-9 fade-up">
                     <form class="contactForm" action="index.php?action=sendMessage" method="post">
                         <section id="yourWebsite">
                             <div class="row">
                                 <div class="col-md-12 center gap fade-down section-heading">
-                                    <div class="gap"></div>
                                     <p>What kind of website ?</p>
                                     <hr>
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="structure">Structure*</label>
                                     <select id="structure" name="structure" class="form-control" required>
                                         <option value=0 selected>Choose...</option>
                                         <option value="individual">Individual</option>
                                         <option value="professional">Professional</option>
+                                        <option value="association">Association</option>
+                                        <option value="professional">Other</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -72,19 +78,130 @@
                                 </div>
                             </div>
 
-                            <div class="form-row">
+                            <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="language">I want my website to be written in*</label>
-                                    <select id="language" name="language" class="form-control" onchange="myFunction()"
+                                    <div class="btn-group ">
+                                        <label>I want my website to be written in*</label><br>
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                            data-placeholder="Please select">Please select <span
+                                                class="caret"></span></button>
+                                        <ul class="dropdown-menu noclose">
+                                            <li><input type="checkbox" id="french"><label for="french" name="french"
+                                                    value=0>French</label></li>
+                                            <li><input type="checkbox" id="english"><label for="english" name="english"
+                                                    value=50>English</label></li>
+                                            <li><input type="checkbox" id="spanish"><label for="spanish" name="spanish"
+                                                    value=50>Spannish</label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="design">I want a Design*</label>
+                                    <select id="design" name="design" class="form-control" onchange="myFunction()"
                                         required>
                                         <option value=0 selected>Choose...</option>
-                                        <option value=10>French</option>
-                                        <option value=50>English</option>
-                                        <option value=50>Spannish</option>
+                                        <option value=100>Standard : nice, simple and efficient (you don't have a visual
+                                            identity guide)</option>
+                                        <option value=50>Custom : according to your visual identity guide</option>
+                                        <option value=300>Custom + : Top of the range design. 100% tailor-made for you
+                                        </option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="writingContent">I need writing content(descriptions,
+                                        articles...)*</label>
+                                    <select id="writingContent" name="writingContent" class="form-control"
+                                        onchange="myFunction()" required>
+                                        <option value=0 selected>Choose...</option>
+                                        <option value=200>Yes</option>
+                                        <option value=0>No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="visualContent">I need visual content (pictures...)*</label>
+                                    <select id="visualContent" name="visualContent" class="form-control"
+                                        onchange="myFunction()" required>
+                                        <option value=0 selected>Choose...</option>
+                                        <option value=100>Yes</option>
+                                        <option value=0>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="update">Maintenance / updates*</label>
+                                    <select id="update" name="update" class="form-control" onchange="myFunction()"
+                                        required>
+                                        <option value=0 selected>Choose...</option>
+                                        <option value=0>I will do it myself</option>
+                                        <option value=100>I want a minimal plan (mininum maintance, no updates)</option>
+                                        <option value=200>I want a regular plan (minimum maintenance, updated every
+                                            year)</option>
+                                        <option value=400>I want a premium plan (regular maintenance, updated every 3
+                                            months)</option>
+                                        <option value=1500>I want a gold plan (priority maintenance, updated every
+                                            months)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="host">Host*</label>
+                                    <select id="host" name="host" class="form-control" onchange="myFunction()" required>
+                                        <option value=0 selected>Choose...</option>
+                                        <option value=0>I will handle that myself </option>
+                                        <option value=50>I want a standard host</option>
+                                        <option value=100>I want a premium host (high traffic website)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="domainYN">Domain name*</label>
+                                    <select id="domainYN" name="domainYN" class="form-control" onchange="myFunction5()"
+                                        required>
+                                        <option value="No" selected>Choose...</option>
+                                        <option value="No">I already have one </option>
+                                        <option value="No">I will get one </option>
+                                        <option value="Yes">I need one - Choose one or several extensions (.com, .fr
+                                            etc)</option>
+                                    </select>
+                                </div>
+                                <!--<div class="form-group col-md-6">
+                                     <div class="form-group col-md-6" id="extensionBlock">
+                                        <label for="extensionBlock">Extentions</label><br>
+                                        <label><input type="checkbox" value=20 name="extensions"> .com</label>
+                                        <label><input type="checkbox" value=10 name="extensions"> .fr</label>
+                                        <label><input type="checkbox" value=10 name="extensions"> .uk</label>
+                                        <label><input type="checkbox" value=10 name="extensions"> .de</label><br>
+                                        <small>Check the full list of available extensions <a href="https://iwantmyname.com/domains">here</a></small>
+                                    </div> 
+                                </div>-->
+                                <div class="form-group col-md-6" id="extensionBlock">
+                                    <div class="btn-group">
+                                        <label>Extentions</label><br>
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                            data-placeholder="Please select">Please select <span
+                                                class="caret"></span></button>
+                                        <ul class="dropdown-menu noclose">
+                                            <li><input type="checkbox" id="dotCom"><label for="dotCom" name="dotCom"
+                                                    value=20>.com</label></li>
+                                            <li><input type="checkbox" id="dotFr"><label for="dotFr" name="dotFr"
+                                                    value=10>.fr</label></li>
+                                            <li><input type="checkbox" id="dotUk"><label for="dotUk" name="dotUk"
+                                                    value=10>.uk</label></li>
+                                            <li><input type="checkbox" id="dotDe"><label for="dotDe" name="dotDe"
+                                                    value=10>.de</label></li>
+                                        </ul><br><br>
+                                        <small>Check the full list of available extensions <a
+                                                href="https://iwantmyname.com/domains"><strong>here</strong></a></small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="deadlineYN">I have a specific deadline*</label>
                                     <select id="deadlineYN" name="deadlineYN" class="form-control"
@@ -99,17 +216,22 @@
                                     <input type="date" class="form-control" id="deadline" name="deadline">
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="urgentCheck">Urgent project </label>
+                                    <input type="checkbox" value=300 name="urgentCheck">
+                                </div>
+                            </div>
                         </section>
 
                         <section class="fade-down" id="showcaseSection">
                             <div class="row">
-                                <div class="col-md-12 center gap fade-down section-heading">
-                                    <div class="gap"></div>
+                                <div class="col-md-12 center fade-down section-heading">
                                     <p>Showcase Website</p>
                                     <hr>
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="pageNb">Number of pages on my showcase website*</label>
                                     <select id="pageNb" name="pageNb" class="form-control" onchange="myFunction()"
@@ -134,7 +256,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="paymentShowcaseYN">I need payment methods for my Showcase
                                         Website*</label>
@@ -145,41 +267,65 @@
                                         <option>No</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <fieldset id="paymentMethShowcase">
-                                        <legend>Payment methods (Showcase Website)</legend>
-                                        <label><input type="checkbox" value=50 name="options"> Paypal</label>
-                                        <label><input type="checkbox" value=50 name="options"> Credit Card</label>
-                                        <label><input type="checkbox" value=50 name="options"> Bank Wire</label>
-                                        <label><input type="checkbox" value=50 name="options"> Checks</label>
-                                    </fieldset>
+                                <div class="form-group col-md-6" id="paymentMethShowcase">
+                                    <div class="btn-group">
+                                        <label>Payment methods (Showcase Website)</label><br>
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                            data-placeholder="Please select">Please select <span
+                                                class="caret"></span></button>
+                                        <ul class="dropdown-menu noclose">
+                                            <li><input type="checkbox" id="paypalShow"><label for="paypalShow" name="paypalShow"
+                                                    value=50>Paypal</label></li>
+                                            <li><input type="checkbox" id="creditCardShow"><label for="creditCardShow"
+                                                    name="creditCardShow" value=50>Credit Card</label></li>
+                                            <li><input type="checkbox" id="bankWireShow"><label for="bankWireShow"
+                                                    name="bankWireShow" value=20>Bank Wire</label></li>
+                                            <li><input type="checkbox" id="checkShow"><label for="checkShow" name="checkShow"
+                                                    value=20>Check</label></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-row">
-
-                                <div class="form-group col-md-12">
-                                    <fieldset>
-                                        <legend>Options</legend>
-                                        <label><input type="checkbox" value=100 name="options"> Blog</label>
-                                        <label><input type="checkbox" value=243 name="options"> Chatbox</label>
-                                        <label><input type="checkbox" value=99 name="options"> Newsletter</label>
-                                        <label><input type="checkbox" value=99 name="options"> Appointment plugin
-                                        </label>
-                                        <label><input type="checkbox" value=99 name="options"> Automatic quote
-                                            plugin</label>
-                                        <label><input type="checkbox" value=99 name="options"> Invoice pluging</label>
-                                        <label><input type="checkbox" value=99 name="options"> Social networks
-                                            pluging</label>
-                                        <label><input type="checkbox" value=99 name="options"> Search Engine</label>
-                                        <label><input type="checkbox" value=99 name="options"> Statistics plugin</label>
-                                        <label><input type="checkbox" value=99 name="options"> Calendar pluging</label>
-                                        <label><input type="checkbox" value=99 name="options"> News plugin</label>
-                                        <label><input type="checkbox" value=99 name="options"> Administration
-                                            pannel</label>
-                                        <label><input type="checkbox" value=99 name="options"> Ratings</label>
-                                        <label><input type="checkbox" value=99 name="options"> Surveys</label>
-                                        <label><input type="checkbox" value=99 name="options"> Contact form</label>
-                                    </fieldset>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <div class="btn-group">
+                                        <label>Options</label><br>
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                            data-placeholder="Please select">Please select <span
+                                                class="caret"></span></button>
+                                        <ul class="dropdown-menu noclose">
+                                            <li><input type="checkbox" id="blogOpt"><label for="blogOpt" name="blogOpt"
+                                                    value=200>Blog</label></li>
+                                            <li><input type="checkbox" id="chatOpt"><label for="chatOpt" name="chatOpt"
+                                                    value=150>Chatbox</label></li>
+                                            <li><input type="checkbox" id="contactFormOpt"><label for="contactFormOpt" name="contactFormOpt"
+                                            value=150>Contact Form</label></li>
+                                            <li><input type="checkbox" id="newsletterOpt"><label for="newsletterOpt" name="newsletterOpt"
+                                                    value=70>Newsletter</label></li>
+                                            <li><input type="checkbox" id="appointOpt"><label for="appointOpt" name="appointOpt"
+                                                    value=150>Appointment plugin</label></li>
+                                            <li><input type="checkbox" id="searchOpt"><label for="searchOpt" name="searchOpt"
+                                            value=150>Search engine</label></li>
+                                            <li><input type="checkbox" id="quoteOpt"><label for="quoteOpt" name="quoteOpt"
+                                            value=150>Automatic quote plugin</label></li>
+                                            <li><input type="checkbox" id="invoiceOpt"><label for="invoiceOpt" name="invoiceOpt"
+                                                value=150>Invoice plugin</label></li>
+                                            <li><input type="checkbox" id="socialOpt"><label for="socialOpt" name="socialOpt"
+                                            value=150>Social Networks plugin</label></li>
+                                            <li><input type="checkbox" id="statsOpt"><label for="statsOpt" name="statsOpt"
+                                                value=150>Statistics plugin</label></li>
+                                            <li><input type="checkbox" id="calendarOpt"><label for="calendarOpt" name="calendarOpt"
+                                            value=150>Calendar plugin</label></li>
+                                            <li><input type="checkbox" id="newOpt"><label for="newOpt" name="newOpt"
+                                            value=150>News plugin</label></li>
+                                            <li><input type="checkbox" id="adminPannelOpt"><label for="adminPannelOpt" name="adminPannelOpt"
+                                            value=150>Administration pannel</label></li>
+                                            <li><input type="checkbox" id="ratingsOpt"><label for="ratingsOpt" name="ratingsOpt"
+                                            value=150>Customer ratings</label></li>
+                                            <li><input type="checkbox" id="surveyOpt"><label for="surveyOpt" name="surveyOpt"
+                                            value=150>Survey plugin</label></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -191,7 +337,7 @@
                                     <hr>
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="productNb">Number of products to sell*</label>
                                     <select id="productNb" name="productNb" class="form-control" onchange="myFunction()"
@@ -205,13 +351,22 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <fieldset>
-                                        <legend>Payment methods (Webstore)</legend>
-                                        <label><input type="checkbox" value=50 name="options"> Paypal</label>
-                                        <label><input type="checkbox" value=50 name="options"> Credit Card</label>
-                                        <label><input type="checkbox" value=50 name="options"> Bank Wire</label>
-                                        <label><input type="checkbox" value=50 name="options"> Checks</label>
-                                    </fieldset>
+                                    <div class="btn-group ">
+                                        <label>Payment methods (Webstore)*</label><br>
+                                        <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                            data-placeholder="Please select">Please select <span
+                                                class="caret"></span></button>
+                                        <ul class="dropdown-menu noclose">
+                                            <li><input type="checkbox" id="paypalStore"><label for="paypalStore" name="paypalStore"
+                                                    value=50>Paypal</label></li>
+                                            <li><input type="checkbox" id="creditCardStore"><label for="creditCardStore" name="creditCardStore"
+                                                    value=50>Credit Card</label></li>
+                                            <li><input type="checkbox" id="bankWireStore"><label for="bankWireStore" name="bankWireStore"
+                                                    value=50>Bank Wire</label></li>
+                                            <li><input type="checkbox" id="checkStore"><label for="checkStore" name="checkStore"
+                                            value=50>Check</label></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -219,12 +374,17 @@
                         <script>
                             function myFunction() {
                                 var siteType = parseInt(document.getElementById("siteType").value);
-                                var language = parseInt(document.getElementById("language").value);
                                 var productNb = parseInt(document.getElementById("productNb").value);
                                 var pageNb = parseInt(document.getElementById("pageNb").value);
                                 var loginShowcaseYN = parseInt(document.getElementById("loginShowcaseYN").value);
+                                var design = parseInt(document.getElementById("design").value);
+                                var writingContent = parseInt(document.getElementById("writingContent").value);
+                                var visualContent = parseInt(document.getElementById("visualContent").value);
+                                var host = parseInt(document.getElementById("host").value);
+                                var update = parseInt(document.getElementById("update").value);
 
-                                var total = Number(language + siteType + productNb + pageNb + loginShowcaseYN);
+                                var total = Number(siteType + productNb + pageNb + loginShowcaseYN + design +
+                                    writingContent + visualContent + host + update);
                                 document.getElementById("text-customQuote").innerHTML = total + " € ";
                             };
 
@@ -247,16 +407,25 @@
                                 }
                             }
 
+                            function myFunction5() {
+                                var domainYN = document.getElementById("domainYN").value;
+                                if (domainYN == "Yes") {
+                                    document.getElementById("extensionBlock").style.display = "block";
+                                } else if (domainYN == "No") {
+                                    document.getElementById("extensionBlock").style.display = "none";
+                                }
+                            }
+
                             function myFunction4() {
-                                var siteType = document.getElementById("siteType")
-                                .value; //FIXME, pourquoi ça ne marche pas avec innerHTML ? tester en Jquery?
-                                if (siteType == 500) {
+                                var siteTypeDisplay = document.getElementById("siteType")
+                                    .value; //FIXME, pourquoi ça ne marche pas avec innerHTML ? tester en Jquery?
+                                if (siteTypeDisplay == 500) {
                                     document.getElementById("showcaseSection").style.display = "block";
                                     document.getElementById("webstoreSection").style.display = "none";
-                                } else if (siteType == 800) {
+                                } else if (siteTypeDisplay == 800) {
                                     document.getElementById("showcaseSection").style.display = "none";
                                     document.getElementById("webstoreSection").style.display = "block";
-                                } else if (siteType == 1000) {
+                                } else if (siteTypeDisplay == 1000) {
                                     document.getElementById("showcaseSection").style.display = "block";
                                     document.getElementById("webstoreSection").style.display = "block";
                                 } else {
@@ -265,85 +434,69 @@
                                 }
                             }
                         </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <div class="col-md-12 center gap fade-down section-heading">
-                                <div class="gap"></div>
-                                <p>About you</p>
-                                <hr>
+                        <section id="aboutYou">
+                            <div class="row">
+                                <div class="col-md-12 center gap fade-down section-heading">
+                                    <p>About you</p>
+                                    <hr>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="project">Projet name*</label>
-                                <input type="text" class="form-control" id="project" name="project" maxlength="40"
-                                    required>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="project">Projet name*</label>
+                                    <input type="text" class="form-control" id="project" name="project" maxlength="40"
+                                        required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="company">Company Name</label>
+                                    <input type="text" class="form-control" id="company" name="company" maxlength="100">
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="company">Company Name</label>
-                                <input type="text" class="form-control" id="company" name="company" maxlength="100">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstName">First Name*</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" maxlength="40"
+                                        required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastName">Last Name*</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" maxlength="40"
+                                        required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="firstName">First Name*</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" maxlength="40"
-                                    required>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Email*</label>
+                                    <input type="text" class="form-control" id="contactEmail" name="contactEmail" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone Number*</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="lastName">Last Name*</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" maxlength="40"
-                                    required>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="country">Country*</label>
+                                    <select id="country" name="country" class="form-control" required>
+                                        <option selected>Choose...</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="phone">Email*</label>
-                                <input type="text" class="form-control" id="contactEmail" name="contactEmail" required>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="messageContent" class="col-form-label">Describe your project*</label>
+                                    <textarea class="form-control" rows="5" id="messageContent"
+                                        name="messageContent"></textarea>
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="phone">Phone Number*</label>
-                                <input type="tel" class="form-control" id="phone" name="phone"
-                                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <small>*Any extra requests mentioned here is subject to approval and can cause extra
+                                        fees.</small>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="country">Country*</label>
-                                <select id="country" name="country" class="form-control" required>
-                                    <option selected>Choose...</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="messageContent" class="col-form-label">Additional informations*</label>
-                                <textarea class="form-control" rows="5" id="messageContent"
-                                    name="messageContent"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <small>*Any extra requests mentioned here is subject to approval and can cause extra
-                                    fees.</small>
-                            </div>
-                        </div>
+                        </section>
                     </form>
                 </div>
                 <div class="col-md-3 fade-up quotePrice">
@@ -376,6 +529,10 @@
     <script src="../public/js/jquery.prettyPhoto.js"></script>
     <script src="../public/js/plugins.js"></script>
     <script src="../public/js/init.js"></script>
+    <!-- A GARDER !!! car fichier modifiés pour les menus bootstrap-->
+
+    <script src="../public/js/dropdowns-enhancement.js"></script>
+
 </body>
 
 </html>
