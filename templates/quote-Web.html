@@ -79,7 +79,7 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <div class="btn-group ">
-                                        <label>I want my website to be written in*</label><br>
+                                        <p class="checkboxLabel">I want my website to be written in*</p><br>
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -148,7 +148,8 @@
                                     <select id="design" name="design" class="form-control"
                                         onchange="getSelectValue(), getTotal()" required>
                                         <option value="0" selected>Choose...</option>
-                                        <option value="100">Standard : nice, simple and efficient (you don't have a visual
+                                        <option value="100">Standard : nice, simple and efficient (you don't have a
+                                            visual
                                             identity guide)</option>
                                         <option value="50">Custom : according to your visual identity guide</option>
                                         <option value="300">Custom + : Top of the range design. 100% tailor-made for you
@@ -184,7 +185,8 @@
                                         onchange="getSelectValue(), getTotal()" required>
                                         <option value="0" selected>Choose...</option>
                                         <option value="0">I will do it myself</option>
-                                        <option value="100">I want a minimal plan (mininum maintance, no updates)</option>
+                                        <option value="100">I want a minimal plan (mininum maintance, no updates)
+                                        </option>
                                         <option value="200">I want a regular plan (minimum maintenance, updated every
                                             year)</option>
                                         <option value="400">I want a premium plan (regular maintenance, updated every 3
@@ -220,7 +222,7 @@
                                 </div>
                                 <div class="form-group col-md-6" id="extensionBlock">
                                     <div class="btn-group">
-                                        <label>Extentions</label><br>
+                                        <p class="checkboxLabel">Extentions</p><br>
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -263,7 +265,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="fade-down" id="showcaseSection">
+                        <section id="showcaseSection">
                             <div class="row">
                                 <div class="col-md-12 center fade-down section-heading">
                                     <p>Showcase Website</p>
@@ -308,7 +310,7 @@
                                 </div>
                                 <div class="form-group col-md-6" id="paymentMethShowcase">
                                     <div class="btn-group">
-                                        <label>Payment methods (Showcase Website)</label><br>
+                                        <p class="checkboxLabel">Payment methods (Showcase Website)</p><br>
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -359,7 +361,7 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <div class="btn-group">
-                                        <label>Options</label><br>
+                                        <p class="checkboxLabel">Optional features</p><br>
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -411,7 +413,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="fade-down" id="webstoreSection">
+                        <section id="webstoreSection">
                             <div class="row">
                                 <div class="col-md-12 center gap fade-down section-heading">
                                     <div class="gap"></div>
@@ -434,7 +436,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <div class="btn-group ">
-                                        <label>Payment methods (Webstore)*</label><br>
+                                        <p class="checkboxLabel">Payment methods (Webstore)*</p><br>
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -521,11 +523,26 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="phone">Phone Number*</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                    required>
                                     <!-- FIXME ; rajouter un pattern avec une REGEX -->
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="address">Address*</label>
+                                    <input type="text" class="form-control" id="address" name="address" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="postCode">Post Code*</label>
+                                    <input type="text" class="form-control" id="postCode" name="postCode" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="city">City*</label>
+                                    <input type="text" class="form-control" id="city" name="city" required>
+                                </div>
                                 <div class="form-group col-md-6">
                                     <label for="country">Country*</label>
                                     <select id="country" name="country" class="form-control" required>
@@ -811,10 +828,8 @@
                             </div>
                         </div>
                         <div class="pricing_body bg-white p-top-110 p-bottom-60">
-                            <ul>
-                                <li><span class="text-princing"></span> Various <strong>options available</strong></li>
-                            </ul>
-                            <div class="pricing_btn text-center">
+                            <p class="priceRecap">After submiting this <strong>custom quote</strong> you will automatically recieve a detailled recap to the email address you provided.</p>
+                            <div class="text-center">
                                 <button type="submit" form="customQuoteForm" class="btn btn-princing">I want
                                     this!</button>
                             </div>
