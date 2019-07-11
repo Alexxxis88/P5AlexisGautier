@@ -76,6 +76,9 @@
                                         <option value="500">Showcase Website</option>
                                         <option value="800">Webstore</option>
                                         <option value="1000">Showcase Website + Webstore</option>
+                                        <option value="300">Redesign (Showcase Website)</option>
+                                        <option value="300">Redesign (Webstore)</option>
+                                        <option value="300">Redesign (Showcase Website + Webstore)</option>
                                     </select>
                                 </div>
                             </div>
@@ -859,7 +862,6 @@
                     </form>
                 </div>
                 <div class="col-md-3 fade-up quotePrice">
-                    <!-- FIXME : pas responsive-->
                     <div class="pricing_item">
                         <div class="pricing_top_border"></div>
                         <div class="pricing_head p-top-30 p-bottom-100 text-center ">
@@ -874,8 +876,8 @@
                             <p class="priceRecap">After submiting this <strong>custom quote</strong> you will
                                 automatically recieve a detailled recap to the email address you provided.</p>
                             <div class="text-center">
-                                <button type="submit" form="customQuoteForm" class="btn btn-princing">I want
-                                    this!</button>
+                                <label><input type="checkbox" form="customQuoteForm" id="acceptTerms" required> <small>I accept <a href="#">Terms and conditions</a> and <a href="#">Privacy policy.</a></small></label>
+                                <button type="submit" form="customQuoteForm" class="btn btn-princing">I want this!</button>
                             </div>
                         </div>
                     </div>

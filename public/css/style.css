@@ -914,6 +914,14 @@ Quote
     padding: 0 10px;
 }
 
+.pricing_body label{
+    font-weight: normal;
+}
+
+.pricing_body a{
+    font-weight: bold;
+}
+
 #urgentProject{
     list-style: none;
     padding-inline-start: 0;
