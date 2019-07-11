@@ -58,7 +58,8 @@
                                 <div class="form-group col-md-6">
                                     <label for="structure">Structure*</label>
                                     <select id="structure" name="structure" class="form-control" required>
-                                        <option value="0" selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="" disabled selected hidden> </option>
                                         <option value="individual">Individual</option>
                                         <option value="professional">Professional</option>
                                         <option value="association">Association</option>
@@ -69,7 +70,9 @@
                                     <label for="siteType">Type of Website*</label>
                                     <select id="siteType" name="siteType" class="form-control"
                                         onchange="getSelectValue(), myFunction4(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        <!-- I need de empty option line to respect W3C rules + i need the &nbsp; not to have an empty option without label (W3C error) and i need the Please Choose.. line with value at 0 for my total function to work fine -->
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="500">Showcase Website</option>
                                         <option value="800">Webstore</option>
                                         <option value="1000">Showcase Website + Webstore</option>
@@ -147,7 +150,8 @@
                                     <label for="design">I want a Design*</label>
                                     <select id="design" name="design" class="form-control"
                                         onchange="getSelectValue(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="100">Standard : nice, simple and efficient (you don't have a
                                             visual
                                             identity guide)</option>
@@ -163,7 +167,8 @@
                                         articles...)*</label>
                                     <select id="writingContent" name="writingContent" class="form-control"
                                         onchange="getSelectValue(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="200">Yes</option>
                                         <option value="0">No</option>
                                     </select>
@@ -172,7 +177,8 @@
                                     <label for="visualContent">I need visual content (pictures...)*</label>
                                     <select id="visualContent" name="visualContent" class="form-control"
                                         onchange="getSelectValue(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="100">Yes</option>
                                         <option value="0">No</option>
                                     </select>
@@ -183,7 +189,8 @@
                                     <label for="update">Maintenance / updates*</label>
                                     <select id="update" name="update" class="form-control"
                                         onchange="getSelectValue(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="0">I will do it myself</option>
                                         <option value="100">I want a minimal plan (mininum maintance, no updates)
                                         </option>
@@ -199,7 +206,8 @@
                                     <label for="host">Host*</label>
                                     <select id="host" name="host" class="form-control"
                                         onchange="getSelectValue(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="0">I will handle that myself </option>
                                         <option value="50">I want a standard host</option>
                                         <option value="100">I want a premium host (high traffic website)</option>
@@ -213,7 +221,8 @@
                                     <label for="domainYN">Domain name*</label>
                                     <select id="domainYN" name="domainYN" class="form-control" onchange="myFunction5()"
                                         required>
-                                        <option value="No" selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="No" disabled selected hidden> </option>
                                         <option value="No">I already have one </option>
                                         <option value="No">I will get one </option>
                                         <option value="Yes">I need one - Choose one or several extensions (.com, .fr
@@ -246,7 +255,8 @@
                                     <label for="deadlineYN">I have a specific deadline*</label>
                                     <select id="deadlineYN" name="deadlineYN" class="form-control"
                                         onchange="myFunction3()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option>Yes</option>
                                         <option>No</option>
                                     </select>
@@ -276,8 +286,9 @@
                                 <div class="form-group col-md-6">
                                     <label for="pageNb">Number of pages on my showcase website*</label>
                                     <select id="pageNb" name="pageNb" class="form-control"
-                                        onchange="getSelectValue(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        onchange="getSelectValue(), getTotal()" > <!-- add required only if whole section displayed -->
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="0">- 10</option>
                                         <option value="20">10 - 50</option>
                                         <option value="30">50 - 100</option>
@@ -290,8 +301,9 @@
                                     <label for="loginShowcaseYN">I want my user to be able to log in (Showcase
                                         Website)*</label>
                                     <select id="loginShowcaseYN" name="loginShowcaseYN" class="form-control"
-                                        onchange="getSelectValue(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        onchange="getSelectValue(), getTotal()"> <!-- add required only if whole section displayed -->
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="100">Yes</option>
                                         <option value="0">No</option>
                                     </select>
@@ -302,15 +314,16 @@
                                     <label for="paymentShowcaseYN">I need payment methods for my Showcase
                                         Website*</label>
                                     <select id="paymentShowcaseYN" name="paymentShowcaseYN" class="form-control"
-                                        onchange="myFunction2()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        onchange="myFunction2()"> <!-- add required only if whole section displayed -->
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option>Yes</option>
                                         <option>No</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6" id="paymentMethShowcase">
                                     <div class="btn-group">
-                                        <p class="checkboxLabel">Payment methods (Showcase Website)</p><br>
+                                        <p class="checkboxLabel">Payment methods (Showcase Website)</p><br> <!-- add required only if whole section AND yes on the previous select displayed -->
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -425,8 +438,9 @@
                                 <div class="form-group col-md-6">
                                     <label for="productNb">Number of products to sell*</label>
                                     <select id="productNb" name="productNb" class="form-control"
-                                        onchange="getSelectValue(), getTotal()" required>
-                                        <option value="0" selected>Choose...</option>
+                                        onchange="getSelectValue(), getTotal()" > <!-- add required only if whole section displayed -->
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="0">- 10</option>
                                         <option value="20">10 - 100</option>
                                         <option value="30">100 - 200</option>
@@ -436,7 +450,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <div class="btn-group ">
-                                        <p class="checkboxLabel">Payment methods (Webstore)*</p><br>
+                                        <p class="checkboxLabel">Payment methods (Webstore)*</p><br> <!-- add required only if whole section displayed -->
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -546,7 +560,8 @@
                                 <div class="form-group col-md-6">
                                     <label for="country">Country*</label>
                                     <select id="country" name="country" class="form-control" required>
-                                        <option selected>Choose...</option>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="" disabled selected hidden> </option>
                                         <option value="AFG">Afghanistan</option>
                                         <option value="ALA">Åland Islands</option>
                                         <option value="ALB">Albania</option>
