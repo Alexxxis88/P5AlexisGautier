@@ -252,6 +252,28 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
+                                    <label for="deadlineSelect">I have a specific deadline*</label>
+                                    <select id="deadlineSelect" name="deadlineSelect" class="form-control"
+                                        onchange="getSelectValue(), getTotal(), myFunction3()" required>
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                        <option value="No">No</option>
+                                        <option value="1000">Less than 1 month (Express +)</option>
+                                        <option value="800">Less than 2 months (Express)</option>
+                                        <option value="400">Less than 4 months (Fast)</option>
+                                        <option value="50">Less than 6 months (Regular)</option>
+                                        <option value="0">More than 6 months (Slow)</option>
+                                    </select>
+                                    <small>From today to your deadline</small>
+                                </div>
+                                <div class="form-group col-md-6" id="deadlineBlock">
+                                    <label for="deadline">Specify exact deadline</label>
+                                    <input type="date" class="form-control" id="deadline" name="deadline">
+                                </div>
+                            </div>
+
+                            <!-- <div class="row">
+                                <div class="form-group col-md-6">
                                     <label for="deadlineYN">I have a specific deadline*</label>
                                     <select id="deadlineYN" name="deadlineYN" class="form-control"
                                         onchange="myFunction3()" required>
@@ -268,12 +290,13 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <!-- FIXME onclick="getTotal() not working-->
-                                    <label for="urgentCheck">Urgent project</label>
-                                    <input type="checkbox" id="urgentCheck" name="urgentCheck" class="checkBoxValue"
-                                        value="300">
+                                    <ul id="urgentProject" onchange="getTotal()">
+                                        <li><label for="urgentCheck">Urgent project (Express treatment)</label>
+                                            <input type="checkbox" id="urgentCheck" name="urgentCheck"
+                                                class="checkBoxValue" value="300"></li>
+                                    </ul>
                                 </div>
-                            </div>
+                            </div>-->
                         </section>
                         <section id="showcaseSection">
                             <div class="row">
@@ -286,7 +309,8 @@
                                 <div class="form-group col-md-6">
                                     <label for="pageNb">Number of pages on my showcase website*</label>
                                     <select id="pageNb" name="pageNb" class="form-control"
-                                        onchange="getSelectValue(), getTotal()" > <!-- add required only if whole section displayed -->
+                                        onchange="getSelectValue(), getTotal()">
+                                        <!-- add required only if whole section displayed -->
                                         <option disabled hidden value="">&nbsp;</option>
                                         <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="0">- 10</option>
@@ -301,7 +325,8 @@
                                     <label for="loginShowcaseYN">I want my user to be able to log in (Showcase
                                         Website)*</label>
                                     <select id="loginShowcaseYN" name="loginShowcaseYN" class="form-control"
-                                        onchange="getSelectValue(), getTotal()"> <!-- add required only if whole section displayed -->
+                                        onchange="getSelectValue(), getTotal()">
+                                        <!-- add required only if whole section displayed -->
                                         <option disabled hidden value="">&nbsp;</option>
                                         <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="100">Yes</option>
@@ -314,7 +339,8 @@
                                     <label for="paymentShowcaseYN">I need payment methods for my Showcase
                                         Website*</label>
                                     <select id="paymentShowcaseYN" name="paymentShowcaseYN" class="form-control"
-                                        onchange="myFunction2()"> <!-- add required only if whole section displayed -->
+                                        onchange="myFunction2()">
+                                        <!-- add required only if whole section displayed -->
                                         <option disabled hidden value="">&nbsp;</option>
                                         <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option>Yes</option>
@@ -323,7 +349,8 @@
                                 </div>
                                 <div class="form-group col-md-6" id="paymentMethShowcase">
                                     <div class="btn-group">
-                                        <p class="checkboxLabel">Payment methods (Showcase Website)</p><br> <!-- add required only if whole section AND yes on the previous select displayed -->
+                                        <p class="checkboxLabel">Payment methods (Showcase Website)</p><br>
+                                        <!-- add required only if whole section AND yes on the previous select displayed -->
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -438,7 +465,8 @@
                                 <div class="form-group col-md-6">
                                     <label for="productNb">Number of products to sell*</label>
                                     <select id="productNb" name="productNb" class="form-control"
-                                        onchange="getSelectValue(), getTotal()" > <!-- add required only if whole section displayed -->
+                                        onchange="getSelectValue(), getTotal()">
+                                        <!-- add required only if whole section displayed -->
                                         <option disabled hidden value="">&nbsp;</option>
                                         <option label="Please choose..." value="0" disabled selected hidden> </option>
                                         <option value="0">- 10</option>
@@ -450,7 +478,8 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <div class="btn-group ">
-                                        <p class="checkboxLabel">Payment methods (Webstore)*</p><br> <!-- add required only if whole section displayed -->
+                                        <p class="checkboxLabel">Payment methods (Webstore)*</p><br>
+                                        <!-- add required only if whole section displayed -->
                                         <button data-toggle="dropdown" class="btn dropdown-toggle"
                                             data-placeholder="Please select">Please select <span
                                                 class="caret"></span></button>
@@ -537,8 +566,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="phone">Phone Number*</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone"
-                                    required>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
                                     <!-- FIXME ; rajouter un pattern avec une REGEX -->
                                 </div>
                             </div>
@@ -834,21 +862,28 @@
                     <!-- FIXME : pas responsive-->
                     <div class="pricing_item">
                         <div class="pricing_top_border"></div>
-                        <div class="pricing_head p-top-30 p-bottom-100 text-center">
+                        <div class="pricing_head p-top-30 p-bottom-100 text-center ">
                             <h3 class="text-uppercase">How much?</h3>
                         </div>
-                        <div class="pricing_price_border text-center">
+                        <div class="pricing_price_border text-center bounce-in">
                             <div class="pricing_price">
                                 <h3 id="text-customQuote"> 0 €</h3>
                             </div>
                         </div>
                         <div class="pricing_body bg-white p-top-110 p-bottom-60">
-                            <p class="priceRecap">After submiting this <strong>custom quote</strong> you will automatically recieve a detailled recap to the email address you provided.</p>
+                            <p class="priceRecap">After submiting this <strong>custom quote</strong> you will
+                                automatically recieve a detailled recap to the email address you provided.</p>
                             <div class="text-center">
                                 <button type="submit" form="customQuoteForm" class="btn btn-princing">I want
                                     this!</button>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <!-- Responsive Custom Quote Price Widget-->
+                <div class="pricing_price_border_resp text-center bounce-in" id="customQuoteWidget">
+                    <div class="pricing_price_resp">
+                        <h3 id="text-customQuoteWidget"> 0 €</h3>
                     </div>
                 </div>
             </div>
@@ -873,17 +908,18 @@
         //get the total of all SELECT inputs
         function getSelectValue() {
             let siteType = parseInt(document.getElementById("siteType").value);
-            let productNb = parseInt(document.getElementById("productNb").value);
-            let pageNb = parseInt(document.getElementById("pageNb").value);
-            let loginShowcaseYN = parseInt(document.getElementById("loginShowcaseYN").value);
             let design = parseInt(document.getElementById("design").value);
             let writingContent = parseInt(document.getElementById("writingContent").value);
             let visualContent = parseInt(document.getElementById("visualContent").value);
-            let host = parseInt(document.getElementById("host").value);
             let update = parseInt(document.getElementById("update").value);
+            let host = parseInt(document.getElementById("host").value);
+            let deadlineSelect = parseInt(document.getElementById("deadlineSelect").value);
+            let pageNb = parseInt(document.getElementById("pageNb").value);
+            let loginShowcaseYN = parseInt(document.getElementById("loginShowcaseYN").value);
+            let productNb = parseInt(document.getElementById("productNb").value);
 
-            totalInput = Number(siteType + productNb + pageNb + loginShowcaseYN + design +
-                writingContent + visualContent + host + update);
+            totalInput = Number(siteType + design + writingContent + visualContent + update + host + deadlineSelect +
+                pageNb + loginShowcaseYN + productNb);
         };
 
         //get the total of all CHECKBOXES inputs
@@ -898,11 +934,11 @@
             }
         });
 
-        //display the grand total
-
+        //display the grand total //FIXME : use Jquerry to factor the function
         function getTotal() {
             grandTotal = totalInput + totalCheckboxe;
             document.getElementById("text-customQuote").innerHTML = grandTotal + " € ";
+            document.getElementById("text-customQuoteWidget").innerHTML = grandTotal + " € ";
         }
 
 
@@ -921,13 +957,23 @@
 
         //display / hide calendar for deadline
         function myFunction3() {
+            let deadlineSelect = document.getElementById("deadlineSelect").value;
+            if (deadlineSelect == "No") {
+                document.getElementById("deadlineBlock").style.display = "none";
+            } else {
+                document.getElementById("deadlineBlock").style.display = "block";
+            }
+        }
+
+
+        /*function myFunction3() {
             let deadlineYN = document.getElementById("deadlineYN").value;
             if (deadlineYN == "Yes") {
                 document.getElementById("deadlineBlock").style.display = "block";
             } else if (deadlineYN == "No") {
                 document.getElementById("deadlineBlock").style.display = "none";
             }
-        }
+        }*/
 
         //display / hide extensions list for Showcase website
         function myFunction5() {
@@ -957,6 +1003,21 @@
                 document.getElementById("webstoreSection").style.display = "none";
             }
         }
+
+
+        //display / hide the customQuote Price widget
+        $(window).scroll(function() {
+            if ($(this).scrollTop()>1800)
+            {
+                $('#customQuoteWidget').fadeOut("fast");
+            }
+            else
+            {
+            $('#customQuoteWidget').fadeIn("fast");
+            }
+        });
+
+
     </script>
 
 </body>
