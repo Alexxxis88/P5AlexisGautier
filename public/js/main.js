@@ -8,7 +8,7 @@ $( document ).ready(function() {
         clearInterval(id);
         } else {
         width++; 
-        elem.style.width = width + '%'; 
+        elem.style.width = width + "%"; 
         }
     }
 });
@@ -22,7 +22,7 @@ $( document ).ready(function() {
         clearInterval(id);
         } else {
         width++; 
-        elem.style.width = width + '%'; 
+        elem.style.width = width + "%"; 
         }
     }
 });
@@ -36,7 +36,7 @@ $( document ).ready(function() {
         clearInterval(id);
         } else {
         width++; 
-        elem.style.width = width + '%'; 
+        elem.style.width = width + "%"; 
         }
     }
 });
@@ -50,7 +50,7 @@ $( document ).ready(function() {
         clearInterval(id);
         } else {
         width++; 
-        elem.style.width = width + '%'; 
+        elem.style.width = width + "%"; 
         }
     }
 });
@@ -64,7 +64,7 @@ $( document ).ready(function() {
         clearInterval(id);
         } else {
         width++; 
-        elem.style.width = width + '%'; 
+        elem.style.width = width + "%"; 
         }
     }
 });
@@ -78,7 +78,7 @@ $( document ).ready(function() {
         clearInterval(id);
         } else {
         width++; 
-        elem.style.width = width + '%'; 
+        elem.style.width = width + "%"; 
         }
     }
 });
@@ -92,7 +92,7 @@ $( document ).ready(function() {
         clearInterval(id);
         } else {
         width++; 
-        elem.style.width = width + '%'; 
+        elem.style.width = width + "%"; 
         }
     }
 });
@@ -106,7 +106,7 @@ $( document ).ready(function() {
         clearInterval(id);
         } else {
         width++; 
-        elem.style.width = width + '%'; 
+        elem.style.width = width + "%"; 
         }
     }
 });

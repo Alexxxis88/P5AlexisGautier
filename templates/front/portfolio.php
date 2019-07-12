@@ -134,7 +134,7 @@ ob_start();
                             <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><span class="far fa-eye"></span> Voir le site</a>
                         </div>
                         <div class=" col-md-6 text-center">
-                            <a href="project-item-webagency.html"><span class="far fa-question-circle"></span> Cahier des charges</a>
+                            <a href="index.php?action=portfolioItem&item=webagency"><span class="far fa-question-circle"></span> Cahier des charges</a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@ ob_start();
                                 <a href="http://ocr.straightandalert.com/Office-Strasbourg/"><span class="far fa-eye"></span> Voir le site</a>
                             </div>
                             <div class=" col-md-6 text-center">
-                                <a href="project-item-strasbourg.html"><span class="far fa-question-circle"></span> Cahier des charges</a>
+                                <a href="index.php?action=portfolioItem&item=strasbourg"><span class="far fa-question-circle"></span> Cahier des charges</a>
                             </div>
                         </div>
                     </div>
@@ -245,7 +245,7 @@ ob_start();
                                         class="far fa-eye"></span> Voir le site</a>
                             </div>
                             <div class=" col-md-6 text-center">
-                                <a href="project-item-bicloo.html"><span class="far fa-question-circle"></span>
+                                <a href="index.php?action=portfolioItem&item=bicloo"><span class="far fa-question-circle"></span>
                                     Cahier des charges</a>
                             </div>
                         </div>
@@ -304,7 +304,7 @@ ob_start();
                                         class="far fa-eye"></span> Voir le site</a>
                             </div>
                             <div class=" col-md-6 text-center">
-                                <a href="project-item-forteroche.html"><span class="far fa-question-circle"></span>
+                                <a href="index.php?action=portfolioItem&item=forteroche"><span class="far fa-question-circle"></span>
                                     Cahier des charges</a>
                             </div>
                         </div>

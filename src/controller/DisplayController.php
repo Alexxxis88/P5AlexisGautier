@@ -21,9 +21,9 @@ class DisplayController
         require('templates/front/portfolio.php');
     }
 
-    public function displayPortfolioItem()
+    public function displayPortfolioItem($portfolioItemName)
     {
-        require('templates/front/portfolio-item-bicloo.php');
+        require('templates/portfolio/portfolio-item-' . htmlspecialchars($portfolioItemName) . '.php');
     }
 
     public function displayAbout()

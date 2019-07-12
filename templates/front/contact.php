@@ -30,7 +30,7 @@ ob_start();
                     <form method="post" action="sendemail.php" id="contactform">
                         <input type="text" name="name" id="name" placeholder="Name*" required />
                         <input type="text" name="email" id="email" placeholder="Email*" required/>
-                        <textarea name="comments" id="comments" placeholder="Comments"></textarea>
+                        <textarea name="comments" id="comments" placeholder="Message*"></textarea>
                         <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Send a message" required />
                     </form>
                 </div>

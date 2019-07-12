@@ -30,9 +30,9 @@ try {
             $DisplayController = new DisplayController;
             $DisplayController->displayPortfolio();
         }
-        elseif ($_GET['action'] == 'portfolio-item') {
+        elseif ($_GET['action'] == 'portfolioItem') {
             $DisplayController = new DisplayController;
-            $DisplayController->displayPortfolioItem();
+            $DisplayController->displayPortfolioItem($_GET['item']);
         }
         elseif ($_GET['action'] == 'about') {
             $DisplayController = new DisplayController;

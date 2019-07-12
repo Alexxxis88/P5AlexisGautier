@@ -27,17 +27,18 @@
                             <div class="col-sm-12">
                                 <div class="carousel-content center ">
                                     <h2 class="boxed animation animated-item-1 fade-down">I WILL HELP YOU MAKE AN IMPACT</h2>
-                                    <p class="boxed animation animated-item-2 fade-up">My expertise will guide you to success. Without Fail.</p>
+                                    <p class="boxed animation animated-item-2 fade-up">My expertise will guide you to success. Without Fail</p>
                                     <br>
-                                    <a class="btn btn-md animation bounce-in" href="#services">Learn More</a>
+                                    <a class="btn btn-md animation bounce-in homeBtn" href="#services">I need more info</a>
+                                    <a class="btn btn-md animation bounce-in homeBtn" href="index.php?action=services#pricing">I have a project</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!--/.item-->
-            </div><!--/.carousel-inner-->
-        </div><!--/.carousel-->
-    </section><!--/#main-slider-->
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div id="content-wrapper">
         <section id="services" class="white">
@@ -65,7 +66,7 @@
                                 <p>Need a brand new website or to revamp your old one ? Either for the brand you just started, your company, local association or anything else : I can offer you the kind of services you need.  </p>
                             </div>
                         </div>
-                    </div><!--/.col-md-4-->
+                    </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
@@ -76,7 +77,7 @@
                                 <p>You want to sell your products online ? Only a few items or a very large catalogue, it doesn't make a difference. I will create the webstore that suits your needs and help you boost these sales!</p>
                             </div>
                         </div>
-                    </div><!--/.col-md-4-->
+                    </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
@@ -87,8 +88,8 @@
                                 <p>Food enthusiast, sports maniac, music lover ? Yes, there are millions of people who share your passion. I can develop the blog you dream of for all kinds of topics.</p>
                             </div>
                         </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.row-->
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="center gap fade-down section-heading">
@@ -109,7 +110,7 @@
                                 <p>Your band is finally ready to hit the studio and record these songs you have been jamming for a while now? I have everything you need to make them ROCK HARD!</p>
                             </div>
                         </div>
-                    </div><!--/.col-md-4-->
+                    </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
@@ -120,7 +121,7 @@
                                 <p>You have a couple songs recorded, still hot from the oven ? Getting a proper mix is the next step to eventually put them on a record. Let me handle that and I'll get the best of these tunes!</p>
                             </div>
                         </div>
-                    </div><!--/.col-md-4-->
+                    </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
@@ -131,8 +132,8 @@
                                 <p>Some often don't understand the importance of Mastering...until they listen to the difference with the rough mix! This is the last stage to beautify your record. And I'm ready to help you with that!</p>
                             </div>
                         </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.row-->
+                    </div>
+                </div>
             </div>
             <div class="gap"></div>
             <div class="row">
@@ -320,76 +321,6 @@
                 <div class="gap"></div>
             </section>
 
-            <!--<section id="testimonial-carousel" class="divider-section">
-            <div class="gap"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="center gap fade-down section-heading">
-                            <h2 class="main-title">What They Have Been Saying</h2>
-                            <hr>
-                            <p>A few words from people I worked with</p>
-                            <div class="gap"></div>
-                        </div>
-                        <div class='col-md-offset-2 col-md-8 fade-up'>
-                            <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-                                < !-- Bottom Carousel Indicators -- >
-                                <ol class="carousel-indicators">
-                                    <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#quote-carousel" data-slide-to="1"></li>
-                                    <li data-target="#quote-carousel" data-slide-to="2"></li>
-                                </ol>
-                                < !-- Carousel Slides / Quotes -- >
-                                <div class="carousel-inner">
-                                < !-- Quote 1 -- >
-                                    <div class="item active">
-                                        <blockquote>
-                                            <div class="row">
-                                                <div class="col-sm-3 text-center">
-                                                    <img class="img-responsive" src="./public/images/about/opinion1.jpg" style="width: 100px;height:100px;">
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <p>L'ensemble des éléments ont pu être présentés permettant une présentation à 360° ! Projet & présentation de très bonne qualité</p>
-                                                    <small>Mélanie Petiot | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
-                                                </div>
-                                            </div>
-                                        </blockquote>
-                                    </div>
-                                    < !-- Quote 2 -- >
-                                    <div class="item">
-                                        <blockquote>
-                                            <div class="row">
-                                                <div class="col-sm-3 text-center">
-                                                    <img class="img-responsive" src="./public/images/about/opinion2.jpg" style="width: 100px;height:100px;">
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <p>Le projet est bien réalisé, en témoignent les réponses aux questions ainsi que les explications fournies tout au long de la soutenance.</p>
-                                                    <small>Fabien Rahaingomanana | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
-                                                </div>
-                                            </div>
-                                        </blockquote>
-                                    </div>
-                                    < !-- Quote 3 -- >
-                                    <div class="item">
-                                        <blockquote>
-                                            <div class="row">
-                                                <div class="col-sm-3 text-center">
-                                                    <img class="img-responsive" src="./public/images/about/opinion4.jpg" style="width: 100px;height:100px;">
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <p>Très bon travail tant au niveau du code que de la présentation. Alexis a fait un excellent travail, en allant plus loin que ce qui était demandé.</p>
-                                                    <small>Aurélien Antonio | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
-                                                </div>
-                                            </div>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gap"></div>
-                </div>
-            </section>-->
-
             <section id="contact" class="white">
                 <div class="container">
                     <div class="gap"></div>
@@ -416,7 +347,7 @@
                             <form method="post" action="index.php?action=sendEmail" id="contactform">
                                 <input type="text" name="name" id="name" placeholder="Name*" required />
                                 <input type="text" name="email" id="email" placeholder="Email*" required/>
-                                <textarea name="comments" id="comments" placeholder="Comments"></textarea>
+                                <textarea name="comments" id="comments" placeholder="Message*"></textarea>
                                 <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Send a message" required />
                             </form>
                         </div>

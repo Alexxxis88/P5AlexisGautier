@@ -96,6 +96,10 @@ body > section {
     margin-top : 100px;
 }
 
+.noHeaderImgPortfolio{
+    margin-top : 50px;
+
+}
 .embed-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -124,7 +128,9 @@ blockquote {
     text-transform: uppercase;
 }
 
-
+.homeBtn{
+    margin-right : 10px;
+}
 /*-----------------------------------------------------------------------------------*/
 
 
@@ -330,7 +336,7 @@ blockquote {
 }
 
 .portfolio-item .item-inner h5{
-    font-size: 1vw;
+    font-size: 0.96vw;
 }
 
 .portfolio-item img {
