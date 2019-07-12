@@ -831,6 +831,10 @@ ul.tag-cloud li {
     color: #efefef;
 }
 
+.dropdown-menu a:focus{
+    background-color: rgba(87, 87, 87, 0.3) !important;
+}
+
 .navbar-inverse .navbar-nav .dropdown-menu > li:hover > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li:focus > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li.active > a {
@@ -2336,10 +2340,11 @@ img.author-box-image {
    CONTACT
    ========================================================================== */
 
-#contactform input#name,
-#contactform input#email,
-#contactform input#website,
-#contactform textarea#comments {
+input#firstName,
+input#lastName,
+input#contactEmail,
+input#topic,
+textarea#messageContent {
     width: 100%;
     padding: 10px 5px;
     margin-bottom: 15px;
@@ -2348,7 +2353,7 @@ img.author-box-image {
     border: none;
 }
 
-#contactform textarea#comments {
+textarea#messageContent {
     min-height: 150px;
 }
 

@@ -321,6 +321,7 @@
                 <div class="gap"></div>
             </section>
 
+            <!--
             <section id="contact" class="white">
                 <div class="container">
                     <div class="gap"></div>
@@ -344,7 +345,7 @@
                         <div class="col-md-8 fade-up">
                         <br>
                             <div id="message"></div>
-                            <form method="post" action="index.php?action=sendEmail" id="contactform">
+                            <form method="post" action="index.php?action=sendMessage" id="contactform">
                                 <input type="text" name="name" id="name" placeholder="Name*" required />
                                 <input type="text" name="email" id="email" placeholder="Email*" required/>
                                 <textarea name="comments" id="comments" placeholder="Message*"></textarea>
@@ -354,7 +355,7 @@
                     </div>
                     <div class="gap"></div>
                 </div>
-            </section>
+            </section>-->
         </div>
         <?php
 $content = ob_get_clean();
