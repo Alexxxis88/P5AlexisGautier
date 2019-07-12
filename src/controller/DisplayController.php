@@ -36,4 +36,19 @@ class DisplayController
         require('templates/front/contact.php');
     }
 
+    public function displayTerms()
+    {
+        require('templates/front/termsAndConditions.php');
+    }
+
+    public function displayPrivacy()
+    {
+        require('templates/front/privacyPolicy.php');
+    }
+
+    public function displayLegal()
+    {
+        require('templates/front/legalNotice.php');
+    }
+
 }

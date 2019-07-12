@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Alexis Gautier | Web & Recording solutions</title>
+        <title><?= $title ?></title>
 
         <!-- Favico 
         <link rel="icon" href="./public/img/favicon.ico" type="image/x-icon">-->
@@ -21,17 +21,18 @@
         <meta name="twitter:image" content="http://ocr.straightandalert.com/jean-forteroche/public/img/home-picture.jpg"> -->
 
         <link href="./public/css/bootstrap.min.css" rel="stylesheet">
-        <link href="./public/css/font-awesome.min.css" rel="stylesheet">
-        <link href="./public/css/pe-icons.css" rel="stylesheet">
+        <!-- <link href="./public/css/font-awesome.min.css" rel="stylesheet">-->
+        <!-- <link href="./public/css/pe-icons.css" rel="stylesheet">-->
         <link href="./public/css/prettyPhoto.css" rel="stylesheet">
         <link href="./public/css/animate.css" rel="stylesheet">
         <link href="./public/css/style.css" rel="stylesheet">
         <link href="./public/css/dropdowns-enhancement.css" rel="stylesheet">
 
         <!--[if lt IE 9]>
-        <script src="../public/js/html5shiv.js"></script>
-        <script src="../public/js/respond.min.js"></script>
+        <script src="./public/js/html5shiv.js"></script>
+        <script src="./public/js/respond.min.js"></script>
         <![endif]-->
+
         <script src="./public/js/jquery.js"></script>
 
 
@@ -40,7 +41,7 @@
 
 
         <!-- Bootstrap 
-            <!-- Latest compiled and minified CSS 
+            Latest compiled and minified CSS 
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
             <!-- Optional theme 
@@ -74,13 +75,13 @@
 
 
         <!--display the menu-->
-        <!--<div id="preloader"></div>-->
+        <div id="preloader"></div>
         <header class="navbar navbar-inverse navbar-fixed-top " role="banner">
             <div class="container" id="navContainer">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <i class="fa fa-bars"></i>
+                        <span class="fa fa-bars"></span>
                     </button>
                     <a class="navbar-brand" href="index.php?action=home"><h1><span class="fas fa-sliders-h"></span> ALEXIS GAUTIER</h1></a>
                 </div>
@@ -88,7 +89,13 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=services">Services</a></li>
-                        <li><a href="index.php?action=quote">Quote</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quote <span class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.php?action=services#pricing">All included packs</a></li>
+                                <li><a href="index.php?action=quote">Custom quote</a></li>
+                            </ul>
+                        </li>
                         <li><a href="index.php?action=portfolio">Portfolio</a></li>
                         <li><a href="index.php?action=about">About Me</a></li>
                         <li><a href="index.php?action=contact">Contact</a></li>
@@ -118,28 +125,14 @@
 
         <?= $content ?>
 
-        <!-- Footer 
-        <footer id="footer">
-            <div class="container">
-                <div class="row text-center d-flex justify-content-center">
-                    <div class="col-md-12 ">
-                        <a href="index.php?action=about">A propos</a> &emsp;
-                        <a data-toggle="modal" data-target="#contactModal">Contact</a> &emsp;
-                        <a href="index.php?action=legalNotice">Mentions légales</a>
-                    </div>
-                </div>
-            </div>
-        </footer>-->
-
-        <div id="footer-wrapper">
+            <!-- <div id="footer-wrapper">
             <section id="bottom" class="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3 col-sm-6 about-us-widget">
                             <h4>Global Coverage</h4>
                             <p>Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin.</p>
-                        </div><!--/.col-md-3-->
-
+                        </div>
                         <div class="col-md-3 col-sm-6">
                             <h4>Company</h4>
                             <div>
@@ -150,14 +143,14 @@
                                     <li><a href="#">Our Services</a></li>
                                 </ul>
                             </div>
-                        </div><!--/.col-md-3-->
+                        </div>
 
                         <div class="col-md-3 col-sm-6">
                             <h4>Latest Articles</h4>
                             <div>
                                 <div class="media">
                                     <div class="pull-left">
-                                        <img class="widget-img" src="../public/images/portfolio/folio01.jpg" alt="">
+                                        <img class="widget-img" src="./public/images/portfolio/folio01.jpg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <span class="media-heading"><a href="#">Blog Post A</a></span>
@@ -166,7 +159,7 @@
                                 </div>
                                 <div class="media">
                                     <div class="pull-left">
-                                        <img class="widget-img" src="../public/images/portfolio/folio02.jpg" alt="">
+                                        <img class="widget-img" src="./public/images/portfolio/folio02.jpg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <span class="media-heading"><a href="#">Blog Post B</a></span>
@@ -174,44 +167,47 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--/.col-md-3-->
-
+                        </div>
                         <div class="col-md-3 col-sm-6">
                             <h4>Come See Us</h4>
                             <address>
                                 <strong>Ace Towers</strong><br>
                                 New York Ave,<br>
                                 New York, 215648<br>
-                                <abbr title="Phone"><i class="fa fa-phone"></i></abbr> 546 840654 05
+                                <abbr title="Phone"><span class="fa fa-phone"></span></abbr> 546 840654 05
                             </address>
-                        </div> <!--/.col-md-3-->
-                    </div>
-                </div>
-            </section><!--/#bottom-->
-
-            <footer id="footer" class="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            &copy; 2019 Your Site Name. All Rights Reserved. <a href="https://templatemag.com/bootstrap-templates/">Bootstrap templates</a> by TemplateMag.
-                        </div>
-                        <div class="col-sm-4">
-                            <ul class="pull-right">
-                                <li><a id="gototop" class="gototop" href="#"><i class="fa fa-chevron-up"></i></a></li><!--#gototop-->
-                            </ul>
                         </div>
                     </div>
                 </div>
-            </footer><!--/#footer-->
-        </div>
+            </section> -->
 
-        <?php //require('templates/front/contactView.php'); ?>
+                        <!-- Footer -->
+                        <footer id="footer">
+                            <div class="container">
+                                <div class="row text-center">
+                                    <div class="col-md-12 ">
+                                        <a href="index.php?action=privacyPolicy">Privacy Policy</a> &emsp;
+                                        <a href="index.php?action=termsAndCondition">Terms & Conditions</a> &emsp;
+                                        <a href="index.php?action=legalNotice">Legal Notice</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Back to top -->
+                            <a href="#header" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><span class="fas fa-arrow-circle-up"></span></a>
+                            <!-- Copyright -->
+                            <div class="footer-copyright text-center">
+                                <span>&copy;<script>document.write(new Date().getFullYear());</script> - Alexis Gautier - All rights reserved</span>
+                            </div>
+                        </footer>
 
         <!-- My scripts -->
-        <script src="../public/js/plugins.js"></script>
-        <script src="../public/js/bootstrap.min.js"></script>
-        <script src="../public/js/jquery.prettyPhoto.js"></script>
-        <script src="../public/js/init.js"></script>
+        <script src="./public/js/plugins.js"></script>
+        <script src="./public/js/bootstrap.min.js"></script>
+        <script src="./public/js/jquery.prettyPhoto.js"></script>
+        <script src="./public/js/init.js"></script>
         <script src="./public/js/main.js"></script>
+
+        <!-- A GARDER !!! car fichier modifiés pour les menus bootstrap-->
+        <script src="./public/js/dropdowns-enhancement.js"></script>
     </body>
 </html>

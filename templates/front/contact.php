@@ -1,9 +1,9 @@
 <?php
-$title = 'Contact Me';
+$title = 'Contact - Get in touch';
 ob_start();
 ?>
 <div id="content-wrapper">
-    <section id="contact" class="white">
+    <section id="contact" class="white noHeaderImg">
         <div class="row">
             <div class="center gap fade-down section-heading">
                 <h2 class="main-title">Get in touch</h2>

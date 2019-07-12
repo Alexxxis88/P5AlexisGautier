@@ -42,6 +42,18 @@ try {
             $DisplayController = new DisplayController;
             $DisplayController->displayContact();
         }
+        elseif ($_GET['action'] == 'termsAndCondition') {
+            $DisplayController = new DisplayController;
+            $DisplayController->displayTerms();
+        }
+        elseif ($_GET['action'] == 'privacyPolicy') {
+            $DisplayController = new DisplayController;
+            $DisplayController->displayPrivacy();
+        }
+        elseif ($_GET['action'] == 'legalNotice') {
+            $DisplayController = new DisplayController;
+            $DisplayController->displayLegal();
+        }
     }
     //DEFAULT BEHAVIOR
     else {

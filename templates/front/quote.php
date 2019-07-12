@@ -1,12 +1,13 @@
 <?php
-$title = 'Custom Quote Test';
+$title = 'Custom Quote - So, how much?';
 ob_start();
 ?>
-<div id="content-wrapper">
+<div id="content-wrapper" class="noHeaderImg">
     <div class="row">
         <div class="col-md-10 center gap fade-down section-heading">
             <h2 class="main-title">Custom Quote</h2>
             <hr>
+            <small>I also have all included packs if you fancy take a look <a href="index.php?action=services#pricing"><strong>here</strong></a></small>
         </div>
     </div>
     <div class="container">
@@ -815,12 +816,12 @@ ob_start();
                             <div class="form-group col-md-12">
                                 <label for="messageContent" class="col-form-label">Describe your project*</label>
                                 <textarea class="form-control" rows="5" id="messageContent"
-                                    name="messageContent"></textarea>
+                                    name="messageContent" required></textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <small>*Any extra requests mentioned here is subject to approval and can cause extra
+                                <small>Any extra requests mentioned in the text area above is subject to approval and can cause extra
                                     fees.</small>
                             </div>
                         </div>
@@ -842,7 +843,7 @@ ob_start();
                         <p class="priceRecap">After submiting this <strong>custom quote</strong> you will
                             automatically recieve a detailled recap to the email address you provided.</p>
                         <div class="text-center">
-                            <label><input type="checkbox" form="customQuoteForm" id="acceptTerms" required> <small>I accept <a href="#">Terms and conditions</a> and <a href="#">Privacy policy.</a></small></label>
+                            <label><input type="checkbox" form="customQuoteForm" id="acceptTerms" required> <small>I accept <a href="index.php?action=terms">Terms & Conditions</a> and <a href="index.php?action=privacy">Privacy Policy.</a></small></label><br>
                             <button type="submit" form="customQuoteForm" class="btn btn-princing">I want this!</button>
                         </div>
                     </div>
@@ -858,15 +859,9 @@ ob_start();
     </div>
 </div>
 
-<script src="../public/js/bootstrap.min.js"></script>
-<script src="../public/js/jquery.prettyPhoto.js"></script>
-<script src="../public/js/plugins.js"></script>
-<script src="../public/js/init.js"></script>
 
 
-<!-- A GARDER !!! car fichier modifiés pour les menus bootstrap-->
 
-<script src="../public/js/dropdowns-enhancement.js"></script>
 
 <script>
     let grandTotal = "";

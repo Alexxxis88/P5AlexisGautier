@@ -1,5 +1,5 @@
 <?php
-$title = 'About Me';
+$title = 'Services - What can I do?';
 ob_start();
 ?>
 
@@ -7,7 +7,7 @@ ob_start();
         jQuery(document).ready(function ($) {
             'use strict';
             jQuery('body').backstretch([
-                "../public/../public/images/bg/bg5.jpg"
+                "./public/images/bg/bg5.jpg"
             ], {
                 duration: 5000,
                 fade: 500
@@ -305,8 +305,17 @@ ob_start();
                                                     tools</li>
                                                 <li><span class="text-princing"></span> <strong>Responsive</strong>
                                                     design</li>
-                                                <li><span class="text-princing"></span> Up to <strong>20 pages</strong>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
                                                 </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+
                                             </ul>
                                             <div class="text-center">
                                                 <a data-toggle="modal" data-target="#devPack1"
@@ -373,14 +382,18 @@ ob_start();
                                                     <strong>Webstore</strong> <br>features included</li>
                                                 <li><span class="text-princing"></span> Get your brand / compagny <br>a
                                                     <strong>full online presence</strong></li>
-                                                <li><span class="text-princing"></span> Various <strong>payments
-                                                        options</strong></li>
-                                                <li><span class="text-princing"></span> Configurable
-                                                    <strong>shipping</strong> system</li>
-                                                <li><span class="text-princing"></span> Complete customer
-                                                    <strong>database</strong></li>
-                                                <li><span class="text-princing"></span> <strong>Administration</strong>
-                                                    tools</li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
                                             </ul>
                                             <div class="text-center">
                                                 <a data-toggle="modal" data-target="#devPack3"
@@ -402,17 +415,24 @@ ob_start();
                                         </div>
                                         <div class="pricing_body bg-white p-top-110 p-bottom-60">
                                             <ul>
-                                                <li><span class="text-princing"></span> Various <strong>options
-                                                        available</strong></li>
+                                                <li><span class="text-princing"></span> <strong>Showcase Website | Webstore | Redesign</strong></li>
                                                 <li><span class="text-princing"></span> I can do pretty much <br>
-                                                    <strong>everything you want</strong><br></li>
+                                                <strong>everything you want</strong><br></li>
+                                                <li><span class="text-princing"></span> Various <strong>options
+                                                available</strong></li>
                                                 <li><span class="text-princing"></span> Use my automatic
                                                     <strong>custom quote</strong> system
-                                                    to get an accurate price to fit with what you need.<br></li>
+                                                    to get an accurate price to fit with your needs<br></li>
                                                 <li><span class="text-princing"></span> I got you covered!</li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
+                                                <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                                </li>
                                             </ul>
                                             <div class="text-center">
-                                                <a href="quote-Web.html" class="btn btn-princing">I want this!</a>
+                                                <a href="index.php?action=quote" class="btn btn-princing">I want this!</a>
                                             </div>
                                         </div>
                                     </div>

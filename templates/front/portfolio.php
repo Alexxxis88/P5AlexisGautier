@@ -1,5 +1,5 @@
 <?php
-$title = 'About Me';
+$title = 'Portfolio - Look what I did';
 ob_start();
 ?>
     <script type="text/javascript">

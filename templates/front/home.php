@@ -1,18 +1,18 @@
 
     <?php
-    $title = 'Alexis Gautier | Web & recording solutions';
+    $title = 'Alexis Gautier | Web Solutions';
     ob_start();
     ?>
     <script type="text/javascript">
     jQuery(document).ready(function($){
     'use strict';
         jQuery('body').backstretch([
-            "../public/../public/images/bg/bg4.jpg",
-            "../public/../public/images/bg/bg1.jpg",
-            "../public/../public/images/bg/bg5.jpg",
-            "../public/../public/images/bg/bg2.jpg",
-            "../public/../public/images/bg/bg6.jpg",
-            "../public/../public/images/bg/bg3.jpg"
+            "./public/images/bg/bg4.jpg",
+            "./public/images/bg/bg1.jpg",
+            "./public/images/bg/bg5.jpg",
+            "./public/images/bg/bg2.jpg",
+            "./public/images/bg/bg6.jpg",
+            "./public/images/bg/bg3.jpg"
         ], {duration: 4000, fade: 500, centeredY: true });
 
     });
@@ -27,7 +27,7 @@
                             <div class="col-sm-12">
                                 <div class="carousel-content center ">
                                     <h2 class="boxed animation animated-item-1 fade-down">I WILL HELP YOU MAKE AN IMPACT</h2>
-                                    <p class="boxed animation animated-item-2 fade-up">Our expertise will guide you to success. Without Fail.</p>
+                                    <p class="boxed animation animated-item-2 fade-up">My expertise will guide you to success. Without Fail.</p>
                                     <br>
                                     <a class="btn btn-md animation bounce-in" href="#services">Learn More</a>
                                 </div>
@@ -135,59 +135,26 @@
                 </div><!--/.row-->
             </div>
             <div class="gap"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="center gap fade-down section-heading">
-                            <h2 class="main-title">My Skills</h2>
-                            <hr>
-                            <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
-                        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center gap fade-down section-heading">
+                        <h2 class="main-title">My Skills</h2>
+                        <hr>
+                        <p>My day to day tools to create everything you can think about</p>
                     </div>
                 </div>
             </div>
             <div class="container">
-            <div class="row">
+                <div class="row">
+                    <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
                     <div class="col-md-3">
                         <div class="tile-progress tile-red bounce-in">
                             <div class="tile-header">
-                                <h3>Video Editing</h3>
-                                <span>Our cutting room floor is messy.</span>
+                                <h3>HTML5</h3>
+                                <span>The absolute basic, this is how your website in structured</span>
                             </div>
                             <div class="tile-progressbar">
-                                <span data-fill="65.5%" style="width: 65.5%;"></span>
-                            </div>
-                            <div class="tile-footer">
-                                <h4>
-                                    <span class="pct-counter counter">65.5</span>%
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="tile-progress tile-cyan bounce-in">
-                            <div class="tile-header">
-                                <h3>Marketing</h3>
-                                <span>How well we can sell you and your brand.</span>
-                            </div>
-                            <div class="tile-progressbar">
-                                <span data-fill="98.5%" style="width: 98.5%;"></span>
-                            </div>
-                            <div class="tile-footer">
-                                <h4>
-                                    <span class="pct-counter counter">98.5</span>%
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="tile-progress tile-primary bounce-in">
-                            <div class="tile-header">
-                                <h3>Web Development</h3>
-                                <span>We love servers and stuff.</span>
-                            </div>
-                            <div class="tile-progressbar">
-                                <span data-fill="90%" style="width: 90%;"></span>
+                                <div id="myBarHTML"></div>
                             </div>
                             <div class="tile-footer">
                                 <h4>
@@ -197,23 +164,122 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="tile-progress tile-pink bounce-in">
+                        <div class="tile-progress tile-cyan bounce-in">
                             <div class="tile-header">
-                                <h3>Coffee</h3>
-                                <span>We done make good joe, though.</span>
+                                <h3>CSS3</h3>
+                                <span>How about the look ? CSS3 handles that like no one else</span>
                             </div>
                             <div class="tile-progressbar">
-                                <span data-fill="10%" style="width: 10%;"></span>
+                                <div id="myBarCSS"></div>
                             </div>
                             <div class="tile-footer">
                                 <h4>
-                                    <span class="pct-counter counter">10</span>%
+                                    <span class="pct-counter counter">85</span>%
                                 </h4>
                             </div>
                         </div>
                     </div>
-                </div><!--/.row-->
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-primary bounce-in">
+                            <div class="tile-header">
+                                <h3>Javascript</h3>
+                                <span>Wow, everything is interactive. Say thanks to Javascript</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarJS"></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">70</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-pink bounce-in">
+                            <div class="tile-header">
+                                <h3>PHP/MYSLQ</h3>
+                                <span>Storing and managing datas? This power couple does the job</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarPHP"></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">60</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="gap"></div>
+                <div class="row">
+                    <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-blue bounce-in">
+                            <div class="tile-header">
+                                <h3>Wordpress</h3>
+                                <span>EVERYTHING you can think about can be made with it</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarWP"></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">65</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-purple bounce-in">
+                            <div class="tile-header">
+                                <h3>Bootstrap</h3>
+                                <span>Helps me creating your beautiful design in a blink of an eye</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarBS"></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">55</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-lightblue bounce-in">
+                            <div class="tile-header">
+                                <h3>Photoshop</h3>
+                                <span>I use #1 graphic design software to beautify your project</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarPS"></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">80</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="tile-progress tile-orange bounce-in">
+                            <div class="tile-header">
+                                <h3>Illustrator</h3>
+                                <span>The best tool and a great idea : all I need to create your logo</span>
+                            </div>
+                            <div class="tile-progressbar">
+                                <div id="myBarAI"></div>
+                            </div>
+                            <div class="tile-footer">
+                                <h4>
+                                    <span class="pct-counter counter">70</span>%
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -224,29 +290,29 @@
                         <div class="col-md-3 col-xs-6">
                             <div class="center bounce-in">
                                 <span class="stat-icon"><span class="pe-7s-timer bounce-in"></span></span>
-                                <h1><span class="counter">246000</span></h1>
+                                <h1><span class="counter">2460</span></h1>
                                 <h3>HOURS SAVED</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-xs-6">
                             <div class="center bounce-in">
                                 <span class="stat-icon"><span class="pe-7s-light bounce-in"></span></span>
-                                <h1><span class="counter">16875</span></h1>
+                                <h1><span class="counter">675</span></h1>
                                 <h3>FRESH IDEAS</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-xs-6">
                             <div class="center bounce-in">
                                 <span class="stat-icon"><span class="pe-7s-graph1 bounce-in"></span></span>
-                                <h1><span class="counter">99999999</span></h1>
-                                <h3>HUGE PROFIT</h3>
+                                <h1><span class="counter">100</span> %</h1>
+                                <h3>SALES BOOST</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-xs-6">
                             <div class="center bounce-in">
                                 <span class="stat-icon"><span class="pe-7s-box2 bounce-in"></span></span>
-                                <h1><span class="counter">54875</span></h1>
-                                <h3>THINGS IN BOXES</h3>
+                                <h1><span class="counter">5</span></h1>
+                                <h3>HAPPY CUSTOMERS</h3>
                             </div>
                         </div>
                     </div>
@@ -254,64 +320,64 @@
                 <div class="gap"></div>
             </section>
 
-            <section id="testimonial-carousel" class="divider-section">
+            <!--<section id="testimonial-carousel" class="divider-section">
             <div class="gap"></div>
                 <div class="container">
                     <div class="row">
                         <div class="center gap fade-down section-heading">
                             <h2 class="main-title">What They Have Been Saying</h2>
                             <hr>
-                            <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
+                            <p>A few words from people I worked with</p>
                             <div class="gap"></div>
                         </div>
                         <div class='col-md-offset-2 col-md-8 fade-up'>
                             <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-                                <!-- Bottom Carousel Indicators -->
+                                < !-- Bottom Carousel Indicators -- >
                                 <ol class="carousel-indicators">
                                     <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
                                     <li data-target="#quote-carousel" data-slide-to="1"></li>
                                     <li data-target="#quote-carousel" data-slide-to="2"></li>
                                 </ol>
-                                <!-- Carousel Slides / Quotes -->
+                                < !-- Carousel Slides / Quotes -- >
                                 <div class="carousel-inner">
-                                <!-- Quote 1 -->
+                                < !-- Quote 1 -- >
                                     <div class="item active">
                                         <blockquote>
                                             <div class="row">
                                                 <div class="col-sm-3 text-center">
-                                                    <img class="img-responsive" src="../public/images/team/team01.jpg" style="width: 100px;height:100px;">
+                                                    <img class="img-responsive" src="./public/images/about/opinion1.jpg" style="width: 100px;height:100px;">
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!</p>
-                                                    <small>Someone famous</small>
+                                                    <p>L'ensemble des éléments ont pu être présentés permettant une présentation à 360° ! Projet & présentation de très bonne qualité</p>
+                                                    <small>Mélanie Petiot | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
                                                 </div>
                                             </div>
                                         </blockquote>
                                     </div>
-                                    <!-- Quote 2 -->
+                                    < !-- Quote 2 -- >
                                     <div class="item">
                                         <blockquote>
                                             <div class="row">
                                                 <div class="col-sm-3 text-center">
-                                                    <img class="img-responsive" src="../public/images/team/team02.jpg" style="width: 100px;height:100px;">
+                                                    <img class="img-responsive" src="./public/images/about/opinion2.jpg" style="width: 100px;height:100px;">
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.</p>
-                                                    <small>Someone famous</small>
+                                                    <p>Le projet est bien réalisé, en témoignent les réponses aux questions ainsi que les explications fournies tout au long de la soutenance.</p>
+                                                    <small>Fabien Rahaingomanana | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
                                                 </div>
                                             </div>
                                         </blockquote>
                                     </div>
-                                    <!-- Quote 3 -->
+                                    < !-- Quote 3 -- >
                                     <div class="item">
                                         <blockquote>
                                             <div class="row">
                                                 <div class="col-sm-3 text-center">
-                                                    <img class="img-responsive" src="../public/images/team/team03.jpg" style="width: 100px;height:100px;">
+                                                    <img class="img-responsive" src="./public/images/about/opinion4.jpg" style="width: 100px;height:100px;">
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium nisl accumsan. Sed ultricies commodo tortor, eu pretium mauris.</p>
-                                                    <small>Someone famous</small>
+                                                    <p>Très bon travail tant au niveau du code que de la présentation. Alexis a fait un excellent travail, en allant plus loin que ce qui était demandé.</p>
+                                                    <small>Aurélien Antonio | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
                                                 </div>
                                             </div>
                                         </blockquote>
@@ -322,7 +388,7 @@
                     </div>
                     <div class="gap"></div>
                 </div>
-            </section>
+            </section>-->
 
             <section id="contact" class="white">
                 <div class="container">
@@ -330,35 +396,31 @@
                     <div class="center gap fade-down section-heading">
                         <h2 class="main-title">Get In Touch</h2>
                         <hr>
-                        <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
+                        <p>Any question? I'm here to help!</p>
                     </div>
                     <div class="gap"></div>
                     <div class="row">
                         <div class="col-md-4 fade-up">
                             <h3>Contact Information</h3>
-                            <p><span class="icon icon-home"></span>Time Square, New York<br/>
-                                <span class="icon icon-phone"></span>+36 65984 405<br/>
-                                <span class="icon icon-mobile"></span>+36 65984 405<br/>
-                                <span class="icon icon-envelop"></span> <a href="#">email@infinityteam.com</a> <br/>
-                                <span class="icon icon-twitter"></span> <a href="#">@infinityteam.com</a> <br/>
-                                <span class="icon icon-facebook"></span> <a href="#">Infinity Agency</a> <br/>
+                            <p><span class="fas fa-home contactIcons"></span> Nantes - France<br/>
+                                <span class="fas fa-phone contactIcons"></span> +33 679165242<br/>
+                                <span class="fas fa-mobile-alt contactIcons"></span>+33 679165242<br/>
+                                <span class="far fa-envelope contactIcons"></span> <a href="mailto:alexisxgautier@gmail.com"> alexisxgautier@gmail.com</a> <br/>
+                                <span class="fab fa-skype contactIcons"></span> <a href="#"> alexisxgautier</a> <br/>
+                                <span class="fab fa-facebook contactIcons"></span> <a href="https://facebook.com"> Alexis Gautier</a> <br/>
                             </p>
-                        </div><!-- col -->
-
+                        </div>
                         <div class="col-md-8 fade-up">
-                            <h3>Drop Us A Message</h3>
-                            <br>
-                            <br>
+                        <br>
                             <div id="message"></div>
-                            <form method="post" action="sendemail.php" id="contactform">
-                                <input type="text" name="name" id="name" placeholder="Name" />
-                                <input type="text" name="email" id="email" placeholder="Email" />
-                                <input type="text" name="website" id="website" placeholder="Website" />
+                            <form method="post" action="index.php?action=sendEmail" id="contactform">
+                                <input type="text" name="name" id="name" placeholder="Name*" required />
+                                <input type="text" name="email" id="email" placeholder="Email*" required/>
                                 <textarea name="comments" id="comments" placeholder="Comments"></textarea>
-                                <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Submit" />
+                                <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Send a message" required />
                             </form>
-                        </div><!-- col -->
-                    </div><!-- row -->
+                        </div>
+                    </div>
                     <div class="gap"></div>
                 </div>
             </section>
