@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('src/controller/DisplayController.php');
-require_once('src/controller/FormController.php');
+require_once('src/controller/MessageController.php');
 
 //AUTOLOAD
 function classAutoLoad($class)
@@ -59,41 +59,17 @@ try {
 
         //SEND MESSAGE
         elseif ($_GET['action'] == 'sendMessage') {
-            //testing if all fields a filled
             if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['contactEmail']) && isset($_POST['topic']) && isset($_POST['messageContent'])) {
+                $messageController = new MessageController;
+                if( $messageController->checkMessageFields($_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['topic'], $_POST['messageContent']) == true){
 
-                $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
+                    $messageController->saveMessage($_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['topic'], $_POST['messageContent']);
 
-                //testing if firstName only has authorised caracters
-                if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['firstName'])) {
-                    //testing if lastName only has authorised caracters
-                    if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['lastName'])) {
-                        //testing if email is conform
-                        if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#i", $_POST['contactEmail'])) {
-                            //testing if topic is conform
-                            if (preg_match("#^[a-z". $accentedCharacters ."(' \-)*]+[a-z". $accentedCharacters ."]+$#i", $_POST['topic'])) {
-                                $formController = new FormController;
-
-                                $formController->saveMessage($_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['topic'], $_POST['messageContent']);
-
-                                $formController->sendMessage($_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['topic'], $_POST['messageContent']);
-
-
-
-                            } else {
-                                throw new Exception('L\'intitulé n\'est pas conforme');
-                            }
-                        } else {
-                            throw new Exception('L\'adresse email n\'est pas conforme');
-                        }
-                    } else {
-                        throw new Exception('Le nom n\'est pas conforme.');
-                    }
-                } else {
-                    throw new Exception('Le prénom n\'est pas conforme.');
+                    $messageController->sendMessage($_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['topic'], $_POST['messageContent']);
                 }
-            } else {
-                throw new Exception('Il manque des informations.');
+            }
+            else {
+                throw new Exception('Tous les champs ne sont pas remplis');
             }
         }
         else {

@@ -156,8 +156,8 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="update">Maintenance / updates*</label>
-                                <select id="update" name="update" class="form-control"
+                                <label for="maintenance">Maintenance / updates*</label>
+                                <select id="maintenance" name="maintenance" class="form-control"
                                     onchange="getSelectValue(), getTotal()" required>
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
@@ -239,6 +239,60 @@ ob_start();
                             <div class="form-group col-md-6" id="deadlineBlock">
                                 <label for="deadline">Specify exact deadline</label>
                                 <input type="date" class="form-control" id="deadline" name="deadline">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <div class="btn-group">
+                                    <p class="checkboxLabel">Optional features</p><br>
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                        data-placeholder="Please select">Please select <span
+                                            class="caret"></span></button>
+                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
+                                        <li><input type="checkbox" id="blogOpt" name="blogOpt" class="checkBoxValue"
+                                                value="200"><label for="blogOpt">Blog</label></li>
+                                        <li><input type="checkbox" id="chatOpt" name="chatOpt" class="checkBoxValue"
+                                                value="150"><label for="chatOpt">Chat Box</label></li>
+                                        <li><input type="checkbox" id="contactFormOpt" name="contactFormOpt"
+                                                class="checkBoxValue" value="150"><label
+                                                for="contactFormOpt">Contact Form</label></li>
+                                        <li><input type="checkbox" id="newsletterOpt" name="newsletterOpt"
+                                                class="checkBoxValue" value="70"><label
+                                                for="newsletterOpt">Newsletter</label></li>
+                                        <li><input type="checkbox" id="appointOpt" name="appointOpt"
+                                                class="checkBoxValue" value="150"><label
+                                                for="appointOpt">Appointment plugin</label></li>
+                                        <li><input type="checkbox" id="searchOpt" name="searchOpt"
+                                                class="checkBoxValue" value="150"><label for="searchOpt">Search
+                                                engine</label></li>
+                                        <li><input type="checkbox" id="quoteOpt" name="quoteOpt"
+                                                class="checkBoxValue" value="150"><label for="quoteOpt">Automatic
+                                                quote plugin</label></li>
+                                        <li><input type="checkbox" id="invoiceOpt" name="invoiceOpt"
+                                                class="checkBoxValue" value="150"><label for="invoiceOpt">Invoice
+                                                plugin</label></li>
+                                        <li><input type="checkbox" id="socialOpt" name="socialOpt"
+                                                class="checkBoxValue" value="150"><label for="socialOpt">Social
+                                                Networks plugin</label></li>
+                                        <li><input type="checkbox" id="statsOpt" name="statsOpt"
+                                                class="checkBoxValue" value="150"><label
+                                                for="statsOpt">Statistics</label></li>
+                                        <li><input type="checkbox" id="calendarOpt" name="calendarOpt"
+                                                class="checkBoxValue" value="150"><label
+                                                for="calendarOpt">Calendar</label></li>
+                                        <li><input type="checkbox" id="newOpt" name="newOpt" class="checkBoxValue"
+                                                value="150"><label for="newOpt">News plugin</label></li>
+                                        <li><input type="checkbox" id="adminPannelOpt" name="adminPannelOpt"
+                                                class="checkBoxValue" value="150"><label
+                                                for="adminPannelOpt">Administration pannel</label></li>
+                                        <li><input type="checkbox" id="ratingsOpt" name="ratingsOpt"
+                                                class="checkBoxValue" value="150"><label for="ratingsOpt">Customer
+                                                ratings</label></li>
+                                        <li><input type="checkbox" id="surveyOpt" name="surveyOpt"
+                                                class="checkBoxValue" value="150"><label for="surveyOpt">Survey
+                                                plugin</label></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
@@ -364,60 +418,6 @@ ob_start();
                                         <li><input type="checkbox" id="stripeShow" name="stripeShow"
                                                 class="checkBoxValue" value="50"><label
                                                 for="stripeShow">Stripe</label></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <div class="btn-group">
-                                    <p class="checkboxLabel">Optional features</p><br>
-                                    <button data-toggle="dropdown" class="btn dropdown-toggle"
-                                        data-placeholder="Please select">Please select <span
-                                            class="caret"></span></button>
-                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
-                                        <li><input type="checkbox" id="blogOpt" name="blogOpt" class="checkBoxValue"
-                                                value="200"><label for="blogOpt">Blog</label></li>
-                                        <li><input type="checkbox" id="chatOpt" name="chatOpt" class="checkBoxValue"
-                                                value="150"><label for="chatOpt">Chat Box</label></li>
-                                        <li><input type="checkbox" id="contactFormOpt" name="contactFormOpt"
-                                                class="checkBoxValue" value="150"><label
-                                                for="contactFormOpt">Contact Form</label></li>
-                                        <li><input type="checkbox" id="newsletterOpt" name="newsletterOpt"
-                                                class="checkBoxValue" value="70"><label
-                                                for="newsletterOpt">Newsletter</label></li>
-                                        <li><input type="checkbox" id="appointOpt" name="appointOpt"
-                                                class="checkBoxValue" value="150"><label
-                                                for="appointOpt">Appointment plugin</label></li>
-                                        <li><input type="checkbox" id="searchOpt" name="searchOpt"
-                                                class="checkBoxValue" value="150"><label for="searchOpt">Search
-                                                engine</label></li>
-                                        <li><input type="checkbox" id="quoteOpt" name="quoteOpt"
-                                                class="checkBoxValue" value="150"><label for="quoteOpt">Automatic
-                                                quote plugin</label></li>
-                                        <li><input type="checkbox" id="invoiceOpt" name="invoiceOpt"
-                                                class="checkBoxValue" value="150"><label for="invoiceOpt">Invoice
-                                                plugin</label></li>
-                                        <li><input type="checkbox" id="socialOpt" name="socialOpt"
-                                                class="checkBoxValue" value="150"><label for="socialOpt">Social
-                                                Networks plugin</label></li>
-                                        <li><input type="checkbox" id="statsOpt" name="statsOpt"
-                                                class="checkBoxValue" value="150"><label
-                                                for="statsOpt">Statistics</label></li>
-                                        <li><input type="checkbox" id="calendarOpt" name="calendarOpt"
-                                                class="checkBoxValue" value="150"><label
-                                                for="calendarOpt">Calendar</label></li>
-                                        <li><input type="checkbox" id="newOpt" name="newOpt" class="checkBoxValue"
-                                                value="150"><label for="newOpt">News plugin</label></li>
-                                        <li><input type="checkbox" id="adminPannelOpt" name="adminPannelOpt"
-                                                class="checkBoxValue" value="150"><label
-                                                for="adminPannelOpt">Administration pannel</label></li>
-                                        <li><input type="checkbox" id="ratingsOpt" name="ratingsOpt"
-                                                class="checkBoxValue" value="150"><label for="ratingsOpt">Customer
-                                                ratings</label></li>
-                                        <li><input type="checkbox" id="surveyOpt" name="surveyOpt"
-                                                class="checkBoxValue" value="150"><label for="surveyOpt">Survey
-                                                plugin</label></li>
                                     </ul>
                                 </div>
                             </div>
@@ -874,14 +874,14 @@ ob_start();
         let design = parseInt(document.getElementById("design").value);
         let writingContent = parseInt(document.getElementById("writingContent").value);
         let visualContent = parseInt(document.getElementById("visualContent").value);
-        let update = parseInt(document.getElementById("update").value);
+        let maintenance = parseInt(document.getElementById("maintenance").value);
         let host = parseInt(document.getElementById("host").value);
         let deadlineSelect = parseInt(document.getElementById("deadlineSelect").value);
         let pageNb = parseInt(document.getElementById("pageNb").value);
         let loginShowcaseYN = parseInt(document.getElementById("loginShowcaseYN").value);
         let productNb = parseInt(document.getElementById("productNb").value);
 
-        totalInput = Number(siteType + design + writingContent + visualContent + update + host + deadlineSelect +
+        totalInput = Number(siteType + design + writingContent + visualContent + maintenance + host + deadlineSelect +
             pageNb + loginShowcaseYN + productNb);
     };
 

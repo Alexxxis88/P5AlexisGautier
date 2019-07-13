@@ -791,7 +791,7 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label for="messageContent" class="col-form-label">Additional informations*</label>
+                                <label for="messageContent" class="col-form-label">Additional information*</label>
                                 <textarea class="form-control" rows="5" id="messageContent"
                                     name="messageContent"></textarea>
                             </div>
@@ -1147,7 +1147,7 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label for="messageContent" class="col-form-label">Additional informations*</label>
+                                <label for="messageContent" class="col-form-label">Additional information*</label>
                                 <textarea class="form-control" rows="5" id="messageContent"
                                     name="messageContent"></textarea>
                             </div>
@@ -1215,7 +1215,7 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="phone">Email*</label>
+                                <label for="contactEmail">Email*</label>
                                 <input type="text" class="form-control" id="contactEmail" name="contactEmail" required>
                             </div>
                             <div class="form-group col-md-6">
@@ -1503,7 +1503,7 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <label for="messageContent" class="col-form-label">Additional informations*</label>
+                                <label for="messageContent" class="col-form-label">Additional information*</label>
                                 <textarea class="form-control" rows="5" id="messageContent"
                                     name="messageContent"></textarea>
                             </div>
