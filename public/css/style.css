@@ -899,6 +899,13 @@ ul.tag-cloud li {
 Quote
 =======================*/
 
+.textPackQuote{
+    text-align: center !important;
+    margin:10px 10px 20px 10px!important;
+    font-size:14px;
+}
+
+
 input:read-only{
     background-color: rgb(189, 185, 185) !important;
     width: 100% !important;

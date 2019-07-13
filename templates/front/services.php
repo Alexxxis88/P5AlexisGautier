@@ -465,6 +465,7 @@ ob_start();
                 </div>
                 <hr>
                 <div class="modal-body">
+                    <p class="textPackQuote">Submiting this form will send me a quote request along with a submission confirmation to your email address. I will get back to you shortly!</p>
                     <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -492,7 +493,7 @@ ob_start();
                                     <option value="individual">Individual</option>
                                     <option value="professional">Professional</option>
                                     <option value="association">Association</option>
-                                    <option value="professional">Other</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -518,7 +519,7 @@ ob_start();
                                 <input type="text" class="form-control" id="contactEmail" name="contactEmail" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="phone">Phone Number*</label>
+                                <label for="phone">Phone Number</label>
                                 <input type="tel" class="form-control" id="phone" name="phone">
                             </div>
                         </div>
@@ -804,7 +805,7 @@ ob_start();
                             <div class="form-group col-md-12">
                                 <label for="messageContent" class="col-form-label">Describe your project*</label>
                                 <textarea class="form-control" rows="5" id="messageContent"
-                                    name="messageContent"></textarea>
+                                    name="messageContent" required></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -832,6 +833,7 @@ ob_start();
                 </div>
                 <hr>
                 <div class="modal-body">
+                    <p class="textPackQuote">Submiting this form will send me a quote request along with a submission confirmation to your email address. I will get back to you shortly!</p>
                     <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -859,7 +861,7 @@ ob_start();
                                     <option value="individual">Individual</option>
                                     <option value="professional">Professional</option>
                                     <option value="association">Association</option>
-                                    <option value="professional">Other</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -885,7 +887,7 @@ ob_start();
                                 <input type="text" class="form-control" id="contactEmail" name="contactEmail" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="phone">Phone Number*</label>
+                                <label for="phone">Phone Number</label>
                                 <input type="tel" class="form-control" id="phone" name="phone">
                             </div>
                         </div>
@@ -1171,7 +1173,7 @@ ob_start();
                             <div class="form-group col-md-12">
                                 <label for="messageContent" class="col-form-label">Describe your project*</label>
                                 <textarea class="form-control" rows="5" id="messageContent"
-                                    name="messageContent"></textarea>
+                                    name="messageContent" required></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -1199,6 +1201,7 @@ ob_start();
                 </div>
                 <hr>
                 <div class="modal-body">
+                    <p class="textPackQuote">Submiting this form will send me a quote request along with a submission confirmation to your email address. I will get back to you shortly!</p>
                     <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -1226,7 +1229,7 @@ ob_start();
                                     <option value="individual">Individual</option>
                                     <option value="professional">Professional</option>
                                     <option value="association">Association</option>
-                                    <option value="professional">Other</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -1252,7 +1255,7 @@ ob_start();
                                 <input type="text" class="form-control" id="contactEmail" name="contactEmail" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="phone">Phone Number*</label>
+                                <label for="phone">Phone Number</label>
                                 <input type="tel" class="form-control" id="phone" name="phone">
                             </div>
                         </div>
@@ -1538,7 +1541,7 @@ ob_start();
                             <div class="form-group col-md-12">
                                 <label for="messageContent" class="col-form-label">Describe your project*</label>
                                 <textarea class="form-control" rows="5" id="messageContent"
-                                    name="messageContent"></textarea>
+                                    name="messageContent" required></textarea>
                             </div>
                         </div>
                         <div class="row">
