@@ -468,7 +468,17 @@ ob_start();
                     <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="project">Projet name*</label>
+                                <label for="packName">Pack</label>
+                                <input type="text" class="form-control" id="packName" name="packName" value="Website" readonly >
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="price">Price <small>(in €)</small></label>
+                                <input type="text" class="form-control" id="price" name="price" value="1000" readonly >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="project">Project name*</label>
                                 <input type="text" class="form-control" id="project" name="project" maxlength="40"
                                     required>
                             </div>
@@ -786,7 +796,7 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="deadline">Deadline</label>
+                                <label for="deadline">Deadline*</label>
                                 <input type="date" class="form-control" id="deadline" name="deadline" required>
                             </div>
                         </div>
@@ -825,7 +835,17 @@ ob_start();
                     <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="project">Projet name*</label>
+                                <label for="packName">Pack</label>
+                                <input type="text" class="form-control" id="packName" name="packName" value="Webstore" readonly >
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="price">Price <small>(in €)</small></label>
+                                <input type="text" class="form-control" id="price" name="price" value="2000" readonly >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="project">Project name*</label>
                                 <input type="text" class="form-control" id="project" name="project" maxlength="40"
                                     required>
                             </div>
@@ -1143,7 +1163,7 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="deadline">Deadline</label>
+                                <label for="deadline">Deadline*</label>
                                 <input type="date" class="form-control" id="deadline" name="deadline" required>
                             </div>
                         </div>
@@ -1182,7 +1202,17 @@ ob_start();
                     <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="project">Projet name*</label>
+                                <label for="packName">Pack</label>
+                                <input type="text" class="form-control" id="packName" name="packName" value="Website + Webstore" readonly >
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="price">Price <small>(in €)</small></label>
+                                <input type="text" class="form-control" id="price" name="price" value="2500" readonly >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="project">Project name*</label>
                                 <input type="text" class="form-control" id="project" name="project" maxlength="40"
                                     required>
                             </div>
@@ -1500,7 +1530,7 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="deadline">Deadline</label>
+                                <label for="deadline">Deadline*</label>
                                 <input type="date" class="form-control" id="deadline" name="deadline" required>
                             </div>
                         </div>

@@ -899,6 +899,14 @@ ul.tag-cloud li {
 Quote
 =======================*/
 
+input:read-only{
+    background-color: rgb(189, 185, 185) !important;
+    width: 100% !important;
+    padding: 10px 5px !important;
+    margin-bottom: 15px !important;
+    border: none!important;
+    font-weight: bold;
+    }
 
 
 #paymentMethShowcase, #deadlineBlock, #showcaseSection, #webstoreSection, #extensionBlock{
@@ -2339,18 +2347,26 @@ img.author-box-image {
 /* ==========================================================================
    CONTACT
    ========================================================================== */
-
+input#project,
+select#structure,
+input#company,
 input#firstName,
 input#lastName,
 input#contactEmail,
+input#phone,
+input#postalAddress,
+input#postCode,
+input#city,
+select#country,
+input[type="date"],
 input#topic,
 textarea#messageContent {
-    width: 100%;
-    padding: 10px 5px;
-    margin-bottom: 15px;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #202020;
-    border: none;
+    width: 100% !important;
+    padding: 10px 5px !important;
+    margin-bottom: 15px !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    color: #202020 !important;
+    border: none!important;
 }
 
 textarea#messageContent {
