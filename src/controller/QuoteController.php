@@ -1,6 +1,52 @@
 <?php
 class QuoteController
 {
+    public function savePackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), $structure, htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), $country, $deadline, htmlspecialchars($messageContent));
+
+        header('Location: index.php?action=services#pricing');
+
+    }
+
+    public function sendPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
+    {
+        $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
+        $topic = 'Quote resquest for a ' . $packName;
+        $message = '
+        <html>
+            <body>
+                <h2>Quote resquest for a <strong>' . htmlspecialchars($packName) . '</strong></h2>
+                <p>Project name : <strong>' . htmlspecialchars($project) . '</strong></p>
+                <p>Structure : <strong>' . $structure . '</strong></p>
+                <p>Compagny : <strong>' . htmlspecialchars($company) . '</strong></p>
+                <p>Full name : <strong>' . htmlspecialchars($firstName) . ' ' . htmlspecialchars($lastName) . '</strong></p>
+                <p>Email address : <strong>' . htmlspecialchars($contactEmail) . '</strong></p>
+                <p>Phone number : <strong>' . htmlspecialchars($phone) . '</strong></p>
+                <p>Address : <strong>' . htmlspecialchars($postalAddress) . '</strong></p>
+                <p>Post Code : <strong>' . htmlspecialchars($postCode) . '</strong></p>
+                <p>City : <strong>' . htmlspecialchars($city) . '</strong></p>
+                <p>Country : <strong>' . $country . '</strong></p>
+                <p>Deadline : <strong>' . $deadline . '</strong></p>
+                <p>Project description : ' . htmlspecialchars($messageContent) . ' </p>
+                <p>Total Price :<strong>' . htmlspecialchars($price) . ' €</strong></p>
+                <p>Quote request made by email on ' . date("Y-m-d") . ' at ' . date("h:i:sa") . ' </p>
+            </body>
+        </html>
+        ';
+        // Headers Content-type must be defined to send an HTML email
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+
+        // Additional headers
+        $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
+        mail($to, $topic, $message, implode("\r\n", $headers));
+
+        header('Location: index.php');
+    }
+
+
     public function checkPackQuoteFields($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
@@ -84,38 +130,5 @@ class QuoteController
             throw new Exception('Le nom du pack n\'est pas conforme.');
         }
     }
-
-    public function sendPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
-    {
-        $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
-        $message = '
-        <html>
-            <body>
-                <p>' .  htmlspecialchars($messageContent) . '</p>
-            </body>
-        </html>
-        ';
-        // Headers Content-type must be defined to send an HTML email
-        $headers[] = 'MIME-Version: 1.0';
-        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-
-        // Additional headers
-        $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
-        mail($to, $topic, $message, implode("\r\n", $headers));
-
-        header('Location: index.php');
-    }
-
-
-    public function savePackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
-    {
-        $quoteManager = new QuoteManager();
-        $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), $structure, htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), $country, $deadline, htmlspecialchars($messageContent));
-
-        header('Location: index.php?action=services#pricing');
-
-    }
-
-
 
 }
