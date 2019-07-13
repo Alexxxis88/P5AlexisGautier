@@ -542,8 +542,8 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="address">Address*</label>
-                                <input type="text" class="form-control" id="address" name="address" required>
+                                <label for="postalAddress">Address*</label>
+                                <input type="text" class="form-control" id="postalAddress" name="postalAddress" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="postCode">Post Code*</label>

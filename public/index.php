@@ -2,6 +2,7 @@
 session_start();
 require_once('src/controller/DisplayController.php');
 require_once('src/controller/MessageController.php');
+require_once('src/controller/QuoteController.php');
 
 //AUTOLOAD
 function classAutoLoad($class)
@@ -72,6 +73,53 @@ try {
                 throw new Exception('Tous les champs ne sont pas remplis');
             }
         }
+
+        //SEND PACK QUOTE
+        elseif ($_GET['action'] == 'sendPackQuote') {
+            // if (isset($_POST['project']) && isset($_POST['structure']) && isset($_POST['company']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['contactEmail']) && isset($_POST['phone']) && isset($_POST['postalAddress']) &&isset($_POST['postCode']) && isset($_POST['city']) && isset($_POST['country']) && isset($_POST['deadline']) && isset($_POST['messageContent'])) {
+
+                $quoteController = new QuoteController;
+                // if( $quoteController->checkPackQuoteFields($_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent']) == true){
+
+                    $quoteController->savePackQuote('pack N1', 1000, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'],$_POST['deadline'], $_POST['messageContent']);
+
+                    // $quoteController->sendPackQuote($_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent']);
+                // }
+            // }
+            // else {
+            //     throw new Exception('Tous les champs ne sont pas remplis');
+            // }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         else {
             throw new Exception('Cette page n\'existe pas');
         }
