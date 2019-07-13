@@ -831,7 +831,7 @@ ob_start();
             <div class="col-md-3 fade-up quotePrice">
                 <div class="pricing_item">
                     <div class="pricing_top_border"></div>
-                    <div class="pricing_head p-top-30 p-bottom-100 text-center ">
+                    <div class="pricing_head p-top-30 p-bottom-60 text-center ">
                         <h3 class="text-uppercase">How much?</h3>
                     </div>
                     <div class="pricing_price_border text-center bounce-in">

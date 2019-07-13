@@ -935,6 +935,7 @@ input:read-only{
     text-align: center;
     margin-bottom: 40px;
     padding: 0 10px;
+    font-size:15px;
 }
 
 .pricing_body label{
@@ -2661,7 +2662,7 @@ textarea#messageContent {
     .quotePrice{
         position: fixed;
         right:0;
-        top:150px;
+        top:85px;
         margin-right:30px;
     }
 
