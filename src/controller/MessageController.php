@@ -2,12 +2,13 @@
 
 namespace AlexisGautier\PersonalWebsite\Controller;
 
-// require_once('src/model/manager/MessageManager.php'); FIXME : a remettre si l'autoload déconne
+// require_once('src/model/manager/MessageManager.php'); // FIXME : a remettre si l'autoload déconne
 use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
 
 
 class MessageController
 {
+    //FRONTEND
     public function checkMessageFields($firstName, $lastName, $contactEmail, $topic, $messageContent)
     {
         $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
@@ -64,5 +65,60 @@ class MessageController
     }
 
 
+    //BACKEND
+    //display new, answered and archived messages
+    public function listAllMessages()
+    {
+        //messages to manage red icon
+        $messageManager = new MessageManager();
+        // $nbOfReportedComments = $commentManager->getNbOfReportedComments();
+
+        $newMessages = $messageManager->getNewMessages();
+        // $archived = $messageManager->getArchivedMessages();
+
+        require('templates/admin/messagesAdmin.php');
+    }
+
+
+
+    public function approveComments($messageId) //archive
+    {
+        $commentManager = new CommentManager();
+        $commentApproved =  $commentManager->approveComment($messageId);
+        header('Location: ' . $_SERVER['HTTP_REFERER'] . '&success=6');
+        exit;
+    }
+
+    public function reportComments($messageId) //unarchive
+    {
+        $commentManager = new CommentManager();
+        $commentReported = $commentManager->reportComment($messageId);
+        header('Location: ' . $_SERVER['HTTP_REFERER'] . '#commentsAnchor');
+        exit;
+    }
+
+    public function deleteComment($messageId, $postIdComCounts, $userIdComCounts)
+    {
+        $commentManager = new CommentManager();
+        $comDelete = $commentManager->eraseComment($messageId, $postIdComCounts, $userIdComCounts);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;
+    }
+
+    public function deleteAllSelectedComments($arrayCommentsIDs)
+    {
+        $commentManager = new CommentManager();
+        $deleteAllSelectedComments = $commentManager->eraseAllSelectedComments($arrayCommentsIDs);
+        header('Location: index.php?action=manageComments');
+        exit;
+    }
+
+    public function approveAllSelectedComments($arrayCommentsIDs)
+    {
+        $commentManager = new CommentManager();
+        $approveAllSelectedComments = $commentManager->acceptAllSelectedComments($arrayCommentsIDs);
+        header('Location: ' . $_SERVER['HTTP_REFERER'] . '&success=6');
+        exit;
+    }
 
 }

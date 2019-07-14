@@ -896,7 +896,6 @@ ul.tag-cloud li {
 
 .logInForm, .updatePassForm{
     margin: 200px auto;
-    width:50%;
 }
 
 
@@ -905,7 +904,7 @@ ADMIN MENU
 ===========================================================*/
 
 /* Regular Menu */
-.menu {
+.menuAdmin {
     height: auto;
     background-image: linear-gradient(to right, rgba(71, 71, 71, 0.8), rgba(196, 206, 255, 0.8));
     position: fixed;
@@ -921,13 +920,11 @@ ADMIN MENU
 
 }
 
-.menu button,
 .menuAdmin button {
     margin: 10px 20px 10px 0;
 }
 
-.menuAdmin .fa-home,
-.menu .fa-home {
+.menuAdmin .fa-home {
     color: white;
     font-size: 30px;
     float: left;
@@ -935,22 +932,265 @@ ADMIN MENU
     transition: 0.2s;
 }
 
-.menuAdmin .fa-home:hover,
-.menu .fa-home:hover {
+.menuAdmin .fa-home:hover {
     color: #f5c908;
 }
 
-
-.helloText {
-    color: white;
-    margin: 15px 50px 10px 0;
-}
 
 .updatePassBtn {
     height: 10% !important;
 }
 
+.menuAdmin {
+    background-image: linear-gradient(to right, rgba(71, 71, 71, 0.8), rgba(196, 206, 255, 0.8));
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 2px 5px black;
+}
 
+.adminMenu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+
+}
+
+.adminMenu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+
+.adminMenu span {
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+.adminMenu a {
+    color: white;
+    margin-right: 50px;
+    transition: 0.2s;
+}
+
+.adminMenu a:hover {
+    color: #f5c908;
+    text-decoration: none;
+}
+
+.adminMenuLink:hover>span {
+    color: #f5c908;
+}
+
+/* Burger Menu */
+#burgerMenu {
+    display: none;
+    position: fixed;
+    right: 5%;
+    top: 1%;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+/* Rotate the first bar */
+.bar1.change {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    background-color: #f5c908;
+}
+
+/* Fade out the second bar */
+.bar2.change {
+    opacity: 0;
+}
+
+/* Rotate the third bar */
+.bar3.change {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    background-color: #f5c908;
+}
+
+#burgerNav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 54px;
+    z-index: 1001;
+    background-image: linear-gradient(to right, rgba(71, 71, 71, 0.8), rgba(196, 206, 255, 0.8));
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+#burgerNav ul {
+    margin: 0 0 10px 25px;
+    list-style: none;
+}
+
+#burgerNav a,
+#burgerNav span {
+    font-size: 2.5vw;
+    color: white;
+    margin-right: 7px;
+}
+
+#burgerNav a:hover {
+    text-decoration: none;
+    color: #f5c908;
+}
+
+#burgerNav a:hover>span {
+    color: #f5c908;
+}
+
+
+/*=========================================================
+MANAGE COMMENTS
+===========================================================*/
+
+.titleManageCom {
+    text-align: center;
+}
+
+#sectionReported {
+    margin-bottom: 100px;
+}
+
+.btn-successs {
+    background: rgb(24, 167, 24);
+    color: white;
+}
+
+.manageComIcons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.viewComArticle {
+    display: flex;
+}
+
+.approvDelComs {
+    margin-right: 20px;
+}
+
+.approvDelComs a {
+    margin-right: 20px;
+}
+
+.viewComArticle p {
+    margin-right: 30px;
+}
+
+.viewComArticle a {
+    transition: 0.2s;
+}
+
+.viewComArticle a:hover {
+    text-decoration: none;
+    color: rgb(94, 94, 255);
+}
+
+.approvDelComs a:first-child {
+    color: green;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.approvDelComs a:first-child:hover {
+    color: rgb(15, 202, 15);
+}
+
+.approvDelComs a:nth-child(2) {
+    color: red;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.approvDelComs a:nth-child(2):hover {
+    color: rgb(255, 130, 28);
+}
+
+.manageComBtns {
+    margin: 20px 0 40px 0;
+}
+
+.manageComBtn {
+    transition: 0.2s;
+}
+
+.manageComBtn:hover {
+    text-decoration: none;
+    color: #f5c908;
+}
+
+.comments {
+    overflow-wrap: break-word;
+}
+
+.reportedComments {
+    background: rgb(255, 216, 216) !important;
+    overflow-wrap: break-word;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+
+.reportedComments .time {
+    color: rgb(85, 17, 17) !important;
+}
+
+.acceptDenyComments {
+    background: rgb(214, 242, 252) !important;
+    overflow-wrap: break-word;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.commentHead {
+    background: red;
+    color: white;
+    margin-left: -10px;
+    padding-left: 10px;
+    border-radius: 3px;
+}
+
+.newCommentHead {
+    background: lightgrey;
+    color: black;
+    margin-left: -10px;
+    padding-left: 10px;
+    border-radius: 3px;
+}
+
+.noReportedComments,
+.noCommentsToManage {
+    color: white;
+    font-weight: bold;
+    background: rgb(84, 212, 84);
+    text-align: center;
+    margin: 50px;
+    padding: 20px;
+}
 
 /*-----------------------------------------------------------------------------------*/
 
@@ -2721,6 +2961,13 @@ textarea#messageContent {
 
 
 @media all and (min-width: 992px) {
+
+    #burgerNav {
+        display: none !important;
+        /* needed to close the menu when resizing the window */
+    }
+
+
     .quotePrice{
         position: fixed;
         right:0;
@@ -2735,6 +2982,15 @@ textarea#messageContent {
 
 
 @media all and (max-width: 992px) {
+
+    #menuDesktop {
+        display: none;
+    }
+
+    #burgerMenu {
+        display: block;
+    }
+
     .flagsBlock{
         padding-left: 0;
         line-height: 10px;

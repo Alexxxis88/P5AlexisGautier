@@ -2,7 +2,7 @@
 
 namespace AlexisGautier\PersonalWebsite\Controller;
 
-// require_once('src/model/manager/SessionManager.php'); FIXME : a remettre si l'autoload déconne
+// require_once('src/model/manager/SessionManager.php'); // FIXME : a remettre si l'autoload déconne
 use \AlexisGautier\PersonalWebsite\Model\Manager\SessionManager;
 
 class SessionController
@@ -96,12 +96,12 @@ class SessionController
 
     public function killSession()
     {
-        // Delete session variables
+        // Delete  variables
         $_SESSION = array();
         session_destroy();
         // Delete autologing cookies
-        setcookie('id', '', time() + 365*24*3600, null, null, false, true);
-        setcookie('email', '', time() + 365*24*3600, null, null, false, true);
-        setcookie('hash_pass', '', time() + 365*24*3600, null, null, false, true);
+        setcookie('id', '', time() - 3600, null, null, false, true);
+        setcookie('email', '', time() - 3600, null, null, false, true);
+        setcookie('hash_pass', '', time() - 3600, null, null, false, true);
     }
 }

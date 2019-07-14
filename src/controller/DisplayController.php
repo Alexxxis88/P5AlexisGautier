@@ -86,14 +86,4 @@ class DisplayController
         require('templates/admin/dashboard.php');
     }
 
-    public function displayQuotesAdmin()
-    {
-        require('templates/admin/quotesAdmin.php');
-    }
-
-    public function displayMessagesAdmin()
-    {
-        require('templates/admin/messagesAdmin.php');
-    }
-
 }

@@ -6,9 +6,9 @@ require_once('src/controller/MessageController.php');
 require_once('src/controller/QuoteController.php');
 
 
-// require_once('src/model/manager/Manager.php'); FIXME : a remettre si l'autoload déconne
-// require_once('src/model/manager/QuoteManager.php'); FIXME : a remettre si l'autoload déconne
-// require_once('src/model/manager/MessageManager.php'); FIXME : a remettre si l'autoload déconne
+// require_once('src/model/manager/Manager.php'); //FIXME : a remettre si l'autoload déconne
+// require_once('src/model/manager/QuoteManager.php'); //FIXME : a remettre si l'autoload déconne
+// require_once('src/model/manager/MessageManager.php'); //FIXME : a remettre si l'autoload déconne
 
 use \AlexisGautier\PersonalWebsite\Controller\SessionController;
 use \AlexisGautier\PersonalWebsite\Controller\DisplayController;
@@ -89,12 +89,12 @@ try {
         elseif ($_GET['action'] == 'quotesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
-            $displayController->displayQuotesAdmin();
         }
         elseif ($_GET['action'] == 'messagesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
-            $displayController->displayMessagesAdmin();
+            $messageController = new messageController();
+            $messageController->listAllMessages();
         }
 
         //LOG IN

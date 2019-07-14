@@ -1,3 +1,10 @@
+// Burger menu
+$("#burgerMenu").on("click", function() {
+    $("#burgerNav").toggle();
+    $(".bar1, .bar2, .bar3").toggleClass("change");
+});
+
+
 // Skills bars FIXME : les bars sont déja chargées quand je scroll, trouver comme faire pour attendre que le bloc s'affiche puis charger les bars
 $( document ).ready(function() {
     var elem = document.getElementById("myBarHTML"); 
