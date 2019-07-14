@@ -18,7 +18,7 @@ class MessageManager extends Manager
     //gets the Reported comments (where flag >0 and sort them by number of time reported OR by date showing older first if reported the same nb of times)
     public function getNewMessages()
     {
-        $req = $this->_db->query('SELECT * FROM messages WHERE flag = 0 ORDER BY messageDate DESC');
+        $req = $this->_db->query('SELECT * FROM messages WHERE flag = 0 ORDER BY messageDate');
         while ($datasNewMessages = $req->fetch(\PDO::FETCH_ASSOC)) {
             $newMessage[] = new Message($datasNewMessages);
         }
@@ -30,7 +30,7 @@ class MessageManager extends Manager
     //get new comments (flag value = 9999 by default)
     public function getNewComments()
     {
-        $req = $this->_db->query('SELECT id, postId, author, comment, DATE_FORMAT(commentDate, \'%d/%m/%Y à %Hh%imin%ss\') AS modCommentDate, flag FROM comments WHERE flag = 9999 ORDER BY commentDate');
+        $req = $this->_db->query('SELECT id, postId, author, comment, DATE_FORMAT(commentDate, \'%d/%m/%Y à %Hh%imin%ss\') AS modCommentDate, flag FROM comments WHERE flag = 9999 ORDER BY commentDate ');
         while ($datasNewComments = $req->fetch(\PDO::FETCH_ASSOC)) {
             $newComments[] = new Comment($datasNewComments);
         }
@@ -39,6 +39,14 @@ class MessageManager extends Manager
             return $newComments;
         }
     }
+
+    public function eraseMessage($messageId)
+    {
+        $msgDelete = $this->_db->prepare('DELETE FROM messages WHERE id = ?');
+        $msgDelete->execute(array($messageId));
+    }
+
+    
 
     //must receive an array of ids to delete all the comments at once
     public function eraseAllSelectedComments($arrayCommentsIDs)

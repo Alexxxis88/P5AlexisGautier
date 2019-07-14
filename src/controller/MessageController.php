@@ -97,11 +97,11 @@ class MessageController
         exit;
     }
 
-    public function deleteComment($messageId, $postIdComCounts, $userIdComCounts)
+    public function deleteMessage($messageId)
     {
-        $commentManager = new CommentManager();
-        $comDelete = $commentManager->eraseComment($messageId, $postIdComCounts, $userIdComCounts);
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        $messageManager = new MessageManager();
+        $comDelete = $messageManager->eraseMessage($messageId);
+        header('Location: index.php?action=messagesAdmin');
         exit;
     }
 

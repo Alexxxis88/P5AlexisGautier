@@ -34,31 +34,55 @@
                                                 $flag = $newMessages[$i]->flag(); ?>
                                                 <div class="reportedComments">
                                                         <p class="commentHead"><input type="checkbox" id="messageId" name="selectComments[]" value="<?= $idMessage?>" checked >
-                                                        Le message de <strong><?= $firstName . ' ' . $lastName ?></strong> du <?= $messageDate ?></p>
+                                                        <strong><?= $topic?></strong> sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?></p>
 
                                                         <!-- transform non html links in messageContent into clickable links-->
-                                                        <p><?= nl2br($messageContent = preg_replace('#http[s]?://[a-z0-9._/-]+#i', '<a href="$0">$0</a>', $messageContent)) ?></p>
+                                                        <p><strong>Message content :</strong> <?= nl2br($messageContent = preg_replace('#http[s]?://[a-z0-9._/-]+#i', '<a href="$0">$0</a>', $messageContent)) ?></p>
                                                         <div class="manageComIcons">
-                                                                
                                                                 <div class="approvDelComs">
-                                                                <a href="index.php?action=approveComment&amp;messageId=<?= $idMessage ?>"  onclick="return confirm('Archive ce commentaire ?')" ><span class="far fa-check-square"></span>  Archive</a>
+                                                                <a class="far fa-edit editBtns<?=$idMessage ?> editCommentBtn<?=$idMessage ?>">Answer</a></a>
 
-                                                                <a href="index.php?action=deleteComment&amp;messageId=<?= $idMessage ?>" onclick="return confirm('Delete ce commentaire ?')"><span class="far fa-trash-alt"></span> Delete</a>
+                                                                <a href="index.php?action=deleteMessage&amp;messageId=<?= $idMessage ?>" onclick="return confirm('Delete this message ?')"><span class="far fa-trash-alt"></span> Delete</a>
+
+                                                                <a href="index.php?action=archiveMessage&amp;messageId=<?= $idMessage ?>"  onclick="return confirm('Archive this message ?')" ><span class="far fa-check-square"></span>  Archive</a>
                                                                 </div>
                                                         </div>
                                                 </div>
+                                                <!-- Answer message -->
+                                                <!-- $idMessage['id'] in class name to display only the form of the selected comment -->
+                                                <div class="editCommentForm<?=$idMessage ?>">
+                                                        <form action="index.php?action=sendAnswer&amp;commentId=<?= $idMessage ?>" method="post">
+                                                                <div>
+                                                                        <br>
+                                                                        <textarea id="comment" name="comment" cols="80" rows="5" maxlength="700" required></textarea>
+                                                                </div>
+                                                                <div>
+                                                                <input type="submit" class="btn-success" value="Send my answer"/>
+                                                                <a class="cancelBtns<?=$idMessage ?> cancelAnswerBtn<?=$idMessage ?>"><span class="far fa-window-close"></span> Cancel</a></a>
+
+                                                                </div>
+                                                        </form>
+                                                </div>
+
+
+                                                <!-- this script stays here because it uses PHP variables and can't work in Main.js -->
+                                                <script>
+                                                $(".editBtns<?=$idMessage?>, .cancelBtns<?=$idMessage ?>").on("click", function(){
+                                                        $(".editCommentForm<?=$idMessage?>, .editCommentBtn<?=$idMessage ?>").toggle("slow")
+                                                })
+                                                </script>
+
+
                                                 <?php
-                                                //for each comment, its id is added to $arrayMessages
+                                                //for each message, its id is added to $arrayMessages
                                                 array_push($arrayMessages, $idMessage);
                                         }
                                 }
                                 ?>
                         </form>
-                        <!-- displays a message if no reported comments -->
+                        <!-- displays a message if no new message -->
                         <div class="noReportedComments">There is no new message</div>
                 </section>
-
-                
         </div>
         <?php
 $content = ob_get_clean();

@@ -178,6 +178,17 @@ try {
         }
 
 
+        //MESSAGES
+
+        elseif ($_GET['action'] == 'deleteMessage') {
+            if (isset($_GET['messageId']) && $_GET['messageId'] > 0) {
+
+                $messageController = new MessageController;
+                $messageController->deleteMessage($_GET['messageId']);
+            } else {
+                throw new Exception('Aucun identifiant de message envoyé');
+            }
+        }
 
 
 

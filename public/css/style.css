@@ -1069,6 +1069,11 @@ MANAGE COMMENTS
     text-align: center;
 }
 
+[class*="editCommentForm"] {
+    display: none;
+}
+
+
 #sectionReported {
     margin-bottom: 100px;
 }
