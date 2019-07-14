@@ -54,4 +54,29 @@ class DisplayController
         require('templates/front/legalNotice.php');
     }
 
+    public function displayLogIn()
+    {
+        require('templates/admin/logIn.php');
+    }
+
+    public function displayUpdatePass()
+    {
+        require('templates/admin/updatePass.php');
+    }
+
+    public function displayDashboard()
+    {
+        require('templates/admin/dashboard.php');
+    }
+
+    public function displayQuotesAdmin()
+    {
+        require('templates/admin/quotesAdmin.php');
+    }
+
+    public function displayMessagesAdmin()
+    {
+        require('templates/admin/messagesAdmin.php');
+    }
+
 }
