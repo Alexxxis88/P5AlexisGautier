@@ -46,7 +46,19 @@ class MessageManager extends Manager
         $msgDelete->execute(array($messageId));
     }
 
-    
+    public function fileArchiveMessage($messageId)
+    {
+        $msgArchive = $this->_db->prepare('UPDATE messages SET flag = 2 WHERE id = ?');
+        $msgArchive->execute(array($messageId));
+    }
+
+    public function fileAnsweredMessage($messageId)
+    {
+        $msgAnswered = $this->_db->prepare('UPDATE messages SET flag = 1 WHERE id = ?');
+        $msgAnswered->execute(array($messageId));
+    }
+
+
 
     //must receive an array of ids to delete all the comments at once
     public function eraseAllSelectedComments($arrayCommentsIDs)

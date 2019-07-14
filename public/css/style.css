@@ -1073,6 +1073,9 @@ MANAGE COMMENTS
     display: none;
 }
 
+#cancelBtns:hover{
+    cursor: pointer;
+}
 
 #sectionReported {
     margin-bottom: 100px;

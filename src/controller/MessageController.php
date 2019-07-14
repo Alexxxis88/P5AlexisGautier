@@ -80,43 +80,43 @@ class MessageController
     }
 
 
-
-    public function approveComments($messageId) //archive
-    {
-        $commentManager = new CommentManager();
-        $commentApproved =  $commentManager->approveComment($messageId);
-        header('Location: ' . $_SERVER['HTTP_REFERER'] . '&success=6');
-        exit;
-    }
-
-    public function reportComments($messageId) //unarchive
-    {
-        $commentManager = new CommentManager();
-        $commentReported = $commentManager->reportComment($messageId);
-        header('Location: ' . $_SERVER['HTTP_REFERER'] . '#commentsAnchor');
-        exit;
-    }
-
     public function deleteMessage($messageId)
     {
         $messageManager = new MessageManager();
-        $comDelete = $messageManager->eraseMessage($messageId);
+        $messageManager->eraseMessage($messageId);
+        header('Location: index.php?action=messagesAdmin');
+        exit;
+    }
+
+    public function archiveMessage($messageId)
+    {
+        $messageManager = new MessageManager();
+        $messageManager->fileArchiveMessage($messageId);
+        header('Location: index.php?action=messagesAdmin');
+        exit;
+    }
+
+
+    public function answerMessage($messageId)
+    {
+        $messageManager = new MessageManager();
+        $messageManager->fileAnsweredMessage($messageId);
         header('Location: index.php?action=messagesAdmin');
         exit;
     }
 
     public function deleteAllSelectedComments($arrayCommentsIDs)
     {
-        $commentManager = new CommentManager();
-        $deleteAllSelectedComments = $commentManager->eraseAllSelectedComments($arrayCommentsIDs);
+        $messageManager = new MessageManager();
+        $deleteAllSelectedComments = $messageManager->eraseAllSelectedComments($arrayCommentsIDs);
         header('Location: index.php?action=manageComments');
         exit;
     }
 
     public function approveAllSelectedComments($arrayCommentsIDs)
     {
-        $commentManager = new CommentManager();
-        $approveAllSelectedComments = $commentManager->acceptAllSelectedComments($arrayCommentsIDs);
+        $messageManager = new MessageManager();
+        $approveAllSelectedComments = $messageManager->acceptAllSelectedComments($arrayCommentsIDs);
         header('Location: ' . $_SERVER['HTTP_REFERER'] . '&success=6');
         exit;
     }

@@ -51,14 +51,17 @@
                                                 <!-- Answer message -->
                                                 <!-- $idMessage['id'] in class name to display only the form of the selected comment -->
                                                 <div class="editCommentForm<?=$idMessage ?>">
-                                                        <form action="index.php?action=sendAnswer&amp;commentId=<?= $idMessage ?>" method="post">
+                                                        <form action="index.php?action=answerMessage&amp;commentId=<?= $idMessage ?>" method="post" id="editCommentForm<?=$idMessage ?>">
                                                                 <div>
                                                                         <br>
                                                                         <textarea id="comment" name="comment" cols="80" rows="5" maxlength="700" required></textarea>
                                                                 </div>
                                                                 <div>
-                                                                <input type="submit" class="btn-success" value="Send my answer"/>
-                                                                <a class="cancelBtns<?=$idMessage ?> cancelAnswerBtn<?=$idMessage ?>"><span class="far fa-window-close"></span> Cancel</a></a>
+                                                                <button type="submit" form="editCommentForm<?=$idMessage ?>" class="btn-success" value="Send my answer"> Send my answer </button>
+
+                                                                <!-- <input type="submit" form="editCommentForm< ?=$idMessage ?>" class="btn-success" value="Send my answer"/> -->
+
+                                                                <p id="cancelBtns"class="cancelBtns<?=$idMessage ?> cancelAnswerBtn<?=$idMessage ?>"><span class="far fa-window-close"></span> Cancel</p>
 
                                                                 </div>
                                                         </form>
