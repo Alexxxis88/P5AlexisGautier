@@ -25,74 +25,76 @@ function classAutoLoad($class)
 spl_autoload_register('classAutoLoad');
 
 
-
 try {
     if (isset($_GET['action'])) {
 
         $sessionController = new SessionController();
         $sessionController->checkSession();
 
-
         //DISPLAY PAGES
         if ($_GET['action'] == 'home' or $_GET['action'] == '') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayHome();
+            $displayController = new DisplayController;
+            $displayController->displayHome();
         }
         elseif ($_GET['action'] == 'services') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayServices();
+            $displayController = new DisplayController;
+            $displayController->displayServices();
         }
         elseif ($_GET['action'] == 'quote') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayQuote();
+            $displayController = new DisplayController;
+            $displayController->displayQuote();
         }
         elseif ($_GET['action'] == 'portfolio') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayPortfolio();
+            $displayController = new DisplayController;
+            $displayController->displayPortfolio();
         }
         elseif ($_GET['action'] == 'portfolioItem') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayPortfolioItem($_GET['item']);
+            $displayController = new DisplayController;
+            $displayController->displayPortfolioItem($_GET['item']);
         }
         elseif ($_GET['action'] == 'about') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayAbout();
+            $displayController = new DisplayController;
+            $displayController->displayAbout();
         }
         elseif ($_GET['action'] == 'contact') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayContact();
+            $displayController = new DisplayController;
+            $displayController->displayContact();
         }
         elseif ($_GET['action'] == 'termsAndCondition') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayTerms();
+            $displayController = new DisplayController;
+            $displayController->displayTerms();
         }
         elseif ($_GET['action'] == 'privacyPolicy') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayPrivacy();
+            $displayController = new DisplayController;
+            $displayController->displayPrivacy();
         }
         elseif ($_GET['action'] == 'legalNotice') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayLegal();
+            $displayController = new DisplayController;
+            $displayController->displayLegal();
         }
         elseif ($_GET['action'] == 'canYouFindMyLoginPage') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayLogIn();
+            $displayController = new DisplayController;
+            $displayController->displayLogIn();
         }
         elseif ($_GET['action'] == 'displayUpdatePass') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayUpdatePass();
+            $displayController = new DisplayController;
+            $displayController->displayCheck();
+            $displayController->displayUpdatePass();
         }
         elseif ($_GET['action'] == 'dashboard') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayDashboard();
+            $displayController = new DisplayController;
+            $displayController->displayCheck();
+            $displayController->displayDashboard();
         }
         elseif ($_GET['action'] == 'quotesAdmin') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayQuotesAdmin();
+            $displayController = new DisplayController;
+            $displayController->displayCheck();
+            $displayController->displayQuotesAdmin();
         }
         elseif ($_GET['action'] == 'messagesAdmin') {
-            $DisplayController = new DisplayController;
-            $DisplayController->displayMessagesAdmin();
+            $displayController = new DisplayController;
+            $displayController->displayCheck();
+            $displayController->displayMessagesAdmin();
         }
 
         //LOG IN
@@ -212,8 +214,8 @@ try {
 
     //DEFAULT BEHAVIOR
     else {
-        $DisplayController = new DisplayController;
-        $DisplayController->displayHome();
+        $displayController = new DisplayController;
+        $displayController->displayHome();
         }
 }
 
