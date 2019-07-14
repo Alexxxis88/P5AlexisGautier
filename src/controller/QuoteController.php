@@ -2,7 +2,7 @@
 
 namespace AlexisGautier\PersonalWebsite\Controller;
 
-require_once('src/model/manager/QuoteManager.php');
+// require_once('src/model/manager/QuoteManager.php'); FIXME : a remettre si l'autoload déconne
 use \AlexisGautier\PersonalWebsite\Model\Manager\QuoteManager;
 
 class QuoteController

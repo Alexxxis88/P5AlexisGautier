@@ -2,7 +2,7 @@
 
 namespace AlexisGautier\PersonalWebsite\Model\Manager;
 
-require_once('src/model/manager/Manager.php');
+// require_once('src/model/manager/Manager.php'); FIXME : a remettre si l'autoload déconne
 
 class MessageManager extends Manager
 {
