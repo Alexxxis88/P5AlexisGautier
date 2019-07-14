@@ -61,6 +61,9 @@ class DisplayController
 
     public function displayUpdatePass()
     {
+        $sessionController = new SessionController();
+        $cookieOrSessionEmail = $sessionController->checkSession();
+
         require('templates/admin/updatePass.php');
     }
 

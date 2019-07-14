@@ -10,12 +10,12 @@ class SessionController
     public function checkSession()
     {
         //check wether I'm registered with COOKIE or SESSION
-        if (isset($_COOKIE['id'])) {
-            $cookieOrSessionID = $_COOKIE['id'];
-            return $cookieOrSessionID;
-        } elseif (isset($_SESSION['id'])) {
-            $cookieOrSessionID = $_SESSION['id'];
-            return $cookieOrSessionID;
+        if (isset($_COOKIE['email'])) {
+            $cookieOrSessionEmail = $_COOKIE['email'];
+            return $cookieOrSessionEmail;
+        } elseif (isset($_SESSION['email'])) {
+            $cookieOrSessionEmail = $_SESSION['email'];
+            return $cookieOrSessionEmail;
         }
     }
 
@@ -30,7 +30,7 @@ class SessionController
             throw new \Exception('Vérifiez vos identifiants de connexion');
         } else {   //if the password is Correct SESSION variables are created
             if ($isPasswordCorrect) {
-                $_SESSION['id'] = $checkLogIn['id'];
+                $_SESSION['id'] = $checkLogIn['id']; //FIXME : useless ? on se sert de l'email et pas de l'ID
                 $_SESSION['email'] = $email;
 
                 //if the autolog checkbox is selected COOKIES are created
@@ -48,16 +48,16 @@ class SessionController
         }
     }
 
-    public function UpdatePassWord($newpass, $id)
+    public function UpdatePassWord($newpass, $email)
     {
         $sessionManager = new SessionManager();
-        $UpdatePassWord = $sessionManager->UpdatePass(htmlspecialchars($newpass), $id);
+        $UpdatePassWord = $sessionManager->UpdatePass(htmlspecialchars($newpass), $email);
     }
 
-    public function checkCurrentPass($userID)
+    public function checkCurrentPass($email)
     {
         $sessionManager = new SessionManager();
-        $checkCurrentPass = $sessionManager->checkPass($userID);
+        $checkCurrentPass = $sessionManager->checkPass($email);
         $isPasswordCorrect = password_verify($_POST['currentPass'], $checkCurrentPass['pass']);
 
         if ($isPasswordCorrect) {
@@ -74,7 +74,7 @@ class SessionController
         session_destroy();
         // Delete autologing cookies
         setcookie('id', '', time() + 365*24*3600, null, null, false, true);
-        setcookie('login', '', time() + 365*24*3600, null, null, false, true);
+        setcookie('email', '', time() + 365*24*3600, null, null, false, true);
         setcookie('hash_pass', '', time() + 365*24*3600, null, null, false, true);
     }
 }

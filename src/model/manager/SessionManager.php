@@ -12,16 +12,16 @@ class SessionManager extends Manager
         return $checkLogIn;
     }
 
-    public function UpdatePass($newpass, $id)
+    public function UpdatePass($newpass, $email)
     {
-        $UpdatePass = $this->_db->prepare('UPDATE members SET pass = ? WHERE id = ?');
-        $UpdatePass->execute(array($newpass,$id));
+        $UpdatePass = $this->_db->prepare('UPDATE members SET pass = ? WHERE email = ?');
+        $UpdatePass->execute(array($newpass,$email));
     }
 
-    public function checkPass($userID)
+    public function checkPass($email)
     {
-        $check = $this->_db->prepare('SELECT pass FROM members WHERE id = ?');
-        $check->execute(array($userID));
+        $check = $this->_db->prepare('SELECT pass FROM members WHERE email = ?');
+        $check->execute(array($email));
         $checkPass = $check->fetch();
         return $checkPass;
     }

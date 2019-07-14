@@ -894,7 +894,7 @@ ul.tag-cloud li {
 /*  LOG IN / LOG OUT / UPDATE PASS
 /*-----------------------------------------------------------------------------------*/
 
-.logInForm{
+.logInForm, .updatePassForm{
     margin: 200px auto;
     width:50%;
 }
@@ -910,7 +910,7 @@ ADMIN MENU
     background-image: linear-gradient(to right, rgba(71, 71, 71, 0.8), rgba(196, 206, 255, 0.8));
     position: fixed;
     top: 0;
-    z-index: 0;
+    z-index: 10;
     width: 100%;
     box-shadow: 0 2px 5px black;
 }

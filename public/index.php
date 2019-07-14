@@ -79,6 +79,7 @@ try {
             $DisplayController->displayLogIn();
         }
         elseif ($_GET['action'] == 'displayUpdatePass') {
+            
             $DisplayController = new DisplayController;
             $DisplayController->displayUpdatePass();
         }
@@ -129,18 +130,18 @@ try {
 
                 $accentedCharactersNewPass = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
 
-                //needed to check the current pass in DB from the right user (id)
+                //needed to check the current pass in DB from the right user (email)
                 $sessionController = new SessionController();
-                $cookieOrSessionID = $sessionController->checkSession();
+                $cookieOrSessionEmail = $sessionController->checkSession();
 
-                if ($sessionController->checkCurrentPass($cookieOrSessionID) == true) {
+                if ($sessionController->checkCurrentPass($cookieOrSessionEmail) == true) {
                     if (preg_match("#^[a-z".$accentedCharactersNewPass ."0-9._!?-]{8,20}$#i", $_POST['newPass'])) {
                         //if the password is Correct check if current and new pass are the same
                         if ($_POST['currentPass'] != $_POST['newPass']) {
                             //hash password (security feature)
                             $_POST['newPass'] = password_hash($_POST['newPass'], PASSWORD_DEFAULT);
                             $sessionController = new SessionController;
-                            $sessionController->UpdatePassWord($_POST['newPass'], $_POST['idNewPass']);
+                            $sessionController->UpdatePassWord($_POST['newPass'], $_POST['emailNewPass']);
                             $sessionController->killSession();
                             //success2 needed to display the confirmation message
                             header('Location: index.php');

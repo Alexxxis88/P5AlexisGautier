@@ -2,33 +2,26 @@
 $title = 'Log In';
 ob_start();
 
-//FIXME Needed here because I can't call the $sessionController->checkSession(); in the routeur because there is no action to dislplay the changePassView.php as it's opened in a modal box and not a proper view
-
-//Get user's ID using COOKIE or SESSION
-if (isset($_COOKIE['id'])) {
-    $cookieOrSessionID = $_COOKIE['id'];
-} elseif (isset($_SESSION['id'])) {
-        $cookieOrSessionID = $_SESSION['id'];
-}
 ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <?= var_dump($cookieOrSessionID);?>
             <form class="updatePassForm" action="index.php?action=UpdatePass" method="post">
+                <h1 class="text-center">Please update your password</h1>
+                <hr>
                 <div class="form-group">
-                    <label for="idNewPass" class="col-form-label">Votre numéro de session</label><br>
-                    <input type="text" id="idNewPass" name="idNewPass" value="<?= $cookieOrSessionID ?>"  readonly="readonly" required/>
-                </div><br><br>
+                    <label for="emailNewPass" class="col-form-label">Your email address</label><br>
+                    <input type="text" id="emailNewPass" name="emailNewPass" value="<?= $cookieOrSessionEmail ?>"  readonly="readonly" required/>
+                </div>
                 <div class="form-group">
                     <label for="currentPass" class="col-form-label">Current password*</label>
                     <input type="password" class="form-control" id="currentPass" name="currentPass" required>
-                </div><br><br>
+                </div>
                 <div class="form-group">
-                    <label for="newPass" class="col-form-label"><em>8 to 20 characters - Letters, numbers or special characters( . - _ ! ?) allowed</em><br><br>New password*</label>
+                    <label for="newPass" class="col-form-label">New password*<br><small><em>8 to 20 characters - Letters, numbers or special characters( . - _ ! ?) allowed</em></small></label>
                     <input type="password" class="form-control" id="newPass" name="newPass" required>
-                </div><br><br>
-                <input type="submit" class="btn btn-primary" id="changePassBtn" value="Mettre à jour le password"/>
+                </div>
+                <input type="submit" class="btn btn-primary" id="changePassBtn" value="Update your password"/>
             </form>
         </div>
     </div>
