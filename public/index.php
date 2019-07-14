@@ -101,7 +101,6 @@ try {
                 $sessionController = new SessionController;
                 $sessionController->checkLog($_POST['email']);
 
-                //if there is a session open, displays a message
                 if (isset($_SESSION['id']) AND isset($_SESSION['email'])) {
                     require('templates/admin/dashboard.php');
                 }
@@ -118,6 +117,7 @@ try {
 
                 header('Location: index.php');
                 exit;
+
             } else {
                 throw new \Exception('Vous êtes déja déconnecté');
             }
@@ -127,38 +127,19 @@ try {
         elseif ($_GET['action'] == 'UpdatePass') {
             if ((isset($_COOKIE['email']) and $_COOKIE['email'] != '') or  (isset($_SESSION['email']) and $_SESSION['email'] != '')) {
 
-                $accentedCharactersNewPass = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
+                if( $sessionController->checkNewPassValidity($_POST['newPass']) == true){
+                    $_POST['newPass'] = password_hash($_POST['newPass'], PASSWORD_DEFAULT);
+                    $sessionController->UpdatePassWord($_POST['newPass'], $_POST['emailNewPass']);
+                    $sessionController->killSession();
 
-                //needed to check the current pass in DB from the right user (email)
-                $sessionController = new SessionController();
-                $cookieOrSessionEmail = $sessionController->checkSession();
-
-                if ($sessionController->checkCurrentPass($cookieOrSessionEmail) == true) {
-                    if (preg_match("#^[a-z".$accentedCharactersNewPass ."0-9._!?-]{8,20}$#i", $_POST['newPass'])) {
-                        //if the password is Correct check if current and new pass are the same
-                        if ($_POST['currentPass'] != $_POST['newPass']) {
-                            //hash password (security feature)
-                            $_POST['newPass'] = password_hash($_POST['newPass'], PASSWORD_DEFAULT);
-                            $sessionController = new SessionController;
-                            $sessionController->UpdatePassWord($_POST['newPass'], $_POST['emailNewPass']);
-                            $sessionController->killSession();
-                            //success2 needed to display the confirmation message
-                            header('Location: index.php');
-                            exit;
-                        } else {
-                            throw new \Exception('Votre nouveau password est le même que l\'actuel');
-                        }
-                    } else {
-                        throw new \Exception('Votre nouveau password n\'est pas conforme');
-                    }
-                } else {
-                    throw new \Exception('Votre password actuel n\'est pas le bon');
+                    header('Location: index.php?action=quote');
+                    exit;
                 }
-            } else {
+            }
+            else {
                 throw new \Exception('Vous devez être connecté pour accéder à cette page');
             }
         }
-
 
         //SEND MESSAGE
         elseif ($_GET['action'] == 'sendMessage') {

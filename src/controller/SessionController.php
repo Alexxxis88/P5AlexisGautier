@@ -54,6 +54,7 @@ class SessionController
         $UpdatePassWord = $sessionManager->UpdatePass(htmlspecialchars($newpass), $email);
     }
 
+
     public function checkCurrentPass($email)
     {
         $sessionManager = new SessionManager();
@@ -65,6 +66,32 @@ class SessionController
         } else {
             return false;
         }
+    }
+
+    public function checkNewPassValidity($newPass)
+    {
+        $accentedCharactersNewPass = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
+
+        //needed to check the current pass in DB from the right user (email)
+        $cookieOrSessionEmail = $this->checkSession();
+
+        if ($this->checkCurrentPass($cookieOrSessionEmail) == true) {
+            if (preg_match("#^[a-z".$accentedCharactersNewPass ."0-9._!?-]{8,20}$#i", $_POST['newPass'])) {
+                //if the password is Correct check if current and new pass are the same
+                if ($_POST['currentPass'] != $_POST['newPass']) {
+
+                    return true;
+
+                } else {
+                    throw new \Exception('Votre nouveau password est le même que l\'actuel');
+                }
+            } else {
+                throw new \Exception('Votre nouveau password n\'est pas conforme');
+            }
+        } else {
+            throw new \Exception('Votre password actuel n\'est pas le bon');
+        }
+
     }
 
     public function killSession()
