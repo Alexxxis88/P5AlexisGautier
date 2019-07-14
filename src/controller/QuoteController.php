@@ -1,4 +1,10 @@
 <?php
+
+namespace AlexisGautier\PersonalWebsite\Controller;
+
+require_once('src/model/manager/QuoteManager.php');
+use \AlexisGautier\PersonalWebsite\Model\Manager\QuoteManager;
+
 class QuoteController
 {
     public function savePackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
@@ -91,43 +97,43 @@ class QuoteController
                                                             return true;
 
                                                         } else {
-                                                        throw new Exception('La deadline ne peut pas être dans le passé');
+                                                        throw new \Exception('La deadline ne peut pas être dans le passé');
                                                         }
                                                     } else {
-                                                    throw new Exception('La ville n\'est pas conforme');
+                                                    throw new \Exception('La ville n\'est pas conforme');
                                                     }
                                                 } else {
-                                                throw new Exception('Le code postal n\'est pas conforme');
+                                                throw new \Exception('Le code postal n\'est pas conforme');
                                                 }
                                             } else {
-                                            throw new Exception('L\'adresse n\'est pas conforme');
+                                            throw new \Exception('L\'adresse n\'est pas conforme');
                                             }
                                         } else {
-                                            throw new Exception('Le numéro de téléphone n\'est pas conforme');
+                                            throw new \Exception('Le numéro de téléphone n\'est pas conforme');
                                         }
                                     } else {
-                                        throw new Exception('L\'adresse email n\'est pas conforme');
+                                        throw new \Exception('L\'adresse email n\'est pas conforme');
                                     }
                                 } else {
-                                    throw new Exception('Le nom n\'est pas conforme.');
+                                    throw new \Exception('Le nom n\'est pas conforme.');
                                 }
                             } else {
-                                throw new Exception('Le prénom n\'est pas conforme.');
+                                throw new \Exception('Le prénom n\'est pas conforme.');
                             }
                         } else {
-                            throw new Exception('le nom de l\'entreprise n\'est pas conforme.');
+                            throw new \Exception('le nom de l\'entreprise n\'est pas conforme.');
                         }
                     } else {
-                        throw new Exception('La structure n\'est pas conforme.');
+                        throw new \Exception('La structure n\'est pas conforme.');
                     }
                 } else {
-                    throw new Exception('Le nom du projet n\'est pas conforme.');
+                    throw new \Exception('Le nom du projet n\'est pas conforme.');
                 }
             } else {
-                throw new Exception('Le prix du pack n\'est pas conforme.');
+                throw new \Exception('Le prix du pack n\'est pas conforme.');
             }
         } else {
-            throw new Exception('Le nom du pack n\'est pas conforme.');
+            throw new \Exception('Le nom du pack n\'est pas conforme.');
         }
     }
 

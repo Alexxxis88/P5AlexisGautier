@@ -1,4 +1,5 @@
 <?php
+namespace AlexisGautier\PersonalWebsite\Model\Manager;
 class Manager
 {
     protected $_db = null;
@@ -18,11 +19,11 @@ class Manager
     protected function dbConnect()
     {
         try {
-            $db = new PDO('mysql:host='. $this->_host.';dbname='. $this->_dbName.';charset='. $this->_charset.';port='. $this->_port,  $this->_username,  $this->_password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+            $db = new \PDO('mysql:host='. $this->_host.';dbname='. $this->_dbName.';charset='. $this->_charset.';port='. $this->_port,  $this->_username,  $this->_password, array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING));
             $this->_db= $db;
         }
-        catch(Exception $e) {
-            throw new Exception('Connexion to database has failed.');
+        catch(\Exception $e) {
+            throw new \Exception('Connexion to database has failed.');
         }
 
     }

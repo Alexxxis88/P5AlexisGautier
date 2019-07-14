@@ -1,4 +1,11 @@
 <?php
+
+namespace AlexisGautier\PersonalWebsite\Controller;
+
+require_once('src/model/manager/MessageManager.php');
+use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
+
+
 class MessageController
 {
     public function checkMessageFields($firstName, $lastName, $contactEmail, $topic, $messageContent)
@@ -15,16 +22,16 @@ class MessageController
                     if (preg_match("#^[a-z". $accentedCharacters ."(' \-)*]+[a-z". $accentedCharacters ."]+$#i", $_POST['topic'])) {
                         return true;
                     } else {
-                        throw new Exception('L\'intitulé n\'est pas conforme');
+                        throw new \Exception('L\'intitulé n\'est pas conforme');
                     }
                 } else {
-                    throw new Exception('L\'adresse email n\'est pas conforme');
+                    throw new \Exception('L\'adresse email n\'est pas conforme');
                 }
             } else {
-                throw new Exception('Le nom n\'est pas conforme.');
+                throw new \Exception('Le nom n\'est pas conforme.');
             }
         } else {
-            throw new Exception('Le prénom n\'est pas conforme.');
+            throw new \Exception('Le prénom n\'est pas conforme.');
         }
     }
 

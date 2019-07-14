@@ -1,4 +1,9 @@
 <?php
+
+namespace AlexisGautier\PersonalWebsite\Model\Manager;
+
+require_once('src/model/manager/Manager.php');
+
 class MessageManager extends Manager
 {
 

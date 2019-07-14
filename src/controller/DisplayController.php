@@ -1,4 +1,7 @@
 <?php
+
+namespace AlexisGautier\PersonalWebsite\Controller;
+
 class DisplayController
 {
     public function displayHome()

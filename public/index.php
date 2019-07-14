@@ -4,12 +4,21 @@ require_once('src/controller/DisplayController.php');
 require_once('src/controller/MessageController.php');
 require_once('src/controller/QuoteController.php');
 
-//AUTOLOAD
-function classAutoLoad($class)
-{
-    require 'src/model/manager/' . $class . '.php';
-}
-spl_autoload_register('classAutoLoad');
+
+require_once('src/model/manager/Manager.php');
+require_once('src/model/manager/QuoteManager.php');
+require_once('src/model/manager/MessageManager.php');
+
+use \AlexisGautier\PersonalWebsite\Controller\DisplayController;
+use \AlexisGautier\PersonalWebsite\Controller\MessageController;
+use \AlexisGautier\PersonalWebsite\Controller\QuoteController;
+
+// //AUTOLOAD
+// function classAutoLoad($class)
+// {
+//     require 'src/model/manager/' . $class . '.php';
+// }
+// spl_autoload_register('classAutoLoad');
 
 
 try {
@@ -70,7 +79,7 @@ try {
                 }
             }
             else {
-                throw new Exception('Tous les champs ne sont pas remplis');
+                throw new \Exception('Tous les champs ne sont pas remplis');
             }
         }
 
@@ -88,7 +97,7 @@ try {
                 }
             }
             else {
-                throw new Exception('Tous les champs ne sont pas remplis');
+                throw new \Exception('Tous les champs ne sont pas remplis');
             }
         }
 
@@ -122,7 +131,7 @@ try {
 
 
         else {
-            throw new Exception('Cette page n\'existe pas');
+            throw new \Exception('Cette page n\'existe pas');
         }
     }
 
@@ -135,7 +144,7 @@ try {
 }
 
 //ERROR BEHAVIOR
-catch (Exception $e) {
+catch (\Exception $e) {
     $errorMessage = $e->getMessage();
     require('templates/errorView.php');
 }
