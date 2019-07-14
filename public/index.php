@@ -79,7 +79,6 @@ try {
             $DisplayController->displayLogIn();
         }
         elseif ($_GET['action'] == 'displayUpdatePass') {
-            
             $DisplayController = new DisplayController;
             $DisplayController->displayUpdatePass();
         }

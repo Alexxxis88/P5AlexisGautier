@@ -1,9 +1,9 @@
 <?php
-$title = 'Log In';
+$title = 'Alexis Gautier - Update Password';
 ob_start();
 
 ?>
-<div class="container">
+<div class="container fade-up">
     <div class="row">
         <div class="col-md-12">
             <form class="updatePassForm" action="index.php?action=UpdatePass" method="post">

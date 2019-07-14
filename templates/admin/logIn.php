@@ -1,8 +1,8 @@
 <?php
-$title = 'Log In';
+$title = 'Alexis Gautier - Log In';
 ob_start();
 ?>
-<div class="container">
+<div class="container fade-up">
     <div class="row">
         <div class="col-md-12">
             <form class="logInForm" action="index.php?action=logInCheck" method="post">

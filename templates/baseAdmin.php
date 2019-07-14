@@ -48,14 +48,24 @@
     </head>
     <body>
 
-    <div class="menu">
+    <div class="menu fade-down">
             <a href="index.php"><span class="fas fa-home"></span></a>
             <div class="menuBtns">
-                <!-- Log Out button -->
-                <a href="index.php?action=logOutCheck"><button type="button" class="btn btn-info ">Log Out</button></a>
+            <?php //if there is cookies or session information, they are used to display user name
+                if (isset($_COOKIE['email']) or isset($_SESSION['email'])) {
+                    if (isset($_COOKIE['email'])) {
+                        $username = $_COOKIE['email'];
+                    } elseif (isset($_SESSION['email'])) {
+                        $username = $_SESSION['email'];
+                    } ?>
+                    <!-- Log Out button -->
+                    <a href="index.php?action=logOutCheck"><button type="button" class="btn btn-info ">Log Out</button></a>
 
-                <!-- Change Password button -->
-                <a href="index.php?action=displayUpdatePass"><button type="button" class="btn btn-info ">Update Password</button></a>
+                    <!-- Change Password button -->
+                    <a href="index.php?action=displayUpdatePass"><button type="button" class="btn btn-info ">Update Password</button></a>
+                <?php
+                }
+                ?>
             </div>
         </div>
         <?= $content ?>
