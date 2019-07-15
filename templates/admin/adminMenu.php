@@ -4,8 +4,8 @@
     <div class="menuBtns" id="menuDesktop" >
         <nav class="adminMenu">
             <ul>
-            <li><a class="adminMenuLink" href="index.php?action=quotesAdmin"><span class="fas fa-comments comAlert"></span>Quotes</a></li>
-            <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=10"><span class="fas fa-users"></span>Messages</a></li>
+            <li><a class="adminMenuLink" href="index.php?action=quotesAdmin"><span class="fas fa-file-invoice-dollar quoteAlert"></span>Quotes</a></li>
+            <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=10"><span class="fas fa-comments msgAlert"></span>Messages</a></li>
             </ul>
         </nav>
 
@@ -37,8 +37,8 @@
 <!-- Burger Menu Navigation -->
 <nav class="navMenu"  id="burgerNav">
     <ul>
-        <li><a class="adminMenuLink" href="index.php?action=quotesAdmin"><span class="fas fa-comment-alt comAlert"></span>Quotes</a></li>
-        <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=10"><span class="fas fa-users"></span>Messages</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=quotesAdmin"><span class="fas fa-file-invoice-dollar quoteAlert"></span>Quotes</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=10"><span class="fas fa-comment-alt msgAlert"></span>Messages</a></li>
         <?php //if there is cookies or session information, they are used to display user name
         if (isset($_COOKIE['email']) or isset($_SESSION['email'])) {
             if (isset($_COOKIE['email'])) {
@@ -57,10 +57,18 @@
     </ul>
 </nav>
 
-<!-- Display comment to manage alert -->
-<!-- gives an arary, the first value ( [0] ) is the result of SUM on the flag column in comments table -->
-<!-- < ?php
-if ($nbOfReportedComments[0] > 0) { ?>
-    <script>$('.comAlert').css("color", "red");</script>
+<!-- Display new message alert -->
+<?php
+if ($isThereNewMessages == true ) { ?>
+    <script>$('.msgAlert').css("color", "rgb(233, 45, 45)");</script>
+<?php }
+?>
+
+<!-- Display new quote request alert 
+< ?php
+if ($isThereNewQuotes == true ) { ?>
+    <script>$('.quoteAlert').css("color", "rgb(233, 45, 45)");</script>
 < ?php }
-?> -->
+?>-->
+
+

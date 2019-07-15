@@ -74,7 +74,7 @@ class MessageController
     {
         //messages to manage red icon
         $messageManager = new MessageManager();
-        // $nbOfReportedComments = $commentManager->getNbOfReportedComments();
+        $isThereNewMessages = $messageManager->isThereNewMsg();
 
         $newMessages = $messageManager->getNewMessages();
         $archivedMessages = $messageManager->getArchivedMessages();
@@ -137,5 +137,6 @@ class MessageController
         $messageManager = new MessageManager();
         $messageManager->insertAnswer($messageId, htmlspecialchars($answerContent));
     }
+
 
 }

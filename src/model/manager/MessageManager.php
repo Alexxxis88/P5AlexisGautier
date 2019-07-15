@@ -67,10 +67,10 @@ class MessageManager extends Manager
 
     
     //turn messages icon (menuAdmin) in red if messages to manage ( if flag == 0 exists at least once)
-    // public function getNbOfReportedComments()
-    // {
-    //     $req = $this->_db->query('SELECT SUM(flag) AS flagTotal FROM comments');
-    //     $reportedCommentNb= $req->fetch();
-    //     return $reportedCommentNb;
-    // }
+    public function isThereNewMsg()
+    {
+        $req = $this->_db->query('SELECT flag FROM messages WHERE flag = 0');
+        $isThereNewMsg= $req->fetch();
+        return $isThereNewMsg;
+    }
 }
