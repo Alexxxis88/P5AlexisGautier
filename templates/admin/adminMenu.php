@@ -2,12 +2,6 @@
 <div class="menuAdmin fade-down">
     <a href="index.php"><span class="fas fa-home"></span></a>
     <div class="menuBtns" id="menuDesktop" >
-        <nav class="adminMenu">
-            <ul>
-            <li><a class="adminMenuLink" href="index.php?action=quotesAdmin"><span class="fas fa-file-invoice-dollar quoteAlert"></span>Quotes</a></li>
-            <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=10"><span class="fas fa-comments msgAlert"></span>Messages</a></li>
-            </ul>
-        </nav>
 
         <?php //if there is cookies or session information, they are used to display user name
         if (isset($_COOKIE['email']) or isset($_SESSION['email'])) {
@@ -16,6 +10,13 @@
             } elseif (isset($_SESSION['email'])) {
                 $username = $_SESSION['email'];
             } ?>
+
+            <nav class="adminMenu">
+                <ul>
+                <li><a class="adminMenuLink" href="index.php?action=quotesAdmin"><span class="fas fa-file-invoice-dollar quoteAlert"></span>Quotes</a></li>
+                <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=10"><span class="fas fa-comments msgAlert"></span>Messages</a></li>
+                </ul>
+            </nav>
             <!-- Log Out button -->
             <a href="index.php?action=logOutCheck"><button type="button" class="btn btn-info ">Log Out</button></a>
 

@@ -1077,7 +1077,7 @@ MANAGE COMMENTS
     cursor: pointer;
 }
 
-#sectionReported {
+#sectionNewMessages, #sectionArchivedMessages {
     margin-bottom: 100px;
 }
 
@@ -1163,7 +1163,7 @@ MANAGE COMMENTS
     overflow-wrap: break-word;
 }
 
-.reportedComments {
+.newMesssage {
     background: rgb(216, 241, 255) !important;
     overflow-wrap: break-word;
     border-radius: 3px;
@@ -1212,8 +1212,8 @@ MANAGE COMMENTS
     border-radius: 3px;
 }
 
-.noReportedComments,
-.noCommentsToManage {
+.noNewMessage,
+.noArchiveMessage {
     color: white;
     font-weight: bold;
     background: rgb(84, 212, 84);

@@ -17,19 +17,19 @@ $("#checkAllToPublish").change(function () {
 });
 
 
-// displays a message if no new messages
-if (!$.trim($(".reportedComments").html()).length) {
-    $(".noReportedComments").css("display", "block");
+// displays a message box if no new messages
+if ((!$.trim($(".newMesssage").html()).length) && (!$.trim($(".answeredMessage").html()).length)) {
+    $(".noNewMessage").css("display", "block");
 } else {
-    $(".noReportedComments").css("display", "none");
+    $(".noNewMessage").css("display", "none");
 };
 
 
-// displays a message if no archived messages
-if (!$.trim($(".acceptDenyComments").html()).length) {
-    $(".noCommentsToManage").css("display", "block");
+// displays a message box if no archived messages
+if (!$.trim($(".archivedMessage").html()).length) {
+    $(".noArchiveMessage").css("display", "block");
 } else {
-    $(".noCommentsToManage").css("display", "none");
+    $(".noArchiveMessage").css("display", "none");
 };
 
 

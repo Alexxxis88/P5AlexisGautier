@@ -3,6 +3,8 @@
 namespace AlexisGautier\PersonalWebsite\Controller;
 
 use \AlexisGautier\PersonalWebsite\Controller\SessionController;
+use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
+
 class DisplayController
 {
     public function displayCheck()
@@ -70,11 +72,17 @@ class DisplayController
 
     public function displayLogIn()
     {
+        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $messageManager = new MessageManager();
+        $isThereNewMessages = $messageManager->isThereNewMsg();
         require('templates/admin/logIn.php');
     }
 
     public function displayUpdatePass()
     {
+        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $messageManager = new MessageManager();
+        $isThereNewMessages = $messageManager->isThereNewMsg();
         $sessionController = new SessionController();
         $cookieOrSessionEmail = $sessionController->checkSession();
 
@@ -83,6 +91,9 @@ class DisplayController
 
     public function displayDashboard()
     {
+        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $messageManager = new MessageManager();
+        $isThereNewMessages = $messageManager->isThereNewMsg();
         require('templates/admin/dashboard.php');
     }
 

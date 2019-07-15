@@ -13,7 +13,7 @@ ob_start();
         <h2 class="titleManageCom titleMessages">New Messages</h2>
         <hr>
         <?php
-            if (!empty($newMessages)){ //needed otherwise gives an error on the commentsView.php when no comments reported
+            if (!empty($newMessages)){ //needed otherwise gives an error on the messagesAdmin.php when no new message
                 for ($i = 0 ; $i < sizeof($newMessages) ; $i++) {
                     $messageId = $newMessages[$i]->id();
                     $firstName = $newMessages[$i]->firstName();
@@ -24,7 +24,7 @@ ob_start();
                     $messageDate = $newMessages[$i]->messageDate();
                     $flag = $newMessages[$i]->flag(); ?>
 
-                    <div <?php if ($flag == 0) : echo 'class="reportedComments"'; else : echo 'class="answeredMessage"'; endif; ?> >
+                    <div <?php if ($flag == 0) : echo 'class="newMesssage"'; else : echo 'class="answeredMessage"'; endif; ?> >
                         <p class="commentHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
                         <?php if ($flag == 1) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Answered'; endif; ?></p>
 
@@ -85,7 +85,7 @@ ob_start();
             }
             ?>
         <!-- displays a message if no new message -->
-        <div class="noReportedComments">There is no new message</div>
+        <div class="noNewMessage">There is no new message</div>
     </section>
 
     <!-- ARCHIVED MESSAGES -->
@@ -98,7 +98,7 @@ ob_start();
         <h2 class="titleManageCom titleMessages">Archived Messages</h2>
         <hr>
         <?php
-            if (!empty($archivedMessages)) { //needed otherwise gives an error on the commentsView.php when no comments reported
+            if (!empty($archivedMessages)) { //needed otherwise gives an error on the messagesAdmin.php when no archived message
                 for ($i = 0 ; $i < sizeof($archivedMessages) ; $i++) {
                     $messageId = $archivedMessages[$i]->id();
                     $firstName = $archivedMessages[$i]->firstName();
@@ -128,7 +128,7 @@ ob_start();
             }
             ?>
         <!-- displays a message if no new message -->
-        <div class="noReportedComments">There is no archived message</div>
+        <div class="noArchiveMessage">There is no archived message</div>
     </section>
 </div>
 <?php

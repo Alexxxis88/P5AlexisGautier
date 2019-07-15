@@ -72,7 +72,7 @@ class MessageController
     //display new, answered and archived messages
     public function listAllMessages()
     {
-        //messages to manage red icon
+        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $messageManager = new MessageManager();
         $isThereNewMessages = $messageManager->isThereNewMsg();
 
