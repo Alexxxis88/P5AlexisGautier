@@ -1431,6 +1431,14 @@ MANAGE QUOTES
     margin-bottom: 10px;
 }
 
+.refusedPackQuote {
+    background: rgb(255, 135, 135);
+    overflow-wrap: break-word;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
 .packQuote {
     background: rgb(233, 233, 233) !important;
     overflow-wrap: break-word;
@@ -1450,6 +1458,15 @@ MANAGE QUOTES
 
 }
 
+.acceptForm{
+    display : none;
+}
+
+.acceptBtn{
+    background:none;
+    border:none;
+    color:green;
+}
 
 
 /*  TEAM

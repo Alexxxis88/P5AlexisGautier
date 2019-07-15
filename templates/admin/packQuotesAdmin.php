@@ -29,18 +29,15 @@ ob_start();
                     $quoteStatus = $packQuote[$i]->quoteStatus();
                     $accepted = $packQuote[$i]->accepted();
                     $clientStatus = $packQuote[$i]->clientStatus();
-
                     ?>
-
-                    <div <?php if ($quoteStatus == 0) : echo 'class="newPackQuote"'; else : echo 'class="packQuote"'; endif; ?> >
+                    <div <?php if ($quoteStatus == 0 && $accepted != 2) : echo 'class="newPackQuote"'; elseif ($accepted == 2) : echo 'class="refusedPackQuote"'; else : echo 'class="packQuote"'; endif; ?> >
                         <p class="commentHead">Pack Quote n° <strong><?= $packQuoteId ?></strong>
                             <?php
-
                             //Status
-                            if ($quoteStatus == 0 && $accepted < 2) : echo '&emsp; - &emsp; <span class="fas fa-history" style="color:white"> </span> Pending';
-                            elseif ($quoteStatus == 1 && $accepted < 2) : echo '&emsp; - &emsp; <span class="fas fa-play" style="color:lightblue"> </span> In progress';
-                            elseif ($quoteStatus == 2 && $accepted < 2) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Done';
-                            elseif ($quoteStatus == 3 && $accepted < 2) : echo '&emsp; - &emsp; <span class="far fa-folder-open" style="color:yellow"> </span> Archived';
+                            if ($quoteStatus == 0 && $accepted == 1) : echo '&emsp; - &emsp; <span class="fas fa-history" style="color:white"> </span> Pending';
+                            elseif ($quoteStatus == 1 && $accepted == 1) : echo '&emsp; - &emsp; <span class="fas fa-play" style="color:lightblue"> </span> In progress';
+                            elseif ($quoteStatus == 2 && $accepted == 1) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Done';
+                            elseif ($quoteStatus == 3 && $accepted == 1) : echo '&emsp; - &emsp; <span class="far fa-folder-open" style="color:yellow"> </span> Archived';
                             endif;
 
                             //Accepted / Refused
@@ -87,15 +84,46 @@ ob_start();
                                 $(".quoteMoreInfo<?=$packQuoteId?>").toggle("slow")
                             })
                             </script>
+                            <!-- bouton avec formulaire pour envoi de mail auto -->
+
+                            <div class="acceptForm">
+                                <form id="acceptForm<?= $packQuoteId ?>" action="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=1" method="post">
+                                        <label for="myEmail" class="col-form-label">From : </label>
+                                        <input type="text" class="form-control" id="myEmail" name="myEmail" value="alexisxgautier@gmail.com" readonly="readonly">
+                                        <label for="clientEmail" class="col-form-label">to : </label>
+                                        <input type="text" class="form-control" id="clientEmail" name="clientEmail" value="<?= $contactEmail ?>" readonly="readonly">
+                                        <label for="answerTopic" class="col-form-label">Topic</label>
+                                        <input type="text" class="form-control" id="answerTopic" name="answerTopic" value="Congralutations! Your project <?= $project ?> has been accepted" readonly="readonly">
+                                        <label for="answerContent" class="col-form-label">My answer</label>
+                                        <textarea class="form-control" rows="10" id="answerContent" name="answerContent" required>Hello <?= $firstName ?> <?= $lastName ?>. I am glad to inform you I accept to work with you on your project <?= $project ?>. I will be in touch very soon to discuss the next steps. Have a good day!</textarea>
+                                </form>
+                            </div>
 
 
+                            <!-- bouton classique sans envoi de mail auto FIXME DELETE ME si ça marche avec le form-->
+                            <!-- <a class="answerBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=< ?= $packQuoteId ?>&amp;acceptPackQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Ancien bouton fonctionel Accept</a>-->
 
-                            <a class="answerBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Accept</a>
-
-                            <a class="deleteBtn" data-toggle="modal" data-target="#refuseModal<?= $packQuoteId ?>" ><span class="far fa-check-square"></span>  Refuse</a>
 
                             <?php
-                            if ( $accepted < 2) :?>
+                            //Accept / Refuse buttons
+                            if ($accepted == 0 || $accepted == 2) : ?>
+                            <!-- Accept button with an auto email function -->
+                            <button type="submit" form="acceptForm<?= $packQuoteId ?>" class="acceptBtn" onclick="return confirm('Accept this project ?')"><span class="far fa-check-square"></span> Accept</button>
+                            <?php
+                            ;
+                            endif;
+                            if ($accepted == 0 || $accepted == 1) : ?>
+                            <a class="deleteBtn" data-toggle="modal" data-target="#refuseModal<?= $packQuoteId ?>" ><span class="far fa-check-square"></span>  Refuse</a>
+                            <?php
+                            ;
+                            endif;
+                            ?>
+
+
+
+
+                            <?php
+                            if ( $accepted == 1) :?>
                                 <form id="statusForm" action="index.php?action=updateQuoteStatus&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
                                     <label for="statusPackQuote">Status :</label>
                                     <select id="statusPackQuote" name="statusPackQuote"
@@ -112,12 +140,12 @@ ob_start();
                             ;
                             endif;
                             ?>
-                                <a class="deleteBtn" href="index.php?action=deletePackQuote&amp;packQuoteId=<?= $packQuoteId ?>" onclick="return confirm('Delete this request ?')"><span class="far fa-trash-alt"></span> Delete this request</a>
+                                <br><a class="deleteBtn" href="index.php?action=deletePackQuote&amp;packQuoteId=<?= $packQuoteId ?>" onclick="return confirm('Delete this request ?')"><span class="far fa-trash-alt"></span> Delete this request</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Refuse project -->
+                    <!-- Refuse project modal -->
                     <div class="modal fade" id="refuseModal<?= $packQuoteId ?>" tabindex="-1" role="dialog" aria-labelledby="refuseModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">

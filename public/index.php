@@ -213,6 +213,9 @@ try {
         elseif ($_GET['action'] == 'acceptPackQuote') {
             if (isset($_GET['packQuoteId']) && $_GET['packQuoteId'] > 0 && isset($_GET['acceptPackQuote'])) {
 
+                $messageController = new MessageController;
+                $messageController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
+
                 $quoteController = new QuoteController;
                 $quoteController->acceptDenyPackQuote($_GET['acceptPackQuote'], $_GET['packQuoteId']);
             } else {
