@@ -4,6 +4,7 @@ namespace AlexisGautier\PersonalWebsite\Controller;
 
 // require_once('src/model/manager/MessageManager.php'); // FIXME : a remettre si l'autoload déconne
 use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
+use \AlexisGautier\PersonalWebsite\Model\Manager\QuoteManager;
 
 
 class MessageController
@@ -75,6 +76,10 @@ class MessageController
         //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $messageManager = new MessageManager();
         $isThereNewMessages = $messageManager->isThereNewMsg();
+
+        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $quoteManager = new QuoteManager();
+        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
 
         $newMessages = $messageManager->getNewMessages();
         $archivedMessages = $messageManager->getArchivedMessages();

@@ -4,6 +4,7 @@ namespace AlexisGautier\PersonalWebsite\Controller;
 
 use \AlexisGautier\PersonalWebsite\Controller\SessionController;
 use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
+use \AlexisGautier\PersonalWebsite\Model\Manager\QuoteManager;
 
 class DisplayController
 {
@@ -75,6 +76,11 @@ class DisplayController
         //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $messageManager = new MessageManager();
         $isThereNewMessages = $messageManager->isThereNewMsg();
+
+        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $quoteManager = new QuoteManager();
+        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+
         require('templates/admin/logIn.php');
     }
 
@@ -83,6 +89,11 @@ class DisplayController
         //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $messageManager = new MessageManager();
         $isThereNewMessages = $messageManager->isThereNewMsg();
+
+        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $quoteManager = new QuoteManager();
+        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+
         $sessionController = new SessionController();
         $cookieOrSessionEmail = $sessionController->checkSession();
 
@@ -94,6 +105,10 @@ class DisplayController
         //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $messageManager = new MessageManager();
         $isThereNewMessages = $messageManager->isThereNewMsg();
+
+        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $quoteManager = new QuoteManager();
+        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
         require('templates/admin/dashboard.php');
     }
 

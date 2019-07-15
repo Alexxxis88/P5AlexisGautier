@@ -88,7 +88,7 @@ ob_start();
                             })
                             </script>
 
-                            
+
 
                             <a class="answerBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Accept</a>
 

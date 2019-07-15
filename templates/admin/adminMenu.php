@@ -67,12 +67,12 @@ if ($isThereNewMessages == true ) { ?>
 <?php }
 ?>
 
-<!-- Display pack quote request alert
-< ?php
+<!-- Display pack quote request alert-->
+<?php
 if ($isThereNewPackQuotes == true ) { ?>
     <script>$('.packQuoteAlert').css("color", "rgb(233, 45, 45)");</script>
-< ?php }
-?>-->
+<?php }
+?>
 
 <!-- Display custom quote request alert
 < ?php
