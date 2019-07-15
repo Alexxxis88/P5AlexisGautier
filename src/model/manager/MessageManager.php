@@ -32,7 +32,6 @@ class MessageManager extends Manager
         }
     }
 
-
     public function getArchivedMessages()
     {
         $req = $this->_db->query('SELECT * FROM messages WHERE flag = 2 ORDER BY messageDate');
@@ -43,7 +42,6 @@ class MessageManager extends Manager
             return $archivedMessage;
         }
     }
-
 
     public function eraseMessage($messageId)
     {
@@ -65,7 +63,6 @@ class MessageManager extends Manager
         $msgAnswered->execute(array($messageId));
     }
 
-    
     //turn messages icon (menuAdmin) in red if messages to manage ( if flag == 0 exists at least once)
     public function isThereNewMsg()
     {

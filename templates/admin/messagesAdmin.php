@@ -2,7 +2,7 @@
 $title = 'Alexis Gautier - Messages';
 ob_start();
 ?>
-<div class="container noHeaderImg">
+<div class="container noHeaderImg fade-up">
     <!-- NEW MESSAGES -->
     <section id="sectionNewMessages">
         <div class="row manageComBtns newMessagesBtns">

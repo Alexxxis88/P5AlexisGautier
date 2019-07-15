@@ -6,16 +6,6 @@ $("#burgerMenu").on("click", function() {
 
 
 // ----- MANAGE MESSAGES PAGE ----- //
-// Select / Deselect all checkboxes (for New messages)
-$("#checkAllReported").change(function () {
-    $("input[type=checkbox][id=commentID]").prop("checked", $(this).prop("checked"));
-});
-
-// Select / Deselect all checkboxes (for Archived messages)
-$("#checkAllToPublish").change(function () {
-    $("input[type=checkbox][id=commentPublishID]").prop("checked", $(this).prop("checked"));
-});
-
 
 // displays a message box if no new messages
 if ((!$.trim($(".newMesssage").html()).length) && (!$.trim($(".answeredMessage").html()).length)) {
@@ -44,6 +34,18 @@ $(document).ready(function () {
         return;
     });
 });
+
+
+// ----- MANAGE PACK QUOTE ----- //
+
+
+// displays a message box if no pack quotes
+if ((!$.trim($(".newPackQuote").html()).length) && (!$.trim($(".packQuote").html()).length)) {
+    $(".noPackQuote").css("display", "block");
+} else {
+    $(".noPackQuote").css("display", "none");
+};
+
 
 
 // Skills bars FIXME : les bars sont déja chargées quand je scroll, trouver comme faire pour attendre que le bloc s'affiche puis charger les bars

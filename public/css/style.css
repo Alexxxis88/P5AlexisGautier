@@ -1065,6 +1065,7 @@ ADMIN MENU
 MANAGE COMMENTS
 ===========================================================*/
 
+
 .titleManageCom {
     text-align: center;
 }
@@ -1213,7 +1214,7 @@ MANAGE COMMENTS
 }
 
 .noNewMessage,
-.noArchiveMessage {
+.noArchiveMessage, .noPackQuote {
     color: white;
     font-weight: bold;
     background: rgb(84, 212, 84);
@@ -1416,6 +1417,39 @@ Extra height css
     padding-bottom: 10px;
 }
 /*-----------------------------------------------------------------------------------*/
+
+
+/*=========================================================
+MANAGE QUOTES
+===========================================================*/
+
+.newPackQuote {
+    background: rgb(216, 241, 255) !important;
+    overflow-wrap: break-word;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.packQuote {
+    background: rgb(233, 233, 233) !important;
+    overflow-wrap: break-word;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+[class*="quoteMoreInfo"] {
+    display: none;
+}
+
+
+[class*="quoteMoreInfoBtn"] {
+    background: none;
+    border: none;
+
+}
+
 
 
 /*  TEAM

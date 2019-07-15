@@ -4,6 +4,8 @@ namespace AlexisGautier\PersonalWebsite\Controller;
 
 // require_once('src/model/manager/QuoteManager.php'); FIXME : a remettre si l'autoload déconne
 use \AlexisGautier\PersonalWebsite\Model\Manager\QuoteManager;
+use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
+
 
 class QuoteController
 {
@@ -135,6 +137,40 @@ class QuoteController
         } else {
             throw new \Exception('Le nom du pack n\'est pas conforme.');
         }
+    }
+
+    //BACKEND
+    //display packquotes
+    public function listPackQuotes()
+    {
+        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $messageManager = new MessageManager();
+        $isThereNewMessages = $messageManager->isThereNewMsg();
+
+        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $quoteManager = new QuoteManager();
+        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+
+        $packQuote = $quoteManager->getPackQuotes();
+
+        require('templates/admin/packQuotesAdmin.php');
+    }
+
+    public function deletePackQuote($packQuoteId)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->erasePackQuote($packQuoteId);
+        header('Location: index.php?action=packQuotesAdmin');
+        exit;
+    }
+
+
+    public function archiveQuote($packQuoteId)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->fileArchiveQuote($messageId);
+        header('Location: index.php?action=packQuotesAdmin');
+        exit;
     }
 
 }

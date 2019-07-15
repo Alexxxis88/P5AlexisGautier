@@ -86,14 +86,22 @@ try {
             $displayController->displayCheck();
             $displayController->displayDashboard();
         }
-        elseif ($_GET['action'] == 'quotesAdmin') {
+        elseif ($_GET['action'] == 'packQuotesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
+            $quoteController = new QuoteController();
+            $quoteController->listPackQuotes();
+        }
+        elseif ($_GET['action'] == 'customQuotesAdmin') {
+            $displayController = new DisplayController;
+            $displayController->displayCheck();
+            $quoteController = new QuoteController();
+            $quoteController->listCustomQuotes();
         }
         elseif ($_GET['action'] == 'messagesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
-            $messageController = new messageController();
+            $messageController = new MessageController();
             $messageController->listAllMessages();
         }
 
@@ -178,6 +186,43 @@ try {
         }
 
 
+        //QUOTES MANAGEMENT
+
+        // elseif ($_GET['action'] == 'answerQuote') {
+        //     if (isset($_GET['quoteId']) && $_GET['quoteId'] > 0) {
+
+        //         $quoteController = new QuoteController;
+        //         $quoteController->saveAnswer($_GET['quoteId'], $_POST['answerContent']);
+        //         $quoteController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
+        //         $quoteController->updateAnswerMessageFlag($_GET['quoteId']);
+        //     } else {
+        //         throw new Exception('Aucun identifiant de message envoyé');
+        //     }
+        // }
+
+        elseif ($_GET['action'] == 'deletePackQuote') {
+            if (isset($_GET['packQuoteId']) && $_GET['packQuoteId'] > 0) {
+
+                $quoteController = new QuoteController;
+                $quoteController->deletePackQuote($_GET['packQuoteId']);
+            } else {
+                throw new Exception('Aucun identifiant de message envoyé');
+            }
+        }
+
+        // elseif ($_GET['action'] == 'archiveQuote') {
+        //     if (isset($_GET['quoteId']) && $_GET['quoteId'] > 0) {
+
+        //         $quoteController = new QuoteController;
+        //         $quoteController->archiveMessage($_GET['quoteId']);
+        //     } else {
+        //         throw new Exception('Aucun identifiant de message envoyé');
+        //     }
+        // }
+
+
+
+
         //MESSAGES MANAGEMENT
 
         elseif ($_GET['action'] == 'answerMessage') {
@@ -191,9 +236,6 @@ try {
                 throw new Exception('Aucun identifiant de message envoyé');
             }
         }
-
-
-
 
         elseif ($_GET['action'] == 'deleteMessage') {
             if (isset($_GET['messageId']) && $_GET['messageId'] > 0) {
