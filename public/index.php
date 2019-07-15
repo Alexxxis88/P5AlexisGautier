@@ -178,17 +178,22 @@ try {
         }
 
 
-        //MESSAGES
+        //MESSAGES MANAGEMENT
 
         elseif ($_GET['action'] == 'answerMessage') {
             if (isset($_GET['messageId']) && $_GET['messageId'] > 0) {
 
                 $messageController = new MessageController;
-                $messageController->answerMessage($_GET['messageId']);
+                $messageController->saveAnswer($_GET['messageId'], $_POST['answerContent']);
+                $messageController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
+                $messageController->updateAnswerMessageFlag($_GET['messageId']);
             } else {
                 throw new Exception('Aucun identifiant de message envoyé');
             }
         }
+
+
+
 
         elseif ($_GET['action'] == 'deleteMessage') {
             if (isset($_GET['messageId']) && $_GET['messageId'] > 0) {

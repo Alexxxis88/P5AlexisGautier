@@ -14,6 +14,12 @@ class MessageManager extends Manager
     }
 
 
+    public function insertAnswer($messageId, $answerContent)
+    {
+        $answerDb = $this->_db->prepare('INSERT INTO answers( messageId, answerContent, answerDate ) VALUES(?, ?, NOW())');
+        $answerDb->execute(array($messageId, $answerContent));
+    }
+
 
     //gets the Reported comments (where flag >0 and sort them by number of time reported OR by date showing older first if reported the same nb of times)
     public function getNewMessages()

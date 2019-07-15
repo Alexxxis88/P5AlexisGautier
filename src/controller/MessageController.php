@@ -97,13 +97,42 @@ class MessageController
     }
 
 
-    public function answerMessage($messageId)
+    public function updateAnswerMessageFlag($messageId)
     {
         $messageManager = new MessageManager();
         $messageManager->fileAnsweredMessage($messageId);
         header('Location: index.php?action=messagesAdmin');
         exit;
     }
+
+    public function sendAnswer($clientEmail, $answerTopic, $answerContent)
+    {
+        $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($clientEmail) . '';
+        $message = '
+        <html>
+            <body>
+                <p>' .  htmlspecialchars($answerContent) . '</p>
+            </body>
+        </html>
+        ';
+        // Headers Content-type must be defined to send an HTML email
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+
+        // Additional headers
+        $headers[] = 'From: Alexis Gautier <alexisxgautier@gmail.com>';
+        mail($to, $answerTopic, $message, implode("\r\n", $headers));
+
+        header('Location: index.php');
+    }
+
+
+    public function saveAnswer($messageId, $answerContent)
+    {
+        $messageManager = new MessageManager();
+        $messageManager->insertAnswer($messageId, htmlspecialchars($answerContent));
+    }
+
 
     public function deleteAllSelectedComments($arrayCommentsIDs)
     {
