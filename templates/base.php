@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +76,7 @@
 
         <!--display the menu-->
         <div id="preloader"></div>
-        <header class="navbar navbar-inverse navbar-fixed-top " role="banner">
+        <header class="navbar navbar-inverse navbar-fixed-top ">
             <div class="container" id="navContainer">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -90,7 +90,7 @@
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=services">Services</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quote <span class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quote <span class="fa fa-angle-down"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?action=services#pricing">All included packs</a></li>
                                 <li><a href="index.php?action=quote">Custom quote</a></li>

@@ -3,15 +3,12 @@
     $title = 'Alexis Gautier | Web Solutions';
     ob_start();
     ?>
-    <script type="text/javascript">
+    <script>
     jQuery(document).ready(function($){
     'use strict';
         jQuery('body').backstretch([
-            "./public/images/bg/bg4.jpg",
             "./public/images/bg/bg1.jpg",
-            "./public/images/bg/bg5.jpg",
             "./public/images/bg/bg2.jpg",
-            "./public/images/bg/bg6.jpg",
             "./public/images/bg/bg3.jpg"
         ], {duration: 4000, fade: 500, centeredY: true });
 
@@ -26,7 +23,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="carousel-content center ">
-                                    <h2 class="boxed animation animated-item-1 fade-down">I WILL HELP YOU MAKE AN IMPACT</h2>
+                                    <h3 class="boxed animation animated-item-1 fade-down ">I WILL HELP YOU MAKE AN IMPACT</h3>
                                     <p class="boxed animation animated-item-2 fade-up">My expertise will guide you to success. Without Fail</p>
                                     <br>
                                     <a class="btn btn-md animation bounce-in homeBtn" href="#services">I need more info</a>
@@ -47,7 +44,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="center gap fade-down section-heading">
-                            <h2 class="main-title">How can I help you ?</h2>
+                            <h3 class="main-title">How can I help you ?</h3>
                             <hr>
                             <div class="gap"></div>
                             <h4 class="serviceSubtitle">You need a Website | Webstore | Blog ?</h4>
@@ -70,7 +67,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <span class="fas fa-cart-arrow-down fa fa-md"></s>
+                                <span class="fas fa-cart-arrow-down fa fa-md"></span>
                             </div>
                             <div class="media-body fade-up">
                                 <h3 class="media-heading">Webstore</h3>
@@ -81,7 +78,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <span class="fas fa-book-reader fa fa-md"></i>
+                                <span class="fas fa-book-reader fa fa-md"></span>
                             </div>
                             <div class="media-body fade-up">
                                 <h3 class="media-heading">Blog</h3>
@@ -139,7 +136,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="center gap fade-down section-heading">
-                        <h2 class="main-title">My Skills</h2>
+                        <h3 class="main-title">My Skills</h3>
                         <hr>
                         <p>My day to day tools to create everything you can think about</p>
                     </div>
@@ -291,28 +288,28 @@
                         <div class="col-md-3 col-xs-6">
                             <div class="center bounce-in">
                                 <span class="stat-icon"><span class="pe-7s-timer bounce-in"></span></span>
-                                <h1><span class="counter">2460</span></h1>
+                                <h2><span class="counter">2460</span></h2>
                                 <h3>HOURS SAVED</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-xs-6">
                             <div class="center bounce-in">
                                 <span class="stat-icon"><span class="pe-7s-light bounce-in"></span></span>
-                                <h1><span class="counter">675</span></h1>
+                                <h2><span class="counter">675</span></h2>
                                 <h3>FRESH IDEAS</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-xs-6">
                             <div class="center bounce-in">
                                 <span class="stat-icon"><span class="pe-7s-graph1 bounce-in"></span></span>
-                                <h1><span class="counter">100</span> %</h1>
+                                <h2><span class="counter">100</span> %</h2>
                                 <h3>SALES BOOST</h3>
                             </div>
                         </div>
                         <div class="col-md-3 col-xs-6">
                             <div class="center bounce-in">
                                 <span class="stat-icon"><span class="pe-7s-box2 bounce-in"></span></span>
-                                <h1><span class="counter">5</span></h1>
+                                <h2><span class="counter">5</span></h2>
                                 <h3>HAPPY CUSTOMERS</h3>
                             </div>
                         </div>
@@ -326,7 +323,7 @@
                 <div class="container">
                     <div class="gap"></div>
                     <div class="center gap fade-down section-heading">
-                        <h2 class="main-title">Get In Touch</h2>
+                        <h3 class="main-title">Get In Touch</h3>
                         <hr>
                         <p>Any question? I'm here to help!</p>
                     </div>

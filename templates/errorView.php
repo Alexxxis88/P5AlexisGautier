@@ -1,4 +1,4 @@
-<html lang="fr">
+<html lang="en">
     <head>
         <title>Erreur</title>
         <link href="public/css/style.css" rel="stylesheet"/>

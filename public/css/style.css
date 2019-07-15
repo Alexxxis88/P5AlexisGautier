@@ -137,6 +137,7 @@ blockquote {
 /*  Slider
 /*-----------------------------------------------------------------------------------*/
 
+
 #main-slider {
     position: relative;
     z-index: 5;
@@ -156,7 +157,7 @@ blockquote {
     z-index: -1;
 }
 
-#main-slider .carousel h2 {
+#main-slider .carousel h3 {
     font-size: 44px;
     color: #fff;
     text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
@@ -175,7 +176,7 @@ blockquote {
     text-transform: uppercase;
     padding: 10px 15px;
     text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
-    z-index: 10px;
+    /* z-index: 10px; */
 }
 
 #main-slider .carousel .btn:hover {
@@ -748,9 +749,8 @@ ul.tag-cloud li {
     background: #fff;
     content: '';
     opacity: 0;
-    -webkit-transition: opacity .3s 0 .3s;
-    -webkit-transition: opacity .3s transform .3s;
-    transition: opacity .3s transform .3s;
+    -webkit-transition: opacity .3s ;
+    transition: opacity .3s ;
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
     -webkit-transition: all .5s ease-in-out;
@@ -796,9 +796,8 @@ ul.tag-cloud li {
     opacity: 0;
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
-    -webkit-transition: opacity .3s 0 .3s;
-    -webkit-transition: opacity .3s transform .3s;
-    transition: opacity .3s transform .3s;
+    -webkit-transition: opacity .3s ;
+    transition: opacity .3s ;
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
 }
@@ -1281,7 +1280,7 @@ input:read-only{
 
 #urgentProject{
     list-style: none;
-    padding-inline-start: 0;
+    /* padding-inline-start: 0; */
 }
 
 #urgentProject label{
@@ -1482,8 +1481,8 @@ MANAGE QUOTES
     border-radius: 0;
     margin-bottom: 0;
     overflow: hidden;
-    -webkit-transition: background .3s color .3s box-shadow .3s;
-    transition: background .3s color .3s box-shadow .3s;
+    /* -webkit-transition: background .3s color .3s box-shadow .3s;
+    transition: background .3s color .3s box-shadow .3s; */
 }
 
 .team-content {
@@ -2449,6 +2448,7 @@ img.author-box-image {
 }
 
 
+
 /*-----------------------------------------------------------------------------------*/
 
 
@@ -2470,6 +2470,10 @@ img.author-box-image {
     text-transform: uppercase;
 }
 
+.counterItems{
+    font-size: 35px;
+    font-weight: bold;
+}
 
 /*-----------------------------------------------------------------------------------*/
 

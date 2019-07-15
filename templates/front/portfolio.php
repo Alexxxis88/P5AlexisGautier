@@ -2,7 +2,7 @@
 $title = 'Portfolio - Look what I did';
 ob_start();
 ?>
-    <script type="text/javascript">
+    <script>
     jQuery(document).ready(function($){
     'use strict';
         jQuery('body').backstretch([

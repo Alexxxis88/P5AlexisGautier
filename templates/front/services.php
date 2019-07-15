@@ -3,7 +3,7 @@ $title = 'Services - What can I do?';
 ob_start();
 ?>
 
-    <script type="text/javascript">
+    <script>
         jQuery(document).ready(function ($) {
             'use strict';
             jQuery('body').backstretch([
