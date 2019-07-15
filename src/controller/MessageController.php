@@ -36,6 +36,7 @@ class MessageController
         }
     }
 
+
     public function sendMessage($firstName, $lastName, $contactEmail, $topic, $messageContent)
     {
         $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
@@ -58,11 +59,13 @@ class MessageController
     }
 
 
+
     public function saveMessage($firstName, $lastName, $contactEmail, $topic, $messageContent)
     {
         $messageManager = new MessageManager();
         $messageManager->insertNewMessage(htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($topic), htmlspecialchars($messageContent));
     }
+
 
 
     //BACKEND
@@ -74,7 +77,7 @@ class MessageController
         // $nbOfReportedComments = $commentManager->getNbOfReportedComments();
 
         $newMessages = $messageManager->getNewMessages();
-        // $archived = $messageManager->getArchivedMessages();
+        $archivedMessages = $messageManager->getArchivedMessages();
 
         require('templates/admin/messagesAdmin.php');
     }
@@ -87,6 +90,7 @@ class MessageController
         header('Location: index.php?action=messagesAdmin');
         exit;
     }
+
 
     public function archiveMessage($messageId)
     {
@@ -104,6 +108,7 @@ class MessageController
         header('Location: index.php?action=messagesAdmin');
         exit;
     }
+
 
     public function sendAnswer($clientEmail, $answerTopic, $answerContent)
     {
@@ -131,23 +136,6 @@ class MessageController
     {
         $messageManager = new MessageManager();
         $messageManager->insertAnswer($messageId, htmlspecialchars($answerContent));
-    }
-
-
-    public function deleteAllSelectedComments($arrayCommentsIDs)
-    {
-        $messageManager = new MessageManager();
-        $deleteAllSelectedComments = $messageManager->eraseAllSelectedComments($arrayCommentsIDs);
-        header('Location: index.php?action=manageComments');
-        exit;
-    }
-
-    public function approveAllSelectedComments($arrayCommentsIDs)
-    {
-        $messageManager = new MessageManager();
-        $approveAllSelectedComments = $messageManager->acceptAllSelectedComments($arrayCommentsIDs);
-        header('Location: ' . $_SERVER['HTTP_REFERER'] . '&success=6');
-        exit;
     }
 
 }

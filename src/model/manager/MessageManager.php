@@ -21,10 +21,9 @@ class MessageManager extends Manager
     }
 
 
-    //gets the Reported comments (where flag >0 and sort them by number of time reported OR by date showing older first if reported the same nb of times)
     public function getNewMessages()
     {
-        $req = $this->_db->query('SELECT * FROM messages WHERE flag = 0 ORDER BY messageDate');
+        $req = $this->_db->query('SELECT * FROM messages WHERE flag < 2 ORDER BY messageDate');
         while ($datasNewMessages = $req->fetch(\PDO::FETCH_ASSOC)) {
             $newMessage[] = new Message($datasNewMessages);
         }
@@ -33,18 +32,18 @@ class MessageManager extends Manager
         }
     }
 
-    //get new comments (flag value = 9999 by default)
-    public function getNewComments()
-    {
-        $req = $this->_db->query('SELECT id, postId, author, comment, DATE_FORMAT(commentDate, \'%d/%m/%Y à %Hh%imin%ss\') AS modCommentDate, flag FROM comments WHERE flag = 9999 ORDER BY commentDate ');
-        while ($datasNewComments = $req->fetch(\PDO::FETCH_ASSOC)) {
-            $newComments[] = new Comment($datasNewComments);
-        }
 
-        if (!empty($newComments)) { //needed otherwise gives an error on the commentsView.php when no new comments to manage
-            return $newComments;
+    public function getArchivedMessages()
+    {
+        $req = $this->_db->query('SELECT * FROM messages WHERE flag = 2 ORDER BY messageDate');
+        while ($datasArchivedMessages = $req->fetch(\PDO::FETCH_ASSOC)) {
+            $archivedMessage[] = new Message($datasArchivedMessages);
+        }
+        if (!empty($archivedMessage)) { //needed otherwise gives an error on the messagesAdmin.php when no new message
+            return $archivedMessage;
         }
     }
+
 
     public function eraseMessage($messageId)
     {
@@ -52,11 +51,13 @@ class MessageManager extends Manager
         $msgDelete->execute(array($messageId));
     }
 
+
     public function fileArchiveMessage($messageId)
     {
         $msgArchive = $this->_db->prepare('UPDATE messages SET flag = 2 WHERE id = ?');
         $msgArchive->execute(array($messageId));
     }
+
 
     public function fileAnsweredMessage($messageId)
     {
@@ -64,30 +65,7 @@ class MessageManager extends Manager
         $msgAnswered->execute(array($messageId));
     }
 
-
-
-    //must receive an array of ids to delete all the comments at once
-    public function eraseAllSelectedComments($arrayCommentsIDs)
-    {
-        $arrayLength = count($arrayCommentsIDs, COUNT_NORMAL);
-        for ($i = 0; $i < $arrayLength; $i++) {
-            $id = $arrayCommentsIDs[$i];
-            $eraseAllSelectedComments = $this->_db->prepare('DELETE FROM comments WHERE id IN (?)');
-            $eraseAllSelectedComments->execute(array($id));
-        }
-    }
-
-    //accept all the selected reported comments
-    public function acceptAllSelectedComments($arrayCommentsIDs)
-    {
-        $arrayLength = count($arrayCommentsIDs, COUNT_NORMAL);
-        for ($i = 0; $i < $arrayLength; $i++) {
-            $id = $arrayCommentsIDs[$i];
-            $acceptAllSelectedComments = $this->_db->prepare('UPDATE comments SET flag = 0 WHERE id IN (?)');
-            $acceptAllSelectedComments->execute(array($id));
-        }
-    }
-
+    
     //turn messages icon (menuAdmin) in red if messages to manage ( if flag == 0 exists at least once)
     // public function getNbOfReportedComments()
     // {
