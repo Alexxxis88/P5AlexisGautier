@@ -1123,7 +1123,7 @@ MANAGE COMMENTS
     transition: 0.2s;
 }
 
-.answerBtn:hover {
+.answerBtn:hover, .answerBtn:focus, .answerBtn:active {
     color: rgb(15, 202, 15);
 }
 
@@ -1133,7 +1133,7 @@ MANAGE COMMENTS
     transition: 0.2s;
 }
 
-.deleteBtn:hover {
+.deleteBtn:hover, .deleteBtn:focus, .deleteBtn:active {
     color: rgb(255, 130, 28);
 }
 
@@ -1143,7 +1143,7 @@ MANAGE COMMENTS
     transition: 0.2s;
 }
 
-.archiveBtn:hover {
+.archiveBtn:hover, .archiveBtn:focus, .archiveBtn:active {
     color: rgb(28, 81, 255);
 }
 

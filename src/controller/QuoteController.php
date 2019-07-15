@@ -164,11 +164,18 @@ class QuoteController
         exit;
     }
 
-
-    public function archiveQuote($packQuoteId)
+    public function acceptDenyPackQuote($accepted, $packQuoteId)
     {
         $quoteManager = new QuoteManager();
-        $quoteManager->fileArchiveQuote($messageId);
+        $quoteManager->acceptPackQuote($accepted, $packQuoteId);
+        header('Location: index.php?action=packQuotesAdmin');
+        exit;
+    }
+
+    public function updatePackQuoteStatus($quoteStatus, $packQuoteId)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->packQuoteStatus($quoteStatus, $packQuoteId);
         header('Location: index.php?action=packQuotesAdmin');
         exit;
     }

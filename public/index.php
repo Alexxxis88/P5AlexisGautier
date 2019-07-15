@@ -206,19 +206,29 @@ try {
                 $quoteController = new QuoteController;
                 $quoteController->deletePackQuote($_GET['packQuoteId']);
             } else {
-                throw new Exception('Aucun identifiant de message envoyé');
+                throw new Exception('Aucun identifiant de devis envoyé');
             }
         }
 
-        // elseif ($_GET['action'] == 'archiveQuote') {
-        //     if (isset($_GET['quoteId']) && $_GET['quoteId'] > 0) {
+        elseif ($_GET['action'] == 'acceptPackQuote') {
+            if (isset($_GET['packQuoteId']) && $_GET['packQuoteId'] > 0 && isset($_GET['acceptPackQuote'])) {
 
-        //         $quoteController = new QuoteController;
-        //         $quoteController->archiveMessage($_GET['quoteId']);
-        //     } else {
-        //         throw new Exception('Aucun identifiant de message envoyé');
-        //     }
-        // }
+                $quoteController = new QuoteController;
+                $quoteController->acceptDenyPackQuote($_GET['acceptPackQuote'], $_GET['packQuoteId']);
+            } else {
+                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+            }
+        }
+
+        elseif ($_GET['action'] == 'updateQuoteStatus') {
+            if (isset($_GET['packQuoteId']) && $_GET['packQuoteId'] > 0 && isset($_POST['statusPackQuote'])) {
+
+                $quoteController = new QuoteController;
+                $quoteController->updatePackQuoteStatus($_POST['statusPackQuote'], $_GET['packQuoteId']);
+            } else {
+                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+            }
+        }
 
 
 

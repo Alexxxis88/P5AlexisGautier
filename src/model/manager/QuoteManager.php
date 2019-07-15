@@ -33,18 +33,18 @@ class QuoteManager extends Manager
     }
 
 
-    // public function fileArchivePackQuote($packQuoteId)
-    // {
-    //     $packQuoteArchive = $this->_db->prepare('UPDATE packquotes SET quoteStatus = 3 WHERE id = ?');
-    //     $packQuoteArchive->execute(array($packQuoteId));
-    // }
+    public function acceptPackQuote($accepted, $packQuoteId)
+    {
+        $req = $this->_db->prepare('UPDATE packquotes SET accepted = ? WHERE id = ?');
+        $req->execute(array($accepted, $packQuoteId));
+    }
 
+    public function packQuoteStatus($quoteStatus, $packQuoteId)
+    {
+        $req = $this->_db->prepare('UPDATE packquotes SET quoteStatus = ? WHERE id = ?');
+        $req->execute(array($quoteStatus, $packQuoteId));
+    }
 
-    // public function fileAnsweredPackQuote($packQuoteId)
-    // {
-    //     $packQuoteAnswered = $this->_db->prepare('UPDATE packquotes SET answered = 1 WHERE id = ?');
-    //     $packQuoteAnswered->execute(array($packQuoteId));
-    // }
 
 
 

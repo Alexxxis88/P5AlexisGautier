@@ -26,7 +26,6 @@ ob_start();
                     $country = $packQuote[$i]->country();
                     $deadline = $packQuote[$i]->deadline();
                     $messageContent = $packQuote[$i]->messageContent();
-                    $answered = $packQuote[$i]->answered();
                     $quoteStatus = $packQuote[$i]->quoteStatus();
                     $accepted = $packQuote[$i]->accepted();
                     $clientStatus = $packQuote[$i]->clientStatus();
@@ -36,10 +35,6 @@ ob_start();
                     <div <?php if ($quoteStatus == 0) : echo 'class="newPackQuote"'; else : echo 'class="packQuote"'; endif; ?> >
                         <p class="commentHead">Pack Quote n° <strong><?= $packQuoteId ?></strong>
                             <?php
-                            //Answered / Not
-                            if ($answered == 0) : echo '&emsp; - &emsp; <span class="fas fa-envelope" style="color:red"> </span> Not answered'; 
-                            elseif ($answered == 1) : echo '&emsp; - &emsp; <span class="fas fa-envelope-open" style="color:lightgreen"> </span> Answered';
-                            endif;
 
                             //Status
                             if ($quoteStatus == 0) : echo '&emsp; - &emsp; <span class="fas fa-history" style="color:white"> </span> Pending'; 
@@ -93,15 +88,41 @@ ob_start();
                             })
                             </script>
 
+                            
 
-                            <?php if ($answered == 0) : ?>
-                            <a class="answerBtn" data-toggle="modal" data-target="#answerModal<?= $packQuoteId ?>"><span class="far fa-edit editBtns"></span> Answer</a>
-                            <?php endif; ?>
+                            <a class="answerBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Accept</a>
 
-                            <a class="deleteBtn" href="index.php?action=deletePackQuote&amp;packQuoteId=<?= $packQuoteId ?>" onclick="return confirm('Delete this message ?')"><span class="far fa-trash-alt"></span> Delete</a>
+                            <a class="deleteBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=2"  onclick="return confirm('Refuse this project ?')" ><span class="far fa-check-square"></span>  Refuse</a>
 
-                            <a class="archiveBtn" href="index.php?action=archiveMessage&amp;packQuoteId=<?= $packQuoteId ?>"  onclick="return confirm('Archive this message ?')" ><span class="far fa-check-square"></span>  Archive</a>
+
+                            <!--<form id="acceptForm" action="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
+                                    <label for="acceptPackQuote">Accept/Deny :</label>
+                                    <select id="acceptPackQuote" name="acceptPackQuote"
+                                        onchange="submit()">
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                        <option value="0">Pending</option>
+                                        <option value="1">Accept</option>
+                                        <option value="2">Refuse</option>
+                                    </select>
+                                </form>-->
+                                <form id="statusForm" action="index.php?action=updateQuoteStatus&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
+                                    <label for="statusPackQuote">Status :</label>
+                                    <select id="statusPackQuote" name="statusPackQuote"
+                                        onchange="submit()">
+                                        <option disabled hidden value="">&nbsp;</option>
+                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                        <option value="0">Pending</option>
+                                        <option value="1">In process</option>
+                                        <option value="2">Done</option>
+                                        <option value="3">Archived</option>
+                                    </select>
+                                </form>
+
+                                <a class="deleteBtn" href="index.php?action=deletePackQuote&amp;packQuoteId=<?= $packQuoteId ?>" onclick="return confirm('Delete this request ?')"><span class="far fa-trash-alt"></span> Delete this request</a>
                             </div>
+
+                            
                         </div>
                     </div>
 

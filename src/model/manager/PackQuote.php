@@ -22,7 +22,6 @@ class PackQuote
     private $_country ;
     private $_deadline ;
     private $_messageContent ;
-    private $_answered ;
     private $_quoteStatus ;
     private $_accepted ;
     private $_clientStatus ;
@@ -111,10 +110,6 @@ class PackQuote
     public function messageContent()
     {
         return $this->_messageContent;
-    }
-    public function answered()
-    {
-        return $this->_answered;
     }
     public function quoteStatus()
     {
@@ -245,14 +240,6 @@ class PackQuote
     {
         if (is_string($messageContent)) {
             $this->_messageContent = $messageContent;
-        }
-    }
-
-    public function setAnswered($answered)
-    {
-        $answered = (int) $answered;
-        if ($answered >= 0) {
-            $this->_answered = $answered;
         }
     }
 
