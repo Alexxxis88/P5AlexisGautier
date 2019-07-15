@@ -2,7 +2,7 @@
 $title = 'Alexis Gautier - Messages';
 ob_start();
 ?>
-<div class="container noHeaderImg fade-up">
+<div class="container noHeaderImg"> <!-- DO NOT add a fade-up/down/bounce/flip class or modal when answering won't display correctly-->
     <!-- NEW MESSAGES -->
     <section id="sectionNewMessages">
         <div class="row manageComBtns newMessagesBtns">

@@ -2,7 +2,7 @@
 $title = 'Alexis Gautier - Pack Quotes';
 ob_start();
 ?>
-<div class="container noHeaderImg fade-up">
+<div class="container noHeaderImg"> <!-- DO NOT add a fade-up/down/bounce/flip class or modal when answering won't display correctly-->
     <section>
         <h2 class="titleManageCom titleMessages">Pack Quotes</h2>
         <hr>
@@ -92,20 +92,8 @@ ob_start();
 
                             <a class="answerBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Accept</a>
 
-                            <a class="deleteBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=2"  onclick="return confirm('Refuse this project ?')" ><span class="far fa-check-square"></span>  Refuse</a>
+                            <a class="deleteBtn" data-toggle="modal" data-target="#refuseModal<?= $packQuoteId ?>" ><span class="far fa-check-square"></span>  Refuse</a>
 
-
-                            <!--<form id="acceptForm" action="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
-                                    <label for="acceptPackQuote">Accept/Deny :</label>
-                                    <select id="acceptPackQuote" name="acceptPackQuote"
-                                        onchange="submit()">
-                                        <option disabled hidden value="">&nbsp;</option>
-                                        <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                        <option value="0">Pending</option>
-                                        <option value="1">Accept</option>
-                                        <option value="2">Refuse</option>
-                                    </select>
-                                </form>-->
                                 <form id="statusForm" action="index.php?action=updateQuoteStatus&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
                                     <label for="statusPackQuote">Status :</label>
                                     <select id="statusPackQuote" name="statusPackQuote"
@@ -121,23 +109,21 @@ ob_start();
 
                                 <a class="deleteBtn" href="index.php?action=deletePackQuote&amp;packQuoteId=<?= $packQuoteId ?>" onclick="return confirm('Delete this request ?')"><span class="far fa-trash-alt"></span> Delete this request</a>
                             </div>
-
-                            
                         </div>
                     </div>
 
-                    <!-- Answer message -->
-                    <div class="modal fade" id="answerModal<?= $packQuoteId ?>" tabindex="-1" role="dialog" aria-labelledby="answerModalLabel" aria-hidden="true">
+                    <!-- Refuse project -->
+                    <div class="modal fade" id="refuseModal<?= $packQuoteId ?>" tabindex="-1" role="dialog" aria-labelledby="refuseModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h2 class="modal-title" id="answerModalLabel">Answer to <?= $firstName ?> <?= $lastName ?> </h2>
+                                    <h2 class="modal-title" id="refuseModalLabel">Why do I refuse this project? </h2>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="answerForm" action="index.php?action=answerMessage&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
+                                    <form class="answerForm" action="index.php?action=refusePackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=2" method="post">
                                         <div class="form-group">
                                             <label for="myEmail" class="col-form-label">From : </label>
                                             <input type="text" class="form-control" id="myEmail" name="myEmail" value="alexisxgautier@gmail.com" readonly="readonly">
@@ -148,11 +134,11 @@ ob_start();
                                         </div>
                                         <div class="form-group">
                                             <label for="answerTopic" class="col-form-label">Topic</label>
-                                            <input type="text" class="form-control" id="answerTopic" name="answerTopic" value="RE : <?= $topic ?>" readonly="readonly">
+                                            <input type="text" class="form-control" id="answerTopic" name="answerTopic" value="Sorry I won't be able to help you with <?= $project ?>" readonly="readonly">
                                         </div>
                                         <div class="form-group">
                                             <label for="answerContent" class="col-form-label">My answer</label>
-                                            <textarea class="form-control" rows="10" id="answerContent" name="answerContent" required></textarea>
+                                            <textarea class="form-control" rows="10" id="answerContent" name="answerContent" required>Hello <?= $firstName ?> <?= $lastName ?>. I'm sorry to inform you I will not be able to help you with your project because</textarea>
                                         </div>
                                         <input type="submit" class="btn btn-primary"  value="Answer"/>
                                     </form>

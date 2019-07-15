@@ -133,7 +133,7 @@ class MessageController
         $headers[] = 'From: Alexis Gautier <alexisxgautier@gmail.com>';
         mail($to, $answerTopic, $message, implode("\r\n", $headers));
 
-        header('Location: index.php');
+        // header('Location: index.php'); FIXME needs to be removed to be able to run through updateAnswerMessageFlag after  sendAnswer in routeur "answerMessage" ?????
     }
 
 

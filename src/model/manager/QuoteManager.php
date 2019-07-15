@@ -49,7 +49,7 @@ class QuoteManager extends Manager
 
 
 
-    //turn quotes icon (menuAdmin) in red if quotes to manage ( if flag == 0 exists at least once)
+    //turn quotes icon (menuAdmin) in red if quotes to manage
     public function isThereNewPackQuote()
     {
         $req = $this->_db->query('SELECT quoteStatus FROM packquotes WHERE quoteStatus = 0');
