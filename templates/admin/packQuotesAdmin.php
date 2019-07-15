@@ -37,10 +37,10 @@ ob_start();
                             <?php
 
                             //Status
-                            if ($quoteStatus == 0) : echo '&emsp; - &emsp; <span class="fas fa-history" style="color:white"> </span> Pending'; 
-                            elseif ($quoteStatus == 1) : echo '&emsp; - &emsp; <span class="fas fa-play" style="color:lightblue"> </span> In progress';
-                            elseif ($quoteStatus == 2) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Done';
-                            elseif ($quoteStatus == 3) : echo '&emsp; - &emsp; <span class="far fa-folder-open" style="color:yellow"> </span> Archived';
+                            if ($quoteStatus == 0 && $accepted < 2) : echo '&emsp; - &emsp; <span class="fas fa-history" style="color:white"> </span> Pending';
+                            elseif ($quoteStatus == 1 && $accepted < 2) : echo '&emsp; - &emsp; <span class="fas fa-play" style="color:lightblue"> </span> In progress';
+                            elseif ($quoteStatus == 2 && $accepted < 2) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Done';
+                            elseif ($quoteStatus == 3 && $accepted < 2) : echo '&emsp; - &emsp; <span class="far fa-folder-open" style="color:yellow"> </span> Archived';
                             endif;
 
                             //Accepted / Refused
@@ -94,6 +94,8 @@ ob_start();
 
                             <a class="deleteBtn" data-toggle="modal" data-target="#refuseModal<?= $packQuoteId ?>" ><span class="far fa-check-square"></span>  Refuse</a>
 
+                            <?php
+                            if ( $accepted < 2) :?>
                                 <form id="statusForm" action="index.php?action=updateQuoteStatus&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
                                     <label for="statusPackQuote">Status :</label>
                                     <select id="statusPackQuote" name="statusPackQuote"
@@ -106,7 +108,10 @@ ob_start();
                                         <option value="3">Archived</option>
                                     </select>
                                 </form>
-
+                            <?php
+                            ;
+                            endif;
+                            ?>
                                 <a class="deleteBtn" href="index.php?action=deletePackQuote&amp;packQuoteId=<?= $packQuoteId ?>" onclick="return confirm('Delete this request ?')"><span class="far fa-trash-alt"></span> Delete this request</a>
                             </div>
                         </div>
