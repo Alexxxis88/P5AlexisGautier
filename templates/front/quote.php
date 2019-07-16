@@ -40,12 +40,12 @@ ob_start();
                                     <!-- I need de empty option line to respect W3C rules + i need the &nbsp; not to have an empty option without label (W3C error) and i need the Please Choose.. line with value at 0 for my total function to work fine -->
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="Showcase">Showcase Website</option>
+                                    <option value="Showcase Website">Showcase Website</option>
                                     <option value="Webstore">Webstore</option>
-                                    <option value="Showcase + Webstore">Showcase Website + Webstore</option>
-                                    <option value="Redesign - Showcase">Redesign (Showcase Website)</option>
+                                    <option value="Showcase Website + Webstore">Showcase Website + Webstore</option>
+                                    <option value="Redesign - Showcase Website">Redesign (Showcase Website)</option>
                                     <option value="Redesign - Webstore">Redesign (Webstore)</option>
-                                    <option value="Redesign - Showcase + Webstore">Redesign (Showcase Website + Webstore)</option>
+                                    <option value="Redesign - Showcase Website + Webstore">Redesign (Showcase Website + Webstore)</option>
                                 </select>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <div class="btn-group ">
                                     <p class="checkboxLabel">I want my website to be written in*</p><br>
-                                    <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
@@ -220,7 +220,7 @@ ob_start();
                             <div class="form-group col-md-6" id="extensionBlock">
                                 <div class="btn-group">
                                     <p class="checkboxLabel">Extensions</p><br>
-                                    <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
@@ -266,7 +266,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <div class="btn-group">
                                     <p class="checkboxLabel">Optional features</p><br>
-                                    <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
@@ -405,7 +405,7 @@ ob_start();
                                 <div class="btn-group">
                                     <p class="checkboxLabel">Payment methods (Showcase Website)</p><br>
                                     <!-- add required only if whole section AND yes on the previous select displayed -->
-                                    <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
@@ -483,7 +483,7 @@ ob_start();
                                 <div class="btn-group ">
                                     <p class="checkboxLabel">Payment methods (Webstore)*</p><br>
                                     <!-- add required only if whole section displayed -->
-                                    <button data-toggle="dropdown" class="btn dropdown-toggle"
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
@@ -912,22 +912,22 @@ ob_start();
     function getSelectValue() {
         let siteType = document.getElementById("siteType").value;
         switch (siteType) {
-        case 'Showcase':
+        case 'Showcase Website':
             siteType = 500;
             break;
         case 'Webstore':
             siteType = 800;
             break;
-        case 'Showcase + Webstore':
+        case 'Showcase Website + Webstore':
             siteType = 1000;
             break;
-        case 'Redesign - Showcase':
+        case 'Redesign - Showcase Website':
             siteType = 300;
             break;
         case 'Redesign - Webstore':
             siteType = 300;
             break;
-        case 'Redesign - Showcase + Webstore':
+        case 'Redesign - Showcase Website + Webstore':
             siteType = 300;
             break;
         default:
@@ -1218,7 +1218,7 @@ ob_start();
         $("#productNb option:selected").prop("selected", false);
 
         //reset dropdown option menu placeholder
-        $(".dropdown-toggle").html("Please select <span class='caret'></span>")
+        $(".menuPlaceholder").html("Please select <span class='caret'></span>")
         
         //hide elements
         document.getElementById("extensionBlock").style.display = "none";
@@ -1231,22 +1231,22 @@ ob_start();
 
         let siteType = document.getElementById("siteType").value;
         switch (siteType) {
-        case 'Showcase':
+        case 'Showcase Website':
             siteType = 500;
             break;
         case 'Webstore':
             siteType = 800;
             break;
-        case 'Showcase + Webstore':
+        case 'Showcase Website + Webstore':
             siteType = 1000;
             break;
-        case 'Redesign - Showcase':
+        case 'Redesign - Showcase Website':
             siteType = 300;
             break;
         case 'Redesign - Webstore':
             siteType = 300;
             break;
-        case 'Redesign - Showcase + Webstore':
+        case 'Redesign - Showcase Website + Webstore':
             siteType = 300;
             break;
         default:

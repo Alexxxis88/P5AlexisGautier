@@ -15,12 +15,13 @@ class QuoteController
         $quoteManager = new QuoteManager();
         $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent));
 
-        header('Location: index.php?action=services#pricing');
+        // header('Location: index.php?action=services#pricing'); FIXME: ne pas le mettre sinon ça risque de bloquer sendpackQuotes ? pourtant ça fonctionnait en le laissant
 
     }
 
     public function sendPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
+        date_default_timezone_set("Europe/Paris");
         $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
         $topic = 'Quote resquest for a ' . htmlspecialchars($packName);
         $message = '
@@ -40,7 +41,7 @@ class QuoteController
                 <p>Deadline : <strong>' . htmlspecialchars($deadline) . '</strong></p>
                 <p>Project description : ' . htmlspecialchars($messageContent) . ' </p>
                 <p>Total Price :<strong>' . htmlspecialchars($price) . ' €</strong></p>
-                <p>Quote request made by email on ' . date("Y-m-d") . ' at ' . date("h:i:sa") . ' </p>
+                <p>Quote request made by email on ' . date("d-m-Y") . ' at ' . date("G:i") . ' </p>
             </body>
         </html>
         ';
@@ -186,7 +187,7 @@ class QuoteController
     //CUSTOM QUOTES
     public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
-        //Need to implode arrays to ssave them in DB
+        //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ? 
         $languages = implode(", ",array_values($languages));
         $extensions = implode(", ",array_values($extensions));
         $paymentMtdShowcase = implode(", ",array_values($paymentMtdShowcase));
@@ -200,12 +201,82 @@ class QuoteController
 
     }
 
+    public function sendCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
+    {
+
+        //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ? 
+        $languages = implode(", ",array_values($languages));
+        $extensions = implode(", ",array_values($extensions));
+        $paymentMtdShowcase = implode(", ",array_values($paymentMtdShowcase));
+        $options = implode(", ",array_values($options));
+        $paymentMtdStore = implode(", ",array_values($paymentMtdStore));
+
+
+        date_default_timezone_set("Europe/Paris");
+        $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
+        $topic = 'Quote resquest for a ' . htmlspecialchars($siteType);
+        $message = '
+        <html>
+            <body>
+                <h2>Quote resquest for a <strong>' . htmlspecialchars($siteType) . '</strong></h2>
+                <h3>About you</h3>
+                <p>Project name : <strong>' . htmlspecialchars($project) . '</strong></p>
+                <p>Structure : <strong>' . htmlspecialchars($structure) . '</strong></p>
+                <p>Compagny : <strong>' . htmlspecialchars($company) . '</strong></p>
+                <p>Full name : <strong>' . htmlspecialchars($firstName) . ' ' . htmlspecialchars($lastName) . '</strong></p>
+                <p>Email address : <strong>' . htmlspecialchars($contactEmail) . '</strong></p>
+                <p>Phone number : <strong>' . htmlspecialchars($phone) . '</strong></p>
+                <p>Address : <strong>' . htmlspecialchars($postalAddress) . '</strong></p>
+                <p>Post Code : <strong>' . htmlspecialchars($postCode) . '</strong></p>
+                <p>City : <strong>' . htmlspecialchars($city) . '</strong></p>
+                <p>Country : <strong>' . htmlspecialchars($country) . '</strong></p>
+                <p>Deadline : <strong>' . htmlspecialchars($deadlineSelect) . '</strong></p>
+                <p>Specific date : <strong>' . htmlspecialchars($deadline) . '</strong></p>
+
+                <h3>Showcase Website</h3>
+                <p>Number of pages : <strong>' . htmlspecialchars($pageNb) . '</strong></p>
+                <p>My users need to log in : <strong>' . htmlspecialchars($loginShowcaseYN) . '</strong></p>
+                <p>Payment options needed : <strong>' . htmlspecialchars($paymentShowcaseYN) . '</strong></p>
+                <p>Payment options : <strong>' . htmlspecialchars($paymentMtdShowcase) . '</strong></p>
+
+                <h3>Webstore</h3>
+                <p>Number of products for sale : <strong>' . htmlspecialchars($productNb) . '</strong></p>
+                <p>Payment options : <strong>' . htmlspecialchars($paymentMtdStore) . '</strong></p>
+
+                <h3>General information</h3>
+                <p>Languages : <strong>' . htmlspecialchars($languages) . '</strong></p>
+                <p>Design : <strong>' . htmlspecialchars($design) . '</strong></p>
+                <p>Writing content needed : <strong>' . htmlspecialchars($writingContent) . '</strong></p>
+                <p>Visual content needed : <strong>' . htmlspecialchars($visualContent) . '</strong></p>
+                <p>Maintenance / Updates : <strong>' . htmlspecialchars($maintenance) . '</strong></p>
+                <p>Host service needed : <strong>' . htmlspecialchars($host) . '</strong></p>
+                <p>Domain name needed : <strong>' . htmlspecialchars($domainYN) . '</strong></p>
+                <p>Extensions : <strong>' . htmlspecialchars($extensions) . '</strong></p>
+                <p>Options : <strong>' . htmlspecialchars($options) . '</strong></p>
+
+                <p>Project description : ' . htmlspecialchars($messageContent) . ' </p>
+                <p>Total Price :<strong>' . htmlspecialchars($price) . ' €</strong></p>
+                <p>Quote request made by email on ' . date("d-m-Y") . ' at ' . date("G:i") . ' </p>
+            </body>
+        </html>
+        ';
+        // Headers Content-type must be defined to send an HTML email
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+
+        // Additional headers
+        $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
+        mail($to, $topic, $message, implode("\r\n", $headers));
+
+        header('Location: index.php');
+    }
+
 
     public function checkCustomQuoteFields($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
         $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
         //testing if siteType is correct
-        if ($_POST['siteType'] == "Showcase" OR $_POST['siteType'] == "Webstore" OR $_POST['siteType'] == "Website + Webstore" OR $_POST['siteType'] == "Redesign - Showcase" OR $_POST['siteType'] == "Redesign - Webstore" OR $_POST['siteType'] == "Redesign - Showcase + Webstore" ) {
+        if ($_POST['siteType'] == "Showcase Website" OR $_POST['siteType'] == "Webstore" OR $_POST['siteType'] == "Showcase Website + Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website" OR $_POST['siteType'] == "Redesign - Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website + Webstore" ) {
 
             //testing if price is correct (value = minimum price with all minimum options selected = Redesign showcase w/ min options)
             if ($_POST['price'] > 400 ) {

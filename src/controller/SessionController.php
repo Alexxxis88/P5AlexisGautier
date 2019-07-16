@@ -40,7 +40,7 @@ class SessionController
                     setcookie('hash_pass', password_hash($_POST['pass'], PASSWORD_DEFAULT), time() + 365*24*3600, null, null, false, true);
                 }
 
-                header('Location: index.php?action=dashboard');
+                header('Location: index.php?action=packQuotesAdmin');
                 exit;
             } else {
                 throw new \Exception('Vérifiez vos identifiants de connexion');
