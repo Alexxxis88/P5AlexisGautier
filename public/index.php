@@ -262,6 +262,10 @@ try {
                         $_POST['productNb'] = 0;
                     }
 
+                    // if(empty($_POST['language[]'])){
+                    //     $_POST['language[]'] = 0;
+                    // }
+
 
                     $quoteController->saveCustomQuote($_POST['siteType'],$_POST['price'],
                     // $_POST['LANGAGE'],
@@ -273,7 +277,7 @@ try {
                     // $_POST['PAYMENTMETHSHOW'],
                     $_POST['deadline'], $_POST['messageContent'],
                     // $_POST['PAYMENTMETHSTORE'],
-                    $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb']
+                    $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language']
                     );
 
 

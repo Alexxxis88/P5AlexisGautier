@@ -183,10 +183,14 @@ class QuoteController
 
 
     //CUSTOM QUOTES
-    public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb)
+    public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages)
     {
+
+        $languages = implode(", ",array_values($languages));
+        
+
         $quoteManager = new QuoteManager();
-        $quoteManager->insertNewCustomQuote(htmlspecialchars($siteType), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent), htmlspecialchars($design), htmlspecialchars($writingContent), htmlspecialchars($visualContent), htmlspecialchars($maintenance), htmlspecialchars($host), htmlspecialchars($domainYN), htmlspecialchars($deadlineSelect), htmlspecialchars($pageNb), htmlspecialchars($loginShowcaseYN), htmlspecialchars($paymentShowcaseYN), htmlspecialchars($productNb));
+        $quoteManager->insertNewCustomQuote(htmlspecialchars($siteType), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent), htmlspecialchars($design), htmlspecialchars($writingContent), htmlspecialchars($visualContent), htmlspecialchars($maintenance), htmlspecialchars($host), htmlspecialchars($domainYN), htmlspecialchars($deadlineSelect), htmlspecialchars($pageNb), htmlspecialchars($loginShowcaseYN), htmlspecialchars($paymentShowcaseYN), htmlspecialchars($productNb), htmlspecialchars($languages));
 
         // header('Location: index.php?action=quote');
 

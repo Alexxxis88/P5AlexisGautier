@@ -57,61 +57,61 @@ ob_start();
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
-                                        <li><input type="checkbox" id="french" name="french" class="checkBoxValue"
-                                                value="0"><label for="french">French</label></li>
-                                        <li><input type="checkbox" id="english" name="english" class="checkBoxValue"
-                                                value="50"><label for="english">English</label></li>
-                                        <li><input type="checkbox" id="bulgarian" name="bulgarian"
-                                                class="checkBoxValue" value="100"><label
+                                        <li><input type="checkbox" id="french" name="language[]" class="checkBoxValue"
+                                                value="french"><label for="french">French</label></li>
+                                        <li><input type="checkbox" id="english" name="language[]" class="checkBoxValue"
+                                                value="english"><label for="english">English</label></li>
+                                        <li><input type="checkbox" id="bulgarian" name="language[]"
+                                                class="checkBoxValue" value="bulgarian"><label
                                                 for="bulgarian">Bulgarian</label></li>
-                                        <li><input type="checkbox" id="croatian" name="croatian"
-                                                class="checkBoxValue" value="100"><label
+                                        <li><input type="checkbox" id="croatian" name="language[]"
+                                                class="checkBoxValue" value="croatian"><label
                                                 for="croatian">Croatian</label></li>
-                                        <li><input type="checkbox" id="czech" name="czech" class="checkBoxValue"
-                                                value="100"><label for="czech">Czech</label></li>
-                                        <li><input type="checkbox" id="danish" name="danish" class="checkBoxValue"
-                                                value="100"><label for="danish">Danish</label></li>
-                                        <li><input type="checkbox" id="dutch" name="dutch" class="checkBoxValue"
-                                                value="100"><label for="dutch">Dutch</label></li>
-                                        <li><input type="checkbox" id="estonian" name="estonian"
-                                                class="checkBoxValue" value="100"><label
+                                        <li><input type="checkbox" id="czech" name="language[]" class="checkBoxValue"
+                                                value="czech"><label for="czech">Czech</label></li>
+                                        <li><input type="checkbox" id="danish" name="language[]" class="checkBoxValue"
+                                                value="danish"><label for="danish">Danish</label></li>
+                                        <li><input type="checkbox" id="dutch" name="language[]" class="checkBoxValue"
+                                                value="dutch"><label for="dutch">Dutch</label></li>
+                                        <li><input type="checkbox" id="estonian" name="language[]"
+                                                class="checkBoxValue" value="estonian"><label
                                                 for="estonian">Estonian</label></li>
-                                        <li><input type="checkbox" id="finnish" name="finnish" class="checkBoxValue"
-                                                value="100"><label for="finnish">Finnish</label></li>
-                                        <li><input type="checkbox" id="german" name="german" class="checkBoxValue"
-                                                value="100"><label for="german">German</label></li>
-                                        <li><input type="checkbox" id="greek" name="greek" class="checkBoxValue"
-                                                value="100"><label for="greek">Greek</label></li>
-                                        <li><input type="checkbox" id="hungarian" name="hungarian"
-                                                class="checkBoxValue" value="100"><label
+                                        <li><input type="checkbox" id="finnish" name="language[]" class="checkBoxValue"
+                                                value="finnish"><label for="finnish">Finnish</label></li>
+                                        <li><input type="checkbox" id="german" name="language[]" class="checkBoxValue"
+                                                value="german"><label for="german">German</label></li>
+                                        <li><input type="checkbox" id="greek" name="language[]" class="checkBoxValue"
+                                                value="greek"><label for="greek">Greek</label></li>
+                                        <li><input type="checkbox" id="hungarian" name="language[]"
+                                                class="checkBoxValue" value="hungarian"><label
                                                 for="hungarian">Hungarian</label></li>
-                                        <li><input type="checkbox" id="italian" name="italian" class="checkBoxValue"
-                                                value="100"><label for="italian">Italian</label></li>
-                                        <li><input type="checkbox" id="latvian" name="latvian" class="checkBoxValue"
-                                                value="100"><label for="latvian">Latvian</label></li>
-                                        <li><input type="checkbox" id="lithuanian" name="lithuanian"
-                                                class="checkBoxValue" value="100"><label
+                                        <li><input type="checkbox" id="italian" name="language[]" class="checkBoxValue"
+                                                value="italian"><label for="italian">Italian</label></li>
+                                        <li><input type="checkbox" id="latvian" name="language[]" class="checkBoxValue"
+                                                value="latvian"><label for="latvian">Latvian</label></li>
+                                        <li><input type="checkbox" id="lithuanian" name="language[]"
+                                                class="checkBoxValue" value="lithuanian"><label
                                                 for="lithuanian">Lithuanian</label></li>
-                                        <li><input type="checkbox" id="norwegian" name="norwegian"
-                                                class="checkBoxValue" value="100"><label
+                                        <li><input type="checkbox" id="norwegian" name="language[]"
+                                                class="checkBoxValue" value="norwegian"><label
                                                 for="norwegian">Norwegian</label></li>
-                                        <li><input type="checkbox" id="portuguese" name="portuguese"
-                                                class="checkBoxValue" value="100"><label
+                                        <li><input type="checkbox" id="portuguese" name="language[]"
+                                                class="checkBoxValue" value="portuguese"><label
                                                 for="portuguese">Portuguese</label></li>
-                                        <li><input type="checkbox" id="russian" name="russian" class="checkBoxValue"
-                                                value="100"><label for="russian">Russian</label></li>
-                                        <li><input type="checkbox" id="serbian" name="serbian" class="checkBoxValue"
-                                                value="100"><label for="serbian">Serbian</label></li>
-                                        <li><input type="checkbox" id="slovak" name="slovak" class="checkBoxValue"
-                                                value="100"><label for="slovak">Slovak</label></li>
-                                        <li><input type="checkbox" id="slovene" name="slovene" class="checkBoxValue"
-                                                value="100"><label for="slovene">Slovene</label></li>
-                                        <li><input type="checkbox" id="spanish" name="spanish" class="checkBoxValue"
-                                                value="100"><label for="spanish">Spanish</label></li>
-                                        <li><input type="checkbox" id="swedish" name="swedish" class="checkBoxValue"
-                                                value="100"><label for="swedish">Swedish</label></li>
-                                        <li><input type="checkbox" id="swissGerman" name="swissGerman"
-                                                class="checkBoxValue" value="100"><label for="swissGerman">Swiss
+                                        <li><input type="checkbox" id="russian" name="language[]" class="checkBoxValue"
+                                                value="russian"><label for="russian">Russian</label></li>
+                                        <li><input type="checkbox" id="serbian" name="language[]" class="checkBoxValue"
+                                                value="serbian"><label for="serbian">Serbian</label></li>
+                                        <li><input type="checkbox" id="slovak" name="language[]" class="checkBoxValue"
+                                                value="slovak"><label for="slovak">Slovak</label></li>
+                                        <li><input type="checkbox" id="slovene" name="language[]" class="checkBoxValue"
+                                                value="slovene"><label for="slovene">Slovene</label></li>
+                                        <li><input type="checkbox" id="spanish" name="language[]" class="checkBoxValue"
+                                                value="spanish"><label for="spanish">Spanish</label></li>
+                                        <li><input type="checkbox" id="swedish" name="language[]" class="checkBoxValue"
+                                                value="swedish"><label for="swedish">Swedish</label></li>
+                                        <li><input type="checkbox" id="swissGerman" name="language[]"
+                                                class="checkBoxValue" value="swissGerman"><label for="swissGerman">Swiss
                                                 German</label></li>
                                     </ul>
                                 </div>
@@ -1060,15 +1060,45 @@ ob_start();
             pageNb + loginShowcaseYN + productNb);
     };
 
+
+    //Checkbox values need to be redefine for JS only to display correct price : it has to be .text() and not .val() otherwise the value taken by PHP / MYSQL will be the wrong one
+        //Languages
+        $('#french').text('0');
+        $('#english').text('50');
+        $('#bulgarian').text('100');
+        $('#croatian').text('100');
+        $('#czech').text('100');
+        $('#danish').text('100');
+        $('#dutch').text('100');
+        $('#estonian').text('100');
+        $('#finnish').text('100');
+        $('#german').text('100');
+        $('#greek').text('100');
+        $('#hungarian').text('100');
+        $('#italian').text('100');
+        $('#latvian').text('100');
+        $('#lithuanian').text('100');
+        $('#norwegian').text('100');
+        $('#portuguese').text('100');
+        $('#russian').text('100');
+        $('#serbian').text('100');
+        $('#slovak').text('100');
+        $('#slovene').text('100');
+        $('#spanish').text('100');
+        $('#swedish').text('100');
+        $('#swissGerman').text('100');
+
+
+
     //get the total of all CHECKBOXES inputs
     $(".checkBoxValue").change(function () {
-        let languages = [];
+        let checkboxes = [];
         $("input:checkbox:checked").each(function () {
-            languages.push($(this).val());
+            checkboxes.push($(this).text());
         });
         totalCheckboxe = 0;
-        for (i = 0; i < languages.length; i++) {
-            totalCheckboxe = Number(totalCheckboxe += parseInt(languages[i]));
+        for (i = 0; i < checkboxes.length; i++) {
+            totalCheckboxe = Number(totalCheckboxe += parseInt(checkboxes[i]));
         }
     });
 
