@@ -246,38 +246,39 @@ try {
                         $_POST['deadline'] = '2999-01-01';
                     }
 
+                    if(empty($_POST['extensions'])){
+                        $_POST['extensions'] = [];
+                    }
+
+                    if(empty($_POST['options'])){
+                        $_POST['options'] = [];
+                    }
+
                     if(empty($_POST['pageNb'])){
-                        $_POST['pageNb'] = 0;
+                        $_POST['pageNb'] = "";
                     }
 
                     if(empty($_POST['loginShowcaseYN'])){
-                        $_POST['loginShowcaseYN'] = 0;
+                        $_POST['loginShowcaseYN'] = "";
                     }
 
                     if(empty($_POST['paymentShowcaseYN'])){
-                        $_POST['paymentShowcaseYN'] = 0;
+                        $_POST['paymentShowcaseYN'] = "";
+                    }
+
+                    if(empty($_POST['paymentMtdShowcase'])){
+                        $_POST['paymentMtdShowcase'] = [];
+                    }
+
+                    if(empty($_POST['paymentMtdStore'])){
+                        $_POST['paymentMtdStore'] = [];
                     }
 
                     if(empty($_POST['productNb'])){
-                        $_POST['productNb'] = 0;
+                        $_POST['productNb'] = "";
                     }
 
-                    // if(empty($_POST['language[]'])){
-                    //     $_POST['language[]'] = 0;
-                    // }
-
-
-                    $quoteController->saveCustomQuote($_POST['siteType'],$_POST['price'],
-                    // $_POST['LANGAGE'],
-                    $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'],
-                    // $_POST['EXTENTION'],
-                    $_POST['phone'], $_POST['postalAddress'],
-                    // $_POST['OPTIONS'],
-                    $_POST['postCode'], $_POST['city'], $_POST['country'],
-                    // $_POST['PAYMENTMETHSHOW'],
-                    $_POST['deadline'], $_POST['messageContent'],
-                    // $_POST['PAYMENTMETHSTORE'],
-                    $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language']
+                    $quoteController->saveCustomQuote($_POST['siteType'], $_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']
                     );
 
 

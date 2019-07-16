@@ -201,19 +201,19 @@ ob_start();
                             </div>
                             <div class="form-group col-md-6" id="extensionBlock">
                                 <div class="btn-group">
-                                    <p class="checkboxLabel">Extentions</p><br>
+                                    <p class="checkboxLabel">Extensions</p><br>
                                     <button data-toggle="dropdown" class="btn dropdown-toggle"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
-                                        <li><input type="checkbox" id="dotCom" name="dotCom" class="checkBoxValue"
-                                                value="20"><label for="dotCom">.com</label></li>
-                                        <li><input type="checkbox" id="dotFr" name="dotFr" class="checkBoxValue"
-                                                value="10"><label for="dotFr">.fr</label></li>
-                                        <li><input type="checkbox" id="dotUk" name="dotUk" class="checkBoxValue"
-                                                value="10"><label for="dotUk">.uk</label></li>
-                                        <li><input type="checkbox" id="dotDe" name="dotDe" class="checkBoxValue"
-                                                value="10"><label for="dotDe">.de</label></li>
+                                        <li><input type="checkbox" id="dotCom" name="extensions[]" class="checkBoxValue"
+                                                value="com"><label for="dotCom">.com</label></li>
+                                        <li><input type="checkbox" id="dotFr" name="extensions[]" class="checkBoxValue"
+                                                value="fr"><label for="dotFr">.fr</label></li>
+                                        <li><input type="checkbox" id="dotUk" name="extensions[]" class="checkBoxValue"
+                                                value="uk"><label for="dotUk">.uk</label></li>
+                                        <li><input type="checkbox" id="dotDe" name="extensions[]" class="checkBoxValue"
+                                                value="de"><label for="dotDe">.de</label></li>
                                     </ul><br><br>
                                     <small>Check the full list of available extensions <a
                                             href="https://iwantmyname.com/domains"><strong>here</strong></a></small>
@@ -249,47 +249,47 @@ ob_start();
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
-                                        <li><input type="checkbox" id="blogOpt" name="blogOpt" class="checkBoxValue"
-                                                value="200"><label for="blogOpt">Blog</label></li>
-                                        <li><input type="checkbox" id="chatOpt" name="chatOpt" class="checkBoxValue"
-                                                value="150"><label for="chatOpt">Chat Box</label></li>
-                                        <li><input type="checkbox" id="contactFormOpt" name="contactFormOpt"
-                                                class="checkBoxValue" value="150"><label
+                                        <li><input type="checkbox" id="blogOpt" name="options[]" class="checkBoxValue"
+                                                value="blog"><label for="blogOpt">Blog</label></li>
+                                        <li><input type="checkbox" id="chatOpt" name="options[]" class="checkBoxValue"
+                                                value="chat"><label for="chatOpt">Chat Box</label></li>
+                                        <li><input type="checkbox" id="contactFormOpt" name="options[]"
+                                                class="checkBoxValue" value="contact form"><label
                                                 for="contactFormOpt">Contact Form</label></li>
-                                        <li><input type="checkbox" id="newsletterOpt" name="newsletterOpt"
-                                                class="checkBoxValue" value="70"><label
+                                        <li><input type="checkbox" id="newsletterOpt" name="options[]"
+                                                class="checkBoxValue" value="newsletter"><label
                                                 for="newsletterOpt">Newsletter</label></li>
-                                        <li><input type="checkbox" id="appointOpt" name="appointOpt"
-                                                class="checkBoxValue" value="150"><label
+                                        <li><input type="checkbox" id="appointOpt" name="options[]"
+                                                class="checkBoxValue" value="appointment plugin"><label
                                                 for="appointOpt">Appointment plugin</label></li>
-                                        <li><input type="checkbox" id="searchOpt" name="searchOpt"
-                                                class="checkBoxValue" value="150"><label for="searchOpt">Search
+                                        <li><input type="checkbox" id="searchOpt" name="options[]"
+                                                class="checkBoxValue" value="search plugin"><label for="searchOpt">Search
                                                 engine</label></li>
-                                        <li><input type="checkbox" id="quoteOpt" name="quoteOpt"
-                                                class="checkBoxValue" value="150"><label for="quoteOpt">Automatic
+                                        <li><input type="checkbox" id="quoteOpt" name="options[]"
+                                                class="checkBoxValue" value="autoQuote plugin"><label for="quoteOpt">Automatic
                                                 quote plugin</label></li>
-                                        <li><input type="checkbox" id="invoiceOpt" name="invoiceOpt"
-                                                class="checkBoxValue" value="150"><label for="invoiceOpt">Invoice
+                                        <li><input type="checkbox" id="invoiceOpt" name="options[]"
+                                                class="checkBoxValue" value="invoice plugin"><label for="invoiceOpt">Invoice
                                                 plugin</label></li>
-                                        <li><input type="checkbox" id="socialOpt" name="socialOpt"
-                                                class="checkBoxValue" value="150"><label for="socialOpt">Social
+                                        <li><input type="checkbox" id="socialOpt" name="options[]"
+                                                class="checkBoxValue" value="social Network"><label for="socialOpt">Social
                                                 Networks plugin</label></li>
-                                        <li><input type="checkbox" id="statsOpt" name="statsOpt"
-                                                class="checkBoxValue" value="150"><label
+                                        <li><input type="checkbox" id="statsOpt" name="options[]"
+                                                class="checkBoxValue" value="stats plugin"><label
                                                 for="statsOpt">Statistics</label></li>
-                                        <li><input type="checkbox" id="calendarOpt" name="calendarOpt"
-                                                class="checkBoxValue" value="150"><label
+                                        <li><input type="checkbox" id="calendarOpt" name="options[]"
+                                                class="checkBoxValue" value="calendar"><label
                                                 for="calendarOpt">Calendar</label></li>
-                                        <li><input type="checkbox" id="newOpt" name="newOpt" class="checkBoxValue"
-                                                value="150"><label for="newOpt">News plugin</label></li>
-                                        <li><input type="checkbox" id="adminPannelOpt" name="adminPannelOpt"
-                                                class="checkBoxValue" value="150"><label
+                                        <li><input type="checkbox" id="newsOpt" name="options[]" class="checkBoxValue"
+                                                value="news plugin"><label for="newsOpt">News plugin</label></li>
+                                        <li><input type="checkbox" id="adminPannelOpt" name="options[]"
+                                                class="checkBoxValue" value="admin pannel"><label
                                                 for="adminPannelOpt">Administration pannel</label></li>
-                                        <li><input type="checkbox" id="ratingsOpt" name="ratingsOpt"
-                                                class="checkBoxValue" value="150"><label for="ratingsOpt">Customer
+                                        <li><input type="checkbox" id="ratingsOpt" name="options[]"
+                                                class="checkBoxValue" value="customer ratings"><label for="ratingsOpt">Customer
                                                 ratings</label></li>
-                                        <li><input type="checkbox" id="surveyOpt" name="surveyOpt"
-                                                class="checkBoxValue" value="150"><label for="surveyOpt">Survey
+                                        <li><input type="checkbox" id="surveyOpt" name="options[]"
+                                                class="checkBoxValue" value="survey plugin"><label for="surveyOpt">Survey
                                                 plugin</label></li>
                                     </ul>
                                 </div>
@@ -379,44 +379,44 @@ ob_start();
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
-                                        <li><input type="checkbox" id="2CheckoutShow" name="2CheckoutShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="2CheckoutShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="2Checkout"><label
                                                 for="2CheckoutShow">2Checkout</label></li>
-                                        <li><input type="checkbox" id="authorizeShow" name="authorizeShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="authorizeShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Authorize.Ne"><label
                                                 for="authorizeShow">Authorize.Net</label></li>
-                                        <li><input type="checkbox" id="amazonShow" name="amazonShow"
-                                                class="checkBoxValue" value="50"><label for="amazonShow">Amazon
+                                        <li><input type="checkbox" id="amazonShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Amazon Payment"><label for="amazonShow">Amazon
                                                 Payment</label></li>
-                                        <li><input type="checkbox" id="bankWireShow" name="bankWireShow"
-                                                class="checkBoxValue" value="50"><label for="bankWireShow">Bank
+                                        <li><input type="checkbox" id="bankWireShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Bank Wire"><label for="bankWireShow">Bank
                                                 Wire</label></li>
-                                        <li><input type="checkbox" id="checkShow" name="checkShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="checkShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Check"><label
                                                 for="checkShow">Check</label></li>
-                                        <li><input type="checkbox" id="creditCardPPShow" name="creditCardPPShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="creditCardPPShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Credit Card (Through Paypal)"><label
                                                 for="creditCardPPShow">Credit Card (Through Paypal)</label></li>
-                                        <li><input type="checkbox" id="creditCardBkShow" name="creditCardBkShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="creditCardBkShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Credit Card (Through Bank Api)"><label
                                                 for="creditCardBkShow">Credit Card (Through Bank Api)</label></li>
-                                        <li><input type="checkbox" id="paypalShow" name="paypalShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="paypalShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Paypal"><label
                                                 for="paypalShow">Paypal</label></li>
-                                        <li><input type="checkbox" id="paypalProShow" name="paypalProShow"
-                                                class="checkBoxValue" value="50"><label for="paypalProShow">PayPal
+                                        <li><input type="checkbox" id="paypalProShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="PayPal Payments Pro"><label for="paypalProShow">PayPal
                                                 Payments Pro</label></li>
-                                        <li><input type="checkbox" id="sagePayShow" name="sagePayShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="sagePayShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="SagePay"><label
                                                 for="sagePayShow">SagePay</label></li>
-                                        <li><input type="checkbox" id="skrillShow" name="skrillShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="skrillShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Skrill"><label
                                                 for="skrillShow">Skrill</label></li>
-                                        <li><input type="checkbox" id="squareShow" name="squareShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="squareShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Square"><label
                                                 for="squareShow">Square</label></li>
-                                        <li><input type="checkbox" id="stripeShow" name="stripeShow"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="stripeShow" name="paymentMtdShowcase[]"
+                                                class="checkBoxValue" value="Stripe"><label
                                                 for="stripeShow">Stripe</label></li>
                                     </ul>
                                 </div>
@@ -454,44 +454,44 @@ ob_start();
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="getTotal()">
-                                        <li><input type="checkbox" id="2CheckoutStore" name="2CheckoutStore"
-                                                class="checkBoxValue" value="50"><label
+                                    <li><input type="checkbox" id="2CheckoutStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="2Checkout"><label
                                                 for="2CheckoutStore">2Checkout</label></li>
-                                        <li><input type="checkbox" id="authorizeStore" name="authorizeStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="authorizeStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Authorize.Ne"><label
                                                 for="authorizeStore">Authorize.Net</label></li>
-                                        <li><input type="checkbox" id="amazonStore" name="amazonStore"
-                                                class="checkBoxValue" value="50"><label for="amazonStore">Amazon
+                                        <li><input type="checkbox" id="amazonStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Amazon Payment"><label for="amazonStore">Amazon
                                                 Payment</label></li>
-                                        <li><input type="checkbox" id="bankWireStore" name="bankWireStore"
-                                                class="checkBoxValue" value="50"><label for="bankWireStore">Bank
+                                        <li><input type="checkbox" id="bankWireStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Bank Wire"><label for="bankWireStore">Bank
                                                 Wire</label></li>
-                                        <li><input type="checkbox" id="checkStore" name="checkStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="checkStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Check"><label
                                                 for="checkStore">Check</label></li>
-                                        <li><input type="checkbox" id="creditCardPPStore" name="creditCardPPStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="creditCardPPStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Credit Card (Through Paypal)"><label
                                                 for="creditCardPPStore">Credit Card (Through Paypal)</label></li>
-                                        <li><input type="checkbox" id="creditCardBkStore" name="creditCardBkStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="creditCardBkStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Credit Card (Through Bank Api)"><label
                                                 for="creditCardBkStore">Credit Card (Through Bank Api)</label></li>
-                                        <li><input type="checkbox" id="paypalStore" name="paypalStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="paypalStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Paypal"><label
                                                 for="paypalStore">Paypal</label></li>
-                                        <li><input type="checkbox" id="paypalProStore" name="paypalProStore"
-                                                class="checkBoxValue" value="50"><label for="paypalProStore">PayPal
+                                        <li><input type="checkbox" id="paypalProStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="PayPal Payments Pro"><label for="paypalProStore">PayPal
                                                 Payments Pro</label></li>
-                                        <li><input type="checkbox" id="sagePayStore" name="sagePayStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="sagePayStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="SagePay"><label
                                                 for="sagePayStore">SagePay</label></li>
-                                        <li><input type="checkbox" id="skrillStore" name="skrillStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="skrillStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Skrill"><label
                                                 for="skrillStore">Skrill</label></li>
-                                        <li><input type="checkbox" id="squareStore" name="squareStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="squareStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Square"><label
                                                 for="squareStore">Square</label></li>
-                                        <li><input type="checkbox" id="stripeStore" name="stripeStore"
-                                                class="checkBoxValue" value="50"><label
+                                        <li><input type="checkbox" id="stripeStore" name="paymentMtdStore[]"
+                                                class="checkBoxValue" value="Stripe"><label
                                                 for="stripeStore">Stripe</label></li>
                                     </ul>
                                 </div>
@@ -1087,6 +1087,60 @@ ob_start();
         $('#spanish').text('100');
         $('#swedish').text('100');
         $('#swissGerman').text('100');
+
+        //Extensions
+        $('#dotCom').text('20');
+        $('#dotFr').text('10');
+        $('#dotUk').text('10');
+        $('#dotDe').text('10');
+
+        //Options
+        $('#blogOpt').text('200');
+        $('#chatOpt').text('150');
+        $('#contactFormOpt').text('150');
+        $('#newsletterOpt').text('70');
+        $('#appointOpt').text('150');
+        $('#searchOpt').text('150');
+        $('#quoteOpt').text('150');
+        $('#invoiceOpt').text('150');
+        $('#socialOpt').text('150');
+        $('#statsOpt').text('150');
+        $('#calendarOpt').text('150');
+        $('#newsOpt').text('150');
+        $('#adminPannelOpt').text('150');
+        $('#ratingsOpt').text('150');
+        $('#surveyOpt').text('150');
+
+        //Payment Methods Showcase
+        $('#2CheckoutShow').text('50');
+        $('#authorizeShow').text('50');
+        $('#amazonShow').text('50');
+        $('#bankWireShow').text('50');
+        $('#checkShow').text('50');
+        $('#creditCardPPShow').text('50');
+        $('#creditCardBkShow').text('50');
+        $('#paypalShow').text('50');
+        $('#paypalProShow').text('50');
+        $('#sagePayShow').text('50');
+        $('#skrillShow').text('50');
+        $('#squareShow').text('50');
+        $('#stripeShow').text('50');
+
+        //Payment Methods Store
+        $('#2CheckoutStore').text('50');
+        $('#authorizeStore').text('50');
+        $('#amazonStore').text('50');
+        $('#bankWireStore').text('50');
+        $('#checkStore').text('50');
+        $('#creditCardPPStore').text('50');
+        $('#creditCardBkStore').text('50');
+        $('#paypalStore').text('50');
+        $('#paypalProStore').text('50');
+        $('#sagePayStore').text('50');
+        $('#skrillStore').text('50');
+        $('#squareStore').text('50');
+        $('#stripeStore').text('50');
+
 
 
 
