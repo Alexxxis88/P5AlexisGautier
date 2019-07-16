@@ -860,6 +860,7 @@ ob_start();
                         </div>
                         <div class="row customQuotePriceField">
                             <div class="form-group col-md-6">
+                                <label for="price" class="col-form-label">Price</label>
                                 <input type="text" class="form-control" id="price" name="price" readonly="readonly"                          required>
                             </div>
                         </div>
@@ -881,7 +882,8 @@ ob_start();
                         <p class="priceRecap">After submiting this <strong>custom quote</strong> you will
                             automatically recieve a detailled recap to the email address you provided.</p>
                         <div class="text-center">
-                            <label><input type="checkbox" form="customQuoteForm" id="acceptTerms" required> <small>I accept <a href="index.php?action=terms">Terms & Conditions</a> and <a href="index.php?action=privacy">Privacy Policy.</a></small></label><br>
+                            <input type="checkbox" form="customQuoteForm" id="acceptTerms" required>&nbsp;
+                            <label for="acceptTerms" class="col-form-label"><small>I accept <a href="index.php?action=terms">Terms & Conditions</a> and <a href="index.php?action=privacy">Privacy Policy.</a></small></label><br>
                             <button type="submit" form="customQuoteForm" class="btn btn-princing">I want this!</button>
                         </div>
                     </div>
