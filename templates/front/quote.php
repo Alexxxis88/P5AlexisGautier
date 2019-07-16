@@ -40,12 +40,12 @@ ob_start();
                                     <!-- I need de empty option line to respect W3C rules + i need the &nbsp; not to have an empty option without label (W3C error) and i need the Please Choose.. line with value at 0 for my total function to work fine -->
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="500">Showcase Website</option>
-                                    <option value="800">Webstore</option>
-                                    <option value="1000">Showcase Website + Webstore</option>
-                                    <option value="300">Redesign (Showcase Website)</option>
-                                    <option value="300">Redesign (Webstore)</option>
-                                    <option value="300">Redesign (Showcase Website + Webstore)</option>
+                                    <option value="Showcase">Showcase Website</option>
+                                    <option value="Webstore">Webstore</option>
+                                    <option value="Showcase + Webstore">Showcase Website + Webstore</option>
+                                    <option value="Redesign - Showcase">Redesign (Showcase Website)</option>
+                                    <option value="Redesign - Webstore">Redesign (Webstore)</option>
+                                    <option value="Redesign - Showcase + Webstore">Redesign (Showcase Website + Webstore)</option>
                                 </select>
                             </div>
                         </div>
@@ -122,11 +122,11 @@ ob_start();
                                     onchange="getSelectValue(), getTotal()" required>
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="100">Standard : nice, simple and efficient (you don't have a
+                                    <option value="Standard">Standard : nice, simple and efficient (you don't have a
                                         visual
                                         identity guide)</option>
-                                    <option value="50">Custom : according to your visual identity guide</option>
-                                    <option value="300">Custom + : Top of the range design. 100% tailor-made for you
+                                    <option value="Custom">Custom : according to your visual identity guide</option>
+                                    <option value="Custom +">Custom + : Top of the range design. 100% tailor-made for you
                                     </option>
                                 </select>
                             </div>
@@ -139,8 +139,8 @@ ob_start();
                                     onchange="getSelectValue(), getTotal()" required>
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="200">Yes</option>
-                                    <option value="0">No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -149,8 +149,8 @@ ob_start();
                                     onchange="getSelectValue(), getTotal()" required>
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="100">Yes</option>
-                                    <option value="0">No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
                                 </select>
                             </div>
                         </div>
@@ -161,14 +161,14 @@ ob_start();
                                     onchange="getSelectValue(), getTotal()" required>
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="0">I will do it myself</option>
-                                    <option value="100">I want a minimal plan (mininum maintance, no updates)
+                                    <option value="No">I will do it myself</option>
+                                    <option value="Minimal">I want a minimal plan (mininum maintance, no updates)
                                     </option>
-                                    <option value="200">I want a regular plan (minimum maintenance, updated every
+                                    <option value="Regular">I want a regular plan (minimum maintenance, updated every
                                         year)</option>
-                                    <option value="400">I want a premium plan (regular maintenance, updated every 3
+                                    <option value="Premium">I want a premium plan (regular maintenance, updated every 3
                                         months)</option>
-                                    <option value="1500">I want a gold plan (priority maintenance, updated every
+                                    <option value="Gold">I want a gold plan (priority maintenance, updated every
                                         months)</option>
                                 </select>
                             </div>
@@ -178,9 +178,9 @@ ob_start();
                                     onchange="getSelectValue(), getTotal()" required>
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="0">I will handle that myself </option>
-                                    <option value="50">I want a standard host</option>
-                                    <option value="100">I want a premium host (high traffic website)</option>
+                                    <option value="No">I will handle that myself </option>
+                                    <option value="Standard">I want a standard host</option>
+                                    <option value="Premium">I want a premium host (high traffic website)</option>
                                 </select>
                                 <small>Hosting will be handled by a professional third party. I will not host your
                                     website(s) on my personal server for logistical reasons.</small>
@@ -227,12 +227,12 @@ ob_start();
                                     onchange="getSelectValue(), getTotal(), myFunction3()" required>
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="0">No</option>
-                                    <option value="1000">Less than 1 month (Express +)</option>
-                                    <option value="800">Less than 2 months (Express)</option>
-                                    <option value="400">Less than 4 months (Fast)</option>
-                                    <option value="50">Less than 6 months (Regular)</option>
-                                    <option value="0.00009">More than 6 months (Slow)</option>
+                                    <option value="No">No</option>
+                                    <option value="Express +">Less than 1 month (Express +)</option>
+                                    <option value="Express">Less than 2 months (Express)</option>
+                                    <option value="Fast">Less than 4 months (Fast)</option>
+                                    <option value="Regular">Less than 6 months (Regular)</option>
+                                    <option value="Slow">More than 6 months (Slow)</option>
                                 </select>
                                 <small>From today to your deadline</small>
                             </div>
@@ -337,12 +337,12 @@ ob_start();
                                     <!-- add required only if whole section displayed -->
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="0">- 10</option>
-                                    <option value="20">10 - 50</option>
-                                    <option value="30">50 - 100</option>
-                                    <option value="40">100 - 200</option>
-                                    <option value="50">200 - 500</option>
-                                    <option value="60">+ 500</option>
+                                    <option value="- 10">- 10</option>
+                                    <option value="10 - 50">10 - 50</option>
+                                    <option value="50 - 100">50 - 100</option>
+                                    <option value="100 - 200">100 - 200</option>
+                                    <option value="200 - 500">200 - 500</option>
+                                    <option value="+ 500">+ 500</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -353,8 +353,8 @@ ob_start();
                                     <!-- add required only if whole section displayed -->
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="100">Yes</option>
-                                    <option value="0">No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
                                 </select>
                             </div>
                         </div>
@@ -367,8 +367,8 @@ ob_start();
                                     <!-- add required only if whole section displayed -->
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option>Yes</option>
-                                    <option>No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6" id="paymentMethShowcase">
@@ -439,11 +439,11 @@ ob_start();
                                     <!-- add required only if whole section displayed -->
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="0">- 10</option>
-                                    <option value="20">10 - 100</option>
-                                    <option value="30">100 - 200</option>
-                                    <option value="40">200 - 500</option>
-                                    <option value="50">+ 500</option>
+                                    <option value="- 10">- 10</option>
+                                    <option value="10 - 100">10 - 100</option>
+                                    <option value="100 - 200">100 - 200</option>
+                                    <option value="200 - 500">200 - 500</option>
+                                    <option value="+ 500">+ 500</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -875,16 +875,186 @@ ob_start();
 
     //get the total of all SELECT inputs
     function getSelectValue() {
-        let siteType = parseInt(document.getElementById("siteType").value);
-        let design = parseInt(document.getElementById("design").value);
-        let writingContent = parseInt(document.getElementById("writingContent").value);
-        let visualContent = parseInt(document.getElementById("visualContent").value);
-        let maintenance = parseInt(document.getElementById("maintenance").value);
-        let host = parseInt(document.getElementById("host").value);
-        let deadlineSelect = parseInt(document.getElementById("deadlineSelect").value);
-        let pageNb = parseInt(document.getElementById("pageNb").value);
-        let loginShowcaseYN = parseInt(document.getElementById("loginShowcaseYN").value);
-        let productNb = parseInt(document.getElementById("productNb").value);
+        let siteType = document.getElementById("siteType").value;
+        switch (siteType) {
+        case 'Showcase':
+            siteType = 500;
+            break;
+        case 'Webstore':
+            siteType = 800;
+            break;
+        case 'Showcase + Webstore':
+            siteType = 1000;
+            break;
+        case 'Redesign - Showcase':
+            siteType = 300;
+            break;
+        case 'Redesign - Webstore':
+            siteType = 300;
+            break;
+        case 'Redesign - Showcase + Webstore':
+            siteType = 300;
+            break;
+        default:
+            siteType = 0;
+        }
+
+        let design = document.getElementById("design").value;
+        switch (design) {
+        case 'Standard':
+            design = 100;
+            break;
+        case 'Custom':
+            design = 50;
+            break;
+        case 'Custom +':
+            design = 500;
+            break;
+        default:
+            design = 0;
+        }
+
+        let writingContent = document.getElementById("writingContent").value;
+        switch (writingContent) {
+        case 'Yes':
+            writingContent = 200;
+            break;
+        case 'No':
+            writingContent = 0;
+            break;
+        default:
+            writingContent = 0;
+        }
+
+        let visualContent = document.getElementById("visualContent").value;
+        switch (visualContent) {
+        case 'Yes':
+            visualContent = 100;
+            break;
+        case 'No':
+            visualContent = 0;
+            break;
+        default:
+            visualContent = 0;
+        }
+
+        let maintenance = document.getElementById("maintenance").value;
+        switch (maintenance) {
+        case 'No':
+            maintenance = 0;
+            break;
+        case 'Minimal':
+            maintenance = 100;
+            break;
+        case 'Regular':
+            maintenance = 200;
+            break;
+        case 'Premium':
+            maintenance = 400;
+            break;
+        case 'Gold':
+            maintenance = 1500;
+            break;
+        default:
+            maintenance = 0;
+        }
+
+        let host = document.getElementById("host").value;
+        switch (host) {
+        case 'No':
+            host = 0;
+            break;
+        case 'Standard':
+            host = 50;
+            break;
+        case 'Premium':
+            host = 100;
+            break;
+        default:
+            host = 0;
+        }
+
+        let deadlineSelect = document.getElementById("deadlineSelect").value;
+        switch (deadlineSelect) {
+        case 'No':
+            deadlineSelect = 0;
+            break;
+        case 'Express +':
+            deadlineSelect = 1000;
+            break;
+        case 'Express':
+            deadlineSelect = 800;
+            break;
+        case 'Fast':
+            deadlineSelect = 400;
+            break;
+        case 'Regular':
+            deadlineSelect = 50;
+            break;
+        case 'Slow':
+            deadlineSelect = 0;
+            break;
+        default:
+            deadlineSelect = 0;
+        }
+
+        let pageNb = document.getElementById("pageNb").value;
+        switch (pageNb) {
+        case '- 10':
+            pageNb = 0;
+            break;
+        case '10 - 50':
+            pageNb = 20;
+            break;
+        case '0 - 100':
+            pageNb = 30;
+            break;
+        case '100 - 200':
+            pageNb = 40;
+            break;
+        case '200 - 500':
+            pageNb = 50;
+            break;
+        case '+ 500':
+            pageNb = 60;
+            break;
+        default:
+            pageNb = 0;
+        }
+
+        let loginShowcaseYN = document.getElementById("loginShowcaseYN").value;
+        switch (loginShowcaseYN) {
+        case 'Yes':
+            loginShowcaseYN = 100;
+            break;
+        case 'No':
+            loginShowcaseYN = 0;
+            break;
+        default:
+            loginShowcaseYN = 0;
+        }
+
+        let productNb = document.getElementById("productNb").value;
+        switch (productNb) {
+        case '- 10':
+            productNb = 0;
+            break;
+        case '10 - 100':
+            productNb = 20;
+            break;
+        case '100 - 200':
+            productNb = 30;
+            break;
+        case '200 - 500':
+            productNb = 40;
+            break;
+        case '+ 500':
+            productNb = 50;
+            break;
+        default:
+            productNb = 0;
+        }
+
 
         totalInput = Number(siteType + design + writingContent + visualContent + maintenance + host + deadlineSelect +
             pageNb + loginShowcaseYN + productNb);
@@ -927,7 +1097,7 @@ ob_start();
     //display / hide calendar for deadline
     function myFunction3() {
         let deadlineSelect = document.getElementById("deadlineSelect").value;
-        if (deadlineSelect == "0") {
+        if (deadlineSelect == "No") {
             document.getElementById("deadlineBlock").style.display = "none";
         } else {
             document.getElementById("deadlineBlock").style.display = "block";
@@ -958,13 +1128,13 @@ ob_start();
     function myFunction4() {
         let siteTypeDisplay = document.getElementById("siteType")
             .value; //FIXME, pourquoi ça ne marche pas avec innerHTML ? tester en Jquery?
-        if (siteTypeDisplay == 500) {
+        if (siteTypeDisplay == 'Showcase' || siteTypeDisplay == 'Redesign - Showcase') {
             document.getElementById("showcaseSection").style.display = "block";
             document.getElementById("webstoreSection").style.display = "none";
-        } else if (siteTypeDisplay == 800) {
+        } else if (siteTypeDisplay == 'Webstore' || siteTypeDisplay == 'Redesign - Webstore' ) {
             document.getElementById("showcaseSection").style.display = "none";
             document.getElementById("webstoreSection").style.display = "block";
-        } else if (siteTypeDisplay == 1000) {
+        } else if (siteTypeDisplay == 'Showcase + Webstore' || siteTypeDisplay == 'Redesign - Showcase + Webstore') {
             document.getElementById("showcaseSection").style.display = "block";
             document.getElementById("webstoreSection").style.display = "block";
         } else {
