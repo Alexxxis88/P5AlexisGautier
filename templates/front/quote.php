@@ -13,7 +13,7 @@ ob_start();
     <div class="container">
         <div class="row " id="quoteForm">
             <div class="col-md-9 fade-up">
-                <form id="customQuoteForm" action="index.php?action=sendMessage" method="post">
+                <form id="customQuoteForm" action="index.php?action=sendCustomQuote" method="post">
                     <section id="yourWebsite">
                         <div class="row">
                             <div class="col-md-12 center gap fade-down section-heading">
@@ -227,12 +227,12 @@ ob_start();
                                     onchange="getSelectValue(), getTotal(), myFunction3()" required>
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option value="No">No</option>
+                                    <option value="0">No</option>
                                     <option value="1000">Less than 1 month (Express +)</option>
                                     <option value="800">Less than 2 months (Express)</option>
                                     <option value="400">Less than 4 months (Fast)</option>
                                     <option value="50">Less than 6 months (Regular)</option>
-                                    <option value="0">More than 6 months (Slow)</option>
+                                    <option value="0.00009">More than 6 months (Slow)</option>
                                 </select>
                                 <small>From today to your deadline</small>
                             </div>
@@ -825,6 +825,11 @@ ob_start();
                                     fees.</small>
                             </div>
                         </div>
+                        <div class="row customQuotePriceField">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="price" name="price" readonly="readonly"                          required>
+                            </div>
+                        </div>
                     </section>
                 </form>
             </div>
@@ -902,6 +907,7 @@ ob_start();
         grandTotal = totalInput + totalCheckboxe;
         document.getElementById("text-customQuote").innerHTML = grandTotal + " € ";
         document.getElementById("text-customQuoteWidget").innerHTML = grandTotal + " € ";
+        document.getElementById("price").value = grandTotal;
     }
 
 
@@ -921,7 +927,7 @@ ob_start();
     //display / hide calendar for deadline
     function myFunction3() {
         let deadlineSelect = document.getElementById("deadlineSelect").value;
-        if (deadlineSelect == "No") {
+        if (deadlineSelect == "0") {
             document.getElementById("deadlineBlock").style.display = "none";
         } else {
             document.getElementById("deadlineBlock").style.display = "block";

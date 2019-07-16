@@ -7,6 +7,7 @@ namespace AlexisGautier\PersonalWebsite\Model\Manager;
 class QuoteManager extends Manager
 {
 
+    //PACK QUOTES
     public function insertNewPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         $newPackQuoteDb = $this->_db->prepare('INSERT INTO packquotes( packName, price, project, structure, company, firstName, lastName, contactEmail, phone, postalAddress, postCode, city, country, deadline, messageContent, requestDate ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())');
@@ -24,7 +25,6 @@ class QuoteManager extends Manager
             return $packQuote;
         }
     }
-
 
     public function erasePackQuote($packQuoteId)
     {
@@ -45,16 +45,19 @@ class QuoteManager extends Manager
         $req->execute(array($quoteStatus, $packQuoteId));
     }
 
-
-
-
-
     //turn quotes icon (menuAdmin) in red if quotes to manage
     public function isThereNewPackQuote()
     {
         $req = $this->_db->query('SELECT quoteStatus FROM packquotes WHERE quoteStatus = 0');
         $isTherePackQuote= $req->fetch();
         return $isTherePackQuote;
+    }
+
+    //CUSTOM QUOTES
+    public function insertNewCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb)
+    {
+        $newPackQuoteDb = $this->_db->prepare('INSERT INTO customquotes( siteType, price, project, structure, company, firstName, lastName, contactEmail, phone, postalAddress, postCode, city, country, deadline, messageContent, design, writingContent, visualContent, maintenance, host, domainYN, deadlineSelect, pageNb, loginShowcaseYN, paymentShowcaseYN, productNb, requestDate, languages, extentions, paymentMtdShowcase, options, paymentMtdStore  ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), "languages", "extentions", 578, 578, 578)');
+        $newPackQuoteDb->execute(array($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb));
     }
 
 }

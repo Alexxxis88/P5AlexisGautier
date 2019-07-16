@@ -167,7 +167,8 @@ try {
             }
         }
 
-        //SEND PACK QUOTE
+        //QUOTES MANAGEMENT
+        //PACK QUOTES
         elseif ($_GET['action'] == 'sendPackQuote') {
             if (!empty($_POST['packName']) && !empty($_POST['price']) && !empty($_POST['project']) && !empty($_POST['structure']) && isset($_POST['company']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['contactEmail']) && !empty($_POST['phone']) && !empty($_POST['postalAddress']) &&!empty($_POST['postCode']) && !empty($_POST['city']) && !empty($_POST['country']) && !empty($_POST['deadline']) && !empty($_POST['messageContent'])) {
 
@@ -184,21 +185,6 @@ try {
                 throw new \Exception('Tous les champs ne sont pas remplis');
             }
         }
-
-
-        //QUOTES MANAGEMENT
-
-        // elseif ($_GET['action'] == 'answerQuote') {
-        //     if (isset($_GET['quoteId']) && $_GET['quoteId'] > 0) {
-
-        //         $quoteController = new QuoteController;
-        //         $quoteController->saveAnswer($_GET['quoteId'], $_POST['answerContent']);
-        //         $quoteController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
-        //         $quoteController->updateAnswerMessageFlag($_GET['quoteId']);
-        //     } else {
-        //         throw new Exception('Aucun identifiant de message envoyé');
-        //     }
-        // }
 
         elseif ($_GET['action'] == 'deletePackQuote') {
             if (isset($_GET['packQuoteId']) && $_GET['packQuoteId'] > 0) {
@@ -248,7 +234,58 @@ try {
             }
         }
 
+        //CUSTOM QUOTES
+        elseif ($_GET['action'] == 'sendCustomQuote') {
+            // if (!empty($_POST['packName']) && !empty($_POST['price']) && !empty($_POST['project']) && !empty($_POST['structure']) && isset($_POST['company']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['contactEmail']) && !empty($_POST['phone']) && !empty($_POST['postalAddress']) &&!empty($_POST['postCode']) && !empty($_POST['city']) && !empty($_POST['country']) && !empty($_POST['deadline']) && !empty($_POST['messageContent'])) {
 
+                $quoteController = new QuoteController;
+
+                // if( $quoteController->checkCustomQuoteFields($_POST['packName'],$_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'],$_POST['deadline'], $_POST['messageContent']) == true){
+
+                    if(empty($_POST['deadline'])){
+                        $_POST['deadline'] = '2999-01-01';
+                    }
+
+                    if(empty($_POST['pageNb'])){
+                        $_POST['pageNb'] = 0;
+                    }
+
+                    if(empty($_POST['loginShowcaseYN'])){
+                        $_POST['loginShowcaseYN'] = 0;
+                    }
+
+                    if(empty($_POST['paymentShowcaseYN'])){
+                        $_POST['paymentShowcaseYN'] = 0;
+                    }
+
+                    if(empty($_POST['productNb'])){
+                        $_POST['productNb'] = 0;
+                    }
+
+
+                    $quoteController->saveCustomQuote($_POST['siteType'],$_POST['price'],
+                    // $_POST['LANGAGE'],
+                    $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'],
+                    // $_POST['EXTENTION'],
+                    $_POST['phone'], $_POST['postalAddress'],
+                    // $_POST['OPTIONS'],
+                    $_POST['postCode'], $_POST['city'], $_POST['country'],
+                    // $_POST['PAYMENTMETHSHOW'],
+                    $_POST['deadline'], $_POST['messageContent'],
+                    // $_POST['PAYMENTMETHSTORE'],
+                    $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb']
+                    );
+
+
+
+
+                    // $quoteController->sendCustomQuote($_POST['packName'],$_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'],$_POST['deadline'], $_POST['messageContent']);
+            //     }
+            // }
+            // else {
+            //     throw new \Exception('Tous les champs ne sont pas remplis');
+            // }
+        }
 
 
         //MESSAGES MANAGEMENT

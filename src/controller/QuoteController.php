@@ -9,10 +9,11 @@ use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
 
 class QuoteController
 {
+    //PACK QUOTES
     public function savePackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         $quoteManager = new QuoteManager();
-        $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), $structure, htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), $country, $deadline, htmlspecialchars($messageContent));
+        $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent));
 
         header('Location: index.php?action=services#pricing');
 
@@ -21,13 +22,13 @@ class QuoteController
     public function sendPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
-        $topic = 'Quote resquest for a ' . $packName;
+        $topic = 'Quote resquest for a ' . htmlspecialchars($packName);
         $message = '
         <html>
             <body>
                 <h2>Quote resquest for a <strong>' . htmlspecialchars($packName) . '</strong></h2>
                 <p>Project name : <strong>' . htmlspecialchars($project) . '</strong></p>
-                <p>Structure : <strong>' . $structure . '</strong></p>
+                <p>Structure : <strong>' . htmlspecialchars($structure) . '</strong></p>
                 <p>Compagny : <strong>' . htmlspecialchars($company) . '</strong></p>
                 <p>Full name : <strong>' . htmlspecialchars($firstName) . ' ' . htmlspecialchars($lastName) . '</strong></p>
                 <p>Email address : <strong>' . htmlspecialchars($contactEmail) . '</strong></p>
@@ -35,8 +36,8 @@ class QuoteController
                 <p>Address : <strong>' . htmlspecialchars($postalAddress) . '</strong></p>
                 <p>Post Code : <strong>' . htmlspecialchars($postCode) . '</strong></p>
                 <p>City : <strong>' . htmlspecialchars($city) . '</strong></p>
-                <p>Country : <strong>' . $country . '</strong></p>
-                <p>Deadline : <strong>' . $deadline . '</strong></p>
+                <p>Country : <strong>' . htmlspecialchars($country) . '</strong></p>
+                <p>Deadline : <strong>' . htmlspecialchars($deadline) . '</strong></p>
                 <p>Project description : ' . htmlspecialchars($messageContent) . ' </p>
                 <p>Total Price :<strong>' . htmlspecialchars($price) . ' €</strong></p>
                 <p>Quote request made by email on ' . date("Y-m-d") . ' at ' . date("h:i:sa") . ' </p>
@@ -180,4 +181,14 @@ class QuoteController
         exit;
     }
 
+
+    //CUSTOM QUOTES
+    public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->insertNewCustomQuote(htmlspecialchars($siteType), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent), htmlspecialchars($design), htmlspecialchars($writingContent), htmlspecialchars($visualContent), htmlspecialchars($maintenance), htmlspecialchars($host), htmlspecialchars($domainYN), htmlspecialchars($deadlineSelect), htmlspecialchars($pageNb), htmlspecialchars($loginShowcaseYN), htmlspecialchars($paymentShowcaseYN), htmlspecialchars($productNb));
+
+        // header('Location: index.php?action=quote');
+
+    }
 }

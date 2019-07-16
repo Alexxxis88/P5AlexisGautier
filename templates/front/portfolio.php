@@ -6,7 +6,7 @@ ob_start();
     jQuery(document).ready(function($){
     'use strict';
         jQuery('body').backstretch([
-            "./public/images/bg/bg4.jpg",
+            "./public/images/bg/bg1.jpg",
         ], {duration: 5000, fade: 500});
 
     });

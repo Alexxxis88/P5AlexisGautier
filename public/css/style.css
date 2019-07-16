@@ -1287,6 +1287,9 @@ input:read-only{
     margin-right:5px;
 }
 
+.customQuotePriceField{
+    display : none;
+}
 /*
 Pricing Section style
 =======================*/
