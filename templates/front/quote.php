@@ -36,7 +36,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="siteType">Type of Website*</label>
                                 <select id="siteType" name="siteType" class="form-control"
-                                    onchange="getSelectValue(), myFunction4(), getTotal()" required>
+                                    onchange="getSelectValue(), myFunction4(), getTotal(), deselectAll()" required>
                                     <!-- I need de empty option line to respect W3C rules + i need the &nbsp; not to have an empty option without label (W3C error) and i need the Please Choose.. line with value at 0 for my total function to work fine -->
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option>
@@ -120,8 +120,11 @@ ob_start();
                                 <label for="design">I want a Design*</label>
                                 <select id="design" name="design" class="form-control"
                                     onchange="getSelectValue(), getTotal()" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="Standard">Standard : nice, simple and efficient (you don't have a
                                         visual
                                         identity guide)</option>
@@ -137,8 +140,11 @@ ob_start();
                                     articles...)*</label>
                                 <select id="writingContent" name="writingContent" class="form-control"
                                     onchange="getSelectValue(), getTotal()" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -147,8 +153,11 @@ ob_start();
                                 <label for="visualContent">I need visual content (pictures...)*</label>
                                 <select id="visualContent" name="visualContent" class="form-control"
                                     onchange="getSelectValue(), getTotal()" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -159,8 +168,11 @@ ob_start();
                                 <label for="maintenance">Maintenance / updates*</label>
                                 <select id="maintenance" name="maintenance" class="form-control"
                                     onchange="getSelectValue(), getTotal()" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="No">I will do it myself</option>
                                     <option value="Minimal">I want a minimal plan (mininum maintance, no updates)
                                     </option>
@@ -176,8 +188,11 @@ ob_start();
                                 <label for="host">Host*</label>
                                 <select id="host" name="host" class="form-control"
                                     onchange="getSelectValue(), getTotal()" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="No">I will handle that myself </option>
                                     <option value="Standard">I want a standard host</option>
                                     <option value="Premium">I want a premium host (high traffic website)</option>
@@ -191,8 +206,11 @@ ob_start();
                                 <label for="domainYN">Domain name*</label>
                                 <select id="domainYN" name="domainYN" class="form-control" onchange="myFunction5()"
                                     required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="No" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="No">I already have one </option>
                                     <option value="No">I will get one myself </option>
                                     <option value="Yes">I need one - Choose one or several extensions (.com, .fr
@@ -225,8 +243,11 @@ ob_start();
                                 <label for="deadlineSelect">I have a specific deadline*</label>
                                 <select id="deadlineSelect" name="deadlineSelect" class="form-control"
                                     onchange="getSelectValue(), getTotal(), myFunction3()" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="No">No</option>
                                     <option value="Express +">Less than 1 month (Express +)</option>
                                     <option value="Express">Less than 2 months (Express)</option>
@@ -335,8 +356,11 @@ ob_start();
                                 <select id="pageNb" name="pageNb" class="form-control"
                                     onchange="getSelectValue(), getTotal()">
                                     <!-- add required only if whole section displayed -->
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="- 10">- 10</option>
                                     <option value="10 - 50">10 - 50</option>
                                     <option value="50 - 100">50 - 100</option>
@@ -351,8 +375,11 @@ ob_start();
                                 <select id="loginShowcaseYN" name="loginShowcaseYN" class="form-control"
                                     onchange="getSelectValue(), getTotal()">
                                     <!-- add required only if whole section displayed -->
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -365,8 +392,11 @@ ob_start();
                                 <select id="paymentShowcaseYN" name="paymentShowcaseYN" class="form-control"
                                     onchange="myFunction2()">
                                     <!-- add required only if whole section displayed -->
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
@@ -437,8 +467,11 @@ ob_start();
                                 <select id="productNb" name="productNb" class="form-control"
                                     onchange="getSelectValue(), getTotal()">
                                     <!-- add required only if whole section displayed -->
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="- 10">- 10</option>
                                     <option value="10 - 100">10 - 100</option>
                                     <option value="100 - 200">100 - 200</option>
@@ -1162,6 +1195,65 @@ ob_start();
         document.getElementById("text-customQuote").innerHTML = grandTotal + " € ";
         document.getElementById("text-customQuoteWidget").innerHTML = grandTotal + " € ";
         document.getElementById("price").value = grandTotal;
+    }
+
+
+    //deselect all options choices when Website Type is changed
+    function deselectAll(){
+
+        //deselect inputs
+        $("#design option:selected").prop("selected", false);
+        $("#writingContent option:selected").prop("selected", false);
+        $("#visualContent option:selected").prop("selected", false);
+        $("#maintenance option:selected").prop("selected", false);
+        $("#host option:selected").prop("selected", false);
+        $("#domainYN option:selected").prop("selected", false);
+        $("#deadlineSelect option:selected").prop("selected", false);
+        $("#deadline").val("");
+        $("#pageNb option:selected").prop("selected", false);
+        $("#loginShowcaseYN option:selected").prop("selected", false);
+        $("#paymentShowcaseYN option:selected").prop("selected", false);
+        $("#productNb option:selected").prop("selected", false);
+
+        //reset dropdown option menu placeholder
+        $(".dropdown-toggle").html("Please select <span class='caret'></span>")
+        
+        //hide elements
+        document.getElementById("extensionBlock").style.display = "none";
+        document.getElementById("deadlineBlock").style.display = "none";
+        document.getElementById("paymentMethShowcase").style.display = "none";
+
+        //deselect checkboxes
+        $("#french, #english, #bulgarian, #croatian, #czech, #danish, #dutch, #estonian, #finnish, #german, #greek, #hungarian, #italian, #latvian, #lithuanian, #norwegian, #portuguese, #russian, #serbian, #slovak, #slovene, #spanish, #swedish, #swissGerman, #dotCom, #dotFr, #dotUk, #dotDe, #blogOpt, #chatOpt, #contactFormOpt, #newsletterOpt, #appointOpt, #searchOpt, #quoteOpt, #invoiceOpt, #socialOpt, #statsOpt, #calendarOpt, #newsOpt, #adminPannelOpt, #ratingsOpt, #surveyOpt, #2CheckoutShow, #authorizeShow, #amazonShow, #bankWireShow, #checkShow, #creditCardPPShow, #creditCardBkShow, #paypalShow, #paypalProShow, #sagePayShow, #skrillShow, #squareShow, #stripeShow, #2CheckoutStore, #authorizeStore, #amazonStore, #bankWireStore, #checkStore, #creditCardPPStore, #creditCardBkStore, #paypalStore, #paypalProStore, #sagePayStore, #skrillStore, #squareStore, #stripeStore ").prop( "checked", false );
+
+
+        let siteType = document.getElementById("siteType").value;
+        switch (siteType) {
+        case 'Showcase':
+            siteType = 500;
+            break;
+        case 'Webstore':
+            siteType = 800;
+            break;
+        case 'Showcase + Webstore':
+            siteType = 1000;
+            break;
+        case 'Redesign - Showcase':
+            siteType = 300;
+            break;
+        case 'Redesign - Webstore':
+            siteType = 300;
+            break;
+        case 'Redesign - Showcase + Webstore':
+            siteType = 300;
+            break;
+        default:
+            siteType = 0;
+        }
+
+        document.getElementById("text-customQuote").innerHTML = siteType + " € ";
+        document.getElementById("text-customQuoteWidget").innerHTML = siteType + " € ";
+        document.getElementById("price").value = siteType;
     }
 
 
