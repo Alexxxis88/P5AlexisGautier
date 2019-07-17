@@ -182,7 +182,11 @@ try {
                         if (in_array($extension_upload, $extensions_allowed))
                         {
                             // File is stored in uploads folder on server
-                            move_uploaded_file($_FILES['attachedFile']['tmp_name'], 'uploads/' . basename($_FILES['attachedFile']['name']));
+                            $filenameProject = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '',$_POST['project'])));
+                            $filenameFirstName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '',$_POST['firstName'])));
+                            $filenameLastName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '',$_POST['lastName'])));
+
+                            move_uploaded_file($_FILES['attachedFile']['tmp_name'], 'uploads/' . $filenameProject . '_' . $filenameFirstName . '_' . $filenameLastName . '.' . $extension_upload);
                         }
                         else {
                             throw new \Exception('Incorrect format. Please use jpg, jpeg or png');
