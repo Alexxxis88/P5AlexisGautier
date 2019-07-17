@@ -23,17 +23,6 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="structure">Structure*</label>
-                                <select id="structure" name="structure" class="form-control" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="" disabled selected hidden> </option>
-                                    <option value="individual">Individual</option>
-                                    <option value="professional">Professional</option>
-                                    <option value="association">Association</option>
-                                    <option value="professional">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-6">
                                 <label for="siteType">Type of Website*</label>
                                 <select id="siteType" name="siteType" class="form-control"
                                     onchange="getSelectValue(), myFunction4(), getTotal(), deselectAll()" required>
@@ -47,6 +36,58 @@ ob_start();
                                     <option value="Redesign - Webstore">Redesign (Webstore)</option>
                                     <option value="Redesign - Showcase Website + Webstore">Redesign (Showcase Website + Webstore)</option>
                                 </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="btn-group">
+                                    <p class="checkboxLabel">Optional features</p><br>
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
+                                        data-placeholder="Please select">Please select <span
+                                            class="caret"></span></button>
+                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
+                                        <li><input type="checkbox" id="blogOpt" name="options[]" class="checkBoxValue"
+                                                value="blog"><label for="blogOpt">Blog</label></li>
+                                        <li><input type="checkbox" id="chatOpt" name="options[]" class="checkBoxValue"
+                                                value="chat"><label for="chatOpt">Chat Box</label></li>
+                                        <li><input type="checkbox" id="contactFormOpt" name="options[]"
+                                                class="checkBoxValue" value="contact form"><label
+                                                for="contactFormOpt">Contact Form</label></li>
+                                        <li><input type="checkbox" id="newsletterOpt" name="options[]"
+                                                class="checkBoxValue" value="newsletter"><label
+                                                for="newsletterOpt">Newsletter</label></li>
+                                        <li><input type="checkbox" id="appointOpt" name="options[]"
+                                                class="checkBoxValue" value="appointment plugin"><label
+                                                for="appointOpt">Appointment plugin</label></li>
+                                        <li><input type="checkbox" id="searchOpt" name="options[]"
+                                                class="checkBoxValue" value="search plugin"><label for="searchOpt">Search
+                                                engine</label></li>
+                                        <li><input type="checkbox" id="quoteOpt" name="options[]"
+                                                class="checkBoxValue" value="autoQuote plugin"><label for="quoteOpt">Automatic
+                                                quote plugin</label></li>
+                                        <li><input type="checkbox" id="invoiceOpt" name="options[]"
+                                                class="checkBoxValue" value="invoice plugin"><label for="invoiceOpt">Invoice
+                                                plugin</label></li>
+                                        <li><input type="checkbox" id="socialOpt" name="options[]"
+                                                class="checkBoxValue" value="social Network"><label for="socialOpt">Social
+                                                Networks plugin</label></li>
+                                        <li><input type="checkbox" id="statsOpt" name="options[]"
+                                                class="checkBoxValue" value="stats plugin"><label
+                                                for="statsOpt">Statistics</label></li>
+                                        <li><input type="checkbox" id="calendarOpt" name="options[]"
+                                                class="checkBoxValue" value="calendar"><label
+                                                for="calendarOpt">Calendar</label></li>
+                                        <li><input type="checkbox" id="newsOpt" name="options[]" class="checkBoxValue"
+                                                value="news plugin"><label for="newsOpt">News plugin</label></li>
+                                        <li><input type="checkbox" id="adminPannelOpt" name="options[]"
+                                                class="checkBoxValue" value="admin pannel"><label
+                                                for="adminPannelOpt">Administration pannel</label></li>
+                                        <li><input type="checkbox" id="ratingsOpt" name="options[]"
+                                                class="checkBoxValue" value="customer ratings"><label for="ratingsOpt">Customer
+                                                ratings</label></li>
+                                        <li><input type="checkbox" id="surveyOpt" name="options[]"
+                                                class="checkBoxValue" value="survey plugin"><label for="surveyOpt">Survey
+                                                plugin</label></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -125,11 +166,10 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="Standard">Standard : nice, simple and efficient (you don't have a
-                                        visual
-                                        identity guide)</option>
-                                    <option value="Custom">Custom : according to your visual identity guide</option>
-                                    <option value="Custom +">Custom + : Top of the range design. 100% tailor-made for you
+                                    <option value="Standard">Standard : nice, simple and efficient (I don't have a
+                                        visual identity guide)</option>
+                                    <option value="Custom">Custom : according to my visual identity guide</option>
+                                    <option value="Custom +">Custom + : Top of the range design. 100% tailor-made for me
                                     </option>
                                 </select>
                             </div>
@@ -260,60 +300,6 @@ ob_start();
                             <div class="form-group col-md-6" id="deadlineBlock">
                                 <label for="deadline">Specify exact deadline</label>
                                 <input type="date" class="form-control" id="deadline" name="deadline">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <div class="btn-group">
-                                    <p class="checkboxLabel">Optional features</p><br>
-                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
-                                        data-placeholder="Please select">Please select <span
-                                            class="caret"></span></button>
-                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
-                                        <li><input type="checkbox" id="blogOpt" name="options[]" class="checkBoxValue"
-                                                value="blog"><label for="blogOpt">Blog</label></li>
-                                        <li><input type="checkbox" id="chatOpt" name="options[]" class="checkBoxValue"
-                                                value="chat"><label for="chatOpt">Chat Box</label></li>
-                                        <li><input type="checkbox" id="contactFormOpt" name="options[]"
-                                                class="checkBoxValue" value="contact form"><label
-                                                for="contactFormOpt">Contact Form</label></li>
-                                        <li><input type="checkbox" id="newsletterOpt" name="options[]"
-                                                class="checkBoxValue" value="newsletter"><label
-                                                for="newsletterOpt">Newsletter</label></li>
-                                        <li><input type="checkbox" id="appointOpt" name="options[]"
-                                                class="checkBoxValue" value="appointment plugin"><label
-                                                for="appointOpt">Appointment plugin</label></li>
-                                        <li><input type="checkbox" id="searchOpt" name="options[]"
-                                                class="checkBoxValue" value="search plugin"><label for="searchOpt">Search
-                                                engine</label></li>
-                                        <li><input type="checkbox" id="quoteOpt" name="options[]"
-                                                class="checkBoxValue" value="autoQuote plugin"><label for="quoteOpt">Automatic
-                                                quote plugin</label></li>
-                                        <li><input type="checkbox" id="invoiceOpt" name="options[]"
-                                                class="checkBoxValue" value="invoice plugin"><label for="invoiceOpt">Invoice
-                                                plugin</label></li>
-                                        <li><input type="checkbox" id="socialOpt" name="options[]"
-                                                class="checkBoxValue" value="social Network"><label for="socialOpt">Social
-                                                Networks plugin</label></li>
-                                        <li><input type="checkbox" id="statsOpt" name="options[]"
-                                                class="checkBoxValue" value="stats plugin"><label
-                                                for="statsOpt">Statistics</label></li>
-                                        <li><input type="checkbox" id="calendarOpt" name="options[]"
-                                                class="checkBoxValue" value="calendar"><label
-                                                for="calendarOpt">Calendar</label></li>
-                                        <li><input type="checkbox" id="newsOpt" name="options[]" class="checkBoxValue"
-                                                value="news plugin"><label for="newsOpt">News plugin</label></li>
-                                        <li><input type="checkbox" id="adminPannelOpt" name="options[]"
-                                                class="checkBoxValue" value="admin pannel"><label
-                                                for="adminPannelOpt">Administration pannel</label></li>
-                                        <li><input type="checkbox" id="ratingsOpt" name="options[]"
-                                                class="checkBoxValue" value="customer ratings"><label for="ratingsOpt">Customer
-                                                ratings</label></li>
-                                        <li><input type="checkbox" id="surveyOpt" name="options[]"
-                                                class="checkBoxValue" value="survey plugin"><label for="surveyOpt">Survey
-                                                plugin</label></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
 
@@ -540,9 +526,22 @@ ob_start();
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="project">Projet name*</label>
+                                <label for="project">Project name*</label>
                                 <input type="text" class="form-control" id="project" name="project" maxlength="40"
                                     required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="structure">Structure*</label>
+                                <select id="structure" name="structure" class="form-control" required>
+                                    <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="" disabled selected hidden> </option>
+                                    <option value="individual">Individual</option>
+                                    <option value="professional">Professional</option>
+                                    <option value="association">Association</option>
+                                    <option value="professional">Other</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="company">Company Name</label>
@@ -883,7 +882,7 @@ ob_start();
                             automatically recieve a detailled recap to the email address you provided.</p>
                         <div class="text-center">
                             <input type="checkbox" form="customQuoteForm" id="acceptTerms" required>&nbsp;
-                            <label for="acceptTerms" class="col-form-label"><small>I accept <a href="index.php?action=terms">Terms & Conditions</a> and <a href="index.php?action=privacy">Privacy Policy.</a></small></label><br>
+                            <label for="acceptTerms" class="col-form-label"><small>I accept <a href="index.php?action=termsAndCondition">Terms & Conditions</a> and <a href="index.php?action=privacyPolicy">Privacy Policy.</a></small></label><br>
                             <button type="submit" form="customQuoteForm" class="btn btn-princing">I want this!</button>
                         </div>
                     </div>
