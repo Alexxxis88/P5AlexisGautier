@@ -56,8 +56,46 @@ class QuoteManager extends Manager
     //CUSTOM QUOTES
     public function insertNewCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
-        $newPackQuoteDb = $this->_db->prepare('INSERT INTO customquotes( siteType, price, project, structure, company, firstName, lastName, contactEmail, phone, postalAddress, postCode, city, country, deadline, messageContent, design, writingContent, visualContent, maintenance, host, domainYN, deadlineSelect, pageNb, loginShowcaseYN, paymentShowcaseYN, productNb, requestDate, languages, extensions, paymentMtdShowcase, options, paymentMtdStore  ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?, ?, ?, ?)');
-        $newPackQuoteDb->execute(array($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore));
+        $newCustomQuoteDb = $this->_db->prepare('INSERT INTO customquotes( siteType, price, project, structure, company, firstName, lastName, contactEmail, phone, postalAddress, postCode, city, country, deadline, messageContent, design, writingContent, visualContent, maintenance, host, domainYN, deadlineSelect, pageNb, loginShowcaseYN, paymentShowcaseYN, productNb, requestDate, languages, extensions, paymentMtdShowcase, options, paymentMtdStore  ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?, ?, ?, ?)');
+        $newCustomQuoteDb->execute(array($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore));
+    }
+
+    public function getCustomQuotes()
+    {
+        $req = $this->_db->query('SELECT * FROM customquotes ORDER BY requestDate DESC');
+        while ($datasCustomQuotes = $req->fetch(\PDO::FETCH_ASSOC)) {
+            $customQuote[] = new CustomQuote($datasCustomQuotes);
+        }
+        if (!empty($customQuote)) { //needed otherwise gives an error on the customQuotesAdmin.php when no custom quote
+            return $customQuote;
+        }
+    }
+
+    public function eraseCustomQuote($customQuoteId)
+    {
+        $customQuoteDelete = $this->_db->prepare('DELETE FROM customquotes WHERE id = ?');
+        $customQuoteDelete->execute(array($customQuoteId));
+    }
+
+
+    public function acceptCustomQuote($accepted, $customQuoteId)
+    {
+        $req = $this->_db->prepare('UPDATE customquotes SET accepted = ? WHERE id = ?');
+        $req->execute(array($accepted, $customQuoteId));
+    }
+
+    public function customQuoteStatus($quoteStatus, $customQuoteId)
+    {
+        $req = $this->_db->prepare('UPDATE customquotes SET quoteStatus = ? WHERE id = ?');
+        $req->execute(array($quoteStatus, $customQuoteId));
+    }
+
+    //turn quotes icon (menuAdmin) in red if quotes to manage
+    public function isThereNewCustomQuote()
+    {
+        $req = $this->_db->query('SELECT quoteStatus FROM customquotes WHERE quoteStatus = 0');
+        $isThereCustomQuote= $req->fetch();
+        return $isThereCustomQuote;
     }
 
 }

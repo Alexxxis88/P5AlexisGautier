@@ -1,37 +1,53 @@
 <?php
-$title = 'Alexis Gautier - Pack Quotes';
+$title = 'Alexis Gautier - Custom Quotes';
 ob_start();
 ?>
 <div class="container noHeaderImg"> <!-- DO NOT add a fade-up/down/bounce/flip class or modal when answering won't display correctly-->
     <section>
-        <h2 class="titleManageCom titleMessages">Pack Quotes</h2>
+        <h2 class="titleManageCom titleMessages">Custom Quotes</h2>
         <hr>
         <?php
-            if (!empty($packQuote)){ //needed otherwise gives an error on the messagesAdmin.php when no new message
-                for ($i = 0 ; $i < sizeof($packQuote) ; $i++) {
-                    $packQuoteId = $packQuote[$i]->id();
-                    $packName = $packQuote[$i]->packName();
-                    $price = $packQuote[$i]->price();
-                    $requestDate = $packQuote[$i]->requestDate();
-                    $project = $packQuote[$i]->project();
-                    $structure = $packQuote[$i]->structure();
-                    $company = $packQuote[$i]->company();
-                    $firstName = $packQuote[$i]->firstName();
-                    $lastName = $packQuote[$i]->lastName();
-                    $contactEmail = $packQuote[$i]->contactEmail();
-                    $phone = $packQuote[$i]->phone();
-                    $postalAddress = $packQuote[$i]->postalAddress();
-                    $postCode = $packQuote[$i]->postCode();
-                    $city = $packQuote[$i]->city();
-                    $country = $packQuote[$i]->country();
-                    $deadline = $packQuote[$i]->deadline();
-                    $messageContent = $packQuote[$i]->messageContent();
-                    $quoteStatus = $packQuote[$i]->quoteStatus();
-                    $accepted = $packQuote[$i]->accepted();
-                    $clientStatus = $packQuote[$i]->clientStatus();
+            if (!empty($customQuote)){ //needed otherwise gives an error on the messagesAdmin.php when no new message
+                for ($i = 0 ; $i < sizeof($customQuote) ; $i++) {
+                    $customQuoteId = $customQuote[$i]->id();
+                    $siteType = $customQuote[$i]->siteType();
+                    $price = $customQuote[$i]->price();
+                    $requestDate = $customQuote[$i]->requestDate();
+                    $project = $customQuote[$i]->project();
+                    $structure = $customQuote[$i]->structure();
+                    $company = $customQuote[$i]->company();
+                    $firstName = $customQuote[$i]->firstName();
+                    $lastName = $customQuote[$i]->lastName();
+                    $contactEmail = $customQuote[$i]->contactEmail();
+                    $phone = $customQuote[$i]->phone();
+                    $postalAddress = $customQuote[$i]->postalAddress();
+                    $postCode = $customQuote[$i]->postCode();
+                    $city = $customQuote[$i]->city();
+                    $country = $customQuote[$i]->country();
+                    $deadline = $customQuote[$i]->deadline();
+                    $messageContent = $customQuote[$i]->messageContent();
+                    $languages = $customQuote[$i]->languages();
+                    $design = $customQuote[$i]->design();
+                    $writingContent = $customQuote[$i]->writingContent();
+                    $visualContent = $customQuote[$i]->visualContent();
+                    $maintenance = $customQuote[$i]->maintenance();
+                    $host = $customQuote[$i]->host();
+                    $domainYN = $customQuote[$i]->domainYN();
+                    $extensions = $customQuote[$i]->extensions();
+                    $deadlineSelect = $customQuote[$i]->deadlineSelect();
+                    $pageNb = $customQuote[$i]->pageNb();
+                    $loginShowcaseYN = $customQuote[$i]->loginShowcaseYN();
+                    $paymentShowcaseYN = $customQuote[$i]->paymentShowcaseYN();
+                    $paymentMtdShowcase = $customQuote[$i]->paymentMtdShowcase();
+                    $options = $customQuote[$i]->options();
+                    $productNb = $customQuote[$i]->productNb();
+                    $paymentMtdStore = $customQuote[$i]->paymentMtdStore();
+                    $quoteStatus = $customQuote[$i]->quoteStatus();
+                    $accepted = $customQuote[$i]->accepted();
+                    $clientStatus = $customQuote[$i]->clientStatus();
                     ?>
-                    <div <?php if ($quoteStatus == 0 && $accepted != 2) : echo 'class="newPackQuote"'; elseif ($accepted == 2) : echo 'class="refusedPackQuote"'; else : echo 'class="packQuote"'; endif; ?> >
-                        <p class="commentHead">Pack Quote n° <strong><?= $packQuoteId ?></strong>
+                    <div <?php if ($quoteStatus == 0 && $accepted != 2) : echo 'class="newCustomQuote"'; elseif ($accepted == 2) : echo 'class="refusedCustomQuote"'; else : echo 'class="customQuote"'; endif; ?> >
+                        <p class="commentHead">Custom Quote n° <strong><?= $customQuoteId ?></strong>
                             <?php
                             //Status
                             if ($quoteStatus == 0 && $accepted == 1) : echo '&emsp; - &emsp; <span class="fas fa-history" style="color:white"> </span> Pending';
@@ -47,9 +63,10 @@ ob_start();
                             endif;
                             ?>
                         </p>
-                        <p><Strong>Website type : </Strong><?= $packName?></p>
+                        <p><Strong>Website type : </Strong><?= $siteType?></p>
                         <p><Strong>Price : </Strong><?= $price?> €</p>
-                        <p><Strong>Deadline : </Strong><?= $deadline?></p>
+                        <p><Strong>Deadline : </Strong><?= $deadlineSelect?></p>
+                        <p><Strong>Specific date : </Strong><?= $deadline?></p>
                         <p><Strong>Request sent on : </Strong><?= $requestDate?> </p>
                         <p><Strong>
                             <?php
@@ -62,7 +79,29 @@ ob_start();
                         <p><Strong>Full name : </Strong><?= $firstName?> <?= $lastName?></p>
 
                         <!-- More information -->
-                        <div class="quoteMoreInfo<?=$packQuoteId?>">
+                        <div class="quoteMoreInfo<?=$customQuoteId?>">
+                            <h3>General information</h3>
+                            <p><Strong>Languages : </Strong><?= $languages?></p>
+                            <p><Strong>Design : </Strong><?= $design?></p>
+                            <p><Strong>Writing Content : </Strong><?= $writingContent?></p>
+                            <p><Strong>Visual Content : </Strong><?= $visualContent?></p>
+                            <p><Strong>Maintenance / Updates : </Strong><?= $maintenance?></p>
+                            <p><Strong>Host : </Strong><?= $host?></p>
+                            <p><Strong>Domain name : </Strong><?= $domainYN?></p>
+                            <p><Strong>Extensions : </Strong><?= $extensions?></p>
+                            <p><Strong>Options : </Strong><?= $options?></p>
+
+                            <h3>Showcase Website</h3>
+                            <p><Strong>Number of pages : </Strong><?= $pageNb?></p>
+                            <p><Strong>My users need to log in : </Strong><?= $loginShowcaseYN?></p>
+                            <p><Strong>Payment options needed : </Strong><?= $paymentShowcaseYN?></p>
+                            <p><Strong>Payment options : </Strong><?= $paymentMtdShowcase?></p>
+
+                            <h3>Webstore</h3>
+                            <p><Strong>Number of products for sale : </Strong><?= $productNb?></p>
+                            <p><Strong>Payment options : </Strong><?= $paymentMtdStore?></p>
+
+                            <h3>Client information</h3>
                             <p><Strong>Structure : </Strong><?= $structure?></p>
                             <p><Strong>Company : </Strong><?= $company?></p>
                             <p><Strong>Email : </Strong><?= $contactEmail?></p>
@@ -73,21 +112,21 @@ ob_start();
                             <p><Strong>Country : </Strong><?= $country?></p>
                             <p><Strong>Description : </Strong><?= $messageContent?></p>
                         </div>
-                        <button class="fas fa-search quoteMoreInfoBtn<?=$packQuoteId ?>"> More ...</button>
+                        <button class="fas fa-search quoteMoreInfoBtn<?=$customQuoteId ?>"> More ...</button>
 
                         <div class="manageComIcons">
                             <div class="approvDelComs">
 
                             <!-- this script stays here because it uses PHP variables and can't work in Main.js -->
                             <script>
-                            $(".quoteMoreInfoBtn<?=$packQuoteId ?>").on("click", function(){
-                                $(".quoteMoreInfo<?=$packQuoteId?>").toggle("slow")
+                            $(".quoteMoreInfoBtn<?=$customQuoteId ?>").on("click", function(){
+                                $(".quoteMoreInfo<?=$customQuoteId?>").toggle("slow")
                             })
                             </script>
 
                             <!-- Auto-email form for accepted quote requests-->
                             <div class="acceptForm">
-                                <form id="acceptForm<?= $packQuoteId ?>" action="index.php?action=acceptPackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=1" method="post">
+                                <form id="acceptForm<?= $customQuoteId ?>" action="index.php?action=acceptCustomQuote&amp;customQuoteId=<?= $customQuoteId ?>&amp;acceptCustomQuote=1" method="post">
                                         <label for="myEmail" class="col-form-label">From : </label>
                                         <input type="text" class="form-control" id="myEmail" name="myEmail" value="alexisxgautier@gmail.com" readonly="readonly">
                                         <label for="clientEmail" class="col-form-label">to : </label>
@@ -101,19 +140,19 @@ ob_start();
 
 
                             <!-- bouton classique sans envoi de mail auto FIXME DELETE ME si ça marche avec le form-->
-                            <!-- <a class="answerBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=< ?= $packQuoteId ?>&amp;acceptPackQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Ancien bouton fonctionel Accept</a>-->
+                            <!-- <a class="answerBtn" href="index.php?action=acceptCustomQuote&amp;customQuoteId=< ?= $customQuoteId ?>&amp;acceptCustomQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Ancien bouton fonctionel Accept</a>-->
 
 
                             <?php
                             //Accept / Refuse buttons
                             if ($accepted == 0 || $accepted == 2) : ?>
                             <!-- Accept button with an auto email function -->
-                            <button type="submit" form="acceptForm<?= $packQuoteId ?>" class="acceptBtn" onclick="return confirm('Accept this project ?')"><span class="far fa-check-square"></span> Accept</button>
+                            <button type="submit" form="acceptForm<?= $customQuoteId ?>" class="acceptBtn" onclick="return confirm('Accept this project ?')"><span class="far fa-check-square"></span> Accept</button>
                             <?php
                             ;
                             endif;
                             if ($accepted == 0 || $accepted == 1) : ?>
-                            <a class="deleteBtn" data-toggle="modal" data-target="#refuseModal<?= $packQuoteId ?>" ><span class="far fa-check-square"></span>  Refuse</a>
+                            <a class="deleteBtn" data-toggle="modal" data-target="#refuseModal<?= $customQuoteId ?>" ><span class="far fa-check-square"></span>  Refuse</a>
                             <?php
                             ;
                             endif;
@@ -121,9 +160,9 @@ ob_start();
 
                             <?php
                             if ( $accepted == 1) :?>
-                                <form id="statusForm" action="index.php?action=updateQuoteStatus&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
-                                    <label for="statusPackQuote">Status :</label>
-                                    <select id="statusPackQuote" name="statusPackQuote"
+                                <form id="statusForm" action="index.php?action=updateCustomQuoteStatus&amp;customQuoteId=<?= $customQuoteId ?>" method="post">
+                                    <label for="statusCustomQuote">Status :</label>
+                                    <select id="statusCustomQuote" name="statusCustomQuote"
                                         onchange="submit()">
                                         <option disabled hidden value="">&nbsp;</option>
                                         <option label="Please choose..." value="0" disabled selected hidden> </option>
@@ -137,13 +176,13 @@ ob_start();
                             ;
                             endif;
                             ?>
-                                <br><a class="deleteBtn" href="index.php?action=deletePackQuote&amp;packQuoteId=<?= $packQuoteId ?>" onclick="return confirm('Delete this request ?')"><span class="far fa-trash-alt"></span> Delete this request</a>
+                                <br><a class="deleteBtn" href="index.php?action=deleteCustomQuote&amp;customQuoteId=<?= $customQuoteId ?>" onclick="return confirm('Delete this request ?')"><span class="far fa-trash-alt"></span> Delete this request</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Refuse project modal -->
-                    <div class="modal fade" id="refuseModal<?= $packQuoteId ?>" tabindex="-1" role="dialog" aria-labelledby="refuseModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="refuseModal<?= $customQuoteId ?>" tabindex="-1" role="dialog" aria-labelledby="refuseModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -153,7 +192,7 @@ ob_start();
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="answerForm" action="index.php?action=refusePackQuote&amp;packQuoteId=<?= $packQuoteId ?>&amp;acceptPackQuote=2" method="post">
+                                    <form class="answerForm" action="index.php?action=refuseCustomQuote&amp;customQuoteId=<?= $customQuoteId ?>&amp;acceptCustomQuote=2" method="post">
                                         <div class="form-group">
                                             <label for="myEmail" class="col-form-label">From : </label>
                                             <input type="text" class="form-control" id="myEmail" name="myEmail" value="alexisxgautier@gmail.com" readonly="readonly">
@@ -181,7 +220,7 @@ ob_start();
             }
             ?>
         <!-- displays a message if no new message -->
-        <div class="noPackQuote">There is no pack quotes</div>
+        <div class="noCustomQuote">There is no custom quotes</div>
     </section>
 </div>
 <?php

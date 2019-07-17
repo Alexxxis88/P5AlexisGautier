@@ -80,6 +80,7 @@ class MessageController
         //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $quoteManager = new QuoteManager();
         $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
         $newMessages = $messageManager->getNewMessages();
         $archivedMessages = $messageManager->getArchivedMessages();

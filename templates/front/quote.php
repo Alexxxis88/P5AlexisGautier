@@ -1219,7 +1219,7 @@ ob_start();
 
         //reset dropdown option menu placeholder
         $(".menuPlaceholder").html("Please select <span class='caret'></span>")
-        
+
         //hide elements
         document.getElementById("extensionBlock").style.display = "none";
         document.getElementById("deadlineBlock").style.display = "none";
@@ -1306,13 +1306,13 @@ ob_start();
     function myFunction4() {
         let siteTypeDisplay = document.getElementById("siteType")
             .value; //FIXME, pourquoi ça ne marche pas avec innerHTML ? tester en Jquery?
-        if (siteTypeDisplay == 'Showcase' || siteTypeDisplay == 'Redesign - Showcase') {
+        if (siteTypeDisplay == 'Showcase Website' || siteTypeDisplay == 'Redesign - Showcase Website') {
             document.getElementById("showcaseSection").style.display = "block";
             document.getElementById("webstoreSection").style.display = "none";
         } else if (siteTypeDisplay == 'Webstore' || siteTypeDisplay == 'Redesign - Webstore' ) {
             document.getElementById("showcaseSection").style.display = "none";
             document.getElementById("webstoreSection").style.display = "block";
-        } else if (siteTypeDisplay == 'Showcase + Webstore' || siteTypeDisplay == 'Redesign - Showcase + Webstore') {
+        } else if (siteTypeDisplay == 'Showcase Website + Webstore' || siteTypeDisplay == 'Redesign - Showcase Website + Webstore') {
             document.getElementById("showcaseSection").style.display = "block";
             document.getElementById("webstoreSection").style.display = "block";
         } else {

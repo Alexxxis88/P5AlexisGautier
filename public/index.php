@@ -288,6 +288,54 @@ try {
             }
         }
 
+        elseif ($_GET['action'] == 'deleteCustomQuote') {
+            if (isset($_GET['customQuoteId']) && $_GET['customQuoteId'] > 0) {
+
+                $quoteController = new QuoteController;
+                $quoteController->deleteCustomQuote($_GET['customQuoteId']);
+            } else {
+                throw new Exception('Aucun identifiant de devis envoyé');
+            }
+        }
+
+        elseif ($_GET['action'] == 'acceptCustomQuote') {
+            if (isset($_GET['customQuoteId']) && $_GET['customQuoteId'] > 0 && isset($_GET['acceptCustomQuote'])) {
+
+                $messageController = new MessageController;
+                $messageController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
+
+                $quoteController = new QuoteController;
+                $quoteController->acceptDenyCustomQuote($_GET['acceptCustomQuote'], $_GET['customQuoteId']);
+            } else {
+                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+            }
+        }
+
+        elseif ($_GET['action'] == 'refuseCustomQuote') {
+            if (isset($_GET['customQuoteId']) && $_GET['customQuoteId'] > 0 && isset($_GET['acceptCustomQuote'])) {
+
+                $messageController = new MessageController;
+                $messageController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
+
+                $quoteController = new QuoteController;
+                $quoteController->acceptDenyCustomQuote($_GET['acceptCustomQuote'], $_GET['customQuoteId']);
+
+
+            } else {
+                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+            }
+        }
+
+        elseif ($_GET['action'] == 'updateCustomQuoteStatus') {
+            if (isset($_GET['customQuoteId']) && $_GET['customQuoteId'] > 0 && isset($_POST['statusCustomQuote'])) {
+
+                $quoteController = new QuoteController;
+                $quoteController->updateCustomQuoteStatus($_POST['statusCustomQuote'], $_GET['customQuoteId']);
+            } else {
+                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+            }
+        }
+
 
         //MESSAGES MANAGEMENT
 

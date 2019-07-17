@@ -46,6 +46,14 @@ if ((!$.trim($(".newPackQuote").html()).length) && (!$.trim($(".packQuote").html
     $(".noPackQuote").css("display", "none");
 };
 
+// displays a message box if no custom quotes
+if ((!$.trim($(".newCustomQuote").html()).length) && (!$.trim($(".customQuote").html()).length)) {
+    $(".noCustomQuote").css("display", "block");
+} else {
+    $(".noCustomQuote").css("display", "none");
+};
+
+
 
 
 // Skills bars FIXME : les bars sont déja chargées quand je scroll, trouver comme faire pour attendre que le bloc s'affiche puis charger les bars

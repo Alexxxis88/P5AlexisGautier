@@ -153,6 +153,7 @@ class QuoteController
         //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $quoteManager = new QuoteManager();
         $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
         $packQuote = $quoteManager->getPackQuotes();
 
@@ -187,7 +188,7 @@ class QuoteController
     //CUSTOM QUOTES
     public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
-        //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ? 
+        //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ?
         $languages = implode(", ",array_values($languages));
         $extensions = implode(", ",array_values($extensions));
         $paymentMtdShowcase = implode(", ",array_values($paymentMtdShowcase));
@@ -204,7 +205,7 @@ class QuoteController
     public function sendCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
 
-        //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ? 
+        //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ?
         $languages = implode(", ",array_values($languages));
         $extensions = implode(", ",array_values($extensions));
         $paymentMtdShowcase = implode(", ",array_values($paymentMtdShowcase));
@@ -438,5 +439,47 @@ class QuoteController
         } else {
             throw new \Exception('Le type de prestation souhaité n\'est pas conforme.');
         }
+    }
+
+    //BACKEND
+    //display customquotes
+    public function listCustomQuotes()
+    {
+        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $messageManager = new MessageManager();
+        $isThereNewMessages = $messageManager->isThereNewMsg();
+
+        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $quoteManager = new QuoteManager();
+        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
+
+        $customQuote = $quoteManager->getCustomQuotes();
+
+        require('templates/admin/customQuotesAdmin.php');
+    }
+
+    public function deleteCustomQuote($customQuoteId)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->eraseCustomQuote($customQuoteId);
+        header('Location: index.php?action=customQuotesAdmin');
+        exit;
+    }
+
+    public function acceptDenyCustomQuote($accepted, $customQuoteId)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->acceptCustomQuote($accepted, $customQuoteId);
+        header('Location: index.php?action=customQuotesAdmin');
+        exit;
+    }
+
+    public function updateCustomQuoteStatus($quoteStatus, $customQuoteId)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->customQuoteStatus($quoteStatus, $customQuoteId);
+        header('Location: index.php?action=customQuotesAdmin');
+        exit;
     }
 }

@@ -74,12 +74,12 @@ if ($isThereNewPackQuotes == true ) { ?>
 <?php }
 ?>
 
-<!-- Display custom quote request alert
-< ?php
+<!-- Display custom quote request alert-->
+<?php
 if ($isThereNewCustomQuotes == true ) { ?>
     <script>$('.customQuoteAlert').css("color", "rgb(233, 45, 45)");</script>
-< ?php }
-?>-->
+<?php }
+?>
 
 
 

@@ -80,6 +80,7 @@ class DisplayController
         //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $quoteManager = new QuoteManager();
         $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
         require('templates/admin/logIn.php');
     }
@@ -93,6 +94,7 @@ class DisplayController
         //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $quoteManager = new QuoteManager();
         $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
         $sessionController = new SessionController();
         $cookieOrSessionEmail = $sessionController->checkSession();
@@ -109,6 +111,8 @@ class DisplayController
         //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $quoteManager = new QuoteManager();
         $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
+
         require('templates/admin/dashboard.php');
     }
 
