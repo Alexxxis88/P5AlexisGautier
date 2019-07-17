@@ -160,7 +160,39 @@ try {
         //QUOTES MANAGEMENT
         //PACK QUOTES
         elseif ($_GET['action'] == 'sendPackQuote') {
-            if (!empty($_POST['packName']) && !empty($_POST['price']) && !empty($_POST['project']) && !empty($_POST['structure']) && isset($_POST['company']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['contactEmail']) && !empty($_POST['phone']) && !empty($_POST['postalAddress']) &&!empty($_POST['postCode']) && !empty($_POST['city']) && !empty($_POST['country']) && !empty($_POST['deadline']) && !empty($_POST['messageContent'])) {
+            if (isset($_POST['packName']) && isset($_POST['price']) && isset($_POST['project']) && isset($_POST['structure']) && isset($_POST['company']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['contactEmail']) && isset($_POST['phone']) && isset($_POST['postalAddress']) &&isset($_POST['postCode']) && isset($_POST['city']) && isset($_POST['country']) && isset($_POST['deadline']) && isset($_POST['messageContent'])) {
+
+                if(empty($_POST['company'])){
+                    $_POST['company'] = "";
+                }
+                if(empty($_POST['phone'])){
+                    $_POST['phone'] = "";
+                }
+
+                //checking if an attached file has been sent
+                if (isset($_FILES['attachedFile']) AND $_FILES['attachedFile']['error'] == 0){
+
+                    //checking its size
+                    if ($_FILES['attachedFile']['size'] <= 7000000)
+                    {
+                        //checking its format
+                        $fileIinfo = pathinfo($_FILES['attachedFile']['name']);
+                        $extension_upload = $fileIinfo['extension'];
+                        $extensions_allowed = array('jpg', 'jpeg', 'png');
+                        if (in_array($extension_upload, $extensions_allowed))
+                        {
+                            // File is stored in uploads folder on server
+                            move_uploaded_file($_FILES['attachedFile']['tmp_name'], 'uploads/' . basename($_FILES['attachedFile']['name']));
+                        }
+                        else {
+                            throw new \Exception('Incorrect format. Please use jpg, jpeg or png');
+                        }
+                    }
+                    else {
+                        throw new \Exception('The file you uploaded is too big. Please keep it under 7Mo');
+                    }
+                }
+
 
                 $quoteController = new QuoteController;
 
@@ -262,6 +294,14 @@ try {
 
                 if(empty($_POST['productNb'])){
                     $_POST['productNb'] = "";
+                }
+
+                if(empty($_POST['company'])){
+                    $_POST['company'] = "";
+                }
+
+                if(empty($_POST['phone'])){
+                    $_POST['phone'] = "";
                 }
 
                 $quoteController = new QuoteController;

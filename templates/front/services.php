@@ -1202,7 +1202,7 @@ ob_start();
                 <hr>
                 <div class="modal-body">
                     <p class="textPackQuote">Submiting this form will send me a quote request along with a submission confirmation to your email address. I will get back to you shortly!</p>
-                    <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
+                    <form class="contactForm" action="index.php?action=sendPackQuote" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="packName3">Pack</label>
@@ -1535,6 +1535,11 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="deadline3">Deadline*</label>
                                 <input type="date" class="form-control" id="deadline3" name="deadline" min="<?= date("Y-m-d"); ?>" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="attachedFile3"><small>Attach a mockup (7Mo max)</small></label>
+                                <input type="file" class="form-control" id="attachedFile3" name="attachedFile" accept=".png, .jpg, .jpeg" >
+                                <small>Format .pgn, .jpg, .jpeg</small>
                             </div>
                         </div>
                         <div class="row">
