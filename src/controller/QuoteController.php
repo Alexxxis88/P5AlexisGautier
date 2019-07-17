@@ -219,11 +219,11 @@ class QuoteController
 
         date_default_timezone_set("Europe/Paris");
         $to  = 'jeangujeangu@gmail.com, '. htmlspecialchars($contactEmail) . '';
-        $topic = 'Quote resquest for a ' . htmlspecialchars($siteType);
+        $topic = 'Quote resquest for a custom ' . htmlspecialchars($siteType);
         $message = '
         <html>
             <body>
-                <h2>Quote resquest for a <strong>' . htmlspecialchars($siteType) . '</strong></h2>
+                <h2>Quote resquest for a custom <strong>' . htmlspecialchars($siteType) . '</strong></h2>
                 <h3>About you</h3>
                 <p>Project name : <strong>' . htmlspecialchars($project) . '</strong></p>
                 <p>Structure : <strong>' . htmlspecialchars($structure) . '</strong></p>

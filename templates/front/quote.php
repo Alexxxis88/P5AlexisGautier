@@ -13,7 +13,7 @@ ob_start();
     <div class="container">
         <div class="row " id="quoteForm">
             <div class="col-md-9 fade-up">
-                <form id="customQuoteForm" action="index.php?action=sendCustomQuote" method="post">
+                <form id="customQuoteForm" action="index.php?action=sendCustomQuote" method="post" enctype="multipart/form-data">
                     <section id="yourWebsite">
                         <div class="row">
                             <div class="col-md-12 center gap fade-down section-heading">
@@ -841,6 +841,13 @@ ob_start();
                                     <option value="ZMB">Zambia</option>
                                     <option value="ZWE">Zimbabwe</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="attachedFileCust"><small>Add a mockup(7Mo max)</small></label>
+                                <input type="file" class="form-control" id="attachedFileCust" name="attachedFile" accept=".png, .jpg, .jpeg" >
+                                <small>Format .pgn, .jpg, .jpeg</small>
                             </div>
                         </div>
                         <div class="row">
