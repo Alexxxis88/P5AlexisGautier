@@ -466,7 +466,7 @@ ob_start();
                 <hr>
                 <div class="modal-body">
                     <p class="textPackQuote">Submiting this form will send me a quote request along with a submission confirmation to your email address. I will get back to you shortly!</p>
-                    <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
+                    <form class="contactForm" action="index.php?action=sendPackQuote" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="packName">Pack</label>
@@ -800,6 +800,11 @@ ob_start();
                                 <label for="deadline">Deadline*</label>
                                 <input type="date" class="form-control" id="deadline" name="deadline" min="<?= date("Y-m-d"); ?>" required>
                             </div>
+                            <div class="form-group col-md-6">
+                                <label for="attachedFile"><small>Add a mockup(7Mo max)</small></label>
+                                <input type="file" class="form-control" id="attachedFile" name="attachedFile" accept=".png, .jpg, .jpeg" >
+                                <small>Format .pgn, .jpg, .jpeg</small>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
@@ -834,7 +839,7 @@ ob_start();
                 <hr>
                 <div class="modal-body">
                     <p class="textPackQuote">Submiting this form will send me a quote request along with a submission confirmation to your email address. I will get back to you shortly!</p>
-                    <form class="contactForm" action="index.php?action=sendPackQuote" method="post">
+                    <form class="contactForm" action="index.php?action=sendPackQuote" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="packName2">Pack</label>
@@ -1167,6 +1172,11 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="deadline2">Deadline*</label>
                                 <input type="date" class="form-control" id="deadline2" name="deadline" min="<?= date("Y-m-d"); ?>" required >
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="attachedFile"><small>Add a mockup(7Mo max)</small></label>
+                                <input type="file" class="form-control" id="attachedFile" name="attachedFile" accept=".png, .jpg, .jpeg" >
+                                <small>Format .pgn, .jpg, .jpeg</small>
                             </div>
                         </div>
                         <div class="row">
@@ -1537,7 +1547,7 @@ ob_start();
                                 <input type="date" class="form-control" id="deadline3" name="deadline" min="<?= date("Y-m-d"); ?>" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="attachedFile3"><small>Attach a mockup (7Mo max)</small></label>
+                                <label for="attachedFile3"><small>Add a mockup(7Mo max)</small></label>
                                 <input type="file" class="form-control" id="attachedFile3" name="attachedFile" accept=".png, .jpg, .jpeg" >
                                 <small>Format .pgn, .jpg, .jpeg</small>
                             </div>
