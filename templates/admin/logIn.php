@@ -10,11 +10,11 @@ ob_start();
                 <hr>
                 <div class="form-group">
                     <label for="email" class="col-form-label">Email Address*</label>
-                    <input type="text" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" id="email" name="email" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-zA-Z]{2,4}$" required>
                 </div>
                 <div class="form-group">
-                    <label for="passLog" class="col-form-label">Password*</label>
-                    <input type="password" class="form-control" id="passLog" name="pass" required>
+                    <label for="passLog" class="col-form-label">Password*<br><small><em>8 to 20 characters - Letters, numbers or special characters( . - _ ! ?) allowed</em></small></label>
+                    <input type="password" class="form-control" id="passLog" name="pass" pattern="[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9._!?-]{8,20}" required>
                 </div>
                 <div class="form-group">
                     <label title="cookies will be created when autologin" for="autoLogIn" class="col-form-label">Auto login</label>

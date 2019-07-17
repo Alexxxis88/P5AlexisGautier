@@ -66,11 +66,6 @@ class DisplayController
         require('templates/front/privacyPolicy.php');
     }
 
-    public function displayLegal()
-    {
-        require('templates/front/legalNotice.php');
-    }
-
     public function displayLogIn()
     {
         //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois

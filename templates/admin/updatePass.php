@@ -15,11 +15,11 @@ ob_start();
                 </div>
                 <div class="form-group">
                     <label for="currentPass" class="col-form-label">Current password*</label>
-                    <input type="password" class="form-control" id="currentPass" name="currentPass" required>
+                    <input type="password" class="form-control" id="currentPass" name="currentPass" pattern="[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9._!?-]{8,20}" required>
                 </div>
                 <div class="form-group">
                     <label for="newPass" class="col-form-label">New password*<br><small><em>8 to 20 characters - Letters, numbers or special characters( . - _ ! ?) allowed</em></small></label>
-                    <input type="password" class="form-control" id="newPass" name="newPass" required>
+                    <input type="password" class="form-control" id="newPass" name="newPass" pattern="[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9._!?-]{8,20}" required>
                 </div>
                 <input type="submit" class="btn btn-primary" id="changePassBtn" value="Update your password"/>
             </form>

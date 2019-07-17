@@ -2742,20 +2742,23 @@ img.author-box-image {
 /* ==========================================================================
    CONTACT
    ========================================================================== */
-input#project,
-select#structure,
-input#company,
-input#firstName,
-input#lastName,
-input#contactEmail,
-input#phone,
-input#postalAddress,
-input#postCode,
-input#city,
-select#country,
+
 input[type="date"],
 input#topic,
-textarea#messageContent {
+input[id*="project"],
+input[id*="company"],
+input[id*="firstName"],
+input[id*="lastName"],
+input[id*="contactEmail"],
+input[id*="phone"],
+input[id*="postalAddress"],
+input[id*="postCode"],
+input[id*="city"],
+input[id*="topic"],
+select[id*="structure"],
+select[id*="country"],
+textarea[id*="messageContent"]
+{
     width: 100% !important;
     padding: 10px 5px !important;
     margin-bottom: 15px !important;

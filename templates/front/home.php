@@ -87,50 +87,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="center gap fade-down section-heading">
-                            <hr>
-                            <div class="gap"></div>
-                            <h4 class="serviceSubtitle">Recording | Mixing | Mastering for your band</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <span class="fa-microphone-alt fa fa-md"></span>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Recording</h3>
-                                <p>Your band is finally ready to hit the studio and record these songs you have been jamming for a while now? I have everything you need to make them ROCK HARD!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <span class="fas fa-sliders-h fa fa-md"></span>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Mixing</h3>
-                                <p>You have a couple songs recorded, still hot from the oven ? Getting a proper mix is the next step to eventually put them on a record. Let me handle that and I'll get the best of these tunes!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <span class="fa fas fa-compact-disc fa-md"></span>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Mastering</h3>
-                                <p>Some often don't understand the importance of Mastering...until they listen to the difference with the rough mix! This is the last stage to beautify your record. And I'm ready to help you with that!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="gap"></div>
             <div class="row">
@@ -317,44 +273,11 @@
                 </div>
                 <div class="gap"></div>
             </section>
-
-            <!--
-            <section id="contact" class="white">
-                <div class="container">
-                    <div class="gap"></div>
-                    <div class="center gap fade-down section-heading">
-                        <h3 class="main-title">Get In Touch</h3>
-                        <hr>
-                        <p>Any question? I'm here to help!</p>
-                    </div>
-                    <div class="gap"></div>
-                    <div class="row">
-                        <div class="col-md-4 fade-up">
-                            <h3>Contact Information</h3>
-                            <p><span class="fas fa-home contactIcons"></span> Nantes - France<br/>
-                                <span class="fas fa-phone contactIcons"></span> +33 679165242<br/>
-                                <span class="fas fa-mobile-alt contactIcons"></span>+33 679165242<br/>
-                                <span class="far fa-envelope contactIcons"></span> <a href="mailto:alexisxgautier@gmail.com"> alexisxgautier@gmail.com</a> <br/>
-                                <span class="fab fa-skype contactIcons"></span> <a href="#"> alexisxgautier</a> <br/>
-                                <span class="fab fa-facebook contactIcons"></span> <a href="https://facebook.com"> Alexis Gautier</a> <br/>
-                            </p>
-                        </div>
-                        <div class="col-md-8 fade-up">
-                        <br>
-                            <div id="message"></div>
-                            <form method="post" action="index.php?action=sendMessage" id="contactform">
-                                <input type="text" name="name" id="name" placeholder="Name*" required />
-                                <input type="text" name="email" id="email" placeholder="Email*" required/>
-                                <textarea name="comments" id="comments" placeholder="Message*"></textarea>
-                                <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Send a message" required />
-                            </form>
-                        </div>
-                    </div>
-                    <div class="gap"></div>
-                </div>
-            </section>-->
         </div>
         <?php
 $content = ob_get_clean();
 require('templates/base.php');
 ?>
+
+<!-- Needs to stay here and not in base.php or functions included in main.js otherwise gives 567 console JS errors on quote.php --->
+<script src="./public/js/services.js"></script>

@@ -63,17 +63,6 @@
     </head>
 
     <body>
-
-        <?php
-        //display the right menu depending on the user role
-        // if (isset($checkUserRole['groupId']) && $checkUserRole['groupId'] == 1) {
-        //     require('admin/menuAdmin.php');
-        // } else {
-        //     require('front/menu.php');
-        // }
-        ?>
-
-
         <!--display the menu-->
         <div id="preloader"></div>
         <header class="navbar navbar-inverse navbar-fixed-top ">
@@ -101,13 +90,8 @@
                         <li><a href="index.php?action=contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="lang">
-                    <a href="#">FR</a> / <a href="#">EN</a>
-                </div>
             </div>
         </header>
-
-
 
         <!-- Displays a message if user is not using Javascript -->
         <noscript>
@@ -132,7 +116,6 @@
                     <div class="col-md-12 ">
                         <a href="index.php?action=privacyPolicy">Privacy Policy</a> &emsp;
                         <a href="index.php?action=termsAndCondition">Terms & Conditions</a> &emsp;
-                        <a href="index.php?action=legalNotice">Legal Notice</a>
                     </div>
                 </div>
             </div>
@@ -140,7 +123,7 @@
             <a href="#header" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><span class="fas fa-arrow-circle-up"></span></a>
             <!-- Copyright -->
             <div class="footer-copyright text-center">
-                <span>&copy;<script>document.write(new Date().getFullYear());</script> - Alexis Gautier - All rights reserved</span>
+                <span>&copy;<script>document.write(new Date().getFullYear());</script> - Alexis Gautier</span>
             </div>
         </footer>
 
@@ -150,7 +133,7 @@
         <script src="./public/js/jquery.prettyPhoto.js"></script>
         <script src="./public/js/init.js"></script>
         <script src="./public/js/main.js"></script>
-        
+
         <!-- A GARDER !!! car fichier modifiés pour les menus bootstrap-->
         <script src="./public/js/dropdowns-enhancement.js"></script>
     </body>

@@ -68,10 +68,6 @@ try {
             $displayController = new DisplayController;
             $displayController->displayPrivacy();
         }
-        elseif ($_GET['action'] == 'legalNotice') {
-            $displayController = new DisplayController;
-            $displayController->displayLegal();
-        }
         elseif ($_GET['action'] == 'canYouFindMyLoginPage') {
             $displayController = new DisplayController;
             $displayController->displayLogIn();

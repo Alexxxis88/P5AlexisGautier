@@ -29,15 +29,15 @@ ob_start();
                     <div id="message"></div>
                     <form method="post" action="index.php?action=sendMessage" id="contactform">
                         <label for="firstName" hidden>First Name</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="First Name*" maxlength="20" required />
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name*" maxlength="20" pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+[' -]?[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$" required />
                         <label for="lastName" hidden>Last Name</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Last Name*" maxlength="20" required />
+                        <input type="text" name="lastName" id="lastName" placeholder="Last Name*" maxlength="20" pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+[' -]?[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$" required />
                         <label for="contactEmail" hidden>Email</label>
-                        <input type="text" name="contactEmail" id="contactEmail" placeholder="Email*" required/>
+                        <input type="email" name="contactEmail" id="contactEmail" placeholder="Email*" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-zA-Z]{2,4}$" required/>
                         <label for="topic" hidden>Topic</label>
-                        <input type="text" name="topic" id="topic" placeholder="Subject of your message*" maxlength="60" required/>
+                        <input type="text" name="topic" id="topic" placeholder="Subject of your message*" maxlength="60" pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9(' \-)*]+[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9]+$" required/>
                         <label for="messageContent" hidden>Message</label>
-                        <textarea name="messageContent" id="messageContent" placeholder="Message*"></textarea>
+                        <textarea name="messageContent" id="messageContent" placeholder="Message*" required></textarea>
                         <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Send a message" />
                     </form>
                 </div>

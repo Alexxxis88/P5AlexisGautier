@@ -481,7 +481,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="project">Project name*</label>
                                 <input type="text" class="form-control" id="project" name="project" maxlength="40"
-                                    required>
+                                    required pattern="^[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]{1,}[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]*[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]+$">
                             </div>
                         </div>
                         <div class="row">
@@ -498,45 +498,45 @@ ob_start();
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="company">Company Name</label>
-                                <input type="text" class="form-control" id="company" name="company" maxlength="100">
+                                <input type="text" class="form-control" id="company" name="company" maxlength="100" pattern="^[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]{1,}[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]*[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="firstName">First Name*</label>
                                 <input type="text" class="form-control" id="firstName" name="firstName" maxlength="40"
-                                    required>
+                                    required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+[' -]?[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="lastName">Last Name*</label>
                                 <input type="text" class="form-control" id="lastName" name="lastName" maxlength="40"
-                                    required>
+                                    required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+[' -]?[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="contactEmail">Email*</label>
-                                <input type="text" class="form-control" id="contactEmail" name="contactEmail" required>
+                                <input type="email" class="form-control" id="contactEmail" name="contactEmail" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-zA-Z]{2,4}$" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="phone">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" name="phone">
+                                <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9\.+_ -]*">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="postalAddress">Address*</label>
-                                <input type="text" class="form-control" id="postalAddress" name="postalAddress" required>
+                                <input type="text" class="form-control" id="postalAddress" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="postCode">Post Code*</label>
-                                <input type="text" class="form-control" id="postCode" name="postCode" required>
+                                <input type="text" class="form-control" id="postCode" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="city">City*</label>
-                                <input type="text" class="form-control" id="city" name="city" required>
+                                <input type="text" class="form-control" id="city" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="country">Country*</label>
@@ -798,7 +798,7 @@ ob_start();
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="deadline">Deadline*</label>
-                                <input type="date" class="form-control" id="deadline" name="deadline" required>
+                                <input type="date" class="form-control" id="deadline" name="deadline" min="<?= date("Y-m-d"); ?>" required>
                             </div>
                         </div>
                         <div class="row">
@@ -849,7 +849,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="project2">Project name*</label>
                                 <input type="text" class="form-control" id="project2" name="project" maxlength="40"
-                                    required>
+                                    required pattern="^[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]{1,}[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]*[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]+$">
                             </div>
                         </div>
                         <div class="row">
@@ -866,45 +866,45 @@ ob_start();
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="company2">Company Name</label>
-                                <input type="text" class="form-control" id="company2" name="company" maxlength="100">
+                                <input type="text" class="form-control" id="company2" name="company" maxlength="100" pattern="^[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]{1,}[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]*[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="firstName2">First Name*</label>
                                 <input type="text" class="form-control" id="firstName2" name="firstName" maxlength="40"
-                                    required>
+                                    required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+[' -]?[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="lastName2">Last Name*</label>
                                 <input type="text" class="form-control" id="lastName2" name="lastName" maxlength="40"
-                                    required>
+                                    required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+[' -]?[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="contactEmail2">Email*</label>
-                                <input type="text" class="form-control" id="contactEmail2" name="contactEmail" required>
+                                <input type="email" class="form-control" id="contactEmail2" name="contactEmail" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-zA-Z]{2,4}$" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="phone2">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone2" name="phone">
+                                <input type="tel" class="form-control" id="phone2" name="phone" pattern="[0-9\.+_ -]*">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="postalAddress2">Address*</label>
-                                <input type="text" class="form-control" id="postalAddress2" name="postalAddress" required>
+                                <input type="text" class="form-control" id="postalAddress2" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="postCode2">Post Code*</label>
-                                <input type="text" class="form-control" id="postCode2" name="postCode" required>
+                                <input type="text" class="form-control" id="postCode2" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="city2">City*</label>
-                                <input type="text" class="form-control" id="city2" name="city" required>
+                                <input type="text" class="form-control" id="city2" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="country2">Country*</label>
@@ -1166,7 +1166,7 @@ ob_start();
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="deadline2">Deadline*</label>
-                                <input type="date" class="form-control" id="deadline2" name="deadline" required>
+                                <input type="date" class="form-control" id="deadline2" name="deadline" min="<?= date("Y-m-d"); ?>" required >
                             </div>
                         </div>
                         <div class="row">
@@ -1217,7 +1217,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="project3">Project name*</label>
                                 <input type="text" class="form-control" id="project3" name="project" maxlength="40"
-                                    required>
+                                    required pattern="^[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]{1,}[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]*[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]+$">
                             </div>
                         </div>
                         <div class="row">
@@ -1234,45 +1234,45 @@ ob_start();
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="company3">Company Name</label>
-                                <input type="text" class="form-control" id="company3" name="company" maxlength="100">
+                                <input type="text" class="form-control" id="company3" name="company" maxlength="100" pattern="^[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]{1,}[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]*[' -]?[a-z0-9A-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'&+%_-]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="firstName3">First Name*</label>
                                 <input type="text" class="form-control" id="firstName3" name="firstName" maxlength="40"
-                                    required>
+                                    required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+[' -]?[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="lastName3">Last Name*</label>
                                 <input type="text" class="form-control" id="lastName3" name="lastName" maxlength="40"
-                                    required>
+                                    required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+[' -]?[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="contactEmail3">Email*</label>
-                                <input type="text" class="form-control" id="contactEmail3" name="contactEmail" required>
+                                <input type="email" class="form-control" id="contactEmail3" name="contactEmail" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-zA-Z]{2,4}$" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="phone3">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone3" name="phone">
+                                <input type="tel" class="form-control" id="phone3" name="phone" pattern="[0-9\.+_ -]*">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="postalAddress3">Address*</label>
-                                <input type="text" class="form-control" id="postalAddress3" name="postalAddress" required>
+                                <input type="text" class="form-control" id="postalAddress3" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="postCode3">Post Code*</label>
-                                <input type="text" class="form-control" id="postCode3" name="postCode" required>
+                                <input type="text" class="form-control" id="postCode3" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="city3">City*</label>
-                                <input type="text" class="form-control" id="city3" name="city" required>
+                                <input type="text" class="form-control" id="city3" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="country3">Country*</label>
@@ -1534,7 +1534,7 @@ ob_start();
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="deadline3">Deadline*</label>
-                                <input type="date" class="form-control" id="deadline3" name="deadline" required>
+                                <input type="date" class="form-control" id="deadline3" name="deadline" min="<?= date("Y-m-d"); ?>" required>
                             </div>
                         </div>
                         <div class="row">

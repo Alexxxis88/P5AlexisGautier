@@ -64,7 +64,6 @@
                     <div class="col-md-12 ">
                         <a href="index.php?action=privacyPolicy">Privacy Policy</a> &emsp;
                         <a href="index.php?action=termsAndCondition">Terms & Conditions</a> &emsp;
-                        <a href="index.php?action=legalNotice">Legal Notice</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +71,7 @@
             <a href="#header" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><span class="fas fa-arrow-circle-up"></span></a>
             <!-- Copyright -->
             <div class="footer-copyright text-center">
-                <span>&copy;<script>document.write(new Date().getFullYear());</script> - Alexis Gautier - All rights reserved</span>
+                <span>&copy;<script>document.write(new Date().getFullYear());</script> - Alexis Gautier</span>
             </div>
         </footer>
 
