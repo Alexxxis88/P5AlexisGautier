@@ -150,7 +150,7 @@
         <script src="./public/js/jquery.prettyPhoto.js"></script>
         <script src="./public/js/init.js"></script>
         <script src="./public/js/main.js"></script>
-
+        
         <!-- A GARDER !!! car fichier modifiés pour les menus bootstrap-->
         <script src="./public/js/dropdowns-enhancement.js"></script>
     </body>

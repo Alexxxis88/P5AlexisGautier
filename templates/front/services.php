@@ -1560,3 +1560,6 @@ ob_start();
 $content = ob_get_clean();
 require('templates/base.php');
 ?>
+
+<!-- Needs to stay here and not in base.php or functions included in main.js otherwise gives 567 console JS errors on quote.php --->
+<script src="./public/js/services.js"></script>
