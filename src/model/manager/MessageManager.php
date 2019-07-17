@@ -23,7 +23,7 @@ class MessageManager extends Manager
 
     public function getNewMessages()
     {
-        $req = $this->_db->query('SELECT * FROM messages WHERE flag < 2 ORDER BY messageDate');
+        $req = $this->_db->query('SELECT * FROM messages WHERE flag < 2 ORDER BY messageDate DESC');
         while ($datasNewMessages = $req->fetch(\PDO::FETCH_ASSOC)) {
             $newMessage[] = new Message($datasNewMessages);
         }
@@ -34,7 +34,7 @@ class MessageManager extends Manager
 
     public function getArchivedMessages()
     {
-        $req = $this->_db->query('SELECT * FROM messages WHERE flag = 2 ORDER BY messageDate');
+        $req = $this->_db->query('SELECT * FROM messages WHERE flag = 2 ORDER BY messageDate DESC');
         while ($datasArchivedMessages = $req->fetch(\PDO::FETCH_ASSOC)) {
             $archivedMessage[] = new Message($datasArchivedMessages);
         }

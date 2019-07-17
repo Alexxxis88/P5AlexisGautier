@@ -40,7 +40,7 @@ class MessageController
 
     public function sendMessage($firstName, $lastName, $contactEmail, $topic, $messageContent)
     {
-        $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
+        $to  = 'contact@straightandalert.com '. htmlspecialchars($contactEmail) . '';
         $message = '
         <html>
             <body>
@@ -54,9 +54,12 @@ class MessageController
 
         // Additional headers
         $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
-        mail($to, $topic, $message, implode("\r\n", $headers));
+        if(mail($to, $topic, $message, implode("\r\n", $headers))) //FIXME : enelever le test quand ça remarchera
+        {
+            header('Location: index.php');
 
-        header('Location: index.php');
+        }
+
     }
 
 
@@ -118,7 +121,7 @@ class MessageController
 
     public function sendAnswer($clientEmail, $answerTopic, $answerContent)
     {
-        $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($clientEmail) . '';
+        $to  = ''. htmlspecialchars($clientEmail) . '';
         $message = '
         <html>
             <body>

@@ -16,13 +16,13 @@ class QuoteController
         $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent));
 
         // header('Location: index.php?action=services#pricing'); FIXME: ne pas le mettre sinon ça risque de bloquer sendpackQuotes ? pourtant ça fonctionnait en le laissant
-
+        
     }
 
     public function sendPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         date_default_timezone_set("Europe/Paris");
-        $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
+        $to  = 'jeangujeangu@gmail.com, '. htmlspecialchars($contactEmail) . '';
         $topic = 'Quote resquest for a ' . htmlspecialchars($packName);
         $message = '
         <html>
@@ -51,10 +51,14 @@ class QuoteController
 
         // Additional headers
         $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
-        mail($to, $topic, $message, implode("\r\n", $headers));
+        if(mail($to, $topic, $message, implode("\r\n", $headers)))
 
-        header('Location: index.php');
-    }
+         //FIXME : retirer apres les test sur les emails
+        {
+            header('Location: index.php');
+        }
+
+            }
 
 
     public function checkPackQuoteFields($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
@@ -214,7 +218,7 @@ class QuoteController
 
 
         date_default_timezone_set("Europe/Paris");
-        $to  = 'xmailpoubelle@gmail.com, '. htmlspecialchars($contactEmail) . '';
+        $to  = 'jeangujeangu@gmail.com, '. htmlspecialchars($contactEmail) . '';
         $topic = 'Quote resquest for a ' . htmlspecialchars($siteType);
         $message = '
         <html>
