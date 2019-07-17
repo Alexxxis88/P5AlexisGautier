@@ -125,9 +125,6 @@ try {
                 $sessionController = new SessionController;
                 $sessionController->killSession();
 
-                header('Location: index.php');
-                exit;
-
             } else {
                 throw new \Exception('Vous êtes déja déconnecté');
             }
@@ -141,9 +138,6 @@ try {
                     $_POST['newPass'] = password_hash($_POST['newPass'], PASSWORD_DEFAULT);
                     $sessionController->UpdatePassWord($_POST['newPass'], $_POST['emailNewPass']);
                     $sessionController->killSession();
-
-                    header('Location: index.php?action=quote');
-                    exit;
                 }
             }
             else {
@@ -370,33 +364,6 @@ try {
                 throw new Exception('Aucun identifiant de message envoyé');
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         else {
             throw new \Exception('Cette page n\'existe pas');

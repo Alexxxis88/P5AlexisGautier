@@ -40,7 +40,7 @@ class SessionController
                     setcookie('hash_pass', password_hash($_POST['pass'], PASSWORD_DEFAULT), time() + 365*24*3600, null, null, false, true);
                 }
 
-                header('Location: index.php?action=packQuotesAdmin');
+                header('Location: index.php?action=canYouFindMyLoginPage');
                 exit;
             } else {
                 throw new \Exception('Vérifiez vos identifiants de connexion');
@@ -103,5 +103,8 @@ class SessionController
         setcookie('id', '', time() - 3600, null, null, false, true);
         setcookie('email', '', time() - 3600, null, null, false, true);
         setcookie('hash_pass', '', time() - 3600, null, null, false, true);
+
+        header('Location: index.php');
+        exit;
     }
 }

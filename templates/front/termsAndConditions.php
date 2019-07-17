@@ -16,7 +16,7 @@ ob_start();
                 <span style="text-transform: capitalize;"> Alexis Gautier</span> is located at:<br /> 
                 <address>7 rue du sablais Haute Goulaine <br />44115 , France<br />
                 </address>
-                <p>By accessing this website we assume you accept these terms and conditions in full. Do not continue to use Alexis Gautier's website 
+                <p>By accessing this website we assume you accept these terms and conditions in full. Do not continue to use Alexis Gautier's website
                 if you do not accept all of the terms and conditions stated on this page.</p>
                 <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice
                 and any or all Agreements: "Client", "You" and "Your" refers to you, the person accessing this website
@@ -140,8 +140,6 @@ ob_start();
                 (including negligence) and for breach of statutory duty.</p>
                 <p>To the extent that the website and the information and services on the website are provided free of charge,
                 we will not be liable for any loss or damage of any nature.</p>
-            <h2></h2>
-                <p></p>
         </div>
     </section>
 </div>

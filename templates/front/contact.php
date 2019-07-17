@@ -28,10 +28,15 @@ ob_start();
                     <br>
                     <div id="message"></div>
                     <form method="post" action="index.php?action=sendMessage" id="contactform">
+                        <label for="firstName" hidden>First Name</label>
                         <input type="text" name="firstName" id="firstName" placeholder="First Name*" maxlength="20" required />
+                        <label for="lastName" hidden>Last Name</label>
                         <input type="text" name="lastName" id="lastName" placeholder="Last Name*" maxlength="20" required />
+                        <label for="contactEmail" hidden>Email</label>
                         <input type="text" name="contactEmail" id="contactEmail" placeholder="Email*" required/>
+                        <label for="topic" hidden>Topic</label>
                         <input type="text" name="topic" id="topic" placeholder="Subject of your message*" maxlength="60" required/>
+                        <label for="messageContent" hidden>Message</label>
                         <textarea name="messageContent" id="messageContent" placeholder="Message*"></textarea>
                         <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Send a message" />
                     </form>

@@ -43,20 +43,20 @@ ob_start();
                                 </ul>
                                 <hr>
                                 <h4>Maquette :</h4>
-                                <a href="./public/images/portfolio/Dev/strasbourg/strasbourg1.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/strasbourg/strasbourg1.jpg" alt="Header strasbourg" ></a>
+                                <a href="./public/images/portfolio/Dev/strasbourg/strasbourg1.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/strasbourg/strasbourg1.jpg" alt="Header strasbourg" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/strasbourg/strasbourg2.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/strasbourg/strasbourg2.jpg" alt="Accueil strasbourg" ></a>
+                                <a href="./public/images/portfolio/Dev/strasbourg/strasbourg2.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/strasbourg/strasbourg2.jpg" alt="Accueil strasbourg" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/strasbourg/strasbourg3.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/strasbourg/strasbourg3.jpg" alt="billets de blog strasbourg" ></a>
+                                <a href="./public/images/portfolio/Dev/strasbourg/strasbourg3.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/strasbourg/strasbourg3.jpg" alt="billets de blog strasbourg" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/strasbourg/strasbourg4.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/strasbourg/strasbourg4.jpg" alt="Formulaire de contact strasbourg" ></a>
+                                <a href="./public/images/portfolio/Dev/strasbourg/strasbourg4.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/strasbourg/strasbourg4.jpg" alt="Formulaire de contact strasbourg" ></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com/Office-Strasbourg/"><img class="responsiveMockup" src="./public/images/portfolio/Dev/strasbourg/strasbourgResp.png" style="width:250px"alt="Responsive Office de toursime de Strasbourg"><br><span class="far fa-eye"></span> Voir le site</a>
+                        <a href="http://ocr.straightandalert.com/Office-Strasbourg/"><img class="responsiveMockup" src="./public/images/portfolio/Dev/strasbourg/strasbourgResp.png" style="width:250px" alt="Responsive Office de toursime de Strasbourg"><br><span class="far fa-eye"></span> Voir le site</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>

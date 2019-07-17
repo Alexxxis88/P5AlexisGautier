@@ -23,7 +23,7 @@ ob_start();
                     <strong>Webmaster</strong> : Alexis Gautier – alexisxgautier@gmail.com<br />
                     <strong>Hébergeur</strong> : PHPNET – 97-97 bis rue Général Mangin - 38100 GRENOBLE<br />
                     Crédits : <br />
-                    Le modèle de mentions légales est offert par Subdelirium.com <a target="_blank" href="https://www.subdelirium.com/generateur-de-mentions-legales/" alt="generateur de mentions légales">Générateur de mentions légales</a></p>
+                    Le modèle de mentions légales est offert par Subdelirium.com <a target="_blank" href="https://www.subdelirium.com/generateur-de-mentions-legales/">Générateur de mentions légales</a></p>
 
                     <h3>2. Conditions générales d’utilisation du site et des services proposés.</h3>
                     <p>L’utilisation du site <a href="http://http://ocr.straightandalert.com/">http://ocr.straightandalert.com</a> implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment, les utilisateurs du site <a href="http://http://ocr.straightandalert.com/">http://ocr.straightandalert.com</a> sont donc invités à les consulter de manière régulière.</p>

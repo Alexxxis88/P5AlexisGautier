@@ -344,12 +344,13 @@ blockquote {
     width: 100%;
 }
 
-.portfolio-item h5 {
+.portfolio-item h3 {
     background: #fff;
-    margin: 0;
-    padding: 15px;
-    font-weight: 700;
-    font-size: 16px;
+    margin: 0 20px 0 0;
+    padding: 20px 10px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 2px;
     white-space: nowrap;
     text-overflow: ellipsis;
     position: relative;
@@ -357,6 +358,7 @@ blockquote {
     text-transform: uppercase;
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
+
 }
 
 .portfolio-item:hover h5,
@@ -367,7 +369,7 @@ blockquote {
     border-bottom: 4px solid #00b29e;
 }
 
-.portfolio-item h5:after {
+.portfolio-item h3:after {
     bottom: 100%;
     left: 50%;
     border: solid transparent;
@@ -1491,10 +1493,6 @@ MANAGE QUOTES
     background: #fff;
     padding: 15px;
     border-bottom: 4px solid #f0f0f0;
-}
-
-.team-content h5 {
-    font-size: 16px;
 }
 
 .flagsBlock{
@@ -2898,15 +2896,6 @@ textarea#messageContent {
     letter-spacing: 2px;
 }
 
-.portfolio-item h5 {
-    background: #fff;
-    margin: 0 20px 0 0;
-    padding: 20px 10px;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-
 .post .post-title {
     font-weight: 400;
     font-size: 14px;
@@ -3019,7 +3008,7 @@ textarea#messageContent {
     padding: 0;
 }
 
-.team-content h5 {
+.team-content h3 {
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 400;

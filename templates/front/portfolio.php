@@ -45,7 +45,7 @@ ob_start();
                     <li class="portfolio-item website isotope-item">
                         <div class="item-inner">
                             <a data-toggle="modal" data-target="#webAgency"><img src="./public/images/portfolio/Dev/webAgency/webAgencyPrev.jpg" alt="Image de présentation Webagency">
-                            <h5>Webagency - Agence Web</h5>
+                            <h3>Webagency - Agence Web</h3>
                             <div class="overlay">
                             </div></a>
                         </div>
@@ -53,7 +53,7 @@ ob_start();
                     <li class="portfolio-item joomla website isotope-item">
                         <div class="item-inner">
                             <a data-toggle="modal" data-target="#strasbourg"><img src="./public/images/portfolio/Dev/strasbourg/strasbourgPrev.jpg" alt="Image de présentation Office de Tourisme de Strasbourg">
-                            <h5>Ville de Strasbourg</h5>
+                            <h3>Ville de Strasbourg</h3>
                             <div class="overlay">
                             </div></a>
                         </div>
@@ -61,7 +61,7 @@ ob_start();
                     <li class="portfolio-item website isotope-item">
                         <div class="item-inner">
                             <a data-toggle="modal" data-target="#bicloo"><img src="./public/images/portfolio/Dev/bicloo/biclooPrev.jpg" alt="Image de présentation Bicloo">
-                            <h5>Bicloo - Réservation de vélos</h5>
+                            <h3>Bicloo - Réservation de vélos</h3>
                             <div class="overlay">
                             </div></a>
                         </div>
@@ -69,7 +69,7 @@ ob_start();
                     <li class="portfolio-item joomla blog apps isotope-item">
                         <div class="item-inner">
                             <a data-toggle="modal" data-target="#forteroche"><img src="./public/images/portfolio/Dev/forteroche/forterochePrev.jpg" alt="Image de présentation Jean Forteroche">
-                            <h5>Jean Forteroche - Ecrivain</h5>
+                            <h3>Jean Forteroche - Ecrivain</h3>
                             <div class="overlay">
                             </div></a>
                         </div>
@@ -77,7 +77,7 @@ ob_start();
                     <li class="portfolio-item joomla webstore isotope-item">
                         <div class="item-inner">
                             <a data-toggle="modal" data-target="#qchc"><img src="./public/images/portfolio/Dev/qchc/qchcPrev.jpg" alt="Image de présentation Quality Control records">
-                            <h5>Quality Control - Label</h5>
+                            <h3>Quality Control - Label</h3>
                             <div class="overlay">
                             </div></a>
                         </div>
@@ -90,7 +90,7 @@ ob_start();
     <!-- FIXME : trouver un moyen de factoriser les modales ? ou les mettre dans des fichiers a part
     + revoir les alt=""-->
 
-    <div class="modal fade" id="webAgency" tabindex="-1" role="dialog" aria-labelledby="myLargeModalWebAgency" aria-hidden="true">
+    <div class="modal fade" id="webAgency" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -104,8 +104,8 @@ ob_start();
                 <div class="modal-body">
                     <div class="row">
                         <div class=" col-md-6 rightColPortfolio">
-                            <img class="folioItemPic"src="./public/images/portfolio/Dev/webAgency/webAgency1.jpg" alt="Header Webagency">
-                            <img class="folioItemPic"src="./public/images/portfolio/Dev/webAgency/webAgency3.jpg" alt="Nos Projets Webagency" ><br>
+                            <img class="folioItemPic" src="./public/images/portfolio/Dev/webAgency/webAgency1.jpg" alt="Header Webagency">
+                            <img class="folioItemPic" src="./public/images/portfolio/Dev/webAgency/webAgency3.jpg" alt="Nos Projets Webagency" ><br>
                         </div>
                         <div class="col-md-6 leftColPortfolio">
                             <div class="widget categories">
@@ -142,7 +142,7 @@ ob_start();
         </div>
     </div>
 
-    <div class="modal fade" id="strasbourg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalstrasbourg" aria-hidden="true">
+    <div class="modal fade" id="strasbourg" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -156,8 +156,8 @@ ob_start();
                     <div class="modal-body">
                         <div class="row">
                             <div class=" col-md-6 rightColPortfolio">
-                                <img class="folioItemPic"src="./public/images/portfolio/Dev/strasbourg/strasbourg1.jpg" alt="Header Strasbourg">
-                                <img class="folioItemPic"src="./public/images/portfolio/Dev/strasbourg/strasbourg2.jpg" alt="Accueil Strasbourg" ><br>
+                                <img class="folioItemPic" src="./public/images/portfolio/Dev/strasbourg/strasbourg1.jpg" alt="Header Strasbourg">
+                                <img class="folioItemPic" src="./public/images/portfolio/Dev/strasbourg/strasbourg2.jpg" alt="Accueil Strasbourg" ><br>
                             </div>
                             <div class="col-md-6 leftColPortfolio">
                                 <div class="widget categories">
@@ -194,8 +194,7 @@ ob_start();
             </div>
         </div>
 
-        <div class="modal fade" id="bicloo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalbicloo"
-            aria-hidden="true">
+        <div class="modal fade" id="bicloo" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -254,8 +253,7 @@ ob_start();
             </div>
         </div>
 
-        <div class="modal fade" id="forteroche" tabindex="-1" role="dialog" aria-labelledby="myLargeModalforteroche"
-            aria-hidden="true">
+        <div class="modal fade" id="forteroche" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">

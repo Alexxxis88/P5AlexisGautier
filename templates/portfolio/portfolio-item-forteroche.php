@@ -42,28 +42,28 @@ ob_start();
                                 </ul>
                                 <hr>
                                 <h4>Maquette :</h4>
-                                <a href="./public/images/portfolio/Dev/forteroche/forteroche1.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/forteroche/forteroche1.jpg" alt="Page d'accueil du blog de Jean Forteroche" ></a>
+                                <a href="./public/images/portfolio/Dev/forteroche/forteroche1.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche1.jpg" alt="Page d'accueil du blog de Jean Forteroche" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/forteroche/forteroche2.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/forteroche/forteroche2.jpg" alt="Article du blog de Jean Forteroche" ></a>
+                                <a href="./public/images/portfolio/Dev/forteroche/forteroche2.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche2.jpg" alt="Article du blog de Jean Forteroche" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/forteroche/forteroche3.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/forteroche/forteroche3.jpg" alt="Commentaires du blog de Jean Forteroche" ></a>
+                                <a href="./public/images/portfolio/Dev/forteroche/forteroche3.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche3.jpg" alt="Commentaires du blog de Jean Forteroche" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/forteroche/forteroche4.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/forteroche/forteroche4.jpg" alt="Interface de publication d'un article du blog de Jean Forteroche" ></a>
+                                <a href="./public/images/portfolio/Dev/forteroche/forteroche4.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche4.jpg" alt="Interface de publication d'un article du blog de Jean Forteroche" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/forteroche/forteroche5.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/forteroche/forteroche5.jpg" alt="Gestionnaire de commentaires du blog de Jean Forteroche" ></a>
+                                <a href="./public/images/portfolio/Dev/forteroche/forteroche5.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche5.jpg" alt="Gestionnaire de commentaires du blog de Jean Forteroche" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/forteroche/forteroche6.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/forteroche/forteroche6.jpg" alt="Gestionnaire d'utlisateurs du blog de Jean Forteroche" ></a>
+                                <a href="./public/images/portfolio/Dev/forteroche/forteroche6.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche6.jpg" alt="Gestionnaire d'utlisateurs du blog de Jean Forteroche" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/forteroche/forteroche7.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/forteroche/forteroche7.jpg" alt="Page de statistiques du blog de Jean Forteroche" ></a>
+                                <a href="./public/images/portfolio/Dev/forteroche/forteroche7.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche7.jpg" alt="Page de statistiques du blog de Jean Forteroche" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/forteroche/forteroche8.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/forteroche/forteroche8.jpg" alt="Timer et affichage de la réservation forteroche" ></a>
+                                <a href="./public/images/portfolio/Dev/forteroche/forteroche8.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche8.jpg" alt="Timer et affichage de la réservation forteroche" ></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com/jean-forteroche/"><img class="responsiveMockup" src="./public/images/portfolio/Dev/forteroche/forterocheResp.png" style="width:250px"alt="Responsive Office de toursime de Strasbourg"><br><span class="far fa-eye"></span> Voir le site</a>
+                        <a href="http://ocr.straightandalert.com/jean-forteroche/"><img class="responsiveMockup" src="./public/images/portfolio/Dev/forteroche/forterocheResp.png" style="width:250px" alt="Responsive Office de toursime de Strasbourg"><br><span class="far fa-eye"></span> Voir le site</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>

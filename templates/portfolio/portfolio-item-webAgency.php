@@ -37,20 +37,20 @@ ob_start();
                                 </ul>
                                 <hr>
                                 <h4>Maquette :</h4>
-                                <a href="./public/images/portfolio/Dev/webAgency/webAgency1.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/webAgency/webAgency1.jpg" alt="Header Webagency" ></a>
+                                <a href="./public/images/portfolio/Dev/webAgency/webAgency1.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/webAgency/webAgency1.jpg" alt="Header Webagency" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/webAgency/webAgency2.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/webAgency/webAgency2.jpg" alt="Nos Services Webagency" ></a>
+                                <a href="./public/images/portfolio/Dev/webAgency/webAgency2.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/webAgency/webAgency2.jpg" alt="Nos Services Webagency" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/webAgency/webAgency3.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/webAgency/webAgency3.jpg" alt="Nos Projets Webagency" ></a>
+                                <a href="./public/images/portfolio/Dev/webAgency/webAgency3.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/webAgency/webAgency3.jpg" alt="Nos Projets Webagency" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/webAgency/webAgency4.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/webAgency/webAgency4.jpg" alt="Google map et formulaire de contact Webagency" ></a>
+                                <a href="./public/images/portfolio/Dev/webAgency/webAgency4.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/webAgency/webAgency4.jpg" alt="Google map et formulaire de contact Webagency" ></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><img class="responsiveMockup" src="./public/images/portfolio/Dev/webAgency/webAgencyResp.png" style="width:250px"alt="Responsive WebAgency"><br><span class="far fa-eye"></span> Voir le site</a>
+                        <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><img class="responsiveMockup" src="./public/images/portfolio/Dev/webAgency/webAgencyResp.png" style="width:250px" alt="Responsive WebAgency"><br><span class="far fa-eye"></span> Voir le site</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>

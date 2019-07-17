@@ -30,7 +30,7 @@ ob_start();
                                     <li>Page de type "Single page Application" simulant la réservation de vélos dans une ville</li>
                                     <li>L'utilisateur doit pouvoir réserver un vélo depuis son navigateur </li>
                                     <li>La réservation est alors temporairement enregistrée sur le navigateur du visiteur</li>
-                                    <li>Cette application doit afficher une carte avec la liste des stations de location de vélos disponibles dans la ville</li><br>
+                                    <li>Cette application doit afficher une carte avec la liste des stations de location de vélos disponibles dans la ville</li>
                                     <li><strong>Diaporama :</strong>
                                         <ul>
                                             <li>Afficher photos et textes expliquant le fonctionnement de l'application</li>
@@ -53,22 +53,22 @@ ob_start();
                                             <li>Le nom et le prénom sont toutefois conservés par le navigateur pour préremplir le formulaire de réservation lors d'un prochain usage, même si le navigateur a été fermé</li>
                                             <li>Il ne peut y avoir qu'une réservation à la fois. Si une nouvelle réservation a lieu, elle remplace la précédente</li>
                                         </ul>
-                                    </li><br>
+                                    </li>
                                 </ul>
                                 <hr>
                                 <h4>Maquette :</h4>
-                                <a href="./public/images/portfolio/Dev/bicloo/bicloo1.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/bicloo/bicloo1.jpg" alt="Slider bicloo" ></a>
+                                <a href="./public/images/portfolio/Dev/bicloo/bicloo1.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/bicloo/bicloo1.jpg" alt="Slider bicloo" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/bicloo/bicloo2.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/bicloo/bicloo2.jpg" alt="Carte et formulaire de réservation bicloo" ></a>
+                                <a href="./public/images/portfolio/Dev/bicloo/bicloo2.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/bicloo/bicloo2.jpg" alt="Carte et formulaire de réservation bicloo" ></a>
                                 <hr>
-                                <a href="./public/images/portfolio/Dev/bicloo/bicloo3.jpg" rel="prettyPhoto"><img class="folioItemPic"src="./public/images/portfolio/Dev/bicloo/bicloo3.jpg" alt="Timer et affichage de la réservation bicloo" ></a>
+                                <a href="./public/images/portfolio/Dev/bicloo/bicloo3.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/bicloo/bicloo3.jpg" alt="Timer et affichage de la réservation bicloo" ></a>
                             </div>
                         </div>
                     </div>
                 </div><!--/.col-md-8-->
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com/LocationVelo/index.html"><img class="responsiveMockup" src="./public/images/portfolio/Dev/bicloo/biclooResp.png" style="width:250px"alt="Responsive Bicloo réservation de vélo"><br><span class="far fa-eye"></span> Voir le site</a>
+                        <a href="http://ocr.straightandalert.com/LocationVelo/index.html"><img class="responsiveMockup" src="./public/images/portfolio/Dev/bicloo/biclooResp.png" style="width:250px" alt="Responsive Bicloo réservation de vélo"><br><span class="far fa-eye"></span> Voir le site</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>
