@@ -24,23 +24,23 @@ class MessageController
                     if (preg_match("#^[a-z". $accentedCharacters ."(' \-)*]+[a-z". $accentedCharacters ."]+$#i", $_POST['topic'])) {
                         return true;
                     } else {
-                        throw new \Exception('L\'intitulé n\'est pas conforme');
+                        throw new \Exception('Message topic is incorrect');
                     }
                 } else {
-                    throw new \Exception('L\'adresse email n\'est pas conforme');
+                    throw new \Exception('Email address is incorrect');
                 }
             } else {
-                throw new \Exception('Le nom n\'est pas conforme.');
+                throw new \Exception('Last Name is incorrect');
             }
         } else {
-            throw new \Exception('Le prénom n\'est pas conforme.');
+            throw new \Exception('First Name is incorrect');
         }
     }
 
 
     public function sendMessage($firstName, $lastName, $contactEmail, $topic, $messageContent)
     {
-        $to  = 'contact@straightandalert.com '. htmlspecialchars($contactEmail) . '';
+        $to  = 'contact@straightandalert.com, '. htmlspecialchars($contactEmail) . '';
         $message = '
         <html>
             <body>
@@ -56,8 +56,10 @@ class MessageController
         $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
         if(mail($to, $topic, $message, implode("\r\n", $headers))) //FIXME : enelever le test quand ça remarchera
         {
-            header('Location: index.php');
+            header('Location: index.php?action=contact&success=3');
 
+        } else {
+        throw new \Exception('There was a problem when sending your message. Please try again');
         }
 
     }

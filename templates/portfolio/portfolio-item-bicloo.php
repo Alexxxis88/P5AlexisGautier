@@ -16,47 +16,48 @@ ob_start();
                     <div class="blog">
                         <div class="blog-item">
                             <div class="blog-content">
-                                <h3 class="main-title">Bicloo - Reservation de vélos</h3>
+                                <h3 class="main-title">Bicloo - Bike reservation</h3>
                                 <div class="entry-meta">
-                                    <span><span class="far fa-clock"></span> Avril 2019</span>
+                                    <span><span class="far fa-clock"></span> April 2019</span>
                                 </div>
-                                <p class="lead">Création d'une application web de réservation de vélos via API</p>
+                                <p class="lead">Creating a bicycle booking web application via API</p>
 
-                                <p>Pour ce troisième projet il fallait créer une application web permettant la réservation d'un vélo dans une ville donnée selon les informations récupérées en temps réelle despuis l'<strong>API</strong> JCDecaux.
-                                <p>Ce projet avait pour but la découverte du langage <strong>JAVASCRIPT</strong> et la <strong>PROGRAMMATION ORIENTEE OBJET</strong>.</p>
+                                <p> For this third project it was necessary to create a web application allowing the booking of a bike in a given city according to information retrieved in real time from the <strong> API </strong> JCDecaux.
+                                <p> This project aimed at finding the <strong> JAVASCRIPT </strong> language and <strong> OBJECT-ORIENTED PROGRAMMING </strong>. </p>
                                 <hr>
-                                <h4>Cahier des charges :</h4>
+                                <h4> Specifications: </h4>
                                 <ul>
-                                    <li>Page de type "Single page Application" simulant la réservation de vélos dans une ville</li>
-                                    <li>L'utilisateur doit pouvoir réserver un vélo depuis son navigateur </li>
-                                    <li>La réservation est alors temporairement enregistrée sur le navigateur du visiteur</li>
-                                    <li>Cette application doit afficher une carte avec la liste des stations de location de vélos disponibles dans la ville</li>
-                                    <li><strong>Diaporama :</strong>
-                                        <ul>
-                                            <li>Afficher photos et textes expliquant le fonctionnement de l'application</li>
-                                            <li>Défilement automatique</li>
-                                            <li>Fonction play/pause/next/preview</li>
-                                        </ul><br>
-                                    <li><strong>Carte des vélos :</strong>
-                                        <ul>
-                                            <li>Affiche en temps réel la liste des stations de location de vélos ainsi que leur disponibilité.</li>
-                                            <li>La localisation de toutes les stations de vélos est affichée à l’aide de marqueurs.</li>
-                                            <li>Les données proviennent de l'API JCDecaux en temps réel</li>
-                                            <li>La carte doit être générée dynamiquement via un service de cartographie</li>
-                                        </ul><br>
-                                    <li><strong>Réservation d'un vélo :</strong>
-                                        <ul>
-                                            <li> Il doit être possible de réserver un vélo disponible à la station sélectionnée en indiquant son nom et son prénom et signant dans un champ libre implémenté à l’aide de l’API HTML5 Canvas</li>
-                                            <li>Les données de réservation seront stockées dans le navigateur à l’aide de l’API Web Storage et affichées en dessous du panneau</li>
-                                            <li>L'état de la réservation est affiché avec un décompte dynamique du temps restant avant expiration de la réservation</li>
-                                            <li>Une réservation expire automatiquement au bout de 20 minutes et également lorsque le navigateur web se referme</li>
-                                            <li>Le nom et le prénom sont toutefois conservés par le navigateur pour préremplir le formulaire de réservation lors d'un prochain usage, même si le navigateur a été fermé</li>
-                                            <li>Il ne peut y avoir qu'une réservation à la fois. Si une nouvelle réservation a lieu, elle remplace la précédente</li>
-                                        </ul>
+                                    <li> Single page Application page simulating bicycle booking in a city </li>
+                                    <li> The user must be able to book a bike from his browser </li>
+                                    <li> The reservation is then temporarily saved on the visitor's browser </li>
+                                    <li> This application should display a map with the list of bike rental stations available in the city </li>
+                                    <li> <strong> Slideshow: </strong>
+                                    <ul>
+                                        <li> Show photos and text explaining how the application works </li>
+                                        <li> Auto Scroll </li>
+                                        <li> Function play / pause / next / preview </li>
+                                    </ul>
+                                    <li> <strong> Bike Map: </strong>
+                                    <ul>
+                                        <li> Displays in real time the list of bike rental stations and their availability. </li>
+                                        <li> The location of all bike stations is displayed using markers. </li>
+                                        <li> Data comes from the real-time JCDecaux API </li>
+                                        <li> The map must be generated dynamically via a mapping service </li>
+                                    </ul>
+                                    </li>
+                                    <li> <strong> Booking a bike: </strong>
+                                    <ul>
+                                        <li> It must be possible to book an available bike at the selected station by entering its name and first name and signing into a free field implemented using the HTML5 Canvas API </li>
+                                        <li> Reservation data will be stored in the browser using the Web Storage API and displayed below the </li> panel
+                                        <li> The status of the booking is displayed with a dynamic count of the time remaining before the reservation expires </li>
+                                        <li> A reservation expires automatically after 20 minutes and also when the web browser closes </li>
+                                        <li> The surname and the first name are, however, retained by the browser to pre-fill the booking form for future use, even if the browser has been closed </li>
+                                        <li> There can only be one reservation at a time. If a new reservation takes place, it replaces the previous one </li>
+                                    </ul>
                                     </li>
                                 </ul>
                                 <hr>
-                                <h4>Maquette :</h4>
+                                <h4>Mockup :</h4>
                                 <a href="./public/images/portfolio/Dev/bicloo/bicloo1.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/bicloo/bicloo1.jpg" alt="Slider bicloo" ></a>
                                 <hr>
                                 <a href="./public/images/portfolio/Dev/bicloo/bicloo2.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/bicloo/bicloo2.jpg" alt="Carte et formulaire de réservation bicloo" ></a>
@@ -68,7 +69,7 @@ ob_start();
                 </div><!--/.col-md-8-->
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com/LocationVelo/index.html"><img class="responsiveMockup" src="./public/images/portfolio/Dev/bicloo/biclooResp.png" style="width:250px" alt="Responsive Bicloo réservation de vélo"><br><span class="far fa-eye"></span> Voir le site</a>
+                        <a href="http://ocr.straightandalert.com/LocationVelo/index.html"><img class="responsiveMockup" src="./public/images/portfolio/Dev/bicloo/biclooResp.png" style="width:250px" alt="Responsive Bicloo réservation de vélo"><br><span class="far fa-eye"></span> View website</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>
@@ -81,24 +82,24 @@ ob_start();
                         </ul>
                     </div>
                     <div class="widget categories">
-                        <h3 class="widget-title">Fonctionalités principales</h3>
+                        <h3 class="widget-title">Main features</h3>
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul>
                                     <li><span class="fas fa-chevron-right"></span> Slider</li>
-                                    <li><span class="fas fa-chevron-right"></span> Réservation en ligne</li>
-                                    <li><span class="fas fa-chevron-right"></span> Signature via Canvas</li>
-                                    <li><span class="fas fa-chevron-right"></span> Compte à rebour dynamique</li>
-                                    <li><span class="fas fa-chevron-right"></span> Intégration Open Street Map</li>
-                                    <li><span class="fas fa-chevron-right"></span> Génération de carte Leaflet</li>
+                                    <li><span class="fas fa-chevron-right"></span> Online reservation</li>
+                                    <li><span class="fas fa-chevron-right"></span> Sign with Canvas</li>
+                                    <li><span class="fas fa-chevron-right"></span> Dynamic timer</li>
+                                    <li><span class="fas fa-chevron-right"></span> Open Street Map integration</li>
+                                    <li><span class="fas fa-chevron-right"></span> Map generated with Leaflet</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Client</h3>
-                        <p>Bicloo -  <strong>Ville de Nantes</strong></p>
-                        <p>Client fictif dans le cadre du projet 3 de la formation Developpeur Web Junior OPENCLASSROOMS</p>
+                        <p>Bicloo -  <strong>City of Nantes</strong></p>
+                        <p>Fictitious client as part of Project 3 of Junior Web Developer Training OPENCLASSROOMS</p>
                     </div>
                 </aside>
             </div>

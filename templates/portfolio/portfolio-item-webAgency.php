@@ -18,25 +18,25 @@ ob_start();
                             <div class="blog-content">
                                 <h3 class="main-title">Webagency</h3>
                                 <div class="entry-meta">
-                                    <span><span class="far fa-clock"></span> Janvier 2019</span>
+                                    <span><span class="far fa-clock"></span> January 2019</span>
                                 </div>
-                                <p class="lead">Refonte d'un site vitrine - Intégration d'une maquette</p>
+                                <p class="lead">Redesign of a showcase site - Integration of a mockup</p>
 
-                                <p>Dans le cadre de ma formation de Developpeur Web Junior chez Openclassrooms, j'ai mené à bien ce projet d'<strong>intégration web</strong>. La mission conssitait à faire une refonte complète d'un site et de proposer une maquette statique avant validation du design par le client final.</p>
-                                <p>L'objectif du projet était la découverte des langages de base du développement web que sont <strong>HTML5</strong> et <strong>CSS3</strong>.  </p>
+                                <p> As part of my Junior Web Developer training at Openclassrooms, I completed this <strong> web integration </strong> project. The mission was to make a complete redesign of a site and propose a static mockup before validation of the design by the end customer. </p>
+                                <p> The goal of the project was to discover the basic languages ​​of web development <strong> HTML5 </strong> and <strong> CSS3 </strong>. </p>
                                 <hr>
-                                <h4>Cahier des charges :</h4>
+                                <h4> Specifications: </h4>
                                 <ul>
-                                    <li>le site doit tenir sur une page avec un menu qui reste visible, en haut de la page, même lorsque l'on se déplace dans la page</li>
-                                    <li>les différentes sections attendues sont</li>
-                                    <li>un premier écran d'accueil de bienvenue, très visuel</li>
-                                    <li>la liste des services offerts par l'agence</li>
-                                    <li>des exemples de projets déjà réalisés</li>
-                                    <li>une carte avec un formulaire de contact (on ne vous demande pas de faire marcher le formulaire, juste de l'afficher).</li>
-                                    <li>rédaction de contenu optimisé pour le référencement naturel (SEO).</li>
+                                    <li> the site must fit on a page with a menu that remains visible, at the top of the page, even when one moves in the page </li>
+                                    <li> the different expected sections are </li>
+                                    <li> a first welcome home screen, very visual </li>
+                                    <li> the list of services offered by the agency </li>
+                                    <li> examples of projects already completed </li>
+                                    <li> a card with a contact form (we do not ask you to run the form, just display it). </li>
+                                    <li> Content writing optimized for SEO (SEO). </li>
                                 </ul>
                                 <hr>
-                                <h4>Maquette :</h4>
+                                <h4>Mockup :</h4>
                                 <a href="./public/images/portfolio/Dev/webAgency/webAgency1.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/webAgency/webAgency1.jpg" alt="Header Webagency" ></a>
                                 <hr>
                                 <a href="./public/images/portfolio/Dev/webAgency/webAgency2.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/webAgency/webAgency2.jpg" alt="Nos Services Webagency" ></a>
@@ -50,7 +50,7 @@ ob_start();
                 </div>
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><img class="responsiveMockup" src="./public/images/portfolio/Dev/webAgency/webAgencyResp.png" style="width:250px" alt="Responsive WebAgency"><br><span class="far fa-eye"></span> Voir le site</a>
+                        <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><img class="responsiveMockup" src="./public/images/portfolio/Dev/webAgency/webAgencyResp.png" style="width:250px" alt="Responsive WebAgency"><br><span class="far fa-eye"></span> View website</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>
@@ -60,23 +60,23 @@ ob_start();
                         </ul>
                     </div>
                     <div class="widget categories">
-                        <h3 class="widget-title">Fonctionalités principales</h3>
+                        <h3 class="widget-title">Main features</h3>
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul>
                                     <li><span class="fas fa-chevron-right"></span> Slider</li>
-                                    <li><span class="fas fa-chevron-right"></span> Portofolio interactif</li>
-                                    <li><span class="fas fa-chevron-right"></span> Affichage par catégorie</li>
-                                    <li><span class="fas fa-chevron-right"></span> Intégration Google Map</li>
-                                    <li><span class="fas fa-chevron-right"></span> Site responsive</li>
+                                    <li><span class="fas fa-chevron-right"></span> Interactive Portfolio</li>
+                                    <li><span class="fas fa-chevron-right"></span> View by category</li>
+                                    <li><span class="fas fa-chevron-right"></span> Google Map integration</li>
+                                    <li><span class="fas fa-chevron-right"></span> Responsive design</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Client</h3>
-                        <p>Agence Web - <strong>Webagency</strong></p>
-                        <p>Client fictif dans le cadre du projet 1 de la formation Developpeur Web Junior OPENCLASSROOMS</p>
+                        <p>Web Agency - <strong>Webagency</strong></p>
+                        <p>Fictitious client as part of Junior Web Developer Training Project 1</p>
                     </div>
                 </aside>
             </div>

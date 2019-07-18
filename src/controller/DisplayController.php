@@ -16,9 +16,6 @@ class DisplayController
         if($sessionController->checkSession() == false){
             throw new \Exception('You cannot access this page');
         }
-        // else{
-        //     throw new \Exception('La normalement pas exception ça affiche la page');
-        // }
     }
 
     public function displayHome()

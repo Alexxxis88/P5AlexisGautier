@@ -48,11 +48,12 @@ class QuoteController
 
         // Additional headers
         $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
-        if(mail($to, $topic, $message, implode("\r\n", $headers)))          //FIXME : retirer le if apres les test sur les emails
+        if(mail($to, $topic, $message, implode("\r\n", $headers)))
         {
-            header('Location: index.php');
+            header('Location: index.php?action=services&success=1');
+        }else{
+            throw new \Exception('There was a problem when sending your quote request. Please try again');
         }
-
     }
 
     // public function imageQuote()
@@ -129,43 +130,43 @@ class QuoteController
                                                             return true;
 
                                                         } else {
-                                                        throw new \Exception('La deadline ne peut pas être dans le passé');
+                                                        throw new \Exception('Deadline cannot be in the past');
                                                         }
                                                     } else {
-                                                    throw new \Exception('La ville n\'est pas conforme');
+                                                    throw new \Exception('City is incorrect');
                                                     }
                                                 } else {
-                                                throw new \Exception('Le code postal n\'est pas conforme');
+                                                throw new \Exception('Post Code is incorrect');
                                                 }
                                             } else {
-                                            throw new \Exception('L\'adresse n\'est pas conforme');
+                                            throw new \Exception('Address is incorrect');
                                             }
                                         } else {
-                                            throw new \Exception('Le numéro de téléphone n\'est pas conforme');
+                                            throw new \Exception('Phone number is incorrect');
                                         }
                                     } else {
-                                        throw new \Exception('L\'adresse email n\'est pas conforme');
+                                        throw new \Exception('Email address is incorrect');
                                     }
                                 } else {
-                                    throw new \Exception('Le nom n\'est pas conforme.');
+                                    throw new \Exception('Last Name is incorrect.');
                                 }
                             } else {
-                                throw new \Exception('Le prénom n\'est pas conforme.');
+                                throw new \Exception('First Name is incorrect.');
                             }
                         } else {
-                            throw new \Exception('le nom de l\'entreprise n\'est pas conforme.');
+                            throw new \Exception('Company name is incorrect');
                         }
                     } else {
-                        throw new \Exception('La structure n\'est pas conforme.');
+                        throw new \Exception('Structure is incorrect');
                     }
                 } else {
-                    throw new \Exception('Le nom du projet n\'est pas conforme.');
+                    throw new \Exception('Project name is incorrect');
                 }
             // } else {
             //     throw new \Exception('Le prix du pack n\'est pas conforme.');
             // }
         } else {
-            throw new \Exception('Il y a un soucis.'); //I stay vague not to inform a malicious user who tryed to edit the price how to make it work
+            throw new \Exception('There is a problem'); //I stay vague not to inform a malicious user who tryed to edit the price how to make it work
         }
     }
 
@@ -293,9 +294,13 @@ class QuoteController
 
         // Additional headers
         $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
-        mail($to, $topic, $message, implode("\r\n", $headers));
+        if(mail($to, $topic, $message, implode("\r\n", $headers)))
+        {
 
-        header('Location: index.php');
+            header('Location: index.php?action=quote&success=1');
+        }else{
+            throw new \Exception('There was a problem when sending your quote request. Please try again');
+        }
     }
 
 
@@ -364,7 +369,7 @@ class QuoteController
                                                                                         if ($_POST['deadline'] > $today) {
                                                                                             return true;
                                                                                         } else {
-                                                                                            throw new \Exception('La deadline ne peut pas être dans le passé');
+                                                                                            throw new \Exception('Deadline cannot be in the past');
                                                                                         }
                                                                                     }
 
@@ -373,7 +378,7 @@ class QuoteController
                                                                                         if ($_POST['loginShowcaseYN'] ==  'Yes' or $_POST['loginShowcaseYN'] == 'No') {
                                                                                             return true;
                                                                                         } else {
-                                                                                            throw new \Exception('La choix de la connexion utilisateur n\'est pas conforme');
+                                                                                            throw new \Exception('User login options is incorrect');
                                                                                         }
                                                                                     }
 
@@ -382,7 +387,7 @@ class QuoteController
                                                                                         if ($_POST['paymentShowcaseYN'] ==  'Yes' OR $_POST['paymentShowcaseYN'] == 'No') {
                                                                                             return true;
                                                                                         } else {
-                                                                                            throw new \Exception('La choix de l\option de paiement pour le Site Vitrine n\'est pas conforme');
+                                                                                            throw new \Exception('Payment option for Showcase Website is incorrect');
                                                                                         }
                                                                                     }
 
@@ -392,7 +397,7 @@ class QuoteController
                                                                                         {
                                                                                             return true;
                                                                                         } else {
-                                                                                            throw new \Exception('Le nombre de page pour le Site Vitrine n\'est pas conforme');
+                                                                                            throw new \Exception('Number of page for Showcase Website is incorrect');
                                                                                         }
                                                                                     }
 
@@ -402,68 +407,68 @@ class QuoteController
                                                                                         {
                                                                                             return true;
                                                                                         } else {
-                                                                                            throw new \Exception('Le nombre de produits à vendre pour le Webstore n\'est pas conforme');
+                                                                                            throw new \Exception('Number of products for sale for Webstore is incorrect');
                                                                                         }
                                                                                     }
 
                                                                                     return true;
 
                                                                                 } else {
-                                                                                throw new \Exception('Le choix de la deadline n\'est pas conforme');
+                                                                                throw new \Exception('Deadline is incorrect');
                                                                                 }
                                                                             } else {
-                                                                            throw new \Exception('Le choix du besoin en nom de domaine n\'est pas conforme');
+                                                                            throw new \Exception('Domain name choice is incorrect');
                                                                             }
                                                                         } else {
-                                                                        throw new \Exception('Le choix de l\'hébergement n\'est pas conforme');
+                                                                        throw new \Exception('Host choice is incorrect');
                                                                         }
                                                                     } else {
-                                                                    throw new \Exception('Le choix de maintenance n\'est pas conforme');
+                                                                    throw new \Exception('Maintenance choice is incorrect');
                                                                     }
                                                                 } else {
-                                                                throw new \Exception('Le choix contenu visuel n\'est pas conforme');
+                                                                throw new \Exception('Visual content choice is incorrect');
                                                                 }
                                                             } else {
-                                                            throw new \Exception('Le choix contenu éditorial n\'est pas conforme');
+                                                            throw new \Exception('Writing content choice is incorrect');
                                                             }
                                                         } else {
-                                                        throw new \Exception('Le choix du design n\'est pas conforme');
+                                                        throw new \Exception('Design choice is incorrect');
                                                         }
                                                     } else {
-                                                    throw new \Exception('La ville n\'est pas conforme');
+                                                    throw new \Exception('City is incorrect');
                                                     }
                                                 } else {
-                                                throw new \Exception('Le code postal n\'est pas conforme');
+                                                throw new \Exception('Post Code is incorrect');
                                                 }
                                             } else {
-                                            throw new \Exception('L\'adresse n\'est pas conforme');
+                                            throw new \Exception('Address is incorrect');
                                             }
                                         } else {
-                                            throw new \Exception('Le numéro de téléphone n\'est pas conforme');
+                                            throw new \Exception('Phone number is incorrect');
                                         }
                                     } else {
-                                        throw new \Exception('L\'adresse email n\'est pas conforme');
+                                        throw new \Exception('Email address is incorrect');
                                     }
                                 } else {
-                                    throw new \Exception('Le nom n\'est pas conforme.');
+                                    throw new \Exception('Last Name is incorrect.');
                                 }
                             } else {
-                                throw new \Exception('Le prénom n\'est pas conforme.');
+                                throw new \Exception('First Name is incorrect.');
                             }
                         } else {
-                            throw new \Exception('le nom de l\'entreprise n\'est pas conforme.');
+                            throw new \Exception('Company name is incorrect');
                         }
                     } else {
-                        throw new \Exception('La structure n\'est pas conforme.');
+                        throw new \Exception('Structure is incorrect');
                     }
                 } else {
-                    throw new \Exception('Le nom du projet n\'est pas conforme.');
+                    throw new \Exception('Project name is incorrect');
                 }
             } else {
-                throw new \Exception('Le prix n\'est pas conforme.');
+                throw new \Exception('Price is incorrect');
             }
         } else {
-            throw new \Exception('Le type de prestation souhaité n\'est pas conforme.');
+            throw new \Exception('Site type is incorrect');
         }
     }
 

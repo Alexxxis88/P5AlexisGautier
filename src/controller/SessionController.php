@@ -27,7 +27,7 @@ class SessionController
         // Check is password matches the one registered in DB
         $isPasswordCorrect = password_verify(htmlspecialchars($_POST['pass']), $checkLogIn['pass']);
         if (!$checkLogIn) {
-            throw new \Exception('Vérifiez vos identifiants de connexion');
+            throw new \Exception('Check your login information');
         } else {   //if the password is Correct SESSION variables are created
             if ($isPasswordCorrect) {
                 $_SESSION['id'] = $checkLogIn['id']; //FIXME : useless ? on se sert de l'email et pas de l'ID
@@ -43,7 +43,7 @@ class SessionController
                 header('Location: index.php?action=canYouFindMyLoginPage');
                 exit;
             } else {
-                throw new \Exception('Vérifiez vos identifiants de connexion');
+                throw new \Exception('Check your login information');
             }
         }
     }
@@ -103,8 +103,5 @@ class SessionController
         setcookie('id', '', time() - 3600, null, null, false, true);
         setcookie('email', '', time() - 3600, null, null, false, true);
         setcookie('hash_pass', '', time() - 3600, null, null, false, true);
-
-        header('Location: index.php');
-        exit;
     }
 }

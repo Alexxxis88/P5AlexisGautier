@@ -39,10 +39,20 @@ try {
         elseif ($_GET['action'] == 'services') {
             $displayController = new DisplayController;
             $displayController->displayServices();
+
+            //Confirmation message quote request sent
+            if (isset($_GET['success']) and $_GET['success'] == 1) {
+                include('templates/success-messages/success1.html');
+            }
         }
         elseif ($_GET['action'] == 'quote') {
             $displayController = new DisplayController;
             $displayController->displayQuote();
+
+            //Confirmation message quote request sent
+            if (isset($_GET['success']) and $_GET['success'] == 1) {
+                include('templates/success-messages/success1.html');
+            }
         }
         elseif ($_GET['action'] == 'portfolio') {
             $displayController = new DisplayController;
@@ -59,6 +69,11 @@ try {
         elseif ($_GET['action'] == 'contact') {
             $displayController = new DisplayController;
             $displayController->displayContact();
+
+            //Confirmation message message sent
+            if (isset($_GET['success']) and $_GET['success'] == 3) {
+                include('templates/success-messages/success3.html');
+            }
         }
         elseif ($_GET['action'] == 'termsAndCondition') {
             $displayController = new DisplayController;
@@ -71,6 +86,11 @@ try {
         elseif ($_GET['action'] == 'canYouFindMyLoginPage') {
             $displayController = new DisplayController;
             $displayController->displayLogIn();
+
+            //Confirmation message updating password
+            if (isset($_GET['success']) and $_GET['success'] == 2) {
+                include('templates/success-messages/success2.html');
+            }
         }
         elseif ($_GET['action'] == 'displayUpdatePass') {
             $displayController = new DisplayController;
@@ -111,7 +131,7 @@ try {
                     require('templates/admin/dashboard.php');
                 }
             } else {
-                throw new \Exception('Vérifiez vos identifiants de connexion');
+                throw new \Exception('Check your login information');
             }
         }
 
@@ -121,8 +141,11 @@ try {
                 $sessionController = new SessionController;
                 $sessionController->killSession();
 
+                header('Location: index.php');
+                exit;
+
             } else {
-                throw new \Exception('Vous êtes déja déconnecté');
+                throw new \Exception('You are already logged off');
             }
         }
 
@@ -134,10 +157,13 @@ try {
                     $_POST['newPass'] = password_hash($_POST['newPass'], PASSWORD_DEFAULT);
                     $sessionController->UpdatePassWord($_POST['newPass'], $_POST['emailNewPass']);
                     $sessionController->killSession();
+
+                    header('Location: index.php?action=canYouFindMyLoginPage&success=2');
+                    exit;
                 }
             }
             else {
-                throw new \Exception('Vous devez être connecté pour accéder à cette page');
+                throw new \Exception('You have to be logged in to access this page');
             }
         }
 
@@ -153,7 +179,7 @@ try {
                 }
             }
             else {
-                throw new \Exception('Tous les champs ne sont pas remplis');
+                throw new \Exception('Some fields are empty');
             }
         }
 
@@ -215,7 +241,7 @@ try {
                 }
             }
             else {
-                throw new \Exception('Tous les champs ne sont pas remplis');
+                throw new \Exception('Some fields are empty');
             }
         }
 
@@ -225,7 +251,7 @@ try {
                 $quoteController = new QuoteController;
                 $quoteController->deletePackQuote($_GET['packQuoteId']);
             } else {
-                throw new Exception('Aucun identifiant de devis envoyé');
+                throw new Exception('Missing invoice id');
             }
         }
 
@@ -238,7 +264,7 @@ try {
                 $quoteController = new QuoteController;
                 $quoteController->acceptDenyPackQuote($_GET['acceptPackQuote'], $_GET['packQuoteId']);
             } else {
-                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+                throw new Exception('Missing invoice id or choice');
             }
         }
 
@@ -253,7 +279,7 @@ try {
 
 
             } else {
-                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+                throw new Exception('Missing invoice id or choice');
             }
         }
 
@@ -263,7 +289,7 @@ try {
                 $quoteController = new QuoteController;
                 $quoteController->updatePackQuoteStatus($_POST['statusPackQuote'], $_GET['packQuoteId']);
             } else {
-                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+                throw new Exception('Missing invoice id or choice');
             }
         }
 
@@ -356,7 +382,7 @@ try {
                 }
             }
             else {
-                throw new \Exception('Tous les champs ne sont pas remplis');
+                throw new \Exception('Some fields are empty');
             }
         }
 
@@ -366,7 +392,7 @@ try {
                 $quoteController = new QuoteController;
                 $quoteController->deleteCustomQuote($_GET['customQuoteId']);
             } else {
-                throw new Exception('Aucun identifiant de devis envoyé');
+                throw new Exception('Missing invoice id');
             }
         }
 
@@ -379,7 +405,7 @@ try {
                 $quoteController = new QuoteController;
                 $quoteController->acceptDenyCustomQuote($_GET['acceptCustomQuote'], $_GET['customQuoteId']);
             } else {
-                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+                throw new Exception('Missing invoice id or choice');
             }
         }
 
@@ -394,7 +420,7 @@ try {
 
 
             } else {
-                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+                throw new Exception('Missing invoice id or choice');
             }
         }
 
@@ -404,7 +430,7 @@ try {
                 $quoteController = new QuoteController;
                 $quoteController->updateCustomQuoteStatus($_POST['statusCustomQuote'], $_GET['customQuoteId']);
             } else {
-                throw new Exception('Aucun identifiant de devis ou choix envoyé');
+                throw new Exception('Missing invoice id or choice');
             }
         }
 
@@ -419,7 +445,7 @@ try {
                 $messageController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
                 $messageController->updateAnswerMessageFlag($_GET['messageId']);
             } else {
-                throw new Exception('Aucun identifiant de message envoyé');
+                throw new Exception('Missing message id');
             }
         }
 
@@ -429,7 +455,7 @@ try {
                 $messageController = new MessageController;
                 $messageController->deleteMessage($_GET['messageId']);
             } else {
-                throw new Exception('Aucun identifiant de message envoyé');
+                throw new Exception('Missing message id');
             }
         }
 
@@ -439,12 +465,12 @@ try {
                 $messageController = new MessageController;
                 $messageController->archiveMessage($_GET['messageId']);
             } else {
-                throw new Exception('Aucun identifiant de message envoyé');
+                throw new Exception('Missing message id');
             }
         }
 
         else {
-            throw new \Exception('Cette page n\'existe pas');
+            throw new \Exception('This page doesn\'t exist');
         }
     }
 
@@ -453,7 +479,7 @@ try {
     else {
         $displayController = new DisplayController;
         $displayController->displayHome();
-        }
+    }
 }
 
 //ERROR BEHAVIOR

@@ -54,6 +54,10 @@ if ((!$.trim($(".newCustomQuote").html()).length) && (!$.trim($(".customQuote").
 };
 
 
-
+// Close success messages modal box after 1.8s
+function hideThanks() {
+    $(".successModal").fadeOut();
+}
+let delayConfirmationMsg = setTimeout(hideThanks, 1800);
 
 

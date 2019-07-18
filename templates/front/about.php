@@ -30,17 +30,17 @@ ob_start();
                             </div>
                         </div>
                 <div class="col-md-9 fade-up bioText">
-                    <p>Je m'appelle Alexis, j'ai 31 ans et suis Developpeur Web depuis Septembre 2019. J'ai eu la chance d'avoir un parcours en dehors des sentiers battus qui m'a permis de me forger des solides aptitudes d'adaptabilité et de réactivité, me permettant d'appréhender chaque nouveau projet avec sérénité et détermination. Je sais être franc lorsqu'il le faut et conciliant quand cela s'impose.</p>
+                <p> My name is Alexis, I am 31 years old and I am Web Developer since September 2019. I was fortunate to have a path outside the box that allowed me to forge strong skills of adaptability and responsiveness, allowing me to apprehend each new project with serenity and determination. I can be honest when I need to and reconcile when necessary.</p>
 
-                    <p>Après une scolarité normale et un Bac Scientifique, le chemin classique et tout tracé que beaucoup empruntent s'est dérobé sous mes pieds. Mes aspirations étaient tout autre. Quelques tentatives d'études infructueuses plus tard, le constat est là : suivre mon instinct et créer mon label de musique comme j'en revais depuis des années. Ce fût le début de l'aventure STRAIGHT & ALERT records, Label et boutique en ligne dédiés aux musiques Hardcore / Metal et Punk, qui durera 6 ans.</p>
+                <p>After a normal schooling and a scientific baccalaureate, I didn't follow the classic path most people do. My aspirations were different. After a few unsuccessful attempts to study different subjects, what I really wanted was obvious : follow my instinct and create my music label as I have been dreaming for years. It was the beginning of the STRAIGHT & ALERT Records, Label and Online Shop dedicated to Hardcore / Metal and Punk music, which will last 6 years.</p>
 
-                    <p>C'est durant cette période que le gôut d'apprendre, en autodidacte, s'est manifesté. J'ai ainsi touché à des domaines divers, allant de la communication, marketing à l'organisation de tournées en passant par la relation client, le design où celle qui m'a mis pied de le monde du digital : la gestion d'une boutique en ligne</p>
+                <p>It was during this period that the taste for learning, as an autodidact, came to me. I have thus touched on various fields, ranging from communication, marketing to the tour booking, but also customer relations, design or the one that got me into digital world: running an online shop </p>
 
-                    <p>Et cela me donne un atout de poids : j'ai été à votre place ! Et oui, j'ai moi aussi été client et ai dû faire confiance à un Developpeur Web, en espérant qu'il comprenne toutes mes attentes. Ainsi, je pense être à même de comprendre les votres.</p>
+                <p> And that gives me a real advantage: I have been where you're at! I too have been a customer and had to trust a Web Developer, hoping he understands all my expectations. So, I think I can understand yours.</p>
 
-                    <p>En 2018 le sentiment d'avoir fait le tour de mon metier et l'envie d'accéquerir de nouvelles compétences me poussent à cloturer mon label pour me lancer dans l'apprentissage du métier de Developpeur Web. 7 mois plus tard et un diplome de Developpeur Web Junior obtenu via Openclassrooms, un nouveau chapitre commence.</p>
+                <p> In 2018 the feeling of having gone around my job and the desire to gain new skills pushed me to call it quits with my label to start learning about Web Developing. 7 months later and a Junior Web Developer degree from Openclassrooms, a new chapter begins.</p>
 
-                    <p>La musique occupe la plus grande partie de ma vie : basse, guitare, batterie, chant... j'aime toucher à tout. Cela m'a donné l'opportunité de tourner en Europe, aux USA et au Japon. Et je n'oublie pas mon premier amour : le Skateboard.</p>
+                <p>Music also runs most of my life: bass, guitar, drums, vocals ... I like to try everything. It gave me the opportunity to tour in Europe, USA and Japan. And I do not forget my first love: Skateboarding.</p>
                 </div>
             </div>
             <div class="gap"></div>
@@ -54,14 +54,14 @@ ob_start();
                     <div class="testimonial-list-item">
                     <img class="pull-left img-responsive quote-author-list" src="./public/images/about/opinion1.jpg" alt="Portrait Mélanie Petiot">
                         <blockquote>
-                            <p>Une aisance à l'oral qui a fait de sa soutenance un moment agréable à écouter. L'ensemble des éléments ont pu être présentés permettant une présentation à 360° ! Projet & présentation de très bonne qualité : bravo !</p>
+                            <p>An oral fluency that made his defense a pleasant moment to listen to. All the elements could be presented allowing a 360 ° presentation! Project & presentation of very good quality: bravo!</p>
                             <small>Mélanie Petiot | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
                         </blockquote>
                     </div>
                     <div class="testimonial-list-item">
                     <img class="pull-left img-responsive quote-author-list" src="./public/images/about/opinion2.jpg" alt="Portrait Fabien Rahaingomanana">
                         <blockquote>
-                            <p>Le projet est bien réalisé, en témoignent les réponses aux questions subsidiaires ainsi que les explications fournies tout au long de la soutenance.</p>
+                            <p>The project is well done, witness the answers to the subsidiary questions as well as the explanations provided throughout the defense.</p>
                             <small>Fabien Rahaingomanana | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
                         </blockquote>
                     </div>
@@ -70,14 +70,14 @@ ob_start();
                     <div class="testimonial-list-item">
                     <img class="pull-left img-responsive quote-author-list" src="./public/images/about/opinion4.jpg" alt="Portrait Aurélien Antonio">
                         <blockquote>
-                            <p>Très bon travail tant au niveau du code qu'au niveau de la présentation. Alexis a fait un excellent travail, en allant plus loin que ce qui était demandé. Bonne réflexion sur les axes d'amélioration.</p>
+                            <p>Very good work both at the code level and at the presentation level. Alexis did a great job, going beyond what was asked. Good reflection on the areas of improvement.</p>
                             <small>Aurélien Antonio | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
                         </blockquote>
                     </div>
                     <div class="testimonial-list-item">
                     <img class="pull-left img-responsive quote-author-list" src="./public/images/about/opinion3.jpg" alt="Portrait Cédric Law-Dune">
                         <blockquote>
-                            <p>Très bonne remise en contexte, explication du code fluide. Son oral était structuré et professionnel. Quand à son code, il est optimisé et commenté.</p>
+                            <p>Very good contextualization and explanation of the code. His oral was structured and professional. When to his code, it is optimized and commented.</p>
                             <small>Cédric Law-Dune | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
                         </blockquote>
                     </div>

@@ -16,32 +16,32 @@ ob_start();
                     <div class="blog">
                         <div class="blog-item">
                             <div class="blog-content">
-                                <h3 class="main-title">Jean Forteroche - Blog d'écrivain</h3>
+                                <h3 class="main-title">Jean Forteroche - Writer's blog</h3>
                                 <div class="entry-meta">
-                                    <span><span class="far fa-clock"></span> Juin 2019</span>
+                                    <span><span class="far fa-clock"></span> June 2019</span>
                                 </div>
-                                <p class="lead">Création d'un moteur de blog type Wordpress</p>
+                                <p class="lead">Creating a Worpress alike blog engine</p>
 
-                                <p>Il s'agit du quatrième projet de ma formation Developpeur Web Junior d'OpenClassRooms. Il fallait créer un moteur de blog en <strong>PHP</strong> et <strong>MYSL</strong> basé sur le principe du <strong>CRUD</strong> (Create, Read, Update, Delete).
-                                <p>Ce projet servait de support pour appréhender et maitriser les langages <strong>PHP</strong> et <strong>MYSL</strong>.</p>
+                                <p> This is the fourth project of my OpenClassRooms Junior Web Developer Training. It was necessary to create a <strong> PHP </strong> and <strong> MYSL </strong> blog engine based on the <strong> CRUD </strong> principle (Create, Read, Update, Delete).
+                                <p> This project was used as a support to apprehend and master the <strong> PHP </strong> and <strong> MYSL </strong> languages. </p>
                                 <hr>
-                                <h4>Cahier des charges :</h4>
+                                <h4> Specifications: </h4>
                                 <ul>
-                                    <li>L'auteur souhaite innover et le publier par épisode en ligne sur son propre site.</li>
-                                    <li>Il souhaite avoir son propre outil de blog, offrant des fonctionnalités simples.</li>
-                                    <li>L'application doit fournir une interface frontend et backend respectant le principe du CRUD</li>
-                                    <li>L'interface d'administration sera protégée par mot de passe</li>
-                                    <li>La rédaction de billets se fera dans une interface WYSIWYG basée sur TinyMCE</li>
-                                    <li>Chaque billet doit permettre l'ajout de commentaires</li>
-                                    <li>Les commentaires pourront être modérés dans l'interface d'administration</li>
-                                    <li>Les lecteurs doivent pouvoir signaler les commentaires</li>
-                                    <li>L'application sera développée avec PHP et avec une base de données MySQL</li>
-                                    <li>L'utilisation de frameworks est proscrite</li>
-                                    <li>Le code sera construit sur une architecture MVC</li>
-                                    <li>Vous développerez autant que possible en orienté objet</li>
+                                    <li> The author wants to innovate and publish it by episode online on his own site. </li>
+                                    <li> He wants to have his own blog tool, offering simple features. </li>
+                                    <li> The application must provide a frontend and backend interface respecting the CRUD principle </li>
+                                    <li> The administration interface will be password protected </li>
+                                    <li> Writing tickets will be in a WYSIWYG interface based on TinyMCE </li>
+                                    <li> Each ticket must allow comments to be added </li>
+                                    <li> Comments can be moderated in the admin interface </li>
+                                    <li> Readers must be able to post comments </li>
+                                    <li> The application will be developed with PHP and with a MySQL database </li>
+                                    <li> The use of frameworks is prohibited </li>
+                                    <li> The code will be built on an MVC architecture </li>
+                                    <li> You will develop as much as possible in object-oriented </li>
                                 </ul>
                                 <hr>
-                                <h4>Maquette :</h4>
+                                <h4>Mockup :</h4>
                                 <a href="./public/images/portfolio/Dev/forteroche/forteroche1.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche1.jpg" alt="Page d'accueil du blog de Jean Forteroche" ></a>
                                 <hr>
                                 <a href="./public/images/portfolio/Dev/forteroche/forteroche2.jpg" ><img class="folioItemPic" src="./public/images/portfolio/Dev/forteroche/forteroche2.jpg" alt="Article du blog de Jean Forteroche" ></a>
@@ -63,7 +63,7 @@ ob_start();
                 </div>
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com/jean-forteroche/"><img class="responsiveMockup" src="./public/images/portfolio/Dev/forteroche/forterocheResp.png" style="width:250px" alt="Responsive Office de toursime de Strasbourg"><br><span class="far fa-eye"></span> Voir le site</a>
+                        <a href="http://ocr.straightandalert.com/jean-forteroche/"><img class="responsiveMockup" src="./public/images/portfolio/Dev/forteroche/forterocheResp.png" style="width:250px" alt="Responsive Office de toursime de Strasbourg"><br><span class="far fa-eye"></span> View website</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>
@@ -78,25 +78,25 @@ ob_start();
                         </ul>
                     </div>
                     <div class="widget categories">
-                        <h3 class="widget-title">Fonctionalités principales</h3>
+                        <h3 class="widget-title">Main features</h3>
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul>
                                     <li><span class="fas fa-chevron-right"></span> Blog</li>
-                                    <li><span class="fas fa-chevron-right"></span> Publication / Edition d'articles</li>
-                                    <li><span class="fas fa-chevron-right"></span> Publication / Edition de commentaires</li>
-                                    <li><span class="fas fa-chevron-right"></span> Modération</li>
-                                    <li><span class="fas fa-chevron-right"></span> Gestion des utilisateurs</li>
-                                    <li><span class="fas fa-chevron-right"></span> Statistiques</li>
-                                    <li><span class="fas fa-chevron-right"></span> Intéraction avec une base de données</li>
+                                    <li><span class="fas fa-chevron-right"></span> Publishing / Editing articles</li>
+                                    <li><span class="fas fa-chevron-right"></span> Publishing / Editing comments</li>
+                                    <li><span class="fas fa-chevron-right"></span> Blog moderation</li>
+                                    <li><span class="fas fa-chevron-right"></span> User management</li>
+                                    <li><span class="fas fa-chevron-right"></span> Statistics</li>
+                                    <li><span class="fas fa-chevron-right"></span> Database integration</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Client</h3>
-                        <p>Ecrivain -  <strong>Jean Forteroche</strong></p>
-                        <p>Client fictif dans le cadre du projet 4 de la formation Developpeur Web Junior OPENCLASSROOMS</p>
+                        <p>Writer -  <strong>Jean Forteroche</strong></p>
+                        <p>Fictitious client as part of Project 4 of Junior Web Developer Training OPENCLASSROOMS</p>
                     </div>
                 </aside>
             </div>
