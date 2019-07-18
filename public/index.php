@@ -105,20 +105,28 @@ try {
         elseif ($_GET['action'] == 'packQuotesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
-            $quoteController = new QuoteController();
-            $quoteController->listPackQuotes();
+            if (!isset($_GET['page']) or !isset($_GET['sortBy']) or $_GET['page']<1 or $_GET['sortBy']<1) {
+                throw new Exception('Page number or sort by number is missing');
+            } else {
+                $quoteController = new QuoteController();
+                $quoteController->listPackQuotes();
+            }
         }
         elseif ($_GET['action'] == 'customQuotesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
-            $quoteController = new QuoteController();
-            $quoteController->listCustomQuotes();
+            if (!isset($_GET['page']) or !isset($_GET['sortBy']) or $_GET['page']<1 or $_GET['sortBy']<1) {
+                throw new Exception('Page number or sort by number is missing');
+            } else {
+                $quoteController = new QuoteController();
+                $quoteController->listCustomQuotes();
+            }
         }
         elseif ($_GET['action'] == 'messagesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
             if (!isset($_GET['page']) or !isset($_GET['sortBy']) or $_GET['page']<1 or $_GET['sortBy']<1) {
-                throw new Exception('Il manque le numéro de page ou le classement des utilisateurs');
+                throw new Exception('Page number or sort by number is missing');
             } else {
                 $messageController = new MessageController();
                 $messageController->listAllMessages();

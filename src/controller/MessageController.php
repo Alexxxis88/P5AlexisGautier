@@ -90,15 +90,15 @@ class MessageController
 
         //Pagination
         $totalPages = $messageManager->getTotalPagesMessages();
-        $total = $totalPages['total_messages']; // total of messages in DB
+        $total = $totalPages['total_items']; // total of messages in DB
 
         if (isset($_GET['sortBy'])) {
-            $messagesPerPage = intval($_GET['sortBy']);
+            $itemsPerPage = intval($_GET['sortBy']);
         } else {
-            $messagesPerPage = 10;
+            $itemsPerPage = 5;
         }
 
-        $nbOfPages = ceil($total/$messagesPerPage);
+        $nbOfPages = ceil($total/$itemsPerPage);
 
         if (isset($_GET['page'])) {
             $currentPage = intval($_GET['page']);
@@ -109,12 +109,8 @@ class MessageController
         } else {
             $currentPage = 1;
         }
-        $firstMessage = ($currentPage-1)*$messagesPerPage; // first message to display
-        $currentView = "messages"; //to display the correct Pagination View
-        $newMessages = $messageManager->getNewMessages($firstMessage, $messagesPerPage);
-
-
-
+        $firstItem = ($currentPage-1)*$itemsPerPage; // first message to display
+        $newMessages = $messageManager->getNewMessages($firstItem, $itemsPerPage);
         $archivedMessages = $messageManager->getArchivedMessages();
 
         require('templates/admin/messagesAdmin.php');

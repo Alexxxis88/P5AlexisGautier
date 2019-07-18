@@ -13,9 +13,9 @@
 
             <nav class="adminMenu">
                 <ul>
-                <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin"><span class="fas fa-file-invoice packQuoteAlert"></span>Pack Quotes</a></li>
-                <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin"><span class="fas fa-file-invoice-dollar customQuoteAlert"></span>Custom Quotes</a></li>
-                <li><a class="adminMenuLink" href="index.php?action=messagesAdmin"><span class="fas fa-comments msgAlert"></span>Messages</a></li>
+                <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin&page=1&sortBy=10"><span class="fas fa-file-invoice packQuoteAlert"></span>Pack Quotes</a></li>
+                <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin&page=1&sortBy=10"><span class="fas fa-file-invoice-dollar customQuoteAlert"></span>Custom Quotes</a></li>
+                <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=10"><span class="fas fa-comments msgAlert"></span>Messages</a></li>
                 </ul>
             </nav>
             <!-- Log Out button -->
@@ -39,9 +39,9 @@
 <!-- Burger Menu Navigation -->
 <nav class="navMenu"  id="burgerNav">
     <ul>
-        <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin"><span class="fas fa-file-invoice packQuoteAlert"></span>Pack Quotes</a></li>
-        <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin"><span class="fas fa-file-invoice-dollar customQuoteAlert"></span>Custom Quotes</a></li>
-        <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page"><span class="fas fa-comment-alt msgAlert"></span>Messages</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin&page=1&sortBy=10"><span class="fas fa-file-invoice packQuoteAlert"></span>Pack Quotes</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin&page=1&sortBy=10"><span class="fas fa-file-invoice-dollar customQuoteAlert"></span>Custom Quotes</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page&page=1&sortBy=10"><span class="fas fa-comment-alt msgAlert"></span>Messages</a></li>
         <?php //if there is cookies or session information, they are used to display user name
         if (isset($_COOKIE['email']) or isset($_SESSION['email'])) {
             if (isset($_COOKIE['email'])) {

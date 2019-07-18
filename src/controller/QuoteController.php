@@ -183,7 +183,30 @@ class QuoteController
         $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
         $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
-        $packQuote = $quoteManager->getPackQuotes();
+
+        //Pagination
+        $totalPages = $quoteManager->getTotalPagesPackQuotes();
+        $total = $totalPages['total_items']; // total of messages in DB
+
+        if (isset($_GET['sortBy'])) {
+            $itemsPerPage = intval($_GET['sortBy']);
+        } else {
+            $itemsPerPage = 5;
+        }
+
+        $nbOfPages = ceil($total/$itemsPerPage);
+
+        if (isset($_GET['page'])) {
+            $currentPage = intval($_GET['page']);
+
+            if ($currentPage>$nbOfPages) { // if a user puts the value of a page that doesnt exist, it redirects to the last page ($nbOfPages)
+                $currentPage=$nbOfPages;
+            }
+        } else {
+            $currentPage = 1;
+        }
+        $firstItem = ($currentPage-1)*$itemsPerPage; // first message to display
+        $packQuote = $quoteManager->getPackQuotes($firstItem, $itemsPerPage);
 
         require('templates/admin/packQuotesAdmin.php');
     }
@@ -485,7 +508,29 @@ class QuoteController
         $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
         $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
-        $customQuote = $quoteManager->getCustomQuotes();
+        //Pagination
+        $totalPages = $quoteManager->getTotalPagesCustomQuotes();
+        $total = $totalPages['total_items']; // total of messages in DB
+
+        if (isset($_GET['sortBy'])) {
+            $itemsPerPage = intval($_GET['sortBy']);
+        } else {
+            $itemsPerPage = 5;
+        }
+
+        $nbOfPages = ceil($total/$itemsPerPage);
+
+        if (isset($_GET['page'])) {
+            $currentPage = intval($_GET['page']);
+
+            if ($currentPage>$nbOfPages) { // if a user puts the value of a page that doesnt exist, it redirects to the last page ($nbOfPages)
+                $currentPage=$nbOfPages;
+            }
+        } else {
+            $currentPage = 1;
+        }
+        $firstItem = ($currentPage-1)*$itemsPerPage; // first message to display
+        $customQuote = $quoteManager->getCustomQuotes($firstItem, $itemsPerPage);
 
         require('templates/admin/customQuotesAdmin.php');
     }

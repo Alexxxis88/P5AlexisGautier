@@ -1,5 +1,5 @@
 <?php
-$title = 'Services - What can I do?';
+$title = 'Error - Something went wrong';
 ob_start();
 ?>
     <script>

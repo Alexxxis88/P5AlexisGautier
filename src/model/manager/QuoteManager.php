@@ -15,15 +15,27 @@ class QuoteManager extends Manager
     }
 
 
-    public function getPackQuotes()
+    public function getPackQuotes($firstItem, $itemsPerPage)
     {
-        $req = $this->_db->query('SELECT * FROM packquotes ORDER BY requestDate DESC');
+        $req = $this->_db->prepare('SELECT * FROM packquotes ORDER BY requestDate DESC LIMIT ?,?');
+        $req->bindValue(1, $firstItem, \PDO::PARAM_INT);
+        $req->bindValue(2, $itemsPerPage, \PDO::PARAM_INT);
+        $req->execute();
+
         while ($datasPackQuotes = $req->fetch(\PDO::FETCH_ASSOC)) {
             $packQuote[] = new PackQuote($datasPackQuotes);
         }
         if (!empty($packQuote)) { //needed otherwise gives an error on the packQuotesAdmin.php when no pack quote
             return $packQuote;
         }
+    }
+
+    //Pagination
+    public function getTotalPagesPackQuotes()
+    {
+        $req = $this->_db->query('SELECT COUNT(*) AS total_items FROM packquotes');
+        $returnTotalPagesPackQuotes= $req->fetch();
+        return $returnTotalPagesPackQuotes;
     }
 
     public function erasePackQuote($packQuoteId)
@@ -60,15 +72,27 @@ class QuoteManager extends Manager
         $newCustomQuoteDb->execute(array($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore));
     }
 
-    public function getCustomQuotes()
+    public function getCustomQuotes($firstItem, $itemsPerPage)
     {
-        $req = $this->_db->query('SELECT * FROM customquotes ORDER BY requestDate DESC');
+        $req = $this->_db->prepare('SELECT * FROM customquotes ORDER BY requestDate DESC LIMIT ?,?');
+        $req->bindValue(1, $firstItem, \PDO::PARAM_INT);
+        $req->bindValue(2, $itemsPerPage, \PDO::PARAM_INT);
+        $req->execute();
+
         while ($datasCustomQuotes = $req->fetch(\PDO::FETCH_ASSOC)) {
             $customQuote[] = new CustomQuote($datasCustomQuotes);
         }
         if (!empty($customQuote)) { //needed otherwise gives an error on the customQuotesAdmin.php when no custom quote
             return $customQuote;
         }
+    }
+
+    //Pagination
+    public function getTotalPagesCustomQuotes()
+    {
+        $req = $this->_db->query('SELECT COUNT(*) AS total_items FROM customquotes');
+        $returnTotalPagesCustomQuotes= $req->fetch();
+        return $returnTotalPagesCustomQuotes;
     }
 
     public function eraseCustomQuote($customQuoteId)

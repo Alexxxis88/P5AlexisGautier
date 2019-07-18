@@ -4,10 +4,16 @@ ob_start();
 ?>
 <div class="container noHeaderImg"> <!-- DO NOT add a fade-up/down/bounce/flip class or modal when answering won't display correctly-->
     <section>
+        <p>Display by
+        <a href="index.php?action=packQuotesAdmin&page=<?= $_GET['page'] ?>&sortBy=5"><button class="btn btn-info btn-sm"><strong>5</strong></button></a>
+        <a href="index.php?action=packQuotesAdmin&page=<?= $_GET['page'] ?>&sortBy=10"><button class="btn btn-info btn-sm"><strong>10</strong></button></a>
+        <a href="index.php?action=packQuotesAdmin&page=<?= $_GET['page'] ?>&sortBy=99999999999999999999"><button class="btn btn-info btn-sm"><strong>All</strong></button></a></p>
+        <?php include('templates/pagination.php'); ?>
+
         <h2 class="titleManageCom titleMessages">Pack Quotes</h2>
         <hr>
         <?php
-            if (!empty($packQuote)){ //needed otherwise gives an error on the messagesAdmin.php when no new message
+            if (!empty($packQuote)){ //needed otherwise gives an error on the packQuotesAdmin.php when no new message
                 for ($i = 0 ; $i < sizeof($packQuote) ; $i++) {
                     $packQuoteId = $packQuote[$i]->id();
                     $packName = $packQuote[$i]->packName();
@@ -184,6 +190,7 @@ ob_start();
                 <?php
                 }
             }
+            include('templates/pagination.php');
             ?>
         <!-- displays a message if no new message -->
         <div class="noPackQuote">There is no pack quotes</div>
