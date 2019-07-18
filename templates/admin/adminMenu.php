@@ -63,21 +63,21 @@
 <!-- Display new message alert -->
 <?php
 if ($isThereNewMessages == true ) { ?>
-    <script>$('.msgAlert').css("color", "rgb(233, 45, 45)");</script>
+    <script>$('.msgAlert').css("color", "rgb(223, 57, 57)");</script>
 <?php }
 ?>
 
 <!-- Display pack quote request alert-->
 <?php
 if ($isThereNewPackQuotes == true ) { ?>
-    <script>$('.packQuoteAlert').css("color", "rgb(233, 45, 45)");</script>
+    <script>$('.packQuoteAlert').css("color", "rgb(223, 57, 57)");</script>
 <?php }
 ?>
 
 <!-- Display custom quote request alert-->
 <?php
 if ($isThereNewCustomQuotes == true ) { ?>
-    <script>$('.customQuoteAlert').css("color", "rgb(233, 45, 45)");</script>
+    <script>$('.customQuoteAlert').css("color", "rgb(223, 57, 57)");</script>
 <?php }
 ?>
 
