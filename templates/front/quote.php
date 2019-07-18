@@ -535,8 +535,12 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="structure">Structure*</label>
                                 <select id="structure" name="structure" class="form-control" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="" disabled selected hidden> </option>
+                                    <!-- add required only if whole section displayed -->
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="individual">Individual</option>
                                     <option value="professional">Professional</option>
                                     <option value="association">Association</option>
@@ -589,8 +593,12 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="country">Country*</label>
                                 <select id="country" name="country" class="form-control" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="" disabled selected hidden> </option>
+                                    <!-- add required only if whole section displayed -->
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option label="Please choose..."> </option>
                                     <option value="AFG">Afghanistan</option>
                                     <option value="ALA">Åland Islands</option>
                                     <option value="ALB">Albania</option>
