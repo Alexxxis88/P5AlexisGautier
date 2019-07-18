@@ -26,6 +26,7 @@ ob_start();
                     $country = $packQuote[$i]->country();
                     $deadline = $packQuote[$i]->deadline();
                     $messageContent = $packQuote[$i]->messageContent();
+                    $imageName = $packQuote[$i]->imageName();
                     $quoteStatus = $packQuote[$i]->quoteStatus();
                     $accepted = $packQuote[$i]->accepted();
                     $clientStatus = $packQuote[$i]->clientStatus();
@@ -72,6 +73,10 @@ ob_start();
                             <p><Strong>City : </Strong><?= $city?></p>
                             <p><Strong>Country : </Strong><?= $country?></p>
                             <p><Strong>Description : </Strong><?= $messageContent?></p>
+                            <p><Strong>Mockup : </Strong>
+                            <?php if ($imageName != "") : echo '<a href="./uploads/' . $imageName . '" rel="prettyPhoto"> <img class="mockup" src="./uploads/' . $imageName . '" alt="Mockup' . $imageName . '" ></a>'; endif;?>
+                                <hr>
+                            </p>
                         </div>
                         <button class="fas fa-search quoteMoreInfoBtn<?=$packQuoteId ?>"> More ...</button>
 

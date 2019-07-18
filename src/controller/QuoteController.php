@@ -10,13 +10,10 @@ use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
 class QuoteController
 {
     //PACK QUOTES
-    public function savePackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
+    public function savePackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName)
     {
         $quoteManager = new QuoteManager();
-        $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent));
-
-        // header('Location: index.php?action=services#pricing'); FIXME: ne pas le mettre sinon ça risque de bloquer sendpackQuotes ? pourtant ça fonctionnait en le laissant
-        
+        $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent), htmlspecialchars($imageName));
     }
 
     public function sendPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
@@ -51,15 +48,41 @@ class QuoteController
 
         // Additional headers
         $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
-        if(mail($to, $topic, $message, implode("\r\n", $headers)))
-
-         //FIXME : retirer apres les test sur les emails
+        if(mail($to, $topic, $message, implode("\r\n", $headers)))          //FIXME : retirer le if apres les test sur les emails
         {
             header('Location: index.php');
         }
 
-            }
+    }
 
+    // public function imageQuote()
+    // {
+    //     //checking if an attached file has been sent FIXME : mettre dans une méthode dans le controller
+    //     if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
+
+    //     //checking its size
+    //         if ($_FILES['attachedFile']['size'] <= 7000000) {
+    //             //checking its format
+    //             $fileIinfo = pathinfo($_FILES['attachedFile']['name']);
+    //             $extension_upload = $fileIinfo['extension'];
+    //             $extensions_allowed = array('jpg', 'jpeg', 'png');
+    //             if (in_array($extension_upload, $extensions_allowed)) {
+    //                 // File is stored in uploads folder on server
+    //                 $filenameProject = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['project'])));
+    //                 $filenameFirstName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['firstName'])));
+    //                 $filenameLastName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['lastName'])));
+    //                 $fullImageName = $filenameProject . '_' . $filenameFirstName . '_' . $filenameLastName . '.' . $extension_upload;
+
+    //                 move_uploaded_file($_FILES['attachedFile']['tmp_name'], 'uploads/' . $fullImageName );
+
+    //             } else {
+    //                 throw new \Exception('Incorrect format. Please use jpg, jpeg or png');
+    //             }
+    //         } else {
+    //             throw new \Exception('The file you uploaded is too big. Please keep it under 7Mo');
+    //         }
+    //     }
+    // }
 
     public function checkPackQuoteFields($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
