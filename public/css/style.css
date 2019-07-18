@@ -1499,6 +1499,30 @@ SUCCESS MESSAGES
 }
 
 
+/*=========================================================
+MISC
+===========================================================*/
+
+.pagesLinks{
+    font-weight: 500;
+}
+noscript{
+    text-align:center;
+    width:100%;
+    background: rgba(255, 0, 0, 0.9);
+    z-index: 1000;
+    position:fixed;
+    top:15%;
+}
+
+noscript h1,noscript a{
+    color:yellow;
+}
+
+noscript h2, noscript p{
+    color:white;
+}
+
 /*  TEAM
 /*-----------------------------------------------------------------------------------*/
 

@@ -21,9 +21,13 @@ class MessageManager extends Manager
     }
 
 
-    public function getNewMessages()
+    public function getNewMessages($firstMessage, $messagesPerPage)
     {
-        $req = $this->_db->query('SELECT * FROM messages WHERE flag < 2 ORDER BY messageDate DESC');
+        $req = $this->_db->prepare('SELECT * FROM messages WHERE flag < 2 ORDER BY messageDate DESC LIMIT ?,?');
+        $req->bindValue(1, $firstMessage, \PDO::PARAM_INT);
+        $req->bindValue(2, $messagesPerPage, \PDO::PARAM_INT);
+        $req->execute();
+
         while ($datasNewMessages = $req->fetch(\PDO::FETCH_ASSOC)) {
             $newMessage[] = new Message($datasNewMessages);
         }
@@ -31,6 +35,15 @@ class MessageManager extends Manager
             return $newMessage;
         }
     }
+
+    //Pagination
+    public function getTotalPagesMessages()
+    {
+        $req = $this->_db->query('SELECT COUNT(*) AS total_messages FROM messages');
+        $returnTotalPagesMessages= $req->fetch();
+        return $returnTotalPagesMessages;
+    }
+
 
     public function getArchivedMessages()
     {

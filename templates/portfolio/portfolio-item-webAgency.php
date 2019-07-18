@@ -27,12 +27,12 @@ ob_start();
                                 <hr>
                                 <h4> Specifications: </h4>
                                 <ul>
-                                    <li> the site must fit on a page with a menu that remains visible, at the top of the page, even when one moves in the page </li>
-                                    <li> the different expected sections are </li>
-                                    <li> a first welcome home screen, very visual </li>
-                                    <li> the list of services offered by the agency </li>
-                                    <li> examples of projects already completed </li>
-                                    <li> a card with a contact form (we do not ask you to run the form, just display it). </li>
+                                    <li> The site must fit on a page with a menu that remains visible, at the top of the page, even when one moves in the page </li>
+                                    <li> The different expected sections are </li>
+                                    <li> A first welcome home screen, very visual </li>
+                                    <li> The list of services offered by the agency </li>
+                                    <li> Examples of projects already completed </li>
+                                    <li> A card with a contact form (we do not ask the form to be working, just display it). </li>
                                     <li> Content writing optimized for SEO (SEO). </li>
                                 </ul>
                                 <hr>

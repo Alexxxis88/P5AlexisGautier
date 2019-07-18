@@ -87,7 +87,34 @@ class MessageController
         $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
         $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
-        $newMessages = $messageManager->getNewMessages();
+
+        //Pagination
+        $totalPages = $messageManager->getTotalPagesMessages();
+        $total = $totalPages['total_messages']; // total of messages in DB
+
+        if (isset($_GET['sortBy'])) {
+            $messagesPerPage = intval($_GET['sortBy']);
+        } else {
+            $messagesPerPage = 10;
+        }
+
+        $nbOfPages = ceil($total/$messagesPerPage);
+
+        if (isset($_GET['page'])) {
+            $currentPage = intval($_GET['page']);
+
+            if ($currentPage>$nbOfPages) { // if a user puts the value of a page that doesnt exist, it redirects to the last page ($nbOfPages)
+                $currentPage=$nbOfPages;
+            }
+        } else {
+            $currentPage = 1;
+        }
+        $firstMessage = ($currentPage-1)*$messagesPerPage; // first message to display
+        $currentView = "messages"; //to display the correct Pagination View
+        $newMessages = $messageManager->getNewMessages($firstMessage, $messagesPerPage);
+
+
+
         $archivedMessages = $messageManager->getArchivedMessages();
 
         require('templates/admin/messagesAdmin.php');

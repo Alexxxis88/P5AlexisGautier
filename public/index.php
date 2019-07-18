@@ -117,8 +117,12 @@ try {
         elseif ($_GET['action'] == 'messagesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
-            $messageController = new MessageController();
-            $messageController->listAllMessages();
+            if (!isset($_GET['page']) or !isset($_GET['sortBy']) or $_GET['page']<1 or $_GET['sortBy']<1) {
+                throw new Exception('Il manque le numéro de page ou le classement des utilisateurs');
+            } else {
+                $messageController = new MessageController();
+                $messageController->listAllMessages();
+            }
         }
 
         //LOG IN

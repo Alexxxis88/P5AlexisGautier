@@ -10,6 +10,11 @@ ob_start();
             <a class="manageComBtn newMessagesBtn js-scrollTo" href="#sectionArchivedMessages"><span class="fas fa-anchor"></span> View archived messages</a>
             </div>
         </div>
+        <p>Display by
+            <a href="index.php?action=messagesAdmin&page=<?= $_GET['page'] ?>&sortBy=2"><button class="btn btn-info btn-sm"><strong>2</strong></button></a>
+            <a href="index.php?action=messagesAdmin&page=<?= $_GET['page'] ?>&sortBy=5"><button class="btn btn-info btn-sm"><strong>5</strong></button></a>
+            <a href="index.php?action=messagesAdmin&page=<?= $_GET['page'] ?>&sortBy=99999999999999999999"><button class="btn btn-info btn-sm"><strong>All</strong></button></a></p>
+            <?php include('templates/pagination.php'); ?>
         <h2 class="titleManageCom titleMessages">New Messages</h2>
         <hr>
         <?php
