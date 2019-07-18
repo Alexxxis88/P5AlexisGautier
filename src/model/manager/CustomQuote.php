@@ -22,6 +22,7 @@ class CustomQuote
     private $_country ;
     private $_deadline ;
     private $_messageContent ;
+    private $_imageName ;
     private $_languages ;
     private $_design ;
     private $_writingContent ;
@@ -126,6 +127,10 @@ class CustomQuote
     public function messageContent()
     {
         return $this->_messageContent;
+    }
+    public function imageName()
+    {
+        return $this->_imageName;
     }
     public function languages()
     {
@@ -320,6 +325,13 @@ class CustomQuote
     {
         if (is_string($messageContent)) {
             $this->_messageContent = $messageContent;
+        }
+    }
+
+    public function setImageName($imageName)
+    {
+        if (is_string($imageName)) {
+            $this->_imageName = $imageName;
         }
     }
 

@@ -26,6 +26,7 @@ ob_start();
                     $country = $customQuote[$i]->country();
                     $deadline = $customQuote[$i]->deadline();
                     $messageContent = $customQuote[$i]->messageContent();
+                    $imageName = $customQuote[$i]->imageName();
                     $languages = $customQuote[$i]->languages();
                     $design = $customQuote[$i]->design();
                     $writingContent = $customQuote[$i]->writingContent();
@@ -111,6 +112,10 @@ ob_start();
                             <p><Strong>City : </Strong><?= $city?></p>
                             <p><Strong>Country : </Strong><?= $country?></p>
                             <p><Strong>Description : </Strong><?= $messageContent?></p>
+                            <p><Strong>Mockup : </Strong>
+                            <?php if ($imageName != "") : echo '<a href="./uploads/' . $imageName . '" rel="prettyPhoto"> <img class="mockup" src="./uploads/' . $imageName . '" alt="Mockup' . $imageName . '" ></a>'; endif;?>
+                                <hr>
+                            </p>
                         </div>
                         <button class="fas fa-search quoteMoreInfoBtn<?=$customQuoteId ?>"> More ...</button>
 
