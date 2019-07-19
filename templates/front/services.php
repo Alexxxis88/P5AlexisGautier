@@ -14,7 +14,8 @@ ob_start();
             });
         });
     </script>
-
+<script src="./public/js/ajax.js"></script>
+<script src="./public/js/packs.js"></script>
     <!--- FIXME : probleme de défillement horizontal-->
     <section id="single-page-slider" class="no-margin">
         <div class="carousel slide" data-ride="carousel">

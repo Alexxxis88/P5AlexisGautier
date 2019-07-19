@@ -15,6 +15,44 @@ class QuoteManager extends Manager
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+    public function displayPacks()
+    {
+        $req = $this->_db->query('SELECT * FROM packquoteservices');
+        $req->execute();
+
+        $packs = array();
+
+        while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
+            $packs['AllPacks'][] = $row;
+
+        }
+        return $packs;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function getPackQuotes($firstItem, $itemsPerPage)
     {
         $req = $this->_db->prepare('SELECT * FROM packquotes ORDER BY requestDate DESC LIMIT ?,?');

@@ -23,10 +23,33 @@ class DisplayController
         require('templates/front/home.php');
     }
 
+
+
+
+
+
+
+
+
+
     public function displayServices()
     {
+        $quoteManager = new QuoteManager();
+        $allPacks = $quoteManager->displayPacks();
+        echo var_dump(json_encode($allPacks));
+        echo var_dump(json_encode($allPacks));
         require('templates/front/services.php');
     }
+
+
+
+
+
+
+
+
+
+
 
     public function displayQuote()
     {
