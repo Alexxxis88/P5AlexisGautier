@@ -7,7 +7,7 @@ ob_start();
         <div class="col-md-10 center gap fade-down section-heading">
             <h2 class="main-title">Custom Quote</h2>
             <hr>
-            <small>I also have all included packs if you fancy take a look <a href="index.php?action=services#pricing"><strong>here</strong></a></small>
+            <small>I also have all included packs if you fancy take a look <a href="index.php?action=services#pricing"><strong>here</strong>.</a></small>
         </div>
     </div>
     <div class="container">
