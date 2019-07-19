@@ -2,7 +2,7 @@
 
 namespace AlexisGautier\PersonalWebsite\Model\Manager;
 
-class SessionManager extends Manager
+class SessionManager extends GlobalManager
 {
     public function checkLogIn($email)
     {

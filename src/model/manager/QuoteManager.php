@@ -4,7 +4,7 @@ namespace AlexisGautier\PersonalWebsite\Model\Manager;
 
 // require_once('src/model/manager/Manager.php'); // FIXME : a remettre si l'autoload déconne
 
-class QuoteManager extends Manager
+class QuoteManager extends GlobalManager
 {
 
     //PACK QUOTES

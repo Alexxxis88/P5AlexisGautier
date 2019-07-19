@@ -21,7 +21,6 @@ function classAutoLoad($class)
 {
     $parts = explode('\\', $class);
     $myclass =  end($parts) . '.php';
-    echo var_dump( $myclass); //FIXME : remove me
     if(strpos($myclass, 'Controller')){
         require 'src/controller/' . $myclass;
     }
@@ -29,7 +28,7 @@ function classAutoLoad($class)
         require 'src/model/manager/' . $myclass;
     }
     else{
-        require 'src/model/manager/' . $myclass;
+        require 'src/model/entity/' . $myclass;
     };
 }
 spl_autoload_register('classAutoLoad');

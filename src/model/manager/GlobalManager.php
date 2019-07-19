@@ -1,6 +1,6 @@
 <?php
 namespace AlexisGautier\PersonalWebsite\Model\Manager;
-class Manager
+class GlobalManager
 {
     protected $_db = null;
     protected $_host ='localhost';

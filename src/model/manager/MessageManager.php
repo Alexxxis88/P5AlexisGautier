@@ -4,7 +4,7 @@ namespace AlexisGautier\PersonalWebsite\Model\Manager;
 
 // require_once('src/model/manager/Manager.php'); // FIXME : a remettre si l'autoload déconne
 
-class MessageManager extends Manager
+class MessageManager extends GlobalManager
 {
 
     public function insertNewMessage($firstName, $lastName, $contactEmail, $topic, $messageContent)
