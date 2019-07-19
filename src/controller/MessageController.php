@@ -121,7 +121,7 @@ class MessageController
     {
         $messageManager = new MessageManager();
         $messageManager->eraseMessage($messageId);
-        header('Location: index.php?action=messagesAdmin');
+        header('Location: index.php?action=messagesAdmin&page=1&sortBy=5');
         exit;
     }
 
@@ -130,7 +130,7 @@ class MessageController
     {
         $messageManager = new MessageManager();
         $messageManager->fileArchiveMessage($messageId);
-        header('Location: index.php?action=messagesAdmin');
+        header('Location: index.php?action=messagesAdmin&page=1&sortBy=5');
         exit;
     }
 
@@ -139,7 +139,7 @@ class MessageController
     {
         $messageManager = new MessageManager();
         $messageManager->fileAnsweredMessage($messageId);
-        header('Location: index.php?action=messagesAdmin');
+        header('Location: index.php?action=messagesAdmin&page=1&sortBy=5');
         exit;
     }
 

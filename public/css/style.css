@@ -1436,6 +1436,7 @@ MANAGE QUOTES
 
 
 [class*="quoteMoreInfoBtn"] {
+    display : block;
     background: none;
     border: none;
 

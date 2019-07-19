@@ -215,7 +215,7 @@ class QuoteController
     {
         $quoteManager = new QuoteManager();
         $quoteManager->erasePackQuote($packQuoteId);
-        header('Location: index.php?action=packQuotesAdmin');
+        header('Location: index.php?action=packQuotesAdmin&page=1&sortBy=5');
         exit;
     }
 
@@ -223,7 +223,7 @@ class QuoteController
     {
         $quoteManager = new QuoteManager();
         $quoteManager->acceptPackQuote($accepted, $packQuoteId);
-        header('Location: index.php?action=packQuotesAdmin');
+        header('Location: index.php?action=packQuotesAdmin&page=1&sortBy=5');
         exit;
     }
 
@@ -231,7 +231,7 @@ class QuoteController
     {
         $quoteManager = new QuoteManager();
         $quoteManager->packQuoteStatus($quoteStatus, $packQuoteId);
-        header('Location: index.php?action=packQuotesAdmin');
+        header('Location: index.php?action=packQuotesAdmin&page=1&sortBy=5');
         exit;
     }
 
@@ -539,7 +539,7 @@ class QuoteController
     {
         $quoteManager = new QuoteManager();
         $quoteManager->eraseCustomQuote($customQuoteId);
-        header('Location: index.php?action=customQuotesAdmin');
+        header('Location: index.php?action=customQuotesAdmin&page=1&sortBy=5');
         exit;
     }
 
@@ -547,7 +547,7 @@ class QuoteController
     {
         $quoteManager = new QuoteManager();
         $quoteManager->acceptCustomQuote($accepted, $customQuoteId);
-        header('Location: index.php?action=customQuotesAdmin');
+        header('Location: index.php?action=customQuotesAdmin&page=1&sortBy=5');
         exit;
     }
 
@@ -555,7 +555,7 @@ class QuoteController
     {
         $quoteManager = new QuoteManager();
         $quoteManager->customQuoteStatus($quoteStatus, $customQuoteId);
-        header('Location: index.php?action=customQuotesAdmin');
+        header('Location: index.php?action=customQuotesAdmin&page=1&sortBy=5');
         exit;
     }
 }

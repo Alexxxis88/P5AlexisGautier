@@ -40,7 +40,7 @@ class SessionController
                     setcookie('hash_pass', password_hash($_POST['pass'], PASSWORD_DEFAULT), time() + 365*24*3600, null, null, false, true);
                 }
 
-                header('Location: index.php?action=packQuotesAdmin&page=1&sortBy=10');
+                header('Location: index.php?action=packQuotesAdmin&page=1&sortBy=5');
                 exit;
             } else {
                 throw new \Exception('Check your login information');
