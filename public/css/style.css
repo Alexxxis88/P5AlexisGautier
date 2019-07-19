@@ -677,26 +677,6 @@ ul.tag-cloud li {
 /*-----------------------------------------------------------------------------------*/
 
 
-#navContainer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width:100%;
-}
-.lang{
-    float:right;
-    color:white;
-}
-.lang a{
-    color:white;
-    transition: .3s;
-}
-
-.lang a:hover{
-    color:rgb(247, 222, 0);
-}
-
-
 .navbar-inverse {
     background-color: #202020;
     border: none;
@@ -3085,7 +3065,7 @@ textarea#messageContent {
 
 
 @media all and (max-width: 992px) {
-
+    
     #menuDesktop {
         display: none;
     }
@@ -3145,6 +3125,11 @@ textarea#messageContent {
     #footer-wrapper {
         position: relative !important;
     }
+
+    .navbar-inverse {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    
 }
 
 
