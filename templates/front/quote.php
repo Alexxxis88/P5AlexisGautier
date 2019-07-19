@@ -572,7 +572,6 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="phone">Phone Number</label>
                                 <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9\.+_ -]*">
-                                <!-- FIXME ; rajouter un pattern avec une REGEX -->
                             </div>
                         </div>
                         <div class="row">

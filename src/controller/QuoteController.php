@@ -91,80 +91,73 @@ class QuoteController
         //testing if packname is correct and matching the price
         if (($_POST['packName'] == "Website" && $_POST['price'] == 1000) OR ($_POST['packName'] == "Webstore" && $_POST['price'] == 2000) OR ($_POST['packName'] == "Website + Webstore" && $_POST['price'] == 2500) ) {
 
-            //testing if price is correct FIXME : remove me si celui d'au dessus est plus safe
-            // //testing if price is correct
-            // if ($_POST['price'] == 1000 OR $_POST['price'] == 2000 OR $_POST['price'] == 2500 ) {
+            //testing if project name at least 2 caracters
+            if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]+$#i", $_POST['project'])) {
+                //testing if structure is correct
+                if ($_POST['structure'] == "individual" OR $_POST['structure'] == "professional" OR $_POST['structure'] == "association" OR $_POST['structure'] == "other" ) {
 
-                //testing if project name at least 2 caracters
-                if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]+$#i", $_POST['project'])) {
-                    //testing if structure is correct
-                    if ($_POST['structure'] == "individual" OR $_POST['structure'] == "professional" OR $_POST['structure'] == "association" OR $_POST['structure'] == "other" ) {
+                    //testing if company name is correct
+                    if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$#i", $_POST['company'])) {
 
-                        //testing if company name is correct
-                        if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$#i", $_POST['company'])) {
+                        //testing if firstName only has authorised caracters
+                        if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['firstName'])) {
 
-                            //testing if firstName only has authorised caracters
-                            if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['firstName'])) {
+                            //testing if lastName only has authorised caracters
+                            if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['lastName'])) {
+                                //testing if email is conform
+                                if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#i", $_POST['contactEmail'])) {
 
-                                //testing if lastName only has authorised caracters
-                                if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['lastName'])) {
-                                    //testing if email is conform
-                                    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#i", $_POST['contactEmail'])) {
+                                    //testing if phone is conform (not mandatory)
+                                    if (preg_match("#[0-9\.+_ -]*$#", $_POST['phone'])) {
 
-                                        //testing if phone is conform (not mandatory)
-                                        if (preg_match("#[0-9\.+_ -]*$#", $_POST['phone'])) {
+                                        //testing if address is conform
+                                        if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postalAddress'])) {
 
-                                            //testing if address is conform
-                                            if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postalAddress'])) {
+                                            //testing if postcode is conform
+                                            if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postCode'])) {
 
-                                                //testing if postcode is conform
-                                                if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postCode'])) {
+                                                //testing if city is conform
+                                                if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['city'])) {
 
-                                                    //testing if city is conform
-                                                    if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['city'])) {
+                                                    //testing if deadline is in the future
+                                                    $today = date("Y-m-d");
+                                                    if ( $_POST['deadline'] > $today) {
 
-                                                        //testing if deadline is in the future
-                                                        $today = date("Y-m-d");
-                                                        if ( $_POST['deadline'] > $today) {
+                                                        return true;
 
-                                                            return true;
-
-                                                        } else {
-                                                        throw new \Exception('Deadline cannot be in the past');
-                                                        }
                                                     } else {
-                                                    throw new \Exception('City is incorrect');
+                                                    throw new \Exception('Deadline cannot be in the past');
                                                     }
                                                 } else {
-                                                throw new \Exception('Post Code is incorrect');
+                                                throw new \Exception('City is incorrect');
                                                 }
                                             } else {
-                                            throw new \Exception('Address is incorrect');
+                                            throw new \Exception('Post Code is incorrect');
                                             }
                                         } else {
-                                            throw new \Exception('Phone number is incorrect');
+                                        throw new \Exception('Address is incorrect');
                                         }
                                     } else {
-                                        throw new \Exception('Email address is incorrect');
+                                        throw new \Exception('Phone number is incorrect');
                                     }
                                 } else {
-                                    throw new \Exception('Last Name is incorrect.');
+                                    throw new \Exception('Email address is incorrect');
                                 }
                             } else {
-                                throw new \Exception('First Name is incorrect.');
+                                throw new \Exception('Last Name is incorrect.');
                             }
                         } else {
-                            throw new \Exception('Company name is incorrect');
+                            throw new \Exception('First Name is incorrect.');
                         }
                     } else {
-                        throw new \Exception('Structure is incorrect');
+                        throw new \Exception('Company name is incorrect');
                     }
                 } else {
-                    throw new \Exception('Project name is incorrect');
+                    throw new \Exception('Structure is incorrect');
                 }
-            // } else {
-            //     throw new \Exception('Le prix du pack n\'est pas conforme.');
-            // }
+            } else {
+                throw new \Exception('Project name is incorrect');
+            }
         } else {
             throw new \Exception('There is a problem'); //I stay vague not to inform a malicious user who tryed to edit the price how to make it work
         }

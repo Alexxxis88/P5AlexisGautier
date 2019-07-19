@@ -24,9 +24,7 @@ jQuery(function($) {
 'use strict';
 	$('.tile-progress .tile-header').matchHeight();
 
-  // FIXME inutile ? 
-	// var footerHeight = jQuery('#footer-wrapper').outerHeight();
-	// jQuery('#content-wrapper').css('margin-bottom', footerHeight );
+ 
 
 	var windowsHeight = jQuery(window).height();
 	var navHeight = jQuery('navbar-fixed-top').outerHeight();

@@ -54,7 +54,7 @@ class MessageController
 
         // Additional headers
         $headers[] = 'From: ' . htmlspecialchars($firstName) . ' '. htmlspecialchars($lastName) . '<'. htmlspecialchars($contactEmail) . '>';
-        if(mail($to, $topic, $message, implode("\r\n", $headers))) //FIXME : enelever le test quand ça remarchera
+        if(mail($to, $topic, $message, implode("\r\n", $headers)))
         {
             header('Location: index.php?action=contact&success=3');
 
@@ -161,8 +161,6 @@ class MessageController
         // Additional headers
         $headers[] = 'From: Alexis Gautier <alexisxgautier@gmail.com>';
         mail($to, $answerTopic, $message, implode("\r\n", $headers));
-
-        // header('Location: index.php'); FIXME needs to be removed to be able to run through updateAnswerMessageFlag after  sendAnswer in routeur "answerMessage" ?????
     }
 
 

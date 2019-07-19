@@ -30,7 +30,7 @@ class SessionController
             throw new \Exception('Check your login information');
         } else {   //if the password is Correct SESSION variables are created
             if ($isPasswordCorrect) {
-                $_SESSION['id'] = $checkLogIn['id']; //FIXME : useless ? on se sert de l'email et pas de l'ID
+                $_SESSION['id'] = $checkLogIn['id'];
                 $_SESSION['email'] = $email;
 
                 //if the autolog checkbox is selected COOKIES are created

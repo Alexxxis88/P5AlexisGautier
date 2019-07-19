@@ -799,7 +799,6 @@ ul.tag-cloud li {
     box-shadow: none;
     border: 0;
     padding: 0;
-    /* margin-top: 12px; FIXME regler le pb de la marge qui bouge dans la bare de sous menu quote*/ 
 }
 
 .navbar-right .dropdown-menu {

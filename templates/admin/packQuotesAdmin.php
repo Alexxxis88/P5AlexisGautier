@@ -109,12 +109,6 @@ ob_start();
                                         <textarea class="form-control" rows="10" id="answerContent" name="answerContent" required>Hello <?= $firstName ?> <?= $lastName ?>. I am glad to inform you I accept to work with you on your project <?= $project ?>. I will be in touch very soon to discuss the next steps. Have a good day!</textarea>
                                 </form>
                             </div>
-
-
-                            <!-- bouton classique sans envoi de mail auto FIXME DELETE ME si ça marche avec le form-->
-                            <!-- <a class="answerBtn" href="index.php?action=acceptPackQuote&amp;packQuoteId=< ?= $packQuoteId ?>&amp;acceptPackQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Ancien bouton fonctionel Accept</a>-->
-
-
                             <?php
                             //Accept / Refuse buttons
                             if ($accepted == 0 || $accepted == 2) : ?>

@@ -149,11 +149,6 @@ ob_start();
                                 </form>
                             </div>
 
-
-                            <!-- bouton classique sans envoi de mail auto FIXME DELETE ME si ça marche avec le form-->
-                            <!-- <a class="answerBtn" href="index.php?action=acceptCustomQuote&amp;customQuoteId=< ?= $customQuoteId ?>&amp;acceptCustomQuote=1"  onclick="return confirm('Accept this project ?')" ><span class="far fa-check-square"></span>  Ancien bouton fonctionel Accept</a>-->
-
-
                             <?php
                             //Accept / Refuse buttons
                             if ($accepted == 0 || $accepted == 2) : ?>

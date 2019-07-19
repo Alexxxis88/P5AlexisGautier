@@ -124,10 +124,12 @@
             <!-- Copyright -->
             <div class="footer-copyright text-center">
                 <span>&copy;<script>document.write(new Date().getFullYear());</script> - Alexis Gautier</span>
+                <p><small><a href="https://templatemag.com/bootstrap-templates/">Bootstrap templates</a> by TemplateMag</small></p>
             </div>
         </footer>
 
         <!-- My scripts -->
+        <script src="./public/js/browsers.js" ></script>
         <script src="./public/js/plugins.js"></script>
         <script src="./public/js/bootstrap.min.js"></script>
         <script src="./public/js/jquery.prettyPhoto.js"></script>
