@@ -135,6 +135,7 @@
         <script src="./public/js/jquery.prettyPhoto.js"></script>
         <script src="./public/js/init.js"></script>
         <script src="./public/js/main.js"></script>
+        <script src="./public/js/customQuote.js"></script>
 
         <!-- Has to be loaded here because regular boostrap dropdown menus have been modified for custom quote-->
         <script src="./public/js/dropdowns-enhancement.js"></script>

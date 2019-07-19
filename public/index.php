@@ -1,10 +1,9 @@
 <?php
 session_start();
-require_once('src/controller/SessionController.php');
-require_once('src/controller/DisplayController.php');
-require_once('src/controller/MessageController.php');
-require_once('src/controller/QuoteController.php');
-
+// require_once('src/controller/SessionController.php'); //FIXME : a remettre si l'autoload déconne
+// require_once('src/controller/DisplayController.php'); //FIXME : a remettre si l'autoload déconne
+// require_once('src/controller/MessageController.php'); //FIXME : a remettre si l'autoload déconne
+// require_once('src/controller/QuoteController.php'); //FIXME : a remettre si l'autoload déconne
 
 // require_once('src/model/manager/Manager.php'); //FIXME : a remettre si l'autoload déconne
 // require_once('src/model/manager/QuoteManager.php'); //FIXME : a remettre si l'autoload déconne
@@ -17,10 +16,21 @@ use \AlexisGautier\PersonalWebsite\Controller\QuoteController;
 
 
 //AUTOLOAD
+
 function classAutoLoad($class)
 {
     $parts = explode('\\', $class);
-    require 'src/model/manager/' . end($parts) . '.php';
+    $myclass =  end($parts) . '.php';
+    echo var_dump( $myclass); //FIXME : remove me
+    if(strpos($myclass, 'Controller')){
+        require 'src/controller/' . $myclass;
+    }
+    elseif(strpos($myclass, 'Manager')){
+        require 'src/model/manager/' . $myclass;
+    }
+    else{
+        require 'src/model/manager/' . $myclass;
+    };
 }
 spl_autoload_register('classAutoLoad');
 

@@ -60,6 +60,7 @@
     </ul>
 </nav>
 
+<!-- This script stays here because it uses PHP variables and can't work in Main.js -->
 <!-- Display new message alert -->
 <?php
 if ($isThereNewMessages == true ) { ?>

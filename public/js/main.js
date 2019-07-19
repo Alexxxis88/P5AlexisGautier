@@ -59,5 +59,3 @@ function hideThanks() {
     $(".successModal").fadeOut();
 }
 let delayConfirmationMsg = setTimeout(hideThanks, 1800);
-
-
