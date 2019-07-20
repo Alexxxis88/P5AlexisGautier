@@ -57,7 +57,8 @@ class QuoteController
     }
 
     // public function imageQuote()
-    // {
+    // {    
+        //FIXME : SOLUTION : comme pour sortir totalprice pour la verif de custom quote. Je passe mon code dans une méthode dans le controller imageQuote(). A la fin de mes itérations je fais un return $imageName et dans mon routeur je fais $imageQuote = $quoteController->imageQuote() et ça devrait fonctionner ? la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans :
     //     //checking if an attached file has been sent FIXME : mettre dans une méthode dans le controller
     //     if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
 
@@ -275,9 +276,7 @@ class QuoteController
             $totalPrice = array_sum($allPrices);
             echo '<h1>prix calculé ' . $totalPrice . ' €</h1> '; 
 
-            // $totalPrice = 999;
             return  $totalPrice;
-
     }
 
 

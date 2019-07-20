@@ -265,13 +265,13 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                         <li><input type="checkbox" id="dotCom" name="extensions[]" class="checkBoxValue"
-                                                value="com"><label for="dotCom">.com</label></li>
+                                                value=".com"><label for="dotCom">.com</label></li>
                                         <li><input type="checkbox" id="dotFr" name="extensions[]" class="checkBoxValue"
-                                                value="fr"><label for="dotFr">.fr</label></li>
+                                                value=".fr"><label for="dotFr">.fr</label></li>
                                         <li><input type="checkbox" id="dotUk" name="extensions[]" class="checkBoxValue"
-                                                value="uk"><label for="dotUk">.uk</label></li>
+                                                value=".uk"><label for="dotUk">.uk</label></li>
                                         <li><input type="checkbox" id="dotDe" name="extensions[]" class="checkBoxValue"
-                                                value="de"><label for="dotDe">.de</label></li>
+                                                value=".de"><label for="dotDe">.de</label></li>
                                     </ul><br><br>
                                     <small>Check the full list of available extensions <a
                                             href="https://iwantmyname.com/domains"><strong>here</strong></a></small>

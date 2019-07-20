@@ -229,7 +229,7 @@ try {
                     //     $_FILES['attachedFile']['name'] = $imageName;
                     // }
 
-                    //FIXME : la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans 
+                    //FIXME : SOLUTION : comme pour sortir totalprice pour la verif de custom quote. Je passe mon code dans une méthode dans le controller imageQuote(). A la fin de mes itérations je fais un return $imageName et dans mon routeur je fais $imageQuote = $quoteController->imageQuote() et ça devrait fonctionner ? la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans :
                     //checking if an attached file has been sent FIXME : mettre dans une méthode dans le controller savePackQuote
                     if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
 
@@ -374,16 +374,14 @@ try {
 
 
 
-                    $quoteController->servicesCustomQuote($_POST['arrayServices']);
-
-                    // $price = $totalPrice;
+                    
 
 
 
 
 
 
-                    //FIXME : la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans 
+                    //FIXME : SOLUTION : comme pour sortir totalprice pour la verif de custom quote. Je passe mon code dans une méthode dans le controller imageQuote(). A la fin de mes itérations je fais un return $imageName et dans mon routeur je fais $imageQuote = $quoteController->imageQuote() et ça devrait fonctionner ? la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans :
                     //checking if an attached file has been sent FIXME : mettre dans une méthode dans le controller savePackQuote
                     if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
 
@@ -414,7 +412,10 @@ try {
                         $imageName = "";
                     }
 
-                    $quoteController->saveCustomQuote($_POST['siteType'], $_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $imageName, $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
+                    //getting the price from the total calculated from DB information
+                    $price =  $quoteController->servicesCustomQuote($_POST['arrayServices']);
+
+                    $quoteController->saveCustomQuote($_POST['siteType'],  $price, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $imageName, $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
 
                     // $quoteController->sendCustomQuote($_POST['siteType'], $_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
                 }
