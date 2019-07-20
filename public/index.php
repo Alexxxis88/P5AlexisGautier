@@ -361,6 +361,7 @@ try {
                 if(empty($_POST['phone'])){
                     $_POST['phone'] = "";
                 }
+                
 
 
 
@@ -375,41 +376,45 @@ try {
 
                     $quoteController->servicesCustomQuote($_POST['arrayServices']);
 
+                    // $price = $totalPrice;
 
 
 
 
 
 
+                    //FIXME : la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans 
+                    //checking if an attached file has been sent FIXME : mettre dans une méthode dans le controller savePackQuote
+                    if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
 
-                    // //FIXME : la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans 
-                    // //checking if an attached file has been sent FIXME : mettre dans une méthode dans le controller savePackQuote
-                    // if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
+                        //checking its size
+                        if ($_FILES['attachedFile']['size'] <= 7000000) {
+                            //checking its format
+                            $fileIinfo = pathinfo($_FILES['attachedFile']['name']);
+                            $extension_upload = $fileIinfo['extension'];
+                            $extensions_allowed = array('jpg', 'jpeg', 'png');
+                            if (in_array($extension_upload, $extensions_allowed)) {
+                                // File is stored in uploads folder on server
+                                $filenameProject = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['project'])));
+                                $filenameFirstName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['firstName'])));
+                                $filenameLastName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['lastName'])));
+                                $imageName = $filenameProject . '_' . $filenameFirstName . '_' . $filenameLastName . '.' . $extension_upload;
 
-                    //     //checking its size
-                    //     if ($_FILES['attachedFile']['size'] <= 7000000) {
-                    //         //checking its format
-                    //         $fileIinfo = pathinfo($_FILES['attachedFile']['name']);
-                    //         $extension_upload = $fileIinfo['extension'];
-                    //         $extensions_allowed = array('jpg', 'jpeg', 'png');
-                    //         if (in_array($extension_upload, $extensions_allowed)) {
-                    //             // File is stored in uploads folder on server
-                    //             $filenameProject = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['project'])));
-                    //             $filenameFirstName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['firstName'])));
-                    //             $filenameLastName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['lastName'])));
-                    //             $imageName = $filenameProject . '_' . $filenameFirstName . '_' . $filenameLastName . '.' . $extension_upload;
+                                move_uploaded_file($_FILES['attachedFile']['tmp_name'], 'uploads/' .  $imageName );
 
-                    //             move_uploaded_file($_FILES['attachedFile']['tmp_name'], 'uploads/' .  $imageName );
+                            } else {
+                                throw new \Exception('Incorrect format. Please use jpg, jpeg or png');
+                            }
+                        } else {
+                            throw new \Exception('The file you uploaded is too big. Please keep it under 7Mo');
+                        }
+                    }
 
-                    //         } else {
-                    //             throw new \Exception('Incorrect format. Please use jpg, jpeg or png');
-                    //         }
-                    //     } else {
-                    //         throw new \Exception('The file you uploaded is too big. Please keep it under 7Mo');
-                    //     }
-                    // }
+                    if(empty($imageName)){
+                        $imageName = "";
+                    }
 
-                    // $quoteController->saveCustomQuote($_POST['siteType'], $_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $imageName, $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
+                    $quoteController->saveCustomQuote($_POST['siteType'], $_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $imageName, $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
 
                     // $quoteController->sendCustomQuote($_POST['siteType'], $_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
                 }

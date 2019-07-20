@@ -232,13 +232,18 @@ class QuoteController
     //CUSTOM QUOTES
 
 
+
+
+
+
+
     public function servicesCustomQuote($arrayServices)
     {   
 
         $displayController = new DisplayController();
         $displayController->displayCheckprice();
 
-        
+
         echo '<h3>arrayServices avant de le convertir en tableau</h3> '; 
         echo var_dump($arrayServices);
        
@@ -248,18 +253,39 @@ class QuoteController
         echo var_dump($arrayServices);
 
 
+        $allPrices = [];
+
         for($i = 0; $i < sizeof($arrayServices); $i++ )
         {   
             $quoteManager = new QuoteManager();
             $returnValue = $quoteManager->checkServicesCustomQuote($arrayServices[$i]);
 
-            echo '<h3>La valeur du champ ' . $arrayServices[$i] . ' récupérée depuis la BDD via checkServicesCustomQuote()</h3>  '; 
-            echo var_dump($returnValue);
+            echo '<h3>Les autres champs ayant pour serviceName ' . $arrayServices[$i] . ' récupérés depuis la BDD via checkServicesCustomQuote()</h3>  '; 
+            // echo(implode(", ",array_values($returnValue)));
+            echo 'idServ :' . $returnValue['idServ'] . ' -- ' . ' serviceGroup : ' . $returnValue['serviceGroup'] . ' -- ' . ' serviceName : ' . $returnValue['serviceName'] . ' -- ' .' price :' . $returnValue['price'];
+
+
+            array_push($allPrices, $returnValue['price']);
+            
         }
 
+        echo '<h3>TOTAL PRICE</h3> ';
+        echo var_dump($allPrices);
+        
+            $totalPrice = array_sum($allPrices);
+            echo '<h1>prix calculé ' . $totalPrice . ' €</h1> '; 
 
-       
+            // $totalPrice = 999;
+            return  $totalPrice;
+
     }
+
+
+   
+
+
+
+
 
 
 
@@ -391,25 +417,25 @@ class QuoteController
                                                     if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['city'])) {
 
                                                         //testing if desing is correct
-                                                        if ($_POST['design'] == "Standard" OR $_POST['design'] == "Custom" OR $_POST['design'] == "Custom +") {
+                                                        if ($_POST['design'] == "Standard Design" OR $_POST['design'] == "Custom Design" OR $_POST['design'] == "Custom + Design") {
 
                                                             //testing if writingContent is correct
-                                                            if ($_POST['writingContent'] == "Yes" OR $_POST['writingContent'] == "No") {
+                                                            if ($_POST['writingContent'] == "YesWriting" OR $_POST['writingContent'] == "NoWriting") {
 
                                                                 //testing if visualContent is correct
-                                                                if ($_POST['visualContent'] == "Yes" OR $_POST['visualContent'] == "No") {
+                                                                if ($_POST['visualContent'] == "YesVisual" OR $_POST['visualContent'] == "NoVisual") {
 
                                                                     //testing if maintenance is correct
-                                                                    if ($_POST['maintenance'] == "No" OR $_POST['maintenance'] == "Minimal" OR $_POST['maintenance'] == "Regular" OR $_POST['maintenance'] == "Premium" OR $_POST['maintenance'] == "Gold") {
+                                                                    if ($_POST['maintenance'] == "No Maintenance" OR $_POST['maintenance'] == "Minimal Maintenance" OR $_POST['maintenance'] == "Regular Maintenance" OR $_POST['maintenance'] == "Premium Maintenance" OR $_POST['maintenance'] == "Gold Maintenance") {
 
                                                                         //testing if host is correct
-                                                                        if ($_POST['host'] == "No" OR $_POST['host'] == "Standard" OR $_POST['host'] == "Premium") {
+                                                                        if ($_POST['host'] == "No Host" OR $_POST['host'] == "Standard Host" OR $_POST['host'] == "Premium Host") {
 
                                                                             //testing if domainYN is correct
                                                                             if ($_POST['domainYN'] == "No" OR $_POST['domainYN'] == "Yes" ) {
 
                                                                                 //testing if deadlineSelect is correct
-                                                                                if ($_POST['deadlineSelect'] == "No" OR $_POST['deadlineSelect'] == "Express +" OR $_POST['deadlineSelect'] == "Express" OR $_POST['deadlineSelect'] == "Fast" OR $_POST['deadlineSelect'] == "Regular" OR $_POST['deadlineSelect'] == "Slow") {
+                                                                                if ($_POST['deadlineSelect'] == "No Deadline" OR $_POST['deadlineSelect'] == "Express +" OR $_POST['deadlineSelect'] == "Express" OR $_POST['deadlineSelect'] == "Fast" OR $_POST['deadlineSelect'] == "Regular" OR $_POST['deadlineSelect'] == "Slow") {
 
                                                                                 //FIXME : comment imbriquer tous les if isset ?
                                                                                     //testing if deadline date is in the future
@@ -424,7 +450,7 @@ class QuoteController
 
                                                                                     //testing if loginShowcaseYN is correct
                                                                                     if (isset($_POST['loginShowcaseYN'])) {
-                                                                                        if ($_POST['loginShowcaseYN'] ==  'Yes' or $_POST['loginShowcaseYN'] == 'No') {
+                                                                                        if ($_POST['loginShowcaseYN'] ==  'Yes Login' or $_POST['loginShowcaseYN'] == 'No Login') {
                                                                                             return true;
                                                                                         } else {
                                                                                             throw new \Exception('User login options is incorrect');
@@ -442,7 +468,7 @@ class QuoteController
 
                                                                                     //testing if pageNb is correct
                                                                                     if (isset($_POST['pageNb'])) {
-                                                                                        if ($_POST['pageNb'] ==  '- 10' OR $_POST['pageNb'] == '10 - 50' OR $_POST['pageNb'] == '50 - 100' OR $_POST['pageNb'] == '100 - 200' OR $_POST['pageNb'] == '200 - 500' OR $_POST['pageNb'] == '+ 500')
+                                                                                        if ($_POST['pageNb'] ==  '- 10 pages' OR $_POST['pageNb'] == '10 - 50 pages' OR $_POST['pageNb'] == '50 - 100 pages' OR $_POST['pageNb'] == '100 - 200' OR $_POST['pageNb'] == '200 - 500 pages' OR $_POST['pageNb'] == '+ 500 pages')
                                                                                         {
                                                                                             return true;
                                                                                         } else {
@@ -452,7 +478,7 @@ class QuoteController
 
                                                                                     //testing if productNb is correct
                                                                                     if (isset($_POST['productNb'])) {
-                                                                                        if ($_POST['productNb'] ==  '- 10' OR $_POST['productNb'] == '10 - 100' OR $_POST['productNb'] == '100 - 200' OR $_POST['productNb'] == '200 - 500' OR $_POST['productNb'] == '+ 500')
+                                                                                        if ($_POST['productNb'] ==  '- 10 products' OR $_POST['productNb'] == '10 - 100 products' OR $_POST['productNb'] == '100 - 200 products' OR $_POST['productNb'] == '200 - 500 products' OR $_POST['productNb'] == '+ 500 products')
                                                                                         {
                                                                                             return true;
                                                                                         } else {

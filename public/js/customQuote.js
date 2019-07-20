@@ -9,7 +9,6 @@ function fillArray() {
     let visualContentId = document.getElementById("visualContent").value;
     let maintenanceId = document.getElementById("maintenance").value;
     let hostId = document.getElementById("host").value;
-    let domainYNId = document.getElementById("domainYN").value;
     let deadlineSelectId = document.getElementById("deadlineSelect").value;
     let pageNbId = document.getElementById("pageNb").value;
     let loginShowcaseYNId = document.getElementById("loginShowcaseYN").value;
@@ -17,19 +16,19 @@ function fillArray() {
 
     //set a default value ( = 0 ) for options that are displayed or not depending on siteType chosen
     if( pageNbId == ""){
-        pageNbId = "- 10"
+        pageNbId = "- 10 pages"
     }
 
     if( loginShowcaseYNId == ""){
-        loginShowcaseYNId = "No"
+        loginShowcaseYNId = "No Login"
     }
 
     if( productNbId == ""){
-        productNbId = "- 10"
+        productNbId = "- 10 products"
     }
 
     //get select inputs services
-    arrayId.push(siteTypeId, designID, writingContentId, visualContentId, maintenanceId, hostId, domainYNId, deadlineSelectId, pageNbId, loginShowcaseYNId, productNbId);
+    arrayId.push(siteTypeId, designID, writingContentId, visualContentId, maintenanceId, hostId, deadlineSelectId, pageNbId, loginShowcaseYNId, productNbId);
 
     //get checkboxes inputs services
     $("input:checkbox:checked").each(function () {
@@ -76,13 +75,13 @@ function getSelectValue() {
 
     let design = document.getElementById("design").value;
     switch (design) {
-    case 'Standard':
+    case 'Standard Design':
         design = 100;
         break;
-    case 'Custom':
+    case 'Custom Design':
         design = 50;
         break;
-    case 'Custom +':
+    case 'Custom + Design':
         design = 500;
         break;
     default:
@@ -91,10 +90,10 @@ function getSelectValue() {
 
     let writingContent = document.getElementById("writingContent").value;
     switch (writingContent) {
-    case 'Yes':
+    case 'YesWriting':
         writingContent = 200;
         break;
-    case 'No':
+    case 'NoWriting':
         writingContent = 0;
         break;
     default:
@@ -103,10 +102,10 @@ function getSelectValue() {
 
     let visualContent = document.getElementById("visualContent").value;
     switch (visualContent) {
-    case 'Yes':
+    case 'YesVisual':
         visualContent = 100;
         break;
-    case 'No':
+    case 'NoVisual':
         visualContent = 0;
         break;
     default:
@@ -115,19 +114,19 @@ function getSelectValue() {
 
     let maintenance = document.getElementById("maintenance").value;
     switch (maintenance) {
-    case 'No':
+    case 'No Maintenance':
         maintenance = 0;
         break;
-    case 'Minimal':
+    case 'Minimal Maintenance':
         maintenance = 100;
         break;
-    case 'Regular':
+    case 'Regular Maintenance':
         maintenance = 200;
         break;
-    case 'Premium':
+    case 'Premium Maintenance':
         maintenance = 400;
         break;
-    case 'Gold':
+    case 'Gold Maintenance':
         maintenance = 1500;
         break;
     default:
@@ -136,13 +135,13 @@ function getSelectValue() {
 
     let host = document.getElementById("host").value;
     switch (host) {
-    case 'No':
+    case 'No Host':
         host = 0;
         break;
-    case 'Standard':
+    case 'Standard Host':
         host = 50;
         break;
-    case 'Premium':
+    case 'Premium Host':
         host = 100;
         break;
     default:
@@ -151,7 +150,7 @@ function getSelectValue() {
 
     let deadlineSelect = document.getElementById("deadlineSelect").value;
     switch (deadlineSelect) {
-    case 'No':
+    case 'No Deadline':
         deadlineSelect = 0;
         break;
     case 'Express +':
@@ -175,22 +174,22 @@ function getSelectValue() {
 
     let pageNb = document.getElementById("pageNb").value;
     switch (pageNb) {
-    case '- 10':
+    case '- 10 pages':
         pageNb = 0;
         break;
-    case '10 - 50':
+    case '10 - 50 pages':
         pageNb = 20;
         break;
-    case '0 - 100':
+    case '50 - 100 pages':
         pageNb = 30;
         break;
-    case '100 - 200':
+    case '100 - 200 pages':
         pageNb = 40;
         break;
-    case '200 - 500':
+    case '200 - 500 pages':
         pageNb = 50;
         break;
-    case '+ 500':
+    case '+ 500 pages':
         pageNb = 60;
         break;
     default:
@@ -199,10 +198,10 @@ function getSelectValue() {
 
     let loginShowcaseYN = document.getElementById("loginShowcaseYN").value;
     switch (loginShowcaseYN) {
-    case 'Yes':
+    case 'Yes Login':
         loginShowcaseYN = 100;
         break;
-    case 'No':
+    case 'No Login':
         loginShowcaseYN = 0;
         break;
     default:
@@ -211,19 +210,19 @@ function getSelectValue() {
 
     let productNb = document.getElementById("productNb").value;
     switch (productNb) {
-    case '- 10':
+    case '- 10 products':
         productNb = 0;
         break;
-    case '10 - 100':
+    case '10 - 100 products':
         productNb = 20;
         break;
-    case '100 - 200':
+    case '100 - 200 products':
         productNb = 30;
         break;
-    case '200 - 500':
+    case '200 - 500 products':
         productNb = 40;
         break;
-    case '+ 500':
+    case '+ 500 products':
         productNb = 50;
         break;
     default:
@@ -421,7 +420,7 @@ function myFunction2() {
 //display / hide calendar for deadline
 function myFunction3() {
     let deadlineSelect = document.getElementById("deadlineSelect").value;
-    if (deadlineSelect == "No") {
+    if (deadlineSelect == "No Deadline") {
         document.getElementById("deadlineBlock").style.display = "none";
     } else {
         document.getElementById("deadlineBlock").style.display = "block";

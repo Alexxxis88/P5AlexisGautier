@@ -166,10 +166,10 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="Standard">Standard : nice, simple and efficient (I don't have a
+                                    <option value="Standard Design">Standard : nice, simple and efficient (I don't have a
                                         visual identity guide)</option>
-                                    <option value="Custom">Custom : according to my visual identity guide</option>
-                                    <option value="Custom +">Custom + : Top of the range design. 100% tailor-made for me
+                                    <option value="Custom Design">Custom : according to my visual identity guide</option>
+                                    <option value="Custom + Design">Custom + : Top of the range design. 100% tailor-made for me
                                     </option>
                                 </select>
                             </div>
@@ -185,8 +185,8 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                    <option value="YesWriting">Yes</option>
+                                    <option value="NoWriting">No</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -198,8 +198,8 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                    <option value="YesVisual">Yes</option>
+                                    <option value="NoVisual">No</option>
                                 </select>
                             </div>
                         </div>
@@ -213,14 +213,14 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="No">I will do it myself</option>
-                                    <option value="Minimal">I want a minimal plan (mininum maintance, no updates)
+                                    <option value="No Maintenance">I will do it myself</option>
+                                    <option value="Minimal Maintenance">I want a minimal plan (mininum maintance, no updates)
                                     </option>
-                                    <option value="Regular">I want a regular plan (minimum maintenance, updated every
+                                    <option value="Regular Maintenance">I want a regular plan (minimum maintenance, updated every
                                         year)</option>
-                                    <option value="Premium">I want a premium plan (regular maintenance, updated every 3
+                                    <option value="Premium Maintenance">I want a premium plan (regular maintenance, updated every 3
                                         months)</option>
-                                    <option value="Gold">I want a gold plan (priority maintenance, updated every
+                                    <option value="Gold Maintenance">I want a gold plan (priority maintenance, updated every
                                         months)</option>
                                 </select>
                             </div>
@@ -233,9 +233,9 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="No">I will handle that myself </option>
-                                    <option value="Standard">I want a standard host</option>
-                                    <option value="Premium">I want a premium host (high traffic website)</option>
+                                    <option value="No Host">I will handle that myself </option>
+                                    <option value="Standard Host">I want a standard host</option>
+                                    <option value="Premium Host">I want a premium host (high traffic website)</option>
                                 </select>
                                 <small>Hosting will be handled by a professional third party. I will not host your
                                     website(s) on my personal server for logistical reasons.</small>
@@ -288,7 +288,7 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="No">No</option>
+                                    <option value="No Deadline">No</option>
                                     <option value="Express +">Less than 1 month (Express +)</option>
                                     <option value="Express">Less than 2 months (Express)</option>
                                     <option value="Fast">Less than 4 months (Fast)</option>
@@ -347,12 +347,12 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="- 10">- 10</option>
-                                    <option value="10 - 50">10 - 50</option>
-                                    <option value="50 - 100">50 - 100</option>
-                                    <option value="100 - 200">100 - 200</option>
-                                    <option value="200 - 500">200 - 500</option>
-                                    <option value="+ 500">+ 500</option>
+                                    <option value="- 10 pages">- 10</option>
+                                    <option value="10 - 50 pages">10 - 50</option>
+                                    <option value="50 - 100 pages">50 - 100</option>
+                                    <option value="100 - 200 pages">100 - 200</option>
+                                    <option value="200 - 500 pages">200 - 500</option>
+                                    <option value="+ 500 pages">+ 500</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -366,8 +366,8 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                    <option value="Yes Login">Yes</option>
+                                    <option value="No Login">No</option>
                                 </select>
                             </div>
                         </div>
@@ -396,43 +396,43 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                         <li><input type="checkbox" id="2CheckoutShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="2Checkout"><label
+                                                class="checkBoxValue" value="2Checkout (Showcase)"><label
                                                 for="2CheckoutShow">2Checkout</label></li>
                                         <li><input type="checkbox" id="authorizeShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Authorize.Ne"><label
+                                                class="checkBoxValue" value="Authorize.Ne (Showcase)"><label
                                                 for="authorizeShow">Authorize.Net</label></li>
                                         <li><input type="checkbox" id="amazonShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Amazon Payment"><label for="amazonShow">Amazon
+                                                class="checkBoxValue" value="Amazon Payment (Showcase)"><label for="amazonShow">Amazon
                                                 Payment</label></li>
                                         <li><input type="checkbox" id="bankWireShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Bank Wire"><label for="bankWireShow">Bank
+                                                class="checkBoxValue" value="Bank Wire (Showcase)"><label for="bankWireShow">Bank
                                                 Wire</label></li>
                                         <li><input type="checkbox" id="checkShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Check"><label
+                                                class="checkBoxValue" value="Check (Showcase)"><label
                                                 for="checkShow">Check</label></li>
                                         <li><input type="checkbox" id="creditCardPPShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Credit Card (Through Paypal)"><label
+                                                class="checkBoxValue" value="Credit Card (Through Paypal) (Showcase)"><label
                                                 for="creditCardPPShow">Credit Card (Through Paypal)</label></li>
                                         <li><input type="checkbox" id="creditCardBkShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Credit Card (Through Bank Api)"><label
+                                                class="checkBoxValue" value="Credit Card (Through Bank Api) (Showcase)"><label
                                                 for="creditCardBkShow">Credit Card (Through Bank Api)</label></li>
                                         <li><input type="checkbox" id="paypalShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Paypal"><label
+                                                class="checkBoxValue" value="Paypal (Showcase)"><label
                                                 for="paypalShow">Paypal</label></li>
                                         <li><input type="checkbox" id="paypalProShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="PayPal Payments Pro"><label for="paypalProShow">PayPal
+                                                class="checkBoxValue" value="PayPal Payments Pro (Showcase)"><label for="paypalProShow">PayPal
                                                 Payments Pro</label></li>
                                         <li><input type="checkbox" id="sagePayShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="SagePay"><label
+                                                class="checkBoxValue" value="SagePay (Showcase)"><label
                                                 for="sagePayShow">SagePay</label></li>
                                         <li><input type="checkbox" id="skrillShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Skrill"><label
+                                                class="checkBoxValue" value="Skrill (Showcase)"><label
                                                 for="skrillShow">Skrill</label></li>
                                         <li><input type="checkbox" id="squareShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Square"><label
+                                                class="checkBoxValue" value="Square (Showcase)"><label
                                                 for="squareShow">Square</label></li>
                                         <li><input type="checkbox" id="stripeShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Stripe"><label
+                                                class="checkBoxValue" value="Stripe (Showcase)"><label
                                                 for="stripeShow">Stripe</label></li>
                                     </ul>
                                 </div>
@@ -458,11 +458,11 @@ ob_start();
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
                                     <option label="Please choose..."> </option>
-                                    <option value="- 10">- 10</option>
-                                    <option value="10 - 100">10 - 100</option>
-                                    <option value="100 - 200">100 - 200</option>
-                                    <option value="200 - 500">200 - 500</option>
-                                    <option value="+ 500">+ 500</option>
+                                    <option value="- 10 products">- 10</option>
+                                    <option value="10 - 100 products">10 - 100</option>
+                                    <option value="100 - 200 products">100 - 200</option>
+                                    <option value="200 - 500 products">200 - 500</option>
+                                    <option value="+ 500 products">+ 500</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -474,43 +474,43 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                     <li><input type="checkbox" id="2CheckoutStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="2Checkout"><label
+                                                class="checkBoxValue" value="2Checkout (Store)"><label
                                                 for="2CheckoutStore">2Checkout</label></li>
                                         <li><input type="checkbox" id="authorizeStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Authorize.Ne"><label
+                                                class="checkBoxValue" value="Authorize.Ne (Store)"><label
                                                 for="authorizeStore">Authorize.Net</label></li>
                                         <li><input type="checkbox" id="amazonStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Amazon Payment"><label for="amazonStore">Amazon
+                                                class="checkBoxValue" value="Amazon Payment (Store)"><label for="amazonStore">Amazon
                                                 Payment</label></li>
                                         <li><input type="checkbox" id="bankWireStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Bank Wire"><label for="bankWireStore">Bank
+                                                class="checkBoxValue" value="Bank Wire (Store)"><label for="bankWireStore">Bank
                                                 Wire</label></li>
                                         <li><input type="checkbox" id="checkStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Check"><label
+                                                class="checkBoxValue" value="Check (Store)"><label
                                                 for="checkStore">Check</label></li>
                                         <li><input type="checkbox" id="creditCardPPStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Credit Card (Through Paypal)"><label
+                                                class="checkBoxValue" value="Credit Card (Through Paypal) (Store)"><label
                                                 for="creditCardPPStore">Credit Card (Through Paypal)</label></li>
                                         <li><input type="checkbox" id="creditCardBkStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Credit Card (Through Bank Api)"><label
+                                                class="checkBoxValue" value="Credit Card (Through Bank Api) (Store)"><label
                                                 for="creditCardBkStore">Credit Card (Through Bank Api)</label></li>
                                         <li><input type="checkbox" id="paypalStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Paypal"><label
+                                                class="checkBoxValue" value="Paypal (Store)"><label
                                                 for="paypalStore">Paypal</label></li>
                                         <li><input type="checkbox" id="paypalProStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="PayPal Payments Pro"><label for="paypalProStore">PayPal
+                                                class="checkBoxValue" value="PayPal Payments Pro (Store)"><label for="paypalProStore">PayPal
                                                 Payments Pro</label></li>
                                         <li><input type="checkbox" id="sagePayStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="SagePay"><label
+                                                class="checkBoxValue" value="SagePay (Store)"><label
                                                 for="sagePayStore">SagePay</label></li>
                                         <li><input type="checkbox" id="skrillStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Skrill"><label
+                                                class="checkBoxValue" value="Skrill (Store)"><label
                                                 for="skrillStore">Skrill</label></li>
                                         <li><input type="checkbox" id="squareStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Square"><label
+                                                class="checkBoxValue" value="Square (Store)"><label
                                                 for="squareStore">Square</label></li>
                                         <li><input type="checkbox" id="stripeStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Stripe"><label
+                                                class="checkBoxValue" value="Stripe (Store)"><label
                                                 for="stripeStore">Stripe</label></li>
                                     </ul>
                                 </div>
@@ -578,16 +578,19 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="postalAddress">Address*</label>
                                 <input type="text" class="form-control" id="postalAddress" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
+                                <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="postCode">Post Code*</label>
                                 <input type="text" class="form-control" id="postCode" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
+                                <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="city">City*</label>
                                 <input type="text" class="form-control" id="city" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
+                                <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="country">Country*</label>
