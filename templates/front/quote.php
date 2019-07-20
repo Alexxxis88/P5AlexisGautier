@@ -873,12 +873,13 @@ ob_start();
                                     fees.</small>
                             </div>
                         </div>
+                        <!-- FIXME : a virer quand custom quote marchera bien
                         <div class="row ">
                             <div class="form-group col-md-6">
                                 <label for="price" class="col-form-label">Price</label>
                                 <input type="text" class="form-control" id="price" name="price" readonly="readonly"                          required>
                             </div>
-                        </div>
+                        </div> --> 
                         <div class="row ">
                             <div class="form-group col-md-6">
                                 <label for="arrayServices" class="col-form-label">arrayServices</label>

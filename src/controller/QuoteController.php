@@ -384,8 +384,8 @@ class QuoteController
         //testing if siteType is correct
         if ($_POST['siteType'] == "Showcase Website" OR $_POST['siteType'] == "Webstore" OR $_POST['siteType'] == "Showcase Website + Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website" OR $_POST['siteType'] == "Redesign - Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website + Webstore" ) {
 
-            //testing if price is correct (value = minimum price with all minimum options selected = Redesign showcase w/ min options)
-            if ($_POST['price'] > 400 ) {
+            // //testing if price is correct (value = minimum price with all minimum options selected = Redesign showcase w/ min options)
+            // if ($_POST['price'] > 400 ) { FIXME ; supprimer quand custom quote fonctionnera bien 
 
                 //testing if project name at least 2 caracters
                 if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$#i", $_POST['project'])) {
@@ -538,9 +538,9 @@ class QuoteController
                 } else {
                     throw new \Exception('Project name is incorrect');
                 }
-            } else {
-                throw new \Exception('Price is incorrect');
-            }
+            // } else {
+            //     throw new \Exception('Price is incorrect');
+            // } FIXME ; supprimer quand custom quote fonctionnera bien 
         } else {
             throw new \Exception('Site type is incorrect');
         }
