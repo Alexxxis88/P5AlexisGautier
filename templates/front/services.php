@@ -87,7 +87,7 @@ ob_start();
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Consulting</h3>
-                            <p>You have a business or personal idea but are lost with what online solution you need?
+                            <p>You have a business or personal idea but are lost with what solution you need?
                                 I am here to help you make the right decision that will lead you to success!</p>
                         </div>
                     </div>

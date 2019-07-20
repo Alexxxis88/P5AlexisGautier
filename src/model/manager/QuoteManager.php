@@ -19,6 +19,18 @@ class QuoteManager extends GlobalManager
 
 
 
+    public function checkServicesCustomQuote($serviceName)
+    {
+        $req = $this->_db->prepare('SELECT * FROM customquoteservices WHERE serviceName = ? ');
+        $req->execute(array($serviceName));
+        $services= $req->fetch(); 
+        
+        return $services;
+    }
+    
+
+
+
 
 
 

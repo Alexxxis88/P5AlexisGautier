@@ -230,6 +230,39 @@ class QuoteController
 
 
     //CUSTOM QUOTES
+
+
+    public function servicesCustomQuote($arrayServices)
+    {   
+
+        $displayController = new DisplayController();
+        $displayController->displayCheckprice();
+
+        
+        echo '<h3>arrayServices avant de le convertir en tableau</h3> '; 
+        echo var_dump($arrayServices);
+       
+        $arrayServices = explode(",",$arrayServices);
+
+        echo '<h3>arrayServices APRES l\'avoir converti en tableau</h3> '; 
+        echo var_dump($arrayServices);
+
+
+        for($i = 0; $i < sizeof($arrayServices); $i++ )
+        {   
+            $quoteManager = new QuoteManager();
+            $returnValue = $quoteManager->checkServicesCustomQuote($arrayServices[$i]);
+
+            echo '<h3>La valeur du champ ' . $arrayServices[$i] . ' récupérée depuis la BDD via checkServicesCustomQuote()</h3>  '; 
+            echo var_dump($returnValue);
+        }
+
+
+       
+    }
+
+
+
     public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
         //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ?

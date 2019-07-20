@@ -25,10 +25,10 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="siteType">Type of Website*</label>
                                 <select id="siteType" name="siteType" class="form-control"
-                                    onchange="getSelectValue(), myFunction4(), getTotal(), deselectAll()" required>
+                                    onchange="fillArray(), getSelectValue(), myFunction4(), getTotal(), deselectAll()" required>
                                     <!-- I need de empty option line to respect W3C rules + i need the &nbsp; not to have an empty option without label (W3C error) and i need the Please Choose.. line with value at 0 for my total function to work fine -->
                                     <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
+                                    <option label="Please choose..." value="" disabled selected hidden> </option>
                                     <option value="Showcase Website">Showcase Website</option>
                                     <option value="Webstore">Webstore</option>
                                     <option value="Showcase Website + Webstore">Showcase Website + Webstore</option>
@@ -43,7 +43,7 @@ ob_start();
                                     <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
-                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
+                                    <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                         <li><input type="checkbox" id="blogOpt" name="options[]" class="checkBoxValue"
                                                 value="blog"><label for="blogOpt">Blog</label></li>
                                         <li><input type="checkbox" id="chatOpt" name="options[]" class="checkBoxValue"
@@ -97,7 +97,7 @@ ob_start();
                                     <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
-                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
+                                    <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                         <li><input type="checkbox" id="french" name="language[]" class="checkBoxValue"
                                                 value="french"><label for="french">French</label></li>
                                         <li><input type="checkbox" id="english" name="language[]" class="checkBoxValue"
@@ -160,7 +160,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="design">I want a Design*</label>
                                 <select id="design" name="design" class="form-control"
-                                    onchange="getSelectValue(), getTotal()" required>
+                                    onchange="fillArray(), getSelectValue(), getTotal()" required>
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
@@ -179,7 +179,7 @@ ob_start();
                                 <label for="writingContent">I need writing content(descriptions,
                                     articles...)*</label>
                                 <select id="writingContent" name="writingContent" class="form-control"
-                                    onchange="getSelectValue(), getTotal()" required>
+                                    onchange="fillArray(), getSelectValue(), getTotal()" required>
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
@@ -192,7 +192,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="visualContent">I need visual content (pictures...)*</label>
                                 <select id="visualContent" name="visualContent" class="form-control"
-                                    onchange="getSelectValue(), getTotal()" required>
+                                    onchange="fillArray(), getSelectValue(), getTotal()" required>
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
@@ -207,7 +207,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="maintenance">Maintenance / updates*</label>
                                 <select id="maintenance" name="maintenance" class="form-control"
-                                    onchange="getSelectValue(), getTotal()" required>
+                                    onchange="fillArray(), getSelectValue(), getTotal()" required>
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
@@ -227,7 +227,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="host">Host*</label>
                                 <select id="host" name="host" class="form-control"
-                                    onchange="getSelectValue(), getTotal()" required>
+                                    onchange="fillArray(), getSelectValue(), getTotal()" required>
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
@@ -263,7 +263,7 @@ ob_start();
                                     <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
-                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
+                                    <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                         <li><input type="checkbox" id="dotCom" name="extensions[]" class="checkBoxValue"
                                                 value="com"><label for="dotCom">.com</label></li>
                                         <li><input type="checkbox" id="dotFr" name="extensions[]" class="checkBoxValue"
@@ -282,7 +282,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="deadlineSelect">I have a specific deadline*</label>
                                 <select id="deadlineSelect" name="deadlineSelect" class="form-control"
-                                    onchange="getSelectValue(), getTotal(), myFunction3()" required>
+                                    onchange="fillArray(), getSelectValue(), getTotal(), myFunction3()" required>
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
@@ -340,7 +340,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="pageNb">Number of pages on my showcase website*</label>
                                 <select id="pageNb" name="pageNb" class="form-control"
-                                    onchange="getSelectValue(), getTotal()">
+                                    onchange="fillArray(), getSelectValue(), getTotal()">
                                     <!-- add required only if whole section displayed -->
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
@@ -359,7 +359,7 @@ ob_start();
                                 <label for="loginShowcaseYN">I want my user to be able to log in (Showcase
                                     Website)*</label>
                                 <select id="loginShowcaseYN" name="loginShowcaseYN" class="form-control"
-                                    onchange="getSelectValue(), getTotal()">
+                                    onchange="fillArray(), getSelectValue(), getTotal()">
                                     <!-- add required only if whole section displayed -->
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
@@ -394,7 +394,7 @@ ob_start();
                                     <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
-                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
+                                    <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                         <li><input type="checkbox" id="2CheckoutShow" name="paymentMtdShowcase[]"
                                                 class="checkBoxValue" value="2Checkout"><label
                                                 for="2CheckoutShow">2Checkout</label></li>
@@ -451,7 +451,7 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="productNb">Number of products to sell*</label>
                                 <select id="productNb" name="productNb" class="form-control"
-                                    onchange="getSelectValue(), getTotal()">
+                                    onchange="fillArray(), getSelectValue(), getTotal()">
                                     <!-- add required only if whole section displayed -->
                                     <!-- old solution before trying to disable all inputs after changin site type-->
                                     <!-- <option disabled hidden value="">&nbsp;</option>
@@ -472,7 +472,7 @@ ob_start();
                                     <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
-                                    <ul class="dropdown-menu noclose" onchange="getTotal()">
+                                    <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                     <li><input type="checkbox" id="2CheckoutStore" name="paymentMtdStore[]"
                                                 class="checkBoxValue" value="2Checkout"><label
                                                 for="2CheckoutStore">2Checkout</label></li>
@@ -870,10 +870,16 @@ ob_start();
                                     fees.</small>
                             </div>
                         </div>
-                        <div class="row customQuotePriceField">
+                        <div class="row ">
                             <div class="form-group col-md-6">
                                 <label for="price" class="col-form-label">Price</label>
                                 <input type="text" class="form-control" id="price" name="price" readonly="readonly"                          required>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="form-group col-md-6">
+                                <label for="arrayServices" class="col-form-label">arrayServices</label>
+                                <input type="text" class="form-control" id="arrayServices" name="arrayServices" readonly="readonly"                          required>
                             </div>
                         </div>
                     </section>

@@ -1,3 +1,49 @@
+//Get services array 
+function fillArray() {
+    
+    let arrayId = [];
+
+    let siteTypeId = document.getElementById("siteType").value;
+    let designID = document.getElementById("design").value;
+    let writingContentId = document.getElementById("writingContent").value;
+    let visualContentId = document.getElementById("visualContent").value;
+    let maintenanceId = document.getElementById("maintenance").value;
+    let hostId = document.getElementById("host").value;
+    let domainYNId = document.getElementById("domainYN").value;
+    let deadlineSelectId = document.getElementById("deadlineSelect").value;
+    let pageNbId = document.getElementById("pageNb").value;
+    let loginShowcaseYNId = document.getElementById("loginShowcaseYN").value;
+    let productNbId = document.getElementById("productNb").value;
+
+    //set a default value ( = 0 ) for options that are displayed or not depending on siteType chosen
+    if( pageNbId == ""){
+        pageNbId = "- 10"
+    }
+
+    if( loginShowcaseYNId == ""){
+        loginShowcaseYNId = "No"
+    }
+
+    if( productNbId == ""){
+        productNbId = "- 10"
+    }
+
+    //get select inputs services
+    arrayId.push(siteTypeId, designID, writingContentId, visualContentId, maintenanceId, hostId, domainYNId, deadlineSelectId, pageNbId, loginShowcaseYNId, productNbId);
+
+    //get checkboxes inputs services
+    $("input:checkbox:checked").each(function () {
+        arrayId.push($(this).val());
+    });
+
+    //fill the array
+    document.getElementById("arrayServices").value = arrayId;
+    console.log( arrayId);
+};
+
+
+
+//Display total price
 let grandTotal = "";
 let totalInput = "";
 let totalCheckboxe = "";
@@ -191,6 +237,24 @@ function getSelectValue() {
 
 
 //Checkbox values need to be redefine for JS only to display correct price : it has to be .text() and not .val() otherwise the value taken by PHP / MYSQL will be the wrong one
+
+    //Options
+    $('#blogOpt').text('200');
+    $('#chatOpt').text('150');
+    $('#contactFormOpt').text('150');
+    $('#newsletterOpt').text('70');
+    $('#appointOpt').text('150');
+    $('#searchOpt').text('150');
+    $('#quoteOpt').text('150');
+    $('#invoiceOpt').text('150');
+    $('#socialOpt').text('150');
+    $('#statsOpt').text('150');
+    $('#calendarOpt').text('150');
+    $('#newsOpt').text('150');
+    $('#adminPannelOpt').text('150');
+    $('#ratingsOpt').text('150');
+    $('#surveyOpt').text('150');
+
     //Languages
     $('#french').text('0');
     $('#english').text('50');
@@ -222,23 +286,6 @@ function getSelectValue() {
     $('#dotFr').text('10');
     $('#dotUk').text('10');
     $('#dotDe').text('10');
-
-    //Options
-    $('#blogOpt').text('200');
-    $('#chatOpt').text('150');
-    $('#contactFormOpt').text('150');
-    $('#newsletterOpt').text('70');
-    $('#appointOpt').text('150');
-    $('#searchOpt').text('150');
-    $('#quoteOpt').text('150');
-    $('#invoiceOpt').text('150');
-    $('#socialOpt').text('150');
-    $('#statsOpt').text('150');
-    $('#calendarOpt').text('150');
-    $('#newsOpt').text('150');
-    $('#adminPannelOpt').text('150');
-    $('#ratingsOpt').text('150');
-    $('#surveyOpt').text('150');
 
     //Payment Methods Showcase
     $('#2CheckoutShow').text('50');
@@ -294,6 +341,7 @@ function getTotal() {
 }
 
 
+
 //deselect all options choices when Website Type is changed
 function deselectAll(){
 
@@ -347,9 +395,13 @@ function deselectAll(){
         siteType = 0;
     }
 
+    //reset price display
     document.getElementById("text-customQuote").innerHTML = siteType + " € ";
     document.getElementById("text-customQuoteWidget").innerHTML = siteType + " € ";
     document.getElementById("price").value = siteType;
+
+    //empty arrayService
+    document.getElementById("arrayServices").value = "";
 }
 
 
