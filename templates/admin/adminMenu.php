@@ -13,6 +13,7 @@
 
             <nav class="adminMenu">
                 <ul>
+                <li><a class="adminMenuLink" href="index.php?action=servicesList"><span class="fas fa-list"></span>Services</a></li>
                 <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin&page=1&sortBy=5"><span class="fas fa-file-invoice packQuoteAlert"></span>Pack Quotes</a></li>
                 <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin&page=1&sortBy=5"><span class="fas fa-file-invoice-dollar customQuoteAlert"></span>Custom Quotes</a></li>
                 <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=5"><span class="fas fa-comments msgAlert"></span>Messages</a></li>
@@ -39,6 +40,7 @@
 <!-- Burger Menu Navigation -->
 <nav class="navMenu"  id="burgerNav">
     <ul>
+        <li><a class="adminMenuLink" href="index.php?action=servicesList"><span class="fas fa-list"></span>Services</a></li>
         <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin&page=1&sortBy=5"><span class="fas fa-file-invoice packQuoteAlert"></span>Pack Quotes</a></li>
         <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin&page=1&sortBy=5"><span class="fas fa-file-invoice-dollar customQuoteAlert"></span>Custom Quotes</a></li>
         <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page&page=1&sortBy=5"><span class="fas fa-comment-alt msgAlert"></span>Messages</a></li>

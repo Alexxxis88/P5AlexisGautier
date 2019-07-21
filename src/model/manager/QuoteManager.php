@@ -95,7 +95,7 @@ class QuoteManager extends GlobalManager
 
     //CUSTOM QUOTES
 
-    
+
     public function checkServicesCustomQuote($serviceName)
     {
         $req = $this->_db->prepare('SELECT * FROM customquoteservices WHERE serviceName = ? ');
@@ -104,10 +104,6 @@ class QuoteManager extends GlobalManager
         return $services;
     }
 
-
-
-
-    
     public function insertNewCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
         $newCustomQuoteDb = $this->_db->prepare('INSERT INTO customquotes( siteType, price, project, structure, company, firstName, lastName, contactEmail, phone, postalAddress, postCode, city, country, deadline, messageContent, imageName, design, writingContent, visualContent, maintenance, host, domainYN, deadlineSelect, pageNb, loginShowcaseYN, paymentShowcaseYN, productNb, requestDate, languages, extensions, paymentMtdShowcase, options, paymentMtdStore  ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?, ?, ?, ?)');
@@ -164,4 +160,17 @@ class QuoteManager extends GlobalManager
         return $isThereCustomQuote;
     }
 
+    //GENERAL
+    public function getPackServices()
+    {
+        $req = $this->_db->query('SELECT * FROM packquoteservices');
+        $allPackServices= $req->fetch();
+        return $allPackServices;
+    }
+
+    public function newCustomPrice($price, $idServ)
+    {
+        $req = $this->_db->prepare('UPDATE customquoteservices SET price = ? WHERE idServ = ?');
+        $req->execute(array($price, $idServ));
+    }
 }

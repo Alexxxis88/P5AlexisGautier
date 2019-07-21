@@ -111,6 +111,12 @@ try {
             $displayController->displayCheck();
             $displayController->displayDashboard();
         }
+        elseif ($_GET['action'] == 'servicesList') {
+            $displayController = new DisplayController;
+            $displayController->displayCheck();
+            $quoteController = new QuoteController();
+            $quoteController->listServices();
+        }
         elseif ($_GET['action'] == 'packQuotesAdmin') {
             $displayController = new DisplayController;
             $displayController->displayCheck();
@@ -475,6 +481,12 @@ try {
             } else {
                 throw new Exception('Missing invoice id or choice');
             }
+        }
+
+        elseif ($_GET['action'] == 'updateCustomPrice') {
+
+                $quoteController = new QuoteController;
+                $quoteController->updateCustomPrice($_POST['price'], $_POST['idServ'] );
         }
 
 

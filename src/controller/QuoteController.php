@@ -232,12 +232,6 @@ class QuoteController
 
     //CUSTOM QUOTES
 
-
-
-
-
-
-
     public function servicesCustomQuote($arrayServices)
     {
 
@@ -607,6 +601,31 @@ class QuoteController
         $quoteManager = new QuoteManager();
         $quoteManager->customQuoteStatus($quoteStatus, $customQuoteId);
         header('Location: index.php?action=customQuotesAdmin&page=1&sortBy=5');
+        exit;
+    }
+
+
+    public function listServices()
+    {
+        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $messageManager = new MessageManager();
+        $isThereNewMessages = $messageManager->isThereNewMsg();
+
+        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $quoteManager = new QuoteManager();
+        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
+        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
+
+        $packServicesList = $quoteManager->getPackServices();
+
+        require('templates/admin/servicesAdmin.php');
+    }
+
+    public function updateCustomPrice($price, $idServ)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->newCustomPrice($price, $idServ);
+        header('Location: index.php?action=servicesList');
         exit;
     }
 }
