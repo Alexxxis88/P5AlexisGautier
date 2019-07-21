@@ -373,14 +373,6 @@ try {
 
 
 
-
-                    
-
-
-
-
-
-
                     //FIXME : SOLUTION : comme pour sortir totalprice pour la verif de custom quote. Je passe mon code dans une méthode dans le controller imageQuote(). A la fin de mes itérations je fais un return $imageName et dans mon routeur je fais $imageQuote = $quoteController->imageQuote() et ça devrait fonctionner ? la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans :
                     //checking if an attached file has been sent FIXME : mettre dans une méthode dans le controller savePackQuote
                     if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
@@ -415,7 +407,6 @@ try {
 
 
 
-
                     //getting the right information from the verified array retrieved from DB
                     $arrayServices =  $quoteController->servicesCustomQuote($_POST['arrayServices']);
                     $price = $arrayServices[0];
@@ -434,8 +425,8 @@ try {
 
                     $quoteController->saveCustomQuote($siteType,  $price, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $_POST['domainYN'], $deadlineSelect, $pageNb, $loginShowcaseYN, $_POST['paymentShowcaseYN'], $productNb, $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
 
-                    // $quoteController->sendCustomQuote($_POST['siteType'], $price, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
-                }
+                    $quoteController->sendCustomQuote($siteType,  $price, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $design, $writingContent, $visualContent, $maintenance, $host, $_POST['domainYN'], $deadlineSelect, $pageNb, $loginShowcaseYN, $_POST['paymentShowcaseYN'], $productNb, $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
+                    }
             }
             else {
                 throw new \Exception('Some fields are empty');
