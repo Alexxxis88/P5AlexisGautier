@@ -412,12 +412,29 @@ try {
                         $imageName = "";
                     }
 
-                    //getting the price from the total calculated from DB information
-                    $price =  $quoteController->servicesCustomQuote($_POST['arrayServices']);
 
-                    $quoteController->saveCustomQuote($_POST['siteType'],  $price, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $imageName, $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
 
-                    $quoteController->sendCustomQuote($_POST['siteType'], $price, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
+
+
+                    //getting the right information from the verified array retrieved from DB
+                    $arrayServices =  $quoteController->servicesCustomQuote($_POST['arrayServices']);
+                    $price = $arrayServices[0];
+                    $siteType = $arrayServices[1];
+                    $design =  $arrayServices[2];
+                    $writingContent = $arrayServices[3];
+                    $visualContent = $arrayServices[4];
+                    $maintenance = $arrayServices[5];
+                    $host = $arrayServices[6];
+                    $deadlineSelect = $arrayServices[7];
+                    $pageNb = $arrayServices[8];
+                    $loginShowcaseYN = $arrayServices[9];
+                    $productNb = $arrayServices[10];
+
+
+
+                    $quoteController->saveCustomQuote($siteType,  $price, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $_POST['domainYN'], $deadlineSelect, $pageNb, $loginShowcaseYN, $_POST['paymentShowcaseYN'], $productNb, $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
+
+                    // $quoteController->sendCustomQuote($_POST['siteType'], $price, $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']);
                 }
             }
             else {

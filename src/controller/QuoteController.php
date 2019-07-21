@@ -250,37 +250,54 @@ class QuoteController
        
         $arrayServices = explode(",",$arrayServices);
 
-        echo '<h3>arrayServices APRES l\'avoir converti en tableau</h3> '; 
+        echo '<h3>arrayServices APRES l\'avoir converti en tableau</h3> ';
         echo var_dump($arrayServices);
 
 
         $allPrices = [];
 
+
         for($i = 0; $i < sizeof($arrayServices); $i++ )
-        {   
+        {
             $quoteManager = new QuoteManager();
             $returnValue = $quoteManager->checkServicesCustomQuote($arrayServices[$i]);
 
-            echo '<h3>Les autres champs ayant pour serviceName ' . $arrayServices[$i] . ' récupérés depuis la BDD via checkServicesCustomQuote()</h3>  '; 
+            echo '<h3>Les autres champs ayant pour serviceName ' . $arrayServices[$i] . ' récupérés depuis la BDD via checkServicesCustomQuote()</h3>  ';
             // echo(implode(", ",array_values($returnValue)));
             echo 'idServ :' . $returnValue['idServ'] . ' -- ' . ' serviceGroup : ' . $returnValue['serviceGroup'] . ' -- ' . ' serviceName : ' . $returnValue['serviceName'] . ' -- ' .' price :' . $returnValue['price'];
 
 
+
+
+            //je récup tous les prix dans un tableau
             array_push($allPrices, $returnValue['price']);
-            
+
+
+
         }
 
         echo '<h3>TOTAL PRICE</h3> ';
         echo var_dump($allPrices);
-        
-            $totalPrice = array_sum($allPrices);
-            echo '<h1>prix calculé ' . $totalPrice . ' €</h1> '; 
 
-            return  $totalPrice;
+        
+
+            $totalPrice = array_sum($allPrices);
+            echo '<h1>prix calculé ' . $totalPrice . ' €</h1> ';
+
+
+            array_unshift($arrayServices, $totalPrice );
+
+            echo '<h3>TOUTES LES INFOS</h3> ';
+            echo var_dump($arrayServices);
+
+
+            return  $arrayServices;
+
+
     }
 
 
-   
+
 
 
 
@@ -290,7 +307,7 @@ class QuoteController
 
     public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
-        //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ?
+        //Need to implode arrays to save them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ?
         $languages = implode(", ",array_values($languages));
         $extensions = implode(", ",array_values($extensions));
         $paymentMtdShowcase = implode(", ",array_values($paymentMtdShowcase));
