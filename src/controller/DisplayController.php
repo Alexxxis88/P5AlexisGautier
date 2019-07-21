@@ -42,17 +42,7 @@ class DisplayController
     }
 
 
-
-
-    public function displayCheckprice() //FIXME: a dégager quand le custom quote fonctionenra
-    {
-        require('templates/admin/displayCheckprice.php');
-    }
-
-
-
-
-
+    
 
     public function displayQuote()
     {

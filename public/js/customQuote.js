@@ -336,7 +336,7 @@ function getTotal() {
     grandTotal = totalInput + totalCheckboxe;
     document.getElementById("text-customQuote").innerHTML = grandTotal + " € ";
     document.getElementById("text-customQuoteWidget").innerHTML = grandTotal + " € ";
-    document.getElementById("price").value = grandTotal;
+    // document.getElementById("price").value = grandTotal; FIXME : remove me car je ne me sers pas du champ price
 }
 
 
@@ -397,7 +397,7 @@ function deselectAll(){
     //reset price display
     document.getElementById("text-customQuote").innerHTML = siteType + " € ";
     document.getElementById("text-customQuoteWidget").innerHTML = siteType + " € ";
-    document.getElementById("price").value = siteType;
+    // document.getElementById("price").value = siteType; FIXME : remove me car je ne me sers pas du champ price
 
     //empty arrayService
     document.getElementById("arrayServices").value = "";

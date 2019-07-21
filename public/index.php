@@ -361,9 +361,6 @@ try {
                 if(empty($_POST['phone'])){
                     $_POST['phone'] = "";
                 }
-                
-
-
 
                 $quoteController = new QuoteController;
 
@@ -403,7 +400,6 @@ try {
                     if(empty($imageName)){
                         $imageName = "";
                     }
-
 
 
 

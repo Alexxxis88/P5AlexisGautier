@@ -239,61 +239,44 @@ class QuoteController
 
 
     public function servicesCustomQuote($arrayServices)
-    {   
+    {
 
-        $displayController = new DisplayController();
-        $displayController->displayCheckprice();
+        // echo '<h3>arrayServices avant de le convertir en tableau</h3> '; //FIXMECUSTOM : a virer
+        // echo var_dump($arrayServices); //FIXMECUSTOM : a virer
 
-
-        echo '<h3>arrayServices avant de le convertir en tableau</h3> '; 
-        echo var_dump($arrayServices);
-       
         $arrayServices = explode(",",$arrayServices);
 
-        echo '<h3>arrayServices APRES l\'avoir converti en tableau</h3> ';
-        echo var_dump($arrayServices);
-
+        // echo '<h3>arrayServices APRES l\'avoir converti en tableau</h3> '; //FIXMECUSTOM : a virer
+        // echo var_dump($arrayServices); //FIXMECUSTOM : a virer
 
         $allPrices = [];
-
 
         for($i = 0; $i < sizeof($arrayServices); $i++ )
         {
             $quoteManager = new QuoteManager();
             $returnValue = $quoteManager->checkServicesCustomQuote($arrayServices[$i]);
 
-            echo '<h3>Les autres champs ayant pour serviceName ' . $arrayServices[$i] . ' récupérés depuis la BDD via checkServicesCustomQuote()</h3>  ';
-            // echo(implode(", ",array_values($returnValue)));
-            echo 'idServ :' . $returnValue['idServ'] . ' -- ' . ' serviceGroup : ' . $returnValue['serviceGroup'] . ' -- ' . ' serviceName : ' . $returnValue['serviceName'] . ' -- ' .' price :' . $returnValue['price'];
+            // echo '<h3>Les autres champs ayant pour serviceName ' . $arrayServices[$i] . ' récupérés depuis la BDD via checkServicesCustomQuote()</h3>  '; //FIXMECUSTOM : a virer
+            // // echo(implode(", ",array_values($returnValue))); //FIXMECUSTOM : a virer
+            // echo 'idServ :' . $returnValue['idServ'] . ' -- ' . ' serviceGroup : ' . $returnValue['serviceGroup'] . ' -- ' . ' serviceName : ' . $returnValue['serviceName'] . ' -- ' .' price :' . $returnValue['price']; //FIXMECUSTOM : a virer
 
 
-
-
-            //je récup tous les prix dans un tableau
+            //All prices are gathered into an array to array_sum all values and get total price
             array_push($allPrices, $returnValue['price']);
-
-
-
         }
 
-        echo '<h3>TOTAL PRICE</h3> ';
-        echo var_dump($allPrices);
+        // echo '<h3>TOTAL PRICE</h3> '; //FIXMECUSTOM : a virer
+        // echo var_dump($allPrices); //FIXMECUSTOM : a virer
 
-        
+        $totalPrice = array_sum($allPrices);
+        // echo '<h1>prix calculé ' . $totalPrice . ' €</h1> '; //FIXMECUSTOM : a virer
 
-            $totalPrice = array_sum($allPrices);
-            echo '<h1>prix calculé ' . $totalPrice . ' €</h1> ';
+        array_unshift($arrayServices, $totalPrice );
 
+        // echo '<h3>TOUTES LES INFOS</h3> '; //FIXMECUSTOM : a virer
+        // echo var_dump($arrayServices); //FIXMECUSTOM : a virer
 
-            array_unshift($arrayServices, $totalPrice );
-
-            echo '<h3>TOUTES LES INFOS</h3> ';
-            echo var_dump($arrayServices);
-
-
-            return  $arrayServices;
-
-
+        return  $arrayServices;
     }
 
 
@@ -402,7 +385,7 @@ class QuoteController
         if ($_POST['siteType'] == "Showcase Website" OR $_POST['siteType'] == "Webstore" OR $_POST['siteType'] == "Showcase Website + Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website" OR $_POST['siteType'] == "Redesign - Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website + Webstore" ) {
 
             // //testing if price is correct (value = minimum price with all minimum options selected = Redesign showcase w/ min options)
-            // if ($_POST['price'] > 400 ) { FIXME ; supprimer quand custom quote fonctionnera bien 
+            // if ($_POST['price'] > 400 ) { FIXMECUSTOM ; supprimer quand custom quote fonctionnera bien
 
                 //testing if project name at least 2 caracters
                 if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$#i", $_POST['project'])) {
