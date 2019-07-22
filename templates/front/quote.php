@@ -885,10 +885,10 @@ ob_start();
                             <button id="customSubmitBtn" type="submit" form="customQuoteForm" class="btn btn-princing" disabled>I want this!</button>
                         </div>
                         <div class="row" id="alertBlock">
-                            <p><small id="langAlert"> At least one language must be selected!</small></p>
-                            <p><small id="extensionAlert"> At least one extension must be selected!</small></p>
-                            <p><small id="payShowAlert"> At least one payment opt (Showcase) must be selected!</small></p>
-                            <p><small id="payStoreAlert"> At least one payment opt (Webstore) must be selected!</small></p>
+                            <p><small id="langAlert"> At least one language must be selected</small></p>
+                            <p><small id="extensionAlert"> At least one extension must be selected</small></p>
+                            <p><small id="payShowAlert"> At least one payment opt (Showcase) must be selected</small></p>
+                            <p><small id="payStoreAlert"> At least one payment opt (Webstore) must be selected</small></p>
                         </div>
                     </div>
                 </div>

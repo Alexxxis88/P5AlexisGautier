@@ -358,17 +358,14 @@ ob_start();
                                                 tools</li>
                                             <li><span class="text-princing"></span> <strong>Responsive</strong>
                                                 design</li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                            <li><span class="text-princing"></span> <strong>W3C </strong>approved
                                             </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                            <li><span class="text-princing"></span> <strong>User </strong>friendly
                                             </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                            <li><span class="text-princing"></span> <strong>SEO</strong> optimised
                                             </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                            <li><span class="text-princing"></span> Up to <strong>20</strong> pages
                                             </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
-                                            </li>
-
                                         </ul>
                                         <div class="text-center">
                                             <a data-toggle="modal" data-target="#devPack1"
@@ -401,8 +398,6 @@ ob_start();
                                                     options</strong></li>
                                             <li><span class="text-princing"></span> Configurable
                                                 <strong>shipping</strong> system</li>
-                                            <li><span class="text-princing"></span> Complete customer
-                                                <strong>database</strong></li>
                                             <li><span class="text-princing"></span> <strong>Administration</strong>
                                                 tools</li>
                                             <li><span class="text-princing"></span> <strong>Responsive</strong>
@@ -435,10 +430,8 @@ ob_start();
                                                 <strong>Webstore</strong> <br>features included</li>
                                             <li><span class="text-princing"></span> Get your brand / compagny <br>a
                                                 <strong>full online presence</strong></li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
-                                            </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
-                                            </li>
+                                            <li><span class="text-princing"></span> Complete customer
+                                            <strong>database</strong></li>
                                             <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
                                             </li>
                                             <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
@@ -473,16 +466,12 @@ ob_start();
                                             <strong>everything you want</strong><br></li>
                                             <li><span class="text-princing"></span> Various <strong>options
                                             available</strong></li>
+                                            <li><span class="text-princing"></span> <strong>Express</strong> treatment available
+                                            </li>
                                             <li><span class="text-princing"></span> Use my automatic
                                                 <strong>custom quote</strong> system
                                                 to get an accurate price to fit with your needs<br></li>
                                             <li><span class="text-princing"></span> I got you covered!</li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
-                                            </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
-                                            </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
-                                            </li>
                                         </ul>
                                         <div class="text-center">
                                             <a href="index.php?action=quote" class="btn btn-princing">I want this!</a>

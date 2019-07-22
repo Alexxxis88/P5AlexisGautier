@@ -1311,6 +1311,8 @@ Pricing Section style
 }
 .pricing_head{
     background-color: #f7f7f7;
+    height: 150px;
+
 }
 
 .pricing_head h3{
@@ -1350,7 +1352,8 @@ Pricing Section style
     overflow: hidden;
     background-color: #fff;
     margin-bottom: 50px;
-    max-height: 630px;
+    min-height: 600px;
+    max-height: 600px;
 }
 .pricing_body ul{
     width:100%;
