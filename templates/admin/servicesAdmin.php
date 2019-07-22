@@ -47,7 +47,7 @@ ob_start();
                         <label><?= $idServ ?> <input type="text" name="idServ" value="<?= $idServ ?>" readonly hidden></label>
                     </div>
                     <div class="form-group col-md-7">
-                        <label><small>(<?= $serviceGroup ?>) </small> <?= $serviceName ?> <input type="text" class="priceServ" name="price" value="<?= $price ?>"> € </label>
+                        <label><small>(<?= $serviceGroup ?>) </small> <?= ucwords($serviceName) ?> <input type="text" class="priceServ" name="price" value="<?= $price ?>"> € </label>
                         <input type="submit" class="btn btn-primary btn-sm btnService" value="Save" />
                     </div>
                 </form>

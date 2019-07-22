@@ -24,8 +24,8 @@ ob_start();
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="siteType">Type of Website*</label>
-                                <select id="siteType" name="siteType" class="form-control"
-                                    onchange="fillArray(), getSelectValue(), myFunction4(), getTotal(), deselectAll()" required>
+                                <select id="siteType" name="siteType" class="form-control" required
+                                    onchange="fillArray(), getSelectValue(), myFunction4(), getTotal(), deselectAll()" >
                                     <!-- I need de empty option line to respect W3C rules + i need the &nbsp; not to have an empty option without label (W3C error) and i need the Please Choose.. line with value at 0 for my total function to work fine -->
                                     <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="" disabled selected hidden> </option>
@@ -90,69 +90,71 @@ ob_start();
                                 </div>
                             </div>
                         </div>
+
+                        
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class="btn-group ">
                                     <p class="checkboxLabel">I want my website to be written in*</p><br>
-                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
+                                    <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder btnlanguage"
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
-                                        <li><input type="checkbox" id="french" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="french" name="language[]" class="checkBoxValue languagecheck"
                                                 value="french"><label for="french">French</label></li>
-                                        <li><input type="checkbox" id="english" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="english" name="language[]" class="checkBoxValue languagecheck"
                                                 value="english"><label for="english">English</label></li>
                                         <li><input type="checkbox" id="bulgarian" name="language[]"
-                                                class="checkBoxValue" value="bulgarian"><label
+                                                class="checkBoxValue languagecheck" value="bulgarian"><label
                                                 for="bulgarian">Bulgarian</label></li>
                                         <li><input type="checkbox" id="croatian" name="language[]"
-                                                class="checkBoxValue" value="croatian"><label
+                                                class="checkBoxValue languagecheck" value="croatian"><label
                                                 for="croatian">Croatian</label></li>
-                                        <li><input type="checkbox" id="czech" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="czech" name="language[]" class="checkBoxValue languagecheck"
                                                 value="czech"><label for="czech">Czech</label></li>
-                                        <li><input type="checkbox" id="danish" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="danish" name="language[]" class="checkBoxValue languagecheck"
                                                 value="danish"><label for="danish">Danish</label></li>
-                                        <li><input type="checkbox" id="dutch" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="dutch" name="language[]" class="checkBoxValue languagecheck"
                                                 value="dutch"><label for="dutch">Dutch</label></li>
                                         <li><input type="checkbox" id="estonian" name="language[]"
-                                                class="checkBoxValue" value="estonian"><label
+                                                class="checkBoxValue languagecheck" value="estonian"><label
                                                 for="estonian">Estonian</label></li>
-                                        <li><input type="checkbox" id="finnish" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="finnish" name="language[]" class="checkBoxValue languagecheck"
                                                 value="finnish"><label for="finnish">Finnish</label></li>
-                                        <li><input type="checkbox" id="german" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="german" name="language[]" class="checkBoxValue languagecheck"
                                                 value="german"><label for="german">German</label></li>
-                                        <li><input type="checkbox" id="greek" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="greek" name="language[]" class="checkBoxValue languagecheck"
                                                 value="greek"><label for="greek">Greek</label></li>
                                         <li><input type="checkbox" id="hungarian" name="language[]"
-                                                class="checkBoxValue" value="hungarian"><label
+                                                class="checkBoxValue languagecheck" value="hungarian"><label
                                                 for="hungarian">Hungarian</label></li>
-                                        <li><input type="checkbox" id="italian" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="italian" name="language[]" class="checkBoxValue languagecheck"
                                                 value="italian"><label for="italian">Italian</label></li>
-                                        <li><input type="checkbox" id="latvian" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="latvian" name="language[]" class="checkBoxValue languagecheck"
                                                 value="latvian"><label for="latvian">Latvian</label></li>
                                         <li><input type="checkbox" id="lithuanian" name="language[]"
-                                                class="checkBoxValue" value="lithuanian"><label
+                                                class="checkBoxValue languagecheck" value="lithuanian"><label
                                                 for="lithuanian">Lithuanian</label></li>
                                         <li><input type="checkbox" id="norwegian" name="language[]"
-                                                class="checkBoxValue" value="norwegian"><label
+                                                class="checkBoxValue languagecheck" value="norwegian"><label
                                                 for="norwegian">Norwegian</label></li>
                                         <li><input type="checkbox" id="portuguese" name="language[]"
-                                                class="checkBoxValue" value="portuguese"><label
+                                                class="checkBoxValue languagecheck" value="portuguese"><label
                                                 for="portuguese">Portuguese</label></li>
-                                        <li><input type="checkbox" id="russian" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="russian" name="language[]" class="checkBoxValue languagecheck"
                                                 value="russian"><label for="russian">Russian</label></li>
-                                        <li><input type="checkbox" id="serbian" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="serbian" name="language[]" class="checkBoxValue languagecheck"
                                                 value="serbian"><label for="serbian">Serbian</label></li>
-                                        <li><input type="checkbox" id="slovak" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="slovak" name="language[]" class="checkBoxValue languagecheck"
                                                 value="slovak"><label for="slovak">Slovak</label></li>
-                                        <li><input type="checkbox" id="slovene" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="slovene" name="language[]" class="checkBoxValue languagecheck"
                                                 value="slovene"><label for="slovene">Slovene</label></li>
-                                        <li><input type="checkbox" id="spanish" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="spanish" name="language[]" class="checkBoxValue languagecheck"
                                                 value="spanish"><label for="spanish">Spanish</label></li>
-                                        <li><input type="checkbox" id="swedish" name="language[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="swedish" name="language[]" class="checkBoxValue languagecheck"
                                                 value="swedish"><label for="swedish">Swedish</label></li>
                                         <li><input type="checkbox" id="swissGerman" name="language[]"
-                                                class="checkBoxValue" value="swissGerman"><label for="swissGerman">Swiss
+                                                class="checkBoxValue languagecheck" value="swissGerman"><label for="swissGerman">Swiss
                                                 German</label></li>
                                     </ul>
                                 </div>
@@ -264,13 +266,13 @@ ob_start();
                                         data-placeholder="Please select">Please select <span
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
-                                        <li><input type="checkbox" id="dotCom" name="extensions[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="dotCom" name="extensions[]" class="checkBoxValue extensioncheck"
                                                 value=".com"><label for="dotCom">.com</label></li>
-                                        <li><input type="checkbox" id="dotFr" name="extensions[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="dotFr" name="extensions[]" class="checkBoxValue extensioncheck"
                                                 value=".fr"><label for="dotFr">.fr</label></li>
-                                        <li><input type="checkbox" id="dotUk" name="extensions[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="dotUk" name="extensions[]" class="checkBoxValue extensioncheck"
                                                 value=".uk"><label for="dotUk">.uk</label></li>
-                                        <li><input type="checkbox" id="dotDe" name="extensions[]" class="checkBoxValue"
+                                        <li><input type="checkbox" id="dotDe" name="extensions[]" class="checkBoxValue extensioncheck"
                                                 value=".de"><label for="dotDe">.de</label></li>
                                     </ul><br><br>
                                     <small>Check the full list of available extensions <a
@@ -302,32 +304,6 @@ ob_start();
                                 <input type="date" class="form-control" id="deadline" name="deadline" min="<?= date("Y-m-d"); ?>">
                             </div>
                         </div>
-
-                        <!-- <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="deadlineYN">I have a specific deadline*</label>
-                                <select id="deadlineYN" name="deadlineYN" class="form-control"
-                                    onchange="myFunction3()" required>
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="0" disabled selected hidden> </option>
-                                    <option>Yes</option>
-                                    <option>No</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-6" id="deadlineBlock">
-                                <label for="deadline">Deadline</label>
-                                <input type="date" class="form-control" id="deadline" name="deadline" >
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <ul id="urgentProject" onchange="getTotal()">
-                                    <li><label for="urgentCheck">Urgent project (Express treatment)</label>
-                                        <input type="checkbox" id="urgentCheck" name="urgentCheck"
-                                            class="checkBoxValue" value="300"></li>
-                                </ul>
-                            </div>
-                        </div>-->
                     </section>
                     <section id="showcaseSection">
                         <div class="row">
@@ -396,43 +372,43 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                         <li><input type="checkbox" id="2CheckoutShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="2Checkout (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="2Checkout (Showcase)"><label
                                                 for="2CheckoutShow">2Checkout</label></li>
                                         <li><input type="checkbox" id="authorizeShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Authorize.Ne (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="Authorize.Ne (Showcase)"><label
                                                 for="authorizeShow">Authorize.Net</label></li>
                                         <li><input type="checkbox" id="amazonShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Amazon Payment (Showcase)"><label for="amazonShow">Amazon
+                                                class="checkBoxValue payShowcheck" value="Amazon Payment (Showcase)"><label for="amazonShow">Amazon
                                                 Payment</label></li>
                                         <li><input type="checkbox" id="bankWireShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Bank Wire (Showcase)"><label for="bankWireShow">Bank
+                                                class="checkBoxValue payShowcheck" value="Bank Wire (Showcase)"><label for="bankWireShow">Bank
                                                 Wire</label></li>
                                         <li><input type="checkbox" id="checkShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Check (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="Check (Showcase)"><label
                                                 for="checkShow">Check</label></li>
                                         <li><input type="checkbox" id="creditCardPPShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Credit Card (Through Paypal) (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="Credit Card (Through Paypal) (Showcase)"><label
                                                 for="creditCardPPShow">Credit Card (Through Paypal)</label></li>
                                         <li><input type="checkbox" id="creditCardBkShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Credit Card (Through Bank Api) (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="Credit Card (Through Bank Api) (Showcase)"><label
                                                 for="creditCardBkShow">Credit Card (Through Bank Api)</label></li>
                                         <li><input type="checkbox" id="paypalShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Paypal (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="Paypal (Showcase)"><label
                                                 for="paypalShow">Paypal</label></li>
                                         <li><input type="checkbox" id="paypalProShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="PayPal Payments Pro (Showcase)"><label for="paypalProShow">PayPal
+                                                class="checkBoxValue payShowcheck" value="PayPal Payments Pro (Showcase)"><label for="paypalProShow">PayPal
                                                 Payments Pro</label></li>
                                         <li><input type="checkbox" id="sagePayShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="SagePay (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="SagePay (Showcase)"><label
                                                 for="sagePayShow">SagePay</label></li>
                                         <li><input type="checkbox" id="skrillShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Skrill (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="Skrill (Showcase)"><label
                                                 for="skrillShow">Skrill</label></li>
                                         <li><input type="checkbox" id="squareShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Square (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="Square (Showcase)"><label
                                                 for="squareShow">Square</label></li>
                                         <li><input type="checkbox" id="stripeShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue" value="Stripe (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" value="Stripe (Showcase)"><label
                                                 for="stripeShow">Stripe</label></li>
                                     </ul>
                                 </div>
@@ -465,8 +441,8 @@ ob_start();
                                     <option value="+ 500 products">+ 500</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
-                                <div class="btn-group ">
+                            <div class="form-group col-md-6" id="paymentMethStore">
+                                <div class="btn-group">
                                     <p class="checkboxLabel">Payment methods (Webstore)*</p><br>
                                     <!-- add required only if whole section displayed -->
                                     <button data-toggle="dropdown" class="btn dropdown-toggle menuPlaceholder"
@@ -474,43 +450,43 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal()">
                                     <li><input type="checkbox" id="2CheckoutStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="2Checkout (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="2Checkout (Store)"><label
                                                 for="2CheckoutStore">2Checkout</label></li>
                                         <li><input type="checkbox" id="authorizeStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Authorize.Ne (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="Authorize.Ne (Store)"><label
                                                 for="authorizeStore">Authorize.Net</label></li>
                                         <li><input type="checkbox" id="amazonStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Amazon Payment (Store)"><label for="amazonStore">Amazon
+                                                class="checkBoxValue payStorecheck" value="Amazon Payment (Store)"><label for="amazonStore">Amazon
                                                 Payment</label></li>
                                         <li><input type="checkbox" id="bankWireStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Bank Wire (Store)"><label for="bankWireStore">Bank
+                                                class="checkBoxValue payStorecheck" value="Bank Wire (Store)"><label for="bankWireStore">Bank
                                                 Wire</label></li>
                                         <li><input type="checkbox" id="checkStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Check (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="Check (Store)"><label
                                                 for="checkStore">Check</label></li>
                                         <li><input type="checkbox" id="creditCardPPStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Credit Card (Through Paypal) (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="Credit Card (Through Paypal) (Store)"><label
                                                 for="creditCardPPStore">Credit Card (Through Paypal)</label></li>
                                         <li><input type="checkbox" id="creditCardBkStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Credit Card (Through Bank Api) (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="Credit Card (Through Bank Api) (Store)"><label
                                                 for="creditCardBkStore">Credit Card (Through Bank Api)</label></li>
                                         <li><input type="checkbox" id="paypalStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Paypal (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="Paypal (Store)"><label
                                                 for="paypalStore">Paypal</label></li>
                                         <li><input type="checkbox" id="paypalProStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="PayPal Payments Pro (Store)"><label for="paypalProStore">PayPal
+                                                class="checkBoxValue payStorecheck" value="PayPal Payments Pro (Store)"><label for="paypalProStore">PayPal
                                                 Payments Pro</label></li>
                                         <li><input type="checkbox" id="sagePayStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="SagePay (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="SagePay (Store)"><label
                                                 for="sagePayStore">SagePay</label></li>
                                         <li><input type="checkbox" id="skrillStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Skrill (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="Skrill (Store)"><label
                                                 for="skrillStore">Skrill</label></li>
                                         <li><input type="checkbox" id="squareStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Square (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="Square (Store)"><label
                                                 for="squareStore">Square</label></li>
                                         <li><input type="checkbox" id="stripeStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue" value="Stripe (Store)"><label
+                                                class="checkBoxValue payStorecheck" value="Stripe (Store)"><label
                                                 for="stripeStore">Stripe</label></li>
                                     </ul>
                                 </div>
@@ -577,19 +553,19 @@ ob_start();
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="postalAddress">Address*</label>
-                                <input type="text" class="form-control" id="postalAddress" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
+                                <input type="text" class="form-control" id="postalAddress" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
                                 <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="postCode">Post Code*</label>
-                                <input type="text" class="form-control" id="postCode" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
+                                <input type="text" class="form-control" id="postCode" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
                                 <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="city">City*</label>
-                                <input type="text" class="form-control" id="city" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9\!,:;/\(\)'&+\#\$%\._ -]+$">
+                                <input type="text" class="form-control" id="city" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
                                 <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                             <div class="form-group col-md-6">
