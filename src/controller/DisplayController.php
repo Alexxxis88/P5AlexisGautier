@@ -61,9 +61,12 @@ class DisplayController
     }
 
 
-
+    //FIXME : useless si ajax ? 
     public function displayQuote()
-    {
+    {   
+        $quoteManager = new QuoteManager();
+        $allCustom = $quoteManager->displayCustomServices();
+
         require('templates/front/quote.php');
     }
 

@@ -56,41 +56,47 @@ class QuoteController
         }
     }
 
-    // public function imageQuote()
-    // {    
-        //FIXME : SOLUTION : comme pour sortir totalprice pour la verif de custom quote. Je passe mon code dans une méthode dans le controller imageQuote(). A la fin de mes itérations je fais un return $imageName et dans mon routeur je fais $imageQuote = $quoteController->imageQuote() et ça devrait fonctionner ? la factorisation dans imageQuote() dans le Controller fonctionne pour enregistrer l'image mais ensuite je n'arrive pas a récup le bon nom d'image modifié pour l'utiliser en parametre dans :
-    //     //checking if an attached file has been sent FIXME : mettre dans une méthode dans le controller
-    //     if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
+    public function imageQuote()
+    {
+        //checking if an attached file has been sent FIXME :
+        if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
 
-    //     //checking its size
-    //         if ($_FILES['attachedFile']['size'] <= 7000000) {
-    //             //checking its format
-    //             $fileIinfo = pathinfo($_FILES['attachedFile']['name']);
-    //             $extension_upload = $fileIinfo['extension'];
-    //             $extensions_allowed = array('jpg', 'jpeg', 'png');
-    //             if (in_array($extension_upload, $extensions_allowed)) {
-    //                 // File is stored in uploads folder on server
-    //                 $filenameProject = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['project'])));
-    //                 $filenameFirstName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['firstName'])));
-    //                 $filenameLastName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['lastName'])));
-    //                 $fullImageName = $filenameProject . '_' . $filenameFirstName . '_' . $filenameLastName . '.' . $extension_upload;
+        //checking its size
+            if ($_FILES['attachedFile']['size'] <= 7000000) {
 
-    //                 move_uploaded_file($_FILES['attachedFile']['tmp_name'], 'uploads/' . $fullImageName );
+                //checking its format
+                $fileIinfo = pathinfo($_FILES['attachedFile']['name']);
+                $extension_upload = $fileIinfo['extension'];
+                $extensions_allowed = array('jpg', 'jpeg', 'png');
+                if (in_array($extension_upload, $extensions_allowed)) {
 
-    //             } else {
-    //                 throw new \Exception('Incorrect format. Please use jpg, jpeg or png');
-    //             }
-    //         } else {
-    //             throw new \Exception('The file you uploaded is too big. Please keep it under 7Mo');
-    //         }
-    //     }
-    // }
+                    // File is stored in uploads folder on server
+                    $filenameProject = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['project'])));
+                    $filenameFirstName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['firstName'])));
+                    $filenameLastName = strtolower(str_replace('/\s+/', '', preg_replace('/[^a-zA-Z]/', '', $_POST['lastName'])));
+                    $fullImageName = $filenameProject . '_' . $filenameFirstName . '_' . $filenameLastName . '.' . $extension_upload;
+
+                    move_uploaded_file($_FILES['attachedFile']['tmp_name'], 'uploads/' . $fullImageName );
+
+                    return $fullImageName;
+
+                } else {
+                    throw new \Exception('Incorrect format. Please use jpg, jpeg or png');
+                }
+            } else {
+                throw new \Exception('The file you uploaded is too big. Please keep it under 7Mo');
+            }
+        }  else{
+                $emptyImageName = '';
+                return $emptyImageName;
+        }
+    }
 
     public function checkPackQuoteFields($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
-        //testing if packname is correct 
-        if (($_POST['packName'] == "Website" && $_POST['price'] == 1000) OR ($_POST['packName'] == "Webstore" && $_POST['price'] == 2000) OR ($_POST['packName'] == "Website + Webstore" && $_POST['price'] == 2500) ) {
+        //testing if packname is correct
+        if (($_POST['packName'] == "Showcase Website" && $_POST['price'] == 1000) OR ($_POST['packName'] == "Webstore" && $_POST['price'] == 2000) OR ($_POST['packName'] == "Showcase Website + Webstore" && $_POST['price'] == 2500) ) {
 
             //testing if project name at least 2 caracters
             if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]+$#i", $_POST['project'])) {

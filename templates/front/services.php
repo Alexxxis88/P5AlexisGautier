@@ -295,18 +295,18 @@ ob_start();
                     // console.log(allPacksTest);
                     // console.log(allPacksTest.packNameServices);
 
-                        let url = 'src/controller/DisplayController/displayServices';
-            // ajaxGet('./packTest.JSON', function (data){
-                ajaxGet(url, function (data){
+            //             let url = 'src/controller/DisplayController/displayServices';
+            // // ajaxGet('./packTest.JSON', function (data){
+            //     ajaxGet(url, function (data){
 
-                        console.log(data);
+            //             console.log(data);
 
-                        // let test = '[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]s';
-                        // let testParse = JSON.parse(test);
-                        // console.log(testParse);
+            //             // let test = '[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]s';
+            //             // let testParse = JSON.parse(test);
+            //             // console.log(testParse);
 
-                        let allPacks = JSON.parse(data);
-                        console.log(allPacks);
+            //             let allPacks = JSON.parse(data);
+            //             console.log(allPacks);
 
                         // // console.log(allPacks[0].packNameServices) ; 
                         // document.getElementById("pack1Name").innerHTML = allPacks[0].packNameServices;
@@ -327,7 +327,7 @@ ob_start();
                         // $('.tesssst').text(pack.packNameServices)
 
                         // });
-                    });
+                    // });
             </script>
 
 

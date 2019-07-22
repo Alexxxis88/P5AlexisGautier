@@ -16,7 +16,7 @@ class QuoteManager extends GlobalManager
 
 
 
-
+    //FIXME : useless si ajax ? 
     public function displayPacks()
     {
         $req = $this->_db->query('SELECT * FROM packquoteservices');
@@ -31,20 +31,20 @@ class QuoteManager extends GlobalManager
         return $packs;
     }
 
+    //FIXME : useless si ajax ? 
+    public function displayCustomServices()
+    {
+        $req = $this->_db->query('SELECT * FROM customquoteservices');
+        $req->execute();
 
-    // public function displayCustomServices()
-    // {
-    //     $req = $this->_db->query('SELECT * FROM customquoteservices');
-    //     $req->execute();
+        $customServices = array();
 
-    //     $customServices = array();
+        while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
+            $customServices[] = $row;
 
-    //     while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
-    //         $customServices[] = $row;
-
-    //     }
-    //     return $customServices;
-    // }
+        }
+        return $customServices;
+    }
 
 
 
