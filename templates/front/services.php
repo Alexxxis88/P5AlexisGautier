@@ -285,14 +285,10 @@ ob_start();
                 $packPrice3 = $allPacks[2]['packPriceServices'];
              ?>
 
-
-
-
-
             <script> 
 
 
-
+    //FIXME a dégager si je zappe AJAX
                     //test en local ( = sans passer par un fichier extern)
                     // let data1 = '{"allPacks":[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]';
                     // let allPacksTest = JSON.parse(data1);
@@ -527,11 +523,11 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="packName">Pack</label>
-                            <input type="text" class="form-control" id="packName" name="packName" value="Website" readonly >
+                            <input type="text" class="form-control" id="packName" name="packName" value="<?= $packName1 ?>" readonly >
                         </div>
                         <div class="form-group col-md-6">
                             <label for="price">Price <small>(in €)</small></label>
-                            <input type="text" class="form-control" id="price" name="price" value="1000" readonly >
+                            <input type="text" class="form-control" id="price" name="price" value="<?= $packPrice1 ?>" readonly >
                         </div>
                     </div>
                     <div class="row">

@@ -176,12 +176,37 @@ class QuoteManager extends GlobalManager
     //GENERAL
     //FIXME : mettre chaque methode dans son block
 
+
+
+
+
+
     public function getPackServices()
     {
         $req = $this->_db->query('SELECT * FROM packquoteservices');
-        $allPackServices= $req->fetch();
-        return $allPackServices;
+        while ($datasPackServices = $req->fetch(\PDO::FETCH_ASSOC)) {
+            $packService[] = new PackService($datasPackServices);
+        }
+        if (!empty($packService)) { //needed otherwise gives an error on the servicesAdmin.php when no services
+            return $packService;
+        }
     }
+
+
+    public function getCustomServices()
+    {
+        $req = $this->_db->query('SELECT * FROM customquoteservices');
+        while ($datasCustomServices = $req->fetch(\PDO::FETCH_ASSOC)) {
+            $customService[] = new CustomService($datasCustomServices);
+        }
+        if (!empty($customService)) { //needed otherwise gives an error on the servicesAdmin.php when no services
+            return $customService;
+        }
+    }
+
+
+
+
 
     //FIXME : mettre chaque methode dans son block
     public function newPackPrice($price, $idPack)

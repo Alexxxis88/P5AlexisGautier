@@ -89,7 +89,7 @@ class QuoteController
     public function checkPackQuoteFields($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
-        //testing if packname is correct and matching the price
+        //testing if packname is correct 
         if (($_POST['packName'] == "Website" && $_POST['price'] == 1000) OR ($_POST['packName'] == "Webstore" && $_POST['price'] == 2000) OR ($_POST['packName'] == "Website + Webstore" && $_POST['price'] == 2500) ) {
 
             //testing if project name at least 2 caracters
@@ -617,8 +617,8 @@ class QuoteController
         $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
         $packServicesList = $quoteManager->getPackServices();
+        $customServicesList = $quoteManager->getCustomServices();
 
-        $allPacksServices = $quoteManager->displayPacks(); //FIXME : inutile si AJAX
 
         require('templates/admin/servicesAdmin.php');
     }

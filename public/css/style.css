@@ -1404,19 +1404,6 @@ Extra height css
 }
 /*-----------------------------------------------------------------------------------*/
 
-
-.packServices{
-    margin-bottom: 200px;
-}
-.priceServ{
-    width:50px;
-    margin : 0 10px;
-    text-align: center;
-}
-
-.btnService{
-    float : right;
-}
 /*=========================================================
 MANAGE QUOTES
 ===========================================================*/
@@ -1472,6 +1459,29 @@ MANAGE QUOTES
     margin : 20px;
 }
 
+
+
+/*=========================================================
+SERVICES LIST
+===========================================================*/
+.servicesForm small{
+    font-weight: 300;
+    font-style: italic;
+    margin-right: 10px;
+}
+
+.packServices{
+    margin-bottom: 100px;
+}
+.priceServ{
+    width:50px;
+    margin : 0 10px;
+    text-align: center;
+}
+
+.btnService{
+    float : right;
+}
 
 /*=========================================================
 SUCCESS MESSAGES
@@ -3145,7 +3155,24 @@ textarea#messageContent {
     .navbar-inverse {
         background-color: rgba(0, 0, 0, 0.9);
     }
-    
+
+    .servicesForm{
+        font-size: 70%;
+    }
+
+    .servicesForm small{
+        margin-right: 0px;
+    }
+
+    .packServices{
+        margin-bottom: 60px;
+    }
+    .priceServ{
+        width:35px;
+        margin : 0 2px;
+        text-align: center;
+    }
+
 }
 
 
