@@ -1380,6 +1380,24 @@ Pricing Section style
     color:#ff6863;
 }
 
+
+#alertBlock p{
+    text-align: center;
+    margin:10px;
+    color: rgb(212, 51, 51);
+    font-weight: 400;
+    background: #eee;
+}
+
+#langAlert{
+    display: block;
+}
+
+#extensionAlert,
+#payShowAlert,#payStoreAlert{
+    display: none;
+}
+
 /*
 Extra height css
 */

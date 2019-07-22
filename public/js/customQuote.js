@@ -364,6 +364,11 @@ function deselectAll(){
     document.getElementById("extensionBlock").style.display = "none";
     document.getElementById("deadlineBlock").style.display = "none";
     document.getElementById("paymentMethShowcase").style.display = "none";
+    document.getElementById("langAlert").style.display = "block";
+    document.getElementById("extensionAlert").style.display = "none";
+    document.getElementById("payShowAlert").style.display = "none";
+
+    $('#customSubmitBtn').prop( "disabled", true );
 
     //deselect checkboxes
     $("#french, #english, #bulgarian, #croatian, #czech, #danish, #dutch, #estonian, #finnish, #german, #greek, #hungarian, #italian, #latvian, #lithuanian, #norwegian, #portuguese, #russian, #serbian, #slovak, #slovene, #spanish, #swedish, #swissGerman, #dotCom, #dotFr, #dotUk, #dotDe, #blogOpt, #chatOpt, #contactFormOpt, #newsletterOpt, #appointOpt, #searchOpt, #quoteOpt, #invoiceOpt, #socialOpt, #statsOpt, #calendarOpt, #newsOpt, #adminPannelOpt, #ratingsOpt, #surveyOpt, #2CheckoutShow, #authorizeShow, #amazonShow, #bankWireShow, #checkShow, #creditCardPPShow, #creditCardBkShow, #paypalShow, #paypalProShow, #sagePayShow, #skrillShow, #squareShow, #stripeShow, #2CheckoutStore, #authorizeStore, #amazonStore, #bankWireStore, #checkStore, #creditCardPPStore, #creditCardBkStore, #paypalStore, #paypalProStore, #sagePayStore, #skrillStore, #squareStore, #stripeStore ").prop( "checked", false );
@@ -403,14 +408,18 @@ function deselectAll(){
 }
 
 
-
+//FIXME : factoriser les changements d'affichage avec jquerry pour regrouper les display none / block
 //display / hide Payment options for Showcase website
 function myFunction2() {
     let paymentShowcaseYN = document.getElementById("paymentShowcaseYN").value;
     if (paymentShowcaseYN == "Yes") {
         document.getElementById("paymentMethShowcase").style.display = "block";
+        document.getElementById("payShowAlert").style.display = "block";
+        $('#customSubmitBtn').prop( "disabled", true );
     } else if (paymentShowcaseYN == "No") {
         document.getElementById("paymentMethShowcase").style.display = "none";
+        document.getElementById("payShowAlert").style.display = "none";
+        $('#customSubmitBtn').prop( "disabled", false );
     }
 }
 
@@ -433,8 +442,12 @@ function myFunction5() {
     let domainYN = document.getElementById("domainYN").value;
     if (domainYN == "Yes") {
         document.getElementById("extensionBlock").style.display = "block";
+        document.getElementById("extensionAlert").style.display = "block";
+        $('#customSubmitBtn').prop( "disabled", true );
     } else if (domainYN == "No") {
         document.getElementById("extensionBlock").style.display = "none";
+        document.getElementById("extensionAlert").style.display = "none";
+        $('#customSubmitBtn').prop( "disabled", false );
     }
 }
 
@@ -445,12 +458,20 @@ function myFunction4() {
     if (siteTypeDisplay == "Showcase Website" || siteTypeDisplay == "Redesign - Showcase Website") {
         document.getElementById("showcaseSection").style.display = "block";
         document.getElementById("webstoreSection").style.display = "none";
+        document.getElementById("payStoreAlert").style.display = "none";
+
     } else if (siteTypeDisplay == "Webstore" || siteTypeDisplay == "Redesign - Webstore" ) {
         document.getElementById("showcaseSection").style.display = "none";
         document.getElementById("webstoreSection").style.display = "block";
+        document.getElementById("payStoreAlert").style.display = "block";
+        $('#customSubmitBtn').prop( "disabled", true );
+
     } else if (siteTypeDisplay == "Showcase Website + Webstore" || siteTypeDisplay == "Redesign - Showcase Website + Webstore") {
         document.getElementById("showcaseSection").style.display = "block";
         document.getElementById("webstoreSection").style.display = "block";
+        document.getElementById("payStoreAlert").style.display = "block";
+        $('#customSubmitBtn').prop( "disabled", true );
+
     } else {
         document.getElementById("showcaseSection").style.display = "none";
         document.getElementById("webstoreSection").style.display = "none";
@@ -481,6 +502,22 @@ let countLanguageChecked = function() {
 
 $( ".languagecheck" ).on( "click", countLanguageChecked );
 
+//Alert if no language selected when submitting the form
+
+function alertLanguage(){
+    if(countLanguage < 1){
+        $('#customSubmitBtn').prop( "disabled", true );
+        $('#langAlert').css( "display", "block" );
+    }
+    else {
+        $('#customSubmitBtn').prop( "disabled", false );
+        $('#langAlert').css( "display", "none" );
+    }
+}
+$( ".languagecheck" ).on( "click", alertLanguage );
+
+
+
 
 //Extension
 let countExtension = 0;
@@ -490,6 +527,22 @@ let countExtensionChecked = function() {
 
 $( ".extensioncheck" ).on( "click", countExtensionChecked );
 
+//Alert if no extension selected (if displayed) when submitting the form
+
+function alertExtention(){
+    if( ($("#extensionBlock").css("display") == "block") &&  countExtension < 1){
+        $('#customSubmitBtn').prop( "disabled", true );
+        $('#extensionAlert').css( "display", "block" );
+    }
+    else {
+        $('#customSubmitBtn').prop( "disabled", false );
+        $('#extensionAlert').css( "display", "none" );
+    }
+}
+$( ".extensioncheck" ).on( "click", alertExtention );
+
+
+
 //Payment methods (Showcase)
 let countPayShow = 0;
 let countPayShowChecked = function() {
@@ -497,6 +550,23 @@ let countPayShowChecked = function() {
 };
 
 $( ".payShowcheck" ).on( "click", countPayShowChecked );
+
+
+
+//Alert if no Payment methods (Showcase) selected (if displayed) when submitting the form
+
+function alertPayShow(){
+    if( ($("#paymentMethShowcase").css("display") == "block") &&  countPayShow < 1){
+        $('#customSubmitBtn').prop( "disabled", true );
+        $('#payShowAlert').css( "display", "block" );
+    }
+    else {
+        $('#customSubmitBtn').prop( "disabled", false );
+        $('#payShowAlert').css( "display", "none" );
+    }
+}
+$( ".payShowcheck" ).on( "click", alertPayShow );
+
 
 
 //Payment methods (Webstore)
@@ -508,42 +578,19 @@ let countPayStoreChecked = function() {
 $( ".payStorecheck" ).on( "click", countPayStoreChecked );
 
 
-
-//ALERTS
-
-//Alert if no language selected when submitting the form
-$( "#customQuoteForm" ).submit(function( event ) {
-    if(countLanguage < 1){
-        alert( "At least one language must be selected !" );
-        event.preventDefault();
-    }
-});
-
-
-//Alert if no extension selected (if displayed) when submitting the form
-$( "#customQuoteForm" ).submit(function( event ) {
-    if( ($("#extensionBlock").css("display") == "block") &&  countExtension < 1){
-        alert( "At least one extension must be selected !" );
-        event.preventDefault();
-    }
-});
-
-
-//Alert if no Payment methods (Showcase) selected (if displayed) when submitting the form
-$( "#customQuoteForm" ).submit(function( event ) {
-    if( ($("#paymentMethShowcase").css("display") == "block") &&  countPayShow < 1){
-        alert( "At least one payment method (Showcase) must be selected !" );
-        event.preventDefault();
-    }
-});
-
-
 //Alert if no Payment methods (Store) selected (if displayed) when submitting the form
-$( "#customQuoteForm" ).submit(function( event ) {
+function alertPayStore(){
     if( ($("#paymentMethStore").is(":visible") == true) &&  countPayStore < 1){
-        alert( "At least one payment method (Webstore) must be selected !" );
-        event.preventDefault();
+        $('#customSubmitBtn').prop( "disabled", true );
+        $('#payStoreAlert').css( "display", "block" );
     }
-});
+    else {
+        $('#customSubmitBtn').prop( "disabled", false );
+        $('#payStoreAlert').css( "display", "none" );
+    }
+}
+$( ".payStorecheck" ).on( "click", alertPayStore );
+
+
 
 

@@ -882,7 +882,13 @@ ob_start();
                         <div class="text-center">
                             <input type="checkbox" form="customQuoteForm" id="acceptTerms" required>&nbsp;
                             <label for="acceptTerms" class="col-form-label"><small>I accept <a href="index.php?action=termsAndCondition">Terms & Conditions</a> and <a href="index.php?action=privacyPolicy">Privacy Policy.</a></small></label><br>
-                            <button type="submit" form="customQuoteForm" class="btn btn-princing">I want this!</button>
+                            <button id="customSubmitBtn" type="submit" form="customQuoteForm" class="btn btn-princing" disabled>I want this!</button>
+                        </div>
+                        <div class="row" id="alertBlock">
+                            <p><small id="langAlert"> At least one language must be selected!</small></p>
+                            <p><small id="extensionAlert"> At least one extension must be selected!</small></p>
+                            <p><small id="payShowAlert"> At least one payment opt (Showcase) must be selected!</small></p>
+                            <p><small id="payStoreAlert"> At least one payment opt (Webstore) must be selected!</small></p>
                         </div>
                     </div>
                 </div>
@@ -897,14 +903,6 @@ ob_start();
     </div>
 </div>
 
-
-
-
-
-<script>
- 
-
-</script>
 
 <?php
 $content = ob_get_clean();
