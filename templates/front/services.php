@@ -907,11 +907,11 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="packName2">Pack</label>
-                            <input type="text" class="form-control" id="packName2" name="packName" value="Webstore" readonly >
+                            <input type="text" class="form-control" id="packName2" name="packName" value="<?= $packName2 ?>" readonly >
                         </div>
                         <div class="form-group col-md-6">
                             <label for="price2">Price <small>(in €)</small></label>
-                            <input type="text" class="form-control" id="price2" name="price" value="2000" readonly >
+                            <input type="text" class="form-control" id="price2" name="price" value="<?= $packPrice2 ?>" readonly >
                         </div>
                     </div>
                     <div class="row">
@@ -1291,11 +1291,11 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="packName3">Pack</label>
-                            <input type="text" class="form-control" id="packName3" name="packName" value="Website + Webstore" readonly >
+                            <input type="text" class="form-control" id="packName3" name="packName" value="<?= $packName3 ?>" readonly >
                         </div>
                         <div class="form-group col-md-6">
                             <label for="price3">Price <small>(in €)</small></label>
-                            <input type="text" class="form-control" id="price3" name="price" value="2500" readonly >
+                            <input type="text" class="form-control" id="price3" name="price" value="<?= $packPrice3 ?>" readonly >
                         </div>
                     </div>
                     <div class="row">
