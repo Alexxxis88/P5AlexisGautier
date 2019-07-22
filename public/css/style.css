@@ -1312,6 +1312,10 @@ Pricing Section style
 .pricing_head{
     background-color: #f7f7f7;
 }
+
+.pricing_head h3{
+    font-size : 20px;
+}
 .pricing_price_border{
     background-color: #ff6863;
     padding: 10px;
@@ -1401,6 +1405,18 @@ Extra height css
 /*-----------------------------------------------------------------------------------*/
 
 
+.packServices{
+    margin-bottom: 200px;
+}
+.priceServ{
+    width:50px;
+    margin : 0 10px;
+    text-align: center;
+}
+
+.btnService{
+    float : right;
+}
 /*=========================================================
 MANAGE QUOTES
 ===========================================================*/

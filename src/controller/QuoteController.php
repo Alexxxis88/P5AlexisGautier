@@ -618,7 +618,18 @@ class QuoteController
 
         $packServicesList = $quoteManager->getPackServices();
 
+        $allPacksServices = $quoteManager->displayPacks(); //FIXME : inutile si AJAX
+
         require('templates/admin/servicesAdmin.php');
+    }
+
+    //FIXME : mettre chaque methode dans son block
+    public function updatePackPrice($price, $idPack)
+    {
+        $quoteManager = new QuoteManager();
+        $quoteManager->newPackPrice($price, $idPack);
+        header('Location: index.php?action=servicesList');
+        exit;
     }
 
     public function updateCustomPrice($price, $idServ)

@@ -27,7 +27,22 @@ class DisplayController
 
 
 
+    // public function getJsonServices()
+    // {
+    //     $quoteManager = new QuoteManager();
+    //     $allPacks = $quoteManager->displayPacks();
+    //     $allPacks = json_encode($allPacks);
+    //     echo var_dump($allPacks);
+    // }
 
+
+    // public function getJsonCustom()
+    // {
+    //     $quoteManager = new QuoteManager();
+    //     $allcustomServices = $quoteManager->displayCustomServices();
+    //     $allcustomServices = json_encode($allcustomServices);
+    //     print_r($allcustomServices);
+    // }
 
 
 
@@ -36,13 +51,16 @@ class DisplayController
     {
         $quoteManager = new QuoteManager();
         $allPacks = $quoteManager->displayPacks();
-        echo var_dump(json_encode($allPacks));
-        echo var_dump(json_encode($allPacks));
+
+        //AJAX
+        // $allPacks = json_encode($allPacks);
+        // echo var_dump($allPacks);
+        // echo var_dump($allPacks);
+
         require('templates/front/services.php');
     }
 
 
-    
 
     public function displayQuote()
     {

@@ -48,6 +48,8 @@ try {
         elseif ($_GET['action'] == 'services') {
             $displayController = new DisplayController;
             $displayController->displayServices();
+            // $displayController->getJsonServices();
+
 
             //Confirmation message quote request sent
             if (isset($_GET['success']) and $_GET['success'] == 1) {
@@ -57,6 +59,8 @@ try {
         elseif ($_GET['action'] == 'quote') {
             $displayController = new DisplayController;
             $displayController->displayQuote();
+            // $displayController->getJsonCustom();
+
 
             //Confirmation message quote request sent
             if (isset($_GET['success']) and $_GET['success'] == 1) {
@@ -318,6 +322,12 @@ try {
             } else {
                 throw new Exception('Missing invoice id or choice');
             }
+        }
+
+        elseif ($_GET['action'] == 'updatePackPrice') {
+
+            $quoteController = new QuoteController;
+            $quoteController->updatePackPrice($_POST['price'], $_POST['idPack'] );
         }
 
         //CUSTOM QUOTES

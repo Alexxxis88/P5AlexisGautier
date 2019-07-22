@@ -10,8 +10,8 @@ ob_start();
         ]);
     });
 </script>
-<script src="./public/js/ajax.js"></script> <!--FIXME : ici pour un exemple en ajax, a dégager -->
-<script src="./public/js/packs.js"></script> <!--FIXME : ici pour un exemple en ajax, a dégager -->
+<script src="./public/js/ajax.js"></script>
+
 <section id="single-page-slider" class="no-margin">
     <div class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -275,6 +275,67 @@ ob_start();
                     <bR>Otherwise, ask for a custom quote!</p>
             </div>
             <!--Pricing Section-->
+
+            <?php  
+                $packName1 = $allPacks[0]['packNameServices'];
+                $packPrice1 = $allPacks[0]['packPriceServices'];
+                $packName2 = $allPacks[1]['packNameServices'];
+                $packPrice2 = $allPacks[1]['packPriceServices'];
+                $packName3 = $allPacks[2]['packNameServices'];
+                $packPrice3 = $allPacks[2]['packPriceServices'];
+             ?>
+
+
+
+
+
+            <script> 
+
+
+
+                    //test en local ( = sans passer par un fichier extern)
+                    // let data1 = '{"allPacks":[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]';
+                    // let allPacksTest = JSON.parse(data1);
+                    // console.log(allPacksTest);
+                    // console.log(allPacksTest.packNameServices);
+
+                        let url = 'src/controller/DisplayController/displayServices';
+            // ajaxGet('./packTest.JSON', function (data){
+                ajaxGet(url, function (data){
+
+                        console.log(data);
+
+                        // let test = '[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]s';
+                        // let testParse = JSON.parse(test);
+                        // console.log(testParse);
+
+                        let allPacks = JSON.parse(data);
+                        console.log(allPacks);
+
+                        // // console.log(allPacks[0].packNameServices) ; 
+                        // document.getElementById("pack1Name").innerHTML = allPacks[0].packNameServices;
+                        // document.getElementById("pack1Price").innerHTML = allPacks[0].packPriceServices + ' €';
+                        // document.getElementById("pack2Name").innerHTML = allPacks[1].packNameServices;
+                        // document.getElementById("pack2Price").innerHTML = allPacks[1].packPriceServices + ' €';
+                        // document.getElementById("pack3Name").innerHTML = allPacks[2].packNameServices;
+                        // document.getElementById("pack3Price").innerHTML = allPacks[2].packPriceServices + ' €';
+
+
+
+                        //ne fonctionne pas avec une boucle car il faudrait que chacun de mes pack soit un objet ? 
+                        // allPacks.forEach((pack) => {
+
+                        // //  console.log(pack.packNameServices) ;  
+                        // // document.getElementById("tesssst").innerHTML = pack.packNameServices;
+
+                        // $('.tesssst').text(pack.packNameServices)
+
+                        // });
+                    });
+            </script>
+
+
+
             <section id="pricing_body" class="pricing lightbg">
                 <div class="container">
                     <div class="row">
@@ -283,11 +344,11 @@ ob_start();
                                 <div class="pricing_item">
                                     <div class="pricing_top_border"></div>
                                     <div class="pricing_head p-top-30 p-bottom-100 text-center">
-                                        <h3 class="text-uppercase">Website</h3>
+                                        <h3 class="text-uppercase" id="pack1Name"> <?= $packName1 ?></h3>
                                     </div>
                                     <div class="pricing_price_border text-center">
                                         <div class="pricing_price">
-                                            <h3 class="text-white">1000 €</h3>
+                                            <h3 class="text-white" id="pack1Price"> <?= $packPrice1 ?> €</h3>
                                             <p class="text-white">all included</p>
                                         </div>
                                     </div>
@@ -324,11 +385,11 @@ ob_start();
                                 <div class="pricing_item">
                                     <div class="pricing_top_border"></div>
                                     <div class="pricing_head p-top-30 p-bottom-100 text-center">
-                                        <h3 class="text-uppercase">Webstore</h3>
+                                        <h3 class="text-uppercase" id="pack2Name"><?= $packName2 ?></h3>
                                     </div>
                                     <div class="pricing_price_border text-center">
                                         <div class="pricing_price">
-                                            <h3 class="text-white">2000 €</h3>
+                                            <h3 class="text-white" id="pack2Price"><?= $packPrice2 ?> €</h3>
                                             <p class="text-white">all included</p>
                                         </div>
                                     </div>
@@ -364,11 +425,11 @@ ob_start();
                                 <div class="pricing_item">
                                     <div class="pricing_top_border"></div>
                                     <div class="pricing_head p-top-30 p-bottom-100 text-center">
-                                        <h3 class="text-uppercase">Website + Webstore</h3>
+                                        <h3 class="text-uppercase" id="pack3Name"><?= $packName3 ?></h3>
                                     </div>
                                     <div class="pricing_price_border text-center">
                                         <div class="pricing_price">
-                                            <h3 class="text-white">2500 €</h3>
+                                            <h3 class="text-white" id="pack3Price"><?= $packPrice3 ?> €</h3>
                                             <p class="text-white">all included</p>
                                         </div>
                                     </div>

@@ -16,6 +16,7 @@ class QuoteManager extends GlobalManager
 
 
 
+
     public function displayPacks()
     {
         $req = $this->_db->query('SELECT * FROM packquoteservices');
@@ -24,14 +25,26 @@ class QuoteManager extends GlobalManager
         $packs = array();
 
         while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
-            $packs['AllPacks'][] = $row;
+            $packs[] = $row;
 
         }
         return $packs;
     }
 
 
+    // public function displayCustomServices()
+    // {
+    //     $req = $this->_db->query('SELECT * FROM customquoteservices');
+    //     $req->execute();
 
+    //     $customServices = array();
+
+    //     while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
+    //         $customServices[] = $row;
+
+    //     }
+    //     return $customServices;
+    // }
 
 
 
@@ -161,12 +174,24 @@ class QuoteManager extends GlobalManager
     }
 
     //GENERAL
+    //FIXME : mettre chaque methode dans son block
+
     public function getPackServices()
     {
         $req = $this->_db->query('SELECT * FROM packquoteservices');
         $allPackServices= $req->fetch();
         return $allPackServices;
     }
+
+    //FIXME : mettre chaque methode dans son block
+    public function newPackPrice($price, $idPack)
+    {
+        $req = $this->_db->prepare('UPDATE packquoteservices SET packPriceServices = ? WHERE idPack = ?');
+        $req->execute(array($price, $idPack));
+    }
+
+
+    //FIXME : mettre chaque methode dans son block
 
     public function newCustomPrice($price, $idServ)
     {

@@ -129,6 +129,7 @@
         </footer>
 
         <!-- My scripts -->
+        
         <script src="./public/js/browsers.js" ></script>
         <script src="./public/js/plugins.js"></script>
         <script src="./public/js/bootstrap.min.js"></script>
