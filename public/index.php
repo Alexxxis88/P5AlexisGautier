@@ -1,13 +1,5 @@
 <?php
 session_start();
-// require_once('src/controller/SessionController.php'); //FIXME : a remettre si l'autoload déconne
-// require_once('src/controller/DisplayController.php'); //FIXME : a remettre si l'autoload déconne
-// require_once('src/controller/MessageController.php'); //FIXME : a remettre si l'autoload déconne
-// require_once('src/controller/QuoteController.php'); //FIXME : a remettre si l'autoload déconne
-
-// require_once('src/model/manager/Manager.php'); //FIXME : a remettre si l'autoload déconne
-// require_once('src/model/manager/QuoteManager.php'); //FIXME : a remettre si l'autoload déconne
-// require_once('src/model/manager/MessageManager.php'); //FIXME : a remettre si l'autoload déconne
 
 use \AlexisGautier\PersonalWebsite\Controller\SessionController;
 use \AlexisGautier\PersonalWebsite\Controller\DisplayController;

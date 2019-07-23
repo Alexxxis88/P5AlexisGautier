@@ -570,19 +570,16 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="postalAddress">Address*</label>
                             <input type="text" class="form-control" id="postalAddress" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="postCode">Post Code*</label>
                             <input type="text" class="form-control" id="postCode" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="city">City*</label>
                             <input type="text" class="form-control" id="city" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="country">Country*</label>
@@ -954,19 +951,16 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="postalAddress2">Address*</label>
                             <input type="text" class="form-control" id="postalAddress2" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="postCode2">Post Code*</label>
                             <input type="text" class="form-control" id="postCode2" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="city2">City*</label>
                             <input type="text" class="form-control" id="city2" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="country2">Country*</label>
@@ -1338,19 +1332,16 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="postalAddress3">Address*</label>
                             <input type="text" class="form-control" id="postalAddress3" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="postCode3">Post Code*</label>
                             <input type="text" class="form-control" id="postCode3" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="city3">City*</label>
                             <input type="text" class="form-control" id="city3" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                            <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="country3">Country*</label>

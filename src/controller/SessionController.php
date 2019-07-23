@@ -2,7 +2,6 @@
 
 namespace AlexisGautier\PersonalWebsite\Controller;
 
-// require_once('src/model/manager/SessionManager.php'); // FIXME : a remettre si l'autoload déconne
 use \AlexisGautier\PersonalWebsite\Model\Manager\SessionManager;
 
 class SessionController

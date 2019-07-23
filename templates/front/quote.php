@@ -554,19 +554,16 @@ ob_start();
                             <div class="form-group col-md-6">
                                 <label for="postalAddress">Address*</label>
                                 <input type="text" class="form-control" id="postalAddress" name="postalAddress" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                                <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="postCode">Post Code*</label>
                                 <input type="text" class="form-control" id="postCode" name="postCode" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                                <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="city">City*</label>
                                 <input type="text" class="form-control" id="city" name="city" required pattern="^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ0-9,:;/\(\)'&+%\._ -]+$">
-                                <!--FIXME apriori REGEX erronée, voir dans la console sur la page custom quote-->
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="country">Country*</label>
@@ -856,7 +853,7 @@ ob_start();
                                 <input type="text" class="form-control" id="price" name="price" readonly="readonly"                          required>
                             </div>
                         </div> -->
-                        <div class="row customQuotePriceField"> <!--FIXMECUSTOM : a virer -->
+                        <div class="row customQuotePriceField"> 
                             <div class="form-group col-md-6">
                                 <label for="arrayServices" class="col-form-label">arrayServices</label>
                                 <input type="text" class="form-control" id="arrayServices" name="arrayServices" readonly="readonly"                          required>

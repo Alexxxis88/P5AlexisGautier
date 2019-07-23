@@ -2,7 +2,6 @@
 
 namespace AlexisGautier\PersonalWebsite\Controller;
 
-// require_once('src/model/manager/QuoteManager.php'); FIXME : a remettre si l'autoload déconne
 use \AlexisGautier\PersonalWebsite\Model\Manager\QuoteManager;
 use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
 
@@ -58,7 +57,7 @@ class QuoteController
 
     public function imageQuote()
     {
-        //checking if an attached file has been sent FIXME :
+        //checking if an attached file has been sent
         if (isset($_FILES['attachedFile']) and $_FILES['attachedFile']['error'] == 0) {
 
         //checking its size
@@ -611,6 +610,7 @@ class QuoteController
     }
 
 
+    //GENERAL
     public function listServices()
     {
         //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
@@ -629,7 +629,6 @@ class QuoteController
         require('templates/admin/servicesAdmin.php');
     }
 
-    //FIXME : mettre chaque methode dans son block
     public function updatePackPrice($price, $idPack)
     {
         $quoteManager = new QuoteManager();

@@ -2,7 +2,6 @@
 
 namespace AlexisGautier\PersonalWebsite\Controller;
 
-// require_once('src/model/manager/MessageManager.php'); // FIXME : a remettre si l'autoload déconne
 use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
 use \AlexisGautier\PersonalWebsite\Model\Manager\QuoteManager;
 

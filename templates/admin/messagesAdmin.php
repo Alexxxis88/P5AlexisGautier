@@ -33,7 +33,6 @@ ob_start();
                         <p class="commentHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
                         <?php if ($flag == 1) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Answered'; endif; ?></p>
 
-                        <p><Strong>Message ID : </Strong><?= $messageId?></p> <!--FIXME : remove me-->
                         <p><Strong>Email : </Strong><?= $contactEmail?></p>
                         <p><Strong>Topic : </Strong><?= $topic?></p>
                         <!-- transform non html links in messageContent into clickable links-->
@@ -120,7 +119,6 @@ ob_start();
                         <?php if ($flag == 1) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Answered'; endif; ?>
                         </p>
 
-                        <p><Strong>Message ID : </Strong><?= $messageId?></p> <!--FIXME : remove me-->
                         <p><Strong>Email : </Strong><?= $contactEmail?></p>
                         <p><Strong>Topic : </Strong><?= $topic?></p>
                         <!-- transform non html links in messageContent into clickable links-->

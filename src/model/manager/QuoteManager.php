@@ -106,8 +106,29 @@ class QuoteManager extends GlobalManager
         return $isTherePackQuote;
     }
 
-    //CUSTOM QUOTES
+    //update service prices from BO
+    public function newPackPrice($price, $idPack)
+    {
+        $req = $this->_db->prepare('UPDATE packquoteservices SET packPriceServices = ? WHERE idPack = ?');
+        $req->execute(array($price, $idPack));
+    }
 
+    //display all pack services in BO
+    public function getPackServices()
+    {
+        $req = $this->_db->query('SELECT * FROM packquoteservices');
+        while ($datasPackServices = $req->fetch(\PDO::FETCH_ASSOC)) {
+            $packService[] = new PackService($datasPackServices);
+        }
+        if (!empty($packService)) { //needed otherwise gives an error on the servicesAdmin.php when no services
+            return $packService;
+        }
+    }
+
+
+
+
+    //CUSTOM QUOTES
 
     public function checkServicesCustomQuote($serviceName)
     {
@@ -173,26 +194,9 @@ class QuoteManager extends GlobalManager
         return $isThereCustomQuote;
     }
 
-    //GENERAL
-    //FIXME : mettre chaque methode dans son block
 
-
-
-
-
-
-    public function getPackServices()
-    {
-        $req = $this->_db->query('SELECT * FROM packquoteservices');
-        while ($datasPackServices = $req->fetch(\PDO::FETCH_ASSOC)) {
-            $packService[] = new PackService($datasPackServices);
-        }
-        if (!empty($packService)) { //needed otherwise gives an error on the servicesAdmin.php when no services
-            return $packService;
-        }
-    }
-
-
+    
+    //display all custom services in BO
     public function getCustomServices()
     {
         $req = $this->_db->query('SELECT * FROM customquoteservices');
@@ -204,20 +208,7 @@ class QuoteManager extends GlobalManager
         }
     }
 
-
-
-
-
-    //FIXME : mettre chaque methode dans son block
-    public function newPackPrice($price, $idPack)
-    {
-        $req = $this->_db->prepare('UPDATE packquoteservices SET packPriceServices = ? WHERE idPack = ?');
-        $req->execute(array($price, $idPack));
-    }
-
-
-    //FIXME : mettre chaque methode dans son block
-
+    //update service prices from BO
     public function newCustomPrice($price, $idServ)
     {
         $req = $this->_db->prepare('UPDATE customquoteservices SET price = ? WHERE idServ = ?');
