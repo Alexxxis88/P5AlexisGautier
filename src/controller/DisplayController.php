@@ -27,13 +27,13 @@ class DisplayController
 
 
 
-    // public function getJsonServices()
-    // {
-    //     $quoteManager = new QuoteManager();
-    //     $allPacks = $quoteManager->displayPacks();
-    //     $allPacks = json_encode($allPacks);
-    //     echo var_dump($allPacks);
-    // }
+    public function getJsonServices()
+    {
+        $quoteManager = new QuoteManager();
+        $allPacks = $quoteManager->displayPacks();
+        $allPacks = json_encode($allPacks);
+        echo $allPacks;
+    }
 
 
     // public function getJsonCustom()

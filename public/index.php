@@ -40,7 +40,7 @@ try {
         elseif ($_GET['action'] == 'services') {
             $displayController = new DisplayController;
             $displayController->displayServices();
-            // $displayController->getJsonServices();
+            // $displayController->getJsonServices(); //FIXME : a virer si pas d'ajax pour services.php
 
 
             //Confirmation message quote request sent

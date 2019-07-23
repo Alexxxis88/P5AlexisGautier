@@ -288,10 +288,10 @@ ob_start();
             <script> 
 
 
-    // //FIXME a dégager si je zappe AJAX
-    //                
+    // // //FIXME a dégager si je zappe AJAX
+    // //                
 
-    //                     let url = './src/controller/DisplayController.php/displayServices';
+    //                     let url = './src/controller/DisplayController/getJsonServices';
     //                     // let url = './TESTAJAX/my-json.php';
 
     //             ajaxGet(url, function (data){
@@ -863,7 +863,7 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                     <div class="row">
                         <div class="form-group col-md-12">
                             <small>No extra requests mentioned in the text area above will be accepted.
-                            <br>Need something not included in this pack ? Ask for a <a href="quote-Web.html"><strong>custom quote</strong></a> !</small>
+                            <br>Need something not included in this pack ? Ask for a <a href="index.php?action=quote"><strong>custom quote</strong></a> !</small>
                         </div>
                     </div>
                     <input type="submit" class="btn btn-primary formSendBtn" value="Send my request" />
@@ -1244,7 +1244,7 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                     <div class="row">
                         <div class="form-group col-md-12">
                             <small>No extra requests mentioned in the text area above will be accepted.
-                            <br>Need something not included in this pack ? Ask for a <a href="quote-Web.html"><strong>custom quote</strong></a> !</small>
+                            <br>Need something not included in this pack ? Ask for a <a href="index.php?action=quote"><strong>custom quote</strong></a> !</small>
                         </div>
                     </div>
                     <input type="submit" class="btn btn-primary formSendBtn" value="Send my request" />
@@ -1625,7 +1625,7 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                     <div class="row">
                         <div class="form-group col-md-12">
                             <small>No extra requests mentioned in the text area above will be accepted.
-                            <br>Need something not included in this pack ? Ask for a <a href="quote-Web.html"><strong>custom quote</strong></a> !</small>
+                            <br>Need something not included in this pack ? Ask for a <a href="index.php?action=quote"><strong>custom quote</strong></a> !</small>
                         </div>
                     </div>
                     <input type="submit" class="btn btn-primary formSendBtn" value="Send my request" />
