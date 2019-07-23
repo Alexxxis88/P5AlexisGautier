@@ -268,6 +268,13 @@ class QuoteController
             $quoteManager = new QuoteManager();
             $returnValue = $quoteManager->checkServicesCustomQuote($arrayServices[$i]);
 
+
+            //testing if packname is correct
+            if($returnValue[0] == null){
+                throw new \Exception('There is a problem with this Custom Quote. Please try again'); //I stay vague not to inform a malicious user who tryed to edit the price how to make it work
+            }
+
+
             // echo '<h3>Les autres champs ayant pour serviceName ' . $arrayServices[$i] . ' récupérés depuis la BDD via checkServicesCustomQuote()</h3>  '; //FIXMECUSTOM : a virer
             // // echo(implode(", ",array_values($returnValue))); //FIXMECUSTOM : a virer
             // echo 'idServ :' . $returnValue['idServ'] . ' -- ' . ' serviceGroup : ' . $returnValue['serviceGroup'] . ' -- ' . ' serviceName : ' . $returnValue['serviceName'] . ' -- ' .' price :' . $returnValue['price']; //FIXMECUSTOM : a virer
