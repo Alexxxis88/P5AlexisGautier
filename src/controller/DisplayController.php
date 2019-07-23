@@ -33,6 +33,9 @@ class DisplayController
         $allPacks = $quoteManager->displayPacks();
         $allPacks = json_encode($allPacks);
         echo $allPacks;
+
+        // header('Location: index.php?action=messagesAdmin&page=1&sortBy=5');
+
     }
 
 
@@ -55,10 +58,12 @@ class DisplayController
         //AJAX
         // $allPacks = json_encode($allPacks);
         // echo $allPacks;
+        // echo var_dump($allPacks);
+
         // $json = '[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"99"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]';
 
         // echo $json;
-        // echo var_dump($allPacks);
+
 
         require('templates/front/services.php');
     }

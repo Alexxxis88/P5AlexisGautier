@@ -2,12 +2,19 @@
 
 namespace AlexisGautier\PersonalWebsite\Model\Manager;
 
-// require_once('src/model/manager/Manager.php'); // FIXME : a remettre si l'autoload déconne
-
 class QuoteManager extends GlobalManager
 {
 
     //PACK QUOTES
+
+    public function checkServicesPackQuote($packServiceName)
+    {
+        $req = $this->_db->prepare('SELECT * FROM packquoteservices WHERE packNameServices = ? ');
+        $req->execute(array($packServiceName));
+        $packservices= $req->fetch();
+        return $packservices;
+    }
+
     public function insertNewPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName)
     {
         $newPackQuoteDb = $this->_db->prepare('INSERT INTO packquotes( packName, price, project, structure, company, firstName, lastName, contactEmail, phone, postalAddress, postCode, city, country, deadline, messageContent, imageName, requestDate ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())');
@@ -16,7 +23,7 @@ class QuoteManager extends GlobalManager
 
 
 
-    //FIXME : useless si ajax ? 
+    //FIXME : useless si ajax ?
     public function displayPacks()
     {
         $req = $this->_db->query('SELECT * FROM packquoteservices');
@@ -127,14 +134,13 @@ class QuoteManager extends GlobalManager
 
 
 
-
     //CUSTOM QUOTES
 
     public function checkServicesCustomQuote($serviceName)
     {
         $req = $this->_db->prepare('SELECT * FROM customquoteservices WHERE serviceName = ? ');
         $req->execute(array($serviceName));
-        $services= $req->fetch(); 
+        $services= $req->fetch();
         return $services;
     }
 

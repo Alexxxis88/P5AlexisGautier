@@ -9,6 +9,21 @@ use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
 class QuoteController
 {
     //PACK QUOTES
+
+    //Check and gives back an array with correct prices and packname retrieved from DB
+    public function servicesPackQuote($packServiceName)
+    {
+        $quoteManager = new QuoteManager();
+        $returnPackValue = $quoteManager->checkServicesPackQuote($packServiceName);
+
+        //testing if packname is correct
+        if($returnPackValue == false){
+            throw new \Exception('There is a problem. Please try again'); //I stay vague not to inform a malicious user who tryed to edit the price how to make it work
+        }
+
+        return  $returnPackValue;
+    }
+
     public function savePackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName)
     {
         $quoteManager = new QuoteManager();
@@ -94,8 +109,6 @@ class QuoteController
     public function checkPackQuoteFields($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
-        //testing if packname is correct
-        if (($_POST['packName'] == "Showcase Website" && $_POST['price'] == 1000) OR ($_POST['packName'] == "Webstore" && $_POST['price'] == 2000) OR ($_POST['packName'] == "Showcase Website + Webstore" && $_POST['price'] == 2500) ) {
 
             //testing if project name at least 2 caracters
             if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]+$#i", $_POST['project'])) {
@@ -164,9 +177,6 @@ class QuoteController
             } else {
                 throw new \Exception('Project name is incorrect');
             }
-        } else {
-            throw new \Exception('There is a problem'); //I stay vague not to inform a malicious user who tryed to edit the price how to make it work
-        }
     }
 
     //BACKEND
@@ -235,8 +245,11 @@ class QuoteController
     }
 
 
+
+
     //CUSTOM QUOTES
 
+    //Check and gives back an array with correct prices retrieved from DB
     public function servicesCustomQuote($arrayServices)
     {
 
