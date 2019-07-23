@@ -48,7 +48,7 @@ ob_start();
                                     <li> <strong> Booking a bike: </strong>
                                     <ul>
                                         <li> It must be possible to book an available bike at the selected station by entering its name and first name and signing into a free field implemented using the HTML5 Canvas API </li>
-                                        <li> Reservation data will be stored in the browser using the Web Storage API and displayed below the </li> panel
+                                        <li> Reservation data will be stored in the browser using the Web Storage API and displayed below the panel </li>
                                         <li> The status of the booking is displayed with a dynamic count of the time remaining before the reservation expires </li>
                                         <li> A reservation expires automatically after 20 minutes and also when the web browser closes </li>
                                         <li> The surname and the first name are, however, retained by the browser to pre-fill the booking form for future use, even if the browser has been closed </li>

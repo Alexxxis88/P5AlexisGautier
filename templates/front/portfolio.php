@@ -237,8 +237,7 @@ jQuery(document).ready(function($){
                 </div>
                 <div class="row">
                     <div class=" col-md-6 text-center">
-                        <a href="http://ocr.straightandalert.com/LocationVelo"><i
-                                class="far fa-eye"></i> View website</a>
+                        <a href="http://ocr.straightandalert.com/LocationVelo"><i class="far fa-eye"></i> View website</a>
                     </div>
                     <div class=" col-md-6 text-center">
                         <a href="index.php?action=portfolioItem&item=bicloo"><i class="far fa-question-circle"></i>

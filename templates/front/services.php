@@ -1229,8 +1229,8 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                             <input type="date" class="form-control" id="deadline2" name="deadline" min="<?= date("Y-m-d"); ?>" required >
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="attachedFile"><small>Add a mockup(7Mo max)</small></label>
-                            <input type="file" class="form-control" id="attachedFile" name="attachedFile" accept=".png, .jpg, .jpeg" >
+                            <label for="attachedFile2"><small>Add a mockup(7Mo max)</small></label>
+                            <input type="file" class="form-control" id="attachedFile2" name="attachedFile" accept=".png, .jpg, .jpeg" >
                             <small>Format .pgn, .jpg, .jpeg</small>
                         </div>
                     </div>
@@ -1634,10 +1634,10 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
         </div>
     </div>
 </div>
+<!-- Needs to stay here and not in base.php or functions included in main.js otherwise gives 567 console JS errors on quote.php -->
+<script src="./public/js/services.js"></script>
 <?php
 $content = ob_get_clean();
 require('templates/base.php');
 ?>
 
-<!-- Needs to stay here and not in base.php or functions included in main.js otherwise gives 567 console JS errors on quote.php --->
-<script src="./public/js/services.js"></script>
