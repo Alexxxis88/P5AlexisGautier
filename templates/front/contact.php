@@ -16,12 +16,12 @@ ob_start();
             <div class="row">
                 <div class="col-md-4 fade-up">
                     <h3>Contact Information</h3>
-                    <p><span class="fas fa-home contactIcons"></span> Nantes - France<br/>
-                        <span class="fas fa-phone contactIcons"></span> +33 679165242<br/>
-                        <span class="fas fa-mobile-alt contactIcons"></span>+33 679165242<br/>
-                        <span class="far fa-envelope contactIcons"></span> <a href="mailto:alexisxgautier@gmail.com"> alexisxgautier@gmail.com</a> <br/>
-                        <span class="fab fa-skype contactIcons"></span> <a href="#"> alexisxgautier</a> <br/>
-                        <span class="fab fa-facebook contactIcons"></span> <a href="https://facebook.com"> Alexis Gautier</a> <br/>
+                    <p><i class="fas fa-home contactIcons"></i> Nantes - France<br/>
+                        <i class="fas fa-phone contactIcons"></i> +33 679165242<br/>
+                        <i class="fas fa-mobile-alt contactIcons"></i>+33 679165242<br/>
+                        <i class="far fa-envelope contactIcons"></i> <a href="mailto:alexisxgautier@gmail.com"> alexisxgautier@gmail.com</a> <br/>
+                        <i class="fab fa-skype contactIcons"></i> <a href="#"> alexisxgautier</a> <br/>
+                        <i class="fab fa-facebook contactIcons"></i> <a href="https://facebook.com"> Alexis Gautier</a> <br/>
                     </p>
                 </div>
                 <div class="col-md-8 fade-up">

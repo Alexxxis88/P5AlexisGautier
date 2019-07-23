@@ -25,7 +25,7 @@ ob_start();
                                         <p><img src="./public/images/about/englishFlag.png" alt="English Flag"> I speak english</p>
                                         <p><img src="./public/images/about/spanishFlag.png" alt="Spanish Flag"> Hablo español</p>
                                     </div>
-                                    <a class="btn btn-social btn-email" href="mailto:alexisxgautier@gmail.com"><span class="far fa-envelope"></span></a> <a class="btn btn-social btn-facebook" href="#"><span class="fab fa-facebook-f"></span></a> <a class="btn btn-social btn-twitter" href="#"><span class="fab fa-twitter"></span></a> <a class="btn btn-social btn-linkedin" href="#"><span class="fab fa-linkedin-in"></span></a>
+                                    <a class="btn btn-social btn-email" href="mailto:alexisxgautier@gmail.com"><i class="far fa-envelope"></i></a> <a class="btn btn-social btn-facebook" href="#"><i class="fab fa-facebook-f"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="fab fa-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                         </div>

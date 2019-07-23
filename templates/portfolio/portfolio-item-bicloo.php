@@ -8,7 +8,7 @@ ob_start();
             <div class="gap"></div>
             <div class="row">
                 <div class="col-sm-8">
-                    <a href="index.php?action=portfolio"><span class="fas fa-undo"></span>&ensp; Back to Portfolio</a>
+                    <a href="index.php?action=portfolio"><i class="fas fa-undo"></i>&ensp; Back to Portfolio</a>
                 </div>
             </div>
             <div class="row">
@@ -18,7 +18,7 @@ ob_start();
                             <div class="blog-content">
                                 <h3 class="main-title">Bicloo - Bike reservation</h3>
                                 <div class="entry-meta">
-                                    <span><span class="far fa-clock"></span> April 2019</span>
+                                    <span><i class="far fa-clock"></i> April 2019</span>
                                 </div>
                                 <p class="lead">Creating a bicycle booking web application via API</p>
 
@@ -69,7 +69,7 @@ ob_start();
                 </div><!--/.col-md-8-->
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com/LocationVelo/index.html"><img class="responsiveMockup" src="./public/images/portfolio/Dev/bicloo/biclooResp.png" style="width:250px" alt="Responsive Bicloo réservation de vélo"><br><span class="far fa-eye"></span> View website</a>
+                        <a href="http://ocr.straightandalert.com/LocationVelo/index.html"><img class="responsiveMockup" src="./public/images/portfolio/Dev/bicloo/biclooResp.png" style="width:250px" alt="Responsive Bicloo réservation de vélo"><br><i class="far fa-eye"></i> View website</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>
@@ -86,12 +86,12 @@ ob_start();
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul>
-                                    <li><span class="fas fa-chevron-right"></span> Slider</li>
-                                    <li><span class="fas fa-chevron-right"></span> Online reservation</li>
-                                    <li><span class="fas fa-chevron-right"></span> Sign with Canvas</li>
-                                    <li><span class="fas fa-chevron-right"></span> Dynamic timer</li>
-                                    <li><span class="fas fa-chevron-right"></span> Open Street Map integration</li>
-                                    <li><span class="fas fa-chevron-right"></span> Map generated with Leaflet</li>
+                                    <li><i class="fas fa-chevron-right"></i> Slider</li>
+                                    <li><i class="fas fa-chevron-right"></i> Online reservation</li>
+                                    <li><i class="fas fa-chevron-right"></i> Sign with Canvas</li>
+                                    <li><i class="fas fa-chevron-right"></i> Dynamic timer</li>
+                                    <li><i class="fas fa-chevron-right"></i> Open Street Map integration</li>
+                                    <li><i class="fas fa-chevron-right"></i> Map generated with Leaflet</li>
                                 </ul>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ ob_start();
             <div class="gap"></div>
             <div class="row">
                 <div class="col-sm-8">
-                    <a href="index.php?action=portfolio"><span class="fas fa-undo"></span>&ensp; Back to Portfolio</a>
+                    <a href="index.php?action=portfolio"><i class="fas fa-undo"></i>&ensp; Back to Portfolio</a>
                 </div>
             </div>
             <div class="row">
@@ -18,7 +18,7 @@ ob_start();
                             <div class="blog-content">
                                 <h3 class="main-title">Webagency</h3>
                                 <div class="entry-meta">
-                                    <span><span class="far fa-clock"></span> January 2019</span>
+                                    <span><i class="far fa-clock"></i> January 2019</span>
                                 </div>
                                 <p class="lead">Redesign of a showcase site - Integration of a mockup</p>
 
@@ -50,7 +50,7 @@ ob_start();
                 </div>
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><img class="responsiveMockup" src="./public/images/portfolio/Dev/webAgency/webAgencyResp.png" style="width:250px" alt="Responsive WebAgency"><br><span class="far fa-eye"></span> View website</a>
+                        <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><img class="responsiveMockup" src="./public/images/portfolio/Dev/webAgency/webAgencyResp.png" style="width:250px" alt="Responsive WebAgency"><br><i class="far fa-eye"></i> View website</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>
@@ -64,11 +64,11 @@ ob_start();
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul>
-                                    <li><span class="fas fa-chevron-right"></span> Slider</li>
-                                    <li><span class="fas fa-chevron-right"></span> Interactive Portfolio</li>
-                                    <li><span class="fas fa-chevron-right"></span> View by category</li>
-                                    <li><span class="fas fa-chevron-right"></span> Google Map integration</li>
-                                    <li><span class="fas fa-chevron-right"></span> Responsive design</li>
+                                    <li><i class="fas fa-chevron-right"></i> Slider</li>
+                                    <li><i class="fas fa-chevron-right"></i> Interactive Portfolio</li>
+                                    <li><i class="fas fa-chevron-right"></i> View by category</li>
+                                    <li><i class="fas fa-chevron-right"></i> Google Map integration</li>
+                                    <li><i class="fas fa-chevron-right"></i> Responsive design</li>
                                 </ul>
                             </div>
                         </div>

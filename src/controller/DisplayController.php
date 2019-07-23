@@ -32,9 +32,10 @@ class DisplayController
         $quoteManager = new QuoteManager();
         $allPacks = $quoteManager->displayPacks();
         $allPacks = json_encode($allPacks);
-        echo $allPacks;
+        // echo $allPacks;
 
-        // header('Location: index.php?action=messagesAdmin&page=1&sortBy=5');
+        header('Location: index.php?action=messagesAdmin&page=1&sortBy=5');
+        return $allPacks;
 
     }
 
@@ -69,9 +70,9 @@ class DisplayController
     }
 
 
-    //FIXME : useless si ajax ? 
+    //FIXME : useless si ajax ?
     public function displayQuote()
-    {   
+    {
         $quoteManager = new QuoteManager();
         $allCustom = $quoteManager->displayCustomServices();
 

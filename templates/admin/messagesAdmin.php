@@ -7,7 +7,7 @@ ob_start();
     <section id="sectionNewMessages">
         <div class="row manageComBtns newMessagesBtns">
             <div class="col-md-12">
-            <a class="manageComBtn newMessagesBtn js-scrollTo" href="#sectionArchivedMessages"><span class="fas fa-anchor"></span> View archived messages</a>
+            <a class="manageComBtn newMessagesBtn js-scrollTo" href="#sectionArchivedMessages"><i class="fas fa-anchor"></i> View archived messages</a>
             </div>
         </div>
         <p>Display by
@@ -31,7 +31,7 @@ ob_start();
 
                     <div <?php if ($flag == 0) : echo 'class="newMesssage"'; else : echo 'class="answeredMessage"'; endif; ?> >
                         <p class="commentHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
-                        <?php if ($flag == 1) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Answered'; endif; ?></p>
+                        <?php if ($flag == 1) : echo '&emsp; - &emsp; <i class="fas fa-check" style="color:lightgreen"> </i> Answered'; endif; ?></p>
 
                         <p><Strong>Email : </Strong><?= $contactEmail?></p>
                         <p><Strong>Topic : </Strong><?= $topic?></p>
@@ -41,12 +41,12 @@ ob_start();
                             <div class="approvDelComs">
 
                             <?php if ($flag == 0) : ?>
-                            <a class="answerBtn" data-toggle="modal" data-target="#answerModal<?= $messageId ?>"><span class="far fa-edit editBtns"></span> Answer</a>
+                            <a class="answerBtn" data-toggle="modal" data-target="#answerModal<?= $messageId ?>"><i class="far fa-edit editBtns"></i> Answer</a>
                             <?php endif; ?>
 
-                            <a class="deleteBtn" href="index.php?action=deleteMessage&amp;messageId=<?= $messageId ?>" onclick="return confirm('Delete this message ?')"><span class="far fa-trash-alt"></span> Delete</a>
+                            <a class="deleteBtn" href="index.php?action=deleteMessage&amp;messageId=<?= $messageId ?>" onclick="return confirm('Delete this message ?')"><i class="far fa-trash-alt"></i> Delete</a>
 
-                            <a class="archiveBtn" href="index.php?action=archiveMessage&amp;messageId=<?= $messageId ?>"  onclick="return confirm('Archive this message ?')" ><span class="far fa-check-square"></span>  Archive</a>
+                            <a class="archiveBtn" href="index.php?action=archiveMessage&amp;messageId=<?= $messageId ?>"  onclick="return confirm('Archive this message ?')" ><i class="far fa-check-square"></i>  Archive</a>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@ ob_start();
     <section id="sectionArchivedMessages">
         <div class="row manageComBtns archivedMessagesBtns">
             <div class="col-md-12">
-            <a class="manageComBtn archivedMessagesBtn js-scrollTo" href="#sectionNewMessages"><span class="fas fa-anchor"></span> View new messages</a>
+            <a class="manageComBtn archivedMessagesBtn js-scrollTo" href="#sectionNewMessages"><i class="fas fa-anchor"></i> View new messages</a>
             </div>
         </div>
         <h2 class="titleManageCom titleMessages">Archived Messages</h2>
@@ -116,7 +116,7 @@ ob_start();
 
                     <div class="archivedMessage" >
                         <p class="commentHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
-                        <?php if ($flag == 1) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Answered'; endif; ?>
+                        <?php if ($flag == 1) : echo '&emsp; - &emsp; <i class="fas fa-check" style="color:lightgreen"> </i> Answered'; endif; ?>
                         </p>
 
                         <p><Strong>Email : </Strong><?= $contactEmail?></p>
@@ -124,7 +124,7 @@ ob_start();
                         <!-- transform non html links in messageContent into clickable links-->
                         <p><strong>Message content :</strong> <?= nl2br($messageContent = preg_replace('#http[s]?://[a-z0-9._/-]+#i', '<a href="$0">$0</a>', $messageContent)) ?></p>
                         <div class="manageComIcons">
-                            <a class="deleteBtn" href="index.php?action=deleteMessage&amp;messageId=<?= $messageId ?>" onclick="return confirm('Delete this message ?')"><span class="far fa-trash-alt"></span> Delete</a>
+                            <a class="deleteBtn" href="index.php?action=deleteMessage&amp;messageId=<?= $messageId ?>" onclick="return confirm('Delete this message ?')"><i class="far fa-trash-alt"></i> Delete</a>
                         </div>
                     </div>
                 <?php

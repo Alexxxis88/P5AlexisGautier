@@ -65,7 +65,7 @@
                 </div>
             </div>
             <!-- Back to top -->
-            <a href="#header" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><span class="fas fa-arrow-circle-up"></span></a>
+            <a href="#header" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><i class="fas fa-arrow-circle-up"></i></a>
             <!-- Copyright -->
             <div class="footer-copyright text-center">
                 <span>&copy;<script>document.write(new Date().getFullYear());</script> - Alexis Gautier</span>

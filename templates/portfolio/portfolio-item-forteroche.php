@@ -8,7 +8,7 @@ ob_start();
             <div class="gap"></div>
             <div class="row">
                 <div class="col-sm-8">
-                    <a href="index.php?action=portfolio"><span class="fas fa-undo"></span>&ensp; Back to Portfolio</a>
+                    <a href="index.php?action=portfolio"><i class="fas fa-undo"></i>&ensp; Back to Portfolio</a>
                 </div>
             </div>
             <div class="row">
@@ -18,7 +18,7 @@ ob_start();
                             <div class="blog-content">
                                 <h3 class="main-title">Jean Forteroche - Writer's blog</h3>
                                 <div class="entry-meta">
-                                    <span><span class="far fa-clock"></span> June 2019</span>
+                                    <span><i class="far fa-clock"></i> June 2019</span>
                                 </div>
                                 <p class="lead">Creating a Worpress alike blog engine</p>
 
@@ -63,7 +63,7 @@ ob_start();
                 </div>
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
-                        <a href="http://ocr.straightandalert.com/jean-forteroche/"><img class="responsiveMockup" src="./public/images/portfolio/Dev/forteroche/forterocheResp.png" style="width:250px" alt="Responsive Office de toursime de Strasbourg"><br><span class="far fa-eye"></span> View website</a>
+                        <a href="http://ocr.straightandalert.com/jean-forteroche/"><img class="responsiveMockup" src="./public/images/portfolio/Dev/forteroche/forterocheResp.png" style="width:250px" alt="Responsive Office de toursime de Strasbourg"><br><i class="far fa-eye"></i> View website</a>
                     </div>
                     <div class="widget tags">
                         <h3 class="widget-title">Technologies</h3>
@@ -82,13 +82,13 @@ ob_start();
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul>
-                                    <li><span class="fas fa-chevron-right"></span> Blog</li>
-                                    <li><span class="fas fa-chevron-right"></span> Publishing / Editing articles</li>
-                                    <li><span class="fas fa-chevron-right"></span> Publishing / Editing comments</li>
-                                    <li><span class="fas fa-chevron-right"></span> Blog moderation</li>
-                                    <li><span class="fas fa-chevron-right"></span> User management</li>
-                                    <li><span class="fas fa-chevron-right"></span> Statistics</li>
-                                    <li><span class="fas fa-chevron-right"></span> Database integration</li>
+                                    <li><i class="fas fa-chevron-right"></i> Blog</li>
+                                    <li><i class="fas fa-chevron-right"></i> Publishing / Editing articles</li>
+                                    <li><i class="fas fa-chevron-right"></i> Publishing / Editing comments</li>
+                                    <li><i class="fas fa-chevron-right"></i> Blog moderation</li>
+                                    <li><i class="fas fa-chevron-right"></i> User management</li>
+                                    <li><i class="fas fa-chevron-right"></i> Statistics</li>
+                                    <li><i class="fas fa-chevron-right"></i> Database integration</li>
                                 </ul>
                             </div>
                         </div>

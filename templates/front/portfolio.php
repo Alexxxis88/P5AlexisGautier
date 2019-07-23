@@ -111,11 +111,11 @@ jQuery(document).ready(function($){
                             <div class="row">
                                 <div class="col-sm-12">
                                     <ul>
-                                        <li><span class="fas fa-chevron-right"></span> Slider</li>
-                                        <li><span class="fas fa-chevron-right"></span> Interactive Portfolio</li>
-                                        <li><span class="fas fa-chevron-right"></span> View by category</li>
-                                        <li><span class="fas fa-chevron-right"></span> Google Map integration</li>
-                                        <li><span class="fas fa-chevron-right"></span> Responsive design</li>
+                                        <li><i class="fas fa-chevron-right"></i> Slider</li>
+                                        <li><i class="fas fa-chevron-right"></i> Interactive Portfolio</li>
+                                        <li><i class="fas fa-chevron-right"></i> View by category</li>
+                                        <li><i class="fas fa-chevron-right"></i> Google Map integration</li>
+                                        <li><i class="fas fa-chevron-right"></i> Responsive design</li>
                                     </ul>
                                 </div>
                             </div>
@@ -129,10 +129,10 @@ jQuery(document).ready(function($){
                 </div>
                 <div class="row">
                     <div class=" col-md-6 text-center">
-                        <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><span class="far fa-eye"></span> View website</a>
+                        <a href="http://ocr.straightandalert.com//WebAgency/WebAgency.html#"><i class="far fa-eye"></i> View website</a>
                     </div>
                     <div class=" col-md-6 text-center">
-                        <a href="index.php?action=portfolioItem&item=webagency"><span class="far fa-question-circle"></span> Specifications</a>
+                        <a href="index.php?action=portfolioItem&item=webagency"><i class="far fa-question-circle"></i> Specifications</a>
                     </div>
                 </div>
             </div>
@@ -163,10 +163,10 @@ jQuery(document).ready(function($){
                             <div class="row">
                                 <div class="col-sm-12">
                                     <ul>
-                                        <li><span class="fas fa-chevron-right"></span> Administration pannel</li>
-                                        <li><span class="fas fa-chevron-right"></span> Blog</li>
-                                        <li><span class="fas fa-chevron-right"></span> Interactive Agenda</li>
-                                        <li><span class="fas fa-chevron-right"></span> Tickets reservation</li>
+                                        <li><i class="fas fa-chevron-right"></i> Administration pannel</li>
+                                        <li><i class="fas fa-chevron-right"></i> Blog</li>
+                                        <li><i class="fas fa-chevron-right"></i> Interactive Agenda</li>
+                                        <li><i class="fas fa-chevron-right"></i> Tickets reservation</li>
                                     </ul>
                                 </div>
                             </div>
@@ -180,10 +180,10 @@ jQuery(document).ready(function($){
                 </div>
                 <div class="row">
                     <div class=" col-md-6 text-center">
-                        <a href="http://ocr.straightandalert.com/Office-Strasbourg/"><span class="far fa-eye"></span> View website</a>
+                        <a href="http://ocr.straightandalert.com/Office-Strasbourg/"><i class="far fa-eye"></i> View website</a>
                     </div>
                     <div class=" col-md-6 text-center">
-                        <a href="index.php?action=portfolioItem&item=strasbourg"><span class="far fa-question-circle"></span> Specifications</a>
+                        <a href="index.php?action=portfolioItem&item=strasbourg"><i class="far fa-question-circle"></i> Specifications</a>
                     </div>
                 </div>
             </div>
@@ -218,12 +218,12 @@ jQuery(document).ready(function($){
                             <div class="row">
                                 <div class="col-sm-12">
                                     <ul>
-                                        <li><span class="fas fa-chevron-right"></span> Slider</li>
-                                        <li><span class="fas fa-chevron-right"></span> Online reservation</li>
-                                        <li><span class="fas fa-chevron-right"></span> Sign with Canvas</li>
-                                        <li><span class="fas fa-chevron-right"></span> Dynamic timer</li>
-                                        <li><span class="fas fa-chevron-right"></span> Open Street Map integration</li>
-                                        <li><span class="fas fa-chevron-right"></span> Map generated with Leaflet</li>
+                                        <li><i class="fas fa-chevron-right"></i> Slider</li>
+                                        <li><i class="fas fa-chevron-right"></i> Online reservation</li>
+                                        <li><i class="fas fa-chevron-right"></i> Sign with Canvas</li>
+                                        <li><i class="fas fa-chevron-right"></i> Dynamic timer</li>
+                                        <li><i class="fas fa-chevron-right"></i> Open Street Map integration</li>
+                                        <li><i class="fas fa-chevron-right"></i> Map generated with Leaflet</li>
                                     </ul>
                                 </div>
                             </div>
@@ -237,11 +237,11 @@ jQuery(document).ready(function($){
                 </div>
                 <div class="row">
                     <div class=" col-md-6 text-center">
-                        <a href="http://ocr.straightandalert.com/LocationVelo"><span
-                                class="far fa-eye"></span> View website</a>
+                        <a href="http://ocr.straightandalert.com/LocationVelo"><i
+                                class="far fa-eye"></i> View website</a>
                     </div>
                     <div class=" col-md-6 text-center">
-                        <a href="index.php?action=portfolioItem&item=bicloo"><span class="far fa-question-circle"></span>
+                        <a href="index.php?action=portfolioItem&item=bicloo"><i class="far fa-question-circle"></i>
                             Specifications</a>
                     </div>
                 </div>
@@ -275,13 +275,13 @@ jQuery(document).ready(function($){
                             <div class="row">
                                 <div class="col-sm-12">
                                     <ul>
-                                        <li><span class="fas fa-chevron-right"></span> Blog</li>
-                                        <li><span class="fas fa-chevron-right"></span> Publishing / Editing articles</li>
-                                        <li><span class="fas fa-chevron-right"></span> Publishing / Editing comments</li>
-                                        <li><span class="fas fa-chevron-right"></span> Blog moderation</li>
-                                        <li><span class="fas fa-chevron-right"></span> User management</li>
-                                        <li><span class="fas fa-chevron-right"></span> Statistics</li>
-                                        <li><span class="fas fa-chevron-right"></span> Database integration</li>
+                                        <li><i class="fas fa-chevron-right"></i> Blog</li>
+                                        <li><i class="fas fa-chevron-right"></i> Publishing / Editing articles</li>
+                                        <li><i class="fas fa-chevron-right"></i> Publishing / Editing comments</li>
+                                        <li><i class="fas fa-chevron-right"></i> Blog moderation</li>
+                                        <li><i class="fas fa-chevron-right"></i> User management</li>
+                                        <li><i class="fas fa-chevron-right"></i> Statistics</li>
+                                        <li><i class="fas fa-chevron-right"></i> Database integration</li>
                                     </ul>
                                 </div>
                             </div>
@@ -295,11 +295,11 @@ jQuery(document).ready(function($){
                 </div>
                 <div class="row">
                     <div class=" col-md-6 text-center">
-                        <a href="http://ocr.straightandalert.com/jean-forteroche/"><span
-                                class="far fa-eye"></span> View website</a>
+                        <a href="http://ocr.straightandalert.com/jean-forteroche/"><i
+                                class="far fa-eye"></i> View website</a>
                     </div>
                     <div class=" col-md-6 text-center">
-                        <a href="index.php?action=portfolioItem&item=forteroche"><span class="far fa-question-circle"></span>
+                        <a href="index.php?action=portfolioItem&item=forteroche"><i class="far fa-question-circle"></i>
                             Specifications</a>
                     </div>
                 </div>

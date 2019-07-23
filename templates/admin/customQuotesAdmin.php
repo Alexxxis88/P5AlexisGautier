@@ -57,16 +57,16 @@ ob_start();
                         <p class="commentHead">Custom Quote n° <strong><?= $customQuoteId ?></strong>
                             <?php
                             //Status
-                            if ($quoteStatus == 0 && $accepted == 1) : echo '&emsp; - &emsp; <span class="fas fa-history" style="color:white"> </span> Pending';
-                            elseif ($quoteStatus == 1 && $accepted == 1) : echo '&emsp; - &emsp; <span class="fas fa-play" style="color:lightblue"> </span> In progress';
-                            elseif ($quoteStatus == 2 && $accepted == 1) : echo '&emsp; - &emsp; <span class="fas fa-check" style="color:lightgreen"> </span> Done';
-                            elseif ($quoteStatus == 3 && $accepted == 1) : echo '&emsp; - &emsp; <span class="far fa-folder-open" style="color:yellow"> </span> Archived';
+                            if ($quoteStatus == 0 && $accepted == 1) : echo '&emsp; - &emsp; <i class="fas fa-history" style="color:white"> </i> Pending';
+                            elseif ($quoteStatus == 1 && $accepted == 1) : echo '&emsp; - &emsp; <i class="fas fa-play" style="color:lightblue"> </i> In progress';
+                            elseif ($quoteStatus == 2 && $accepted == 1) : echo '&emsp; - &emsp; <i class="fas fa-check" style="color:lightgreen"> </i> Done';
+                            elseif ($quoteStatus == 3 && $accepted == 1) : echo '&emsp; - &emsp; <i class="far fa-folder-open" style="color:yellow"> </i> Archived';
                             endif;
 
                             //Accepted / Refused
-                            if ($accepted == 0) : echo '&emsp; - &emsp; <span class="fas fa-history" style="color:white"> </span> Pending approval';
-                            elseif ($accepted == 1) : echo '&emsp; - &emsp; <span class="fas fa-check-circle" style="color:lightgreen"> </span> Accepted';
-                            elseif ($accepted == 2) : echo '&emsp; - &emsp; <span class="fas fa-times-circle" style="color:red"> </span> Refused';
+                            if ($accepted == 0) : echo '&emsp; - &emsp; <i class="fas fa-history" style="color:white"> </i> Pending approval';
+                            elseif ($accepted == 1) : echo '&emsp; - &emsp; <i class="fas fa-check-circle" style="color:lightgreen"> </i> Accepted';
+                            elseif ($accepted == 2) : echo '&emsp; - &emsp; <i class="fas fa-times-circle" style="color:red"> </i> Refused';
                             endif;
                             ?>
                         </p>
@@ -153,12 +153,12 @@ ob_start();
                             //Accept / Refuse buttons
                             if ($accepted == 0 || $accepted == 2) : ?>
                             <!-- Accept button with an auto email function -->
-                            <button type="submit" form="acceptForm<?= $customQuoteId ?>" class="acceptBtn" onclick="return confirm('Accept this project ?')"><span class="far fa-check-square"></span> Accept</button>
+                            <button type="submit" form="acceptForm<?= $customQuoteId ?>" class="acceptBtn" onclick="return confirm('Accept this project ?')"><i class="far fa-check-square"></i> Accept</button>
                             <?php
                             ;
                             endif;
                             if ($accepted == 0 || $accepted == 1) : ?>
-                            <a class="deleteBtn" data-toggle="modal" data-target="#refuseModal<?= $customQuoteId ?>" ><span class="far fa-check-square"></span>  Refuse</a>
+                            <a class="deleteBtn" data-toggle="modal" data-target="#refuseModal<?= $customQuoteId ?>" ><i class="far fa-check-square"></i>  Refuse</a>
                             <?php
                             ;
                             endif;
@@ -182,7 +182,7 @@ ob_start();
                             ;
                             endif;
                             ?>
-                                <br><a class="deleteBtn" href="index.php?action=deleteCustomQuote&amp;customQuoteId=<?= $customQuoteId ?>" onclick="return confirm('Delete this request ?')"><span class="far fa-trash-alt"></span> Delete this request</a>
+                                <br><a class="deleteBtn" href="index.php?action=deleteCustomQuote&amp;customQuoteId=<?= $customQuoteId ?>" onclick="return confirm('Delete this request ?')"><i class="far fa-trash-alt"></i> Delete this request</a>
                             </div>
                         </div>
                     </div>

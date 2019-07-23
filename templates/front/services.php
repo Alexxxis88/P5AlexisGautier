@@ -42,7 +42,7 @@ ob_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block">
                         <div class="pull-left bounce-in">
-                            <span class="fa fas fa-laptop-code fa-md"></span>
+                            <i class="fa fas fa-laptop-code fa-md"></i>
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Website</h3>
@@ -55,7 +55,7 @@ ob_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block">
                         <div class="pull-left bounce-in">
-                            <span class="fas fa-cart-arrow-down fa fa-md"></span>
+                            <i class="fas fa-cart-arrow-down fa fa-md"></i>
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Webstore</h3>
@@ -68,7 +68,7 @@ ob_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block">
                         <div class="pull-left bounce-in">
-                            <span class="fas fa-book-reader fa fa-md"></span>
+                            <i class="fas fa-book-reader fa fa-md"></i>
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Blog</h3>
@@ -83,7 +83,7 @@ ob_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block">
                         <div class="pull-left bounce-in">
-                            <span class="fas fa-question fa fa-md"></span>
+                            <i class="fas fa-question fa fa-md"></i>
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Consulting</h3>
@@ -95,7 +95,7 @@ ob_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block">
                         <div class="pull-left bounce-in">
-                            <span class="fas fa-pencil-ruler fa fa-md"></span>
+                            <i class="fas fa-pencil-ruler fa fa-md"></i>
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Webdesign</h3>
@@ -107,7 +107,7 @@ ob_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="service-block">
                         <div class="pull-left bounce-in">
-                            <span class="fas fa-search-dollar fa fa-md"></span>
+                            <i class="fas fa-search-dollar fa fa-md"></i>
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">SEO Services</h3>

@@ -70,16 +70,16 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="fa fa-bars"></span>
+                        <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.php?action=home"><h1><span class="fas fa-sliders-h"></span> ALEXIS GAUTIER</h1></a>
+                    <a class="navbar-brand" href="index.php?action=home"><h1><i class="fas fa-sliders-h"></i> ALEXIS GAUTIER</h1></a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=services">Services</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quote <span class="fa fa-angle-down"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quote <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?action=services#pricing">All included packs</a></li>
                                 <li><a href="index.php?action=quote">Custom quote</a></li>
@@ -120,7 +120,7 @@
                 </div>
             </div>
             <!-- Back to top -->
-            <a href="#header" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><span class="fas fa-arrow-circle-up"></span></a>
+            <a href="#header" onclick="$('html,body').animate({scrollTop:0},'slow');return false;"><i class="fas fa-arrow-circle-up"></i></a>
             <!-- Copyright -->
             <div class="footer-copyright text-center">
                 <span>&copy;<script>document.write(new Date().getFullYear());</script> - Alexis Gautier</span>

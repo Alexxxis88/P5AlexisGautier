@@ -1,6 +1,6 @@
 <!-- Desktop Menu -->
 <div class="menuAdmin fade-down">
-    <a href="index.php"><span class="fas fa-home"></span></a>
+    <a href="index.php"><i class="fas fa-home"></i></a>
     <div class="menuBtns" id="menuDesktop" >
 
         <?php //if there is cookies or session information, they are used to display user name
@@ -13,10 +13,10 @@
 
             <nav class="adminMenu">
                 <ul>
-                <li><a class="adminMenuLink" href="index.php?action=servicesList"><span class="fas fa-list"></span>Services</a></li>
-                <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin&page=1&sortBy=5"><span class="fas fa-file-invoice packQuoteAlert"></span>Pack Quotes</a></li>
-                <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin&page=1&sortBy=5"><span class="fas fa-file-invoice-dollar customQuoteAlert"></span>Custom Quotes</a></li>
-                <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=5"><span class="fas fa-comments msgAlert"></span>Messages</a></li>
+                <li><a class="adminMenuLink" href="index.php?action=servicesList"><i class="fas fa-list"></i>Services</a></li>
+                <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin&page=1&sortBy=5"><i class="fas fa-file-invoice packQuoteAlert"></i>Pack Quotes</a></li>
+                <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin&page=1&sortBy=5"><i class="fas fa-file-invoice-dollar customQuoteAlert"></i>Custom Quotes</a></li>
+                <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page=1&sortBy=5"><i class="fas fa-comments msgAlert"></i>Messages</a></li>
                 </ul>
             </nav>
             <!-- Log Out button -->
@@ -40,10 +40,10 @@
 <!-- Burger Menu Navigation -->
 <nav class="navMenu"  id="burgerNav">
     <ul>
-        <li><a class="adminMenuLink" href="index.php?action=servicesList"><span class="fas fa-list"></span>Services</a></li>
-        <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin&page=1&sortBy=5"><span class="fas fa-file-invoice packQuoteAlert"></span>Pack Quotes</a></li>
-        <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin&page=1&sortBy=5"><span class="fas fa-file-invoice-dollar customQuoteAlert"></span>Custom Quotes</a></li>
-        <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page&page=1&sortBy=5"><span class="fas fa-comment-alt msgAlert"></span>Messages</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=servicesList"><i class="fas fa-list"></i>Services</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=packQuotesAdmin&page=1&sortBy=5"><i class="fas fa-file-invoice packQuoteAlert"></i>Pack Quotes</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=customQuotesAdmin&page=1&sortBy=5"><i class="fas fa-file-invoice-dollar customQuoteAlert"></i>Custom Quotes</a></li>
+        <li><a class="adminMenuLink" href="index.php?action=messagesAdmin&page&page=1&sortBy=5"><i class="fas fa-comment-alt msgAlert"></i>Messages</a></li>
         <?php //if there is cookies or session information, they are used to display user name
         if (isset($_COOKIE['email']) or isset($_SESSION['email'])) {
             if (isset($_COOKIE['email'])) {
@@ -52,10 +52,10 @@
                 $username = $_SESSION['email'];
             } ?>
             <!-- Log Out button -->
-            <li><a href="index.php?action=logOutCheck"><span class="fas fa-sign-out-alt"></span>Log Out</a></li>
+            <li><a href="index.php?action=logOutCheck"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
 
             <!-- Change Password button -->
-            <li><a href="index.php?action=displayUpdatePass"><span class="fas fa-unlock-alt"></span>Update Password</a></li>
+            <li><a href="index.php?action=displayUpdatePass"><i class="fas fa-unlock-alt"></i>Update Password</a></li>
         <?php
         }
         ?>
