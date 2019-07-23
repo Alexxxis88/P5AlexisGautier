@@ -455,57 +455,39 @@ class QuoteController
                                                                                 //testing if deadlineSelect is correct
                                                                                 if ($_POST['deadlineSelect'] == "No Deadline" OR $_POST['deadlineSelect'] == "Express +" OR $_POST['deadlineSelect'] == "Express" OR $_POST['deadlineSelect'] == "Fast" OR $_POST['deadlineSelect'] == "Regular" OR $_POST['deadlineSelect'] == "Slow") {
 
-                                                                                //FIXME : comment imbriquer tous les if isset ?
                                                                                     //testing if deadline date is in the future
-                                                                                    if (isset($_POST['deadline'])) {
-                                                                                        $today = date("Y-m-d");
-                                                                                        if ($_POST['deadline'] > $today) {
-                                                                                            return true;
-                                                                                        } else {
-                                                                                            throw new \Exception('Deadline cannot be in the past');
-                                                                                        }
-                                                                                    }
+                                                                                    $today = date("Y-m-d");
+                                                                                    if ($_POST['deadline'] > $today) {
 
-                                                                                    //testing if loginShowcaseYN is correct
-                                                                                    if (isset($_POST['loginShowcaseYN'])) {
-                                                                                        if ($_POST['loginShowcaseYN'] ==  'Yes Login' or $_POST['loginShowcaseYN'] == 'No Login') {
-                                                                                            return true;
-                                                                                        } else {
-                                                                                            throw new \Exception('User login options is incorrect');
-                                                                                        }
-                                                                                    }
-
-                                                                                    //testing if paymentShowcaseYN is correct
-                                                                                    if (isset($_POST['paymentShowcaseYN'])) {
-                                                                                        if ($_POST['paymentShowcaseYN'] ==  'Yes' OR $_POST['paymentShowcaseYN'] == 'No') {
-                                                                                            return true;
-                                                                                        } else {
-                                                                                            throw new \Exception('Payment option for Showcase Website is incorrect');
-                                                                                        }
-                                                                                    }
-
-                                                                                    //testing if pageNb is correct
-                                                                                    if (isset($_POST['pageNb'])) {
-                                                                                        if ($_POST['pageNb'] ==  '- 10 pages' OR $_POST['pageNb'] == '10 - 50 pages' OR $_POST['pageNb'] == '50 - 100 pages' OR $_POST['pageNb'] == '100 - 200' OR $_POST['pageNb'] == '200 - 500 pages' OR $_POST['pageNb'] == '+ 500 pages')
+                                                                                        //testing if pageNb is correct
+                                                                                        if ($_POST['pageNb'] == '' OR $_POST['pageNb'] ==  '- 10 pages' OR $_POST['pageNb'] == '10 - 50 pages' OR $_POST['pageNb'] == '50 - 100 pages' OR $_POST['pageNb'] == '100 - 200' OR $_POST['pageNb'] == '200 - 500 pages' OR $_POST['pageNb'] == '+ 500 pages')
                                                                                         {
-                                                                                            return true;
-                                                                                        } else {
+                                                                                            //testing if loginShowcaseYN is correct
+                                                                                            if ($_POST['loginShowcaseYN'] ==  '' OR $_POST['loginShowcaseYN'] ==  'Yes Login' OR $_POST['loginShowcaseYN'] == 'No Login') {
+
+                                                                                                //testing if paymentShowcaseYN is correct
+                                                                                                if ($_POST['paymentShowcaseYN'] ==  '' OR  $_POST['paymentShowcaseYN'] ==  'Yes' OR $_POST['paymentShowcaseYN'] == 'No') {
+
+                                                                                                    //testing if productNb is correct
+                                                                                                    if ($_POST['productNb'] ==  '' OR $_POST['productNb'] ==  '- 10 products' OR $_POST['productNb'] == '10 - 100 products' OR $_POST['productNb'] == '100 - 200 products' OR $_POST['productNb'] == '200 - 500 products' OR $_POST['productNb'] == '+ 500 products')
+                                                                                                    {
+                                                                                                        return true;
+
+                                                                                                    }else {
+                                                                                                        throw new \Exception('Number of products for sale for Webstore is incorrect');
+                                                                                                    }
+                                                                                                }else {
+                                                                                                    throw new \Exception('Payment option for Showcase Website is incorrect');
+                                                                                                }
+                                                                                            }else {
+                                                                                                throw new \Exception('User login options is incorrect');
+                                                                                            }
+                                                                                        }else {
                                                                                             throw new \Exception('Number of page for Showcase Website is incorrect');
                                                                                         }
+                                                                                    }else {
+                                                                                        throw new \Exception('Deadline cannot be in the past');
                                                                                     }
-
-                                                                                    //testing if productNb is correct
-                                                                                    if (isset($_POST['productNb'])) {
-                                                                                        if ($_POST['productNb'] ==  '- 10 products' OR $_POST['productNb'] == '10 - 100 products' OR $_POST['productNb'] == '100 - 200 products' OR $_POST['productNb'] == '200 - 500 products' OR $_POST['productNb'] == '+ 500 products')
-                                                                                        {
-                                                                                            return true;
-                                                                                        } else {
-                                                                                            throw new \Exception('Number of products for sale for Webstore is incorrect');
-                                                                                        }
-                                                                                    }
-
-                                                                                    return true;
-
                                                                                 } else {
                                                                                 throw new \Exception('Deadline is incorrect');
                                                                                 }
