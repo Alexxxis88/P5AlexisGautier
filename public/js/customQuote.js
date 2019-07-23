@@ -368,8 +368,6 @@ function deselectAll(){
     document.getElementById("extensionAlert").style.display = "none";
     document.getElementById("payShowAlert").style.display = "none";
 
-    $('#customSubmitBtn').prop( "disabled", true );
-
     //deselect checkboxes
     $("#french, #english, #bulgarian, #croatian, #czech, #danish, #dutch, #estonian, #finnish, #german, #greek, #hungarian, #italian, #latvian, #lithuanian, #norwegian, #portuguese, #russian, #serbian, #slovak, #slovene, #spanish, #swedish, #swissGerman, #dotCom, #dotFr, #dotUk, #dotDe, #blogOpt, #chatOpt, #contactFormOpt, #newsletterOpt, #appointOpt, #searchOpt, #quoteOpt, #invoiceOpt, #socialOpt, #statsOpt, #calendarOpt, #newsOpt, #adminPannelOpt, #ratingsOpt, #surveyOpt, #2CheckoutShow, #authorizeShow, #amazonShow, #bankWireShow, #checkShow, #creditCardPPShow, #creditCardBkShow, #paypalShow, #paypalProShow, #sagePayShow, #skrillShow, #squareShow, #stripeShow, #2CheckoutStore, #authorizeStore, #amazonStore, #bankWireStore, #checkStore, #creditCardPPStore, #creditCardBkStore, #paypalStore, #paypalProStore, #sagePayStore, #skrillStore, #squareStore, #stripeStore ").prop( "checked", false );
 
@@ -415,11 +413,9 @@ function myFunction2() {
     if (paymentShowcaseYN == "Yes") {
         document.getElementById("paymentMethShowcase").style.display = "block";
         document.getElementById("payShowAlert").style.display = "block";
-        $('#customSubmitBtn').prop( "disabled", true );
     } else if (paymentShowcaseYN == "No") {
         document.getElementById("paymentMethShowcase").style.display = "none";
         document.getElementById("payShowAlert").style.display = "none";
-        $('#customSubmitBtn').prop( "disabled", false );
     }
 }
 
@@ -443,11 +439,9 @@ function myFunction5() {
     if (domainYN == "Yes") {
         document.getElementById("extensionBlock").style.display = "block";
         document.getElementById("extensionAlert").style.display = "block";
-        $('#customSubmitBtn').prop( "disabled", true );
     } else if (domainYN == "No") {
         document.getElementById("extensionBlock").style.display = "none";
         document.getElementById("extensionAlert").style.display = "none";
-        $('#customSubmitBtn').prop( "disabled", false );
     }
 }
 
@@ -464,13 +458,11 @@ function myFunction4() {
         document.getElementById("showcaseSection").style.display = "none";
         document.getElementById("webstoreSection").style.display = "block";
         document.getElementById("payStoreAlert").style.display = "block";
-        $('#customSubmitBtn').prop( "disabled", true );
 
     } else if (siteTypeDisplay == "Showcase Website + Webstore" || siteTypeDisplay == "Redesign - Showcase Website + Webstore") {
         document.getElementById("showcaseSection").style.display = "block";
         document.getElementById("webstoreSection").style.display = "block";
         document.getElementById("payStoreAlert").style.display = "block";
-        $('#customSubmitBtn').prop( "disabled", true );
 
     } else {
         document.getElementById("showcaseSection").style.display = "none";
@@ -506,11 +498,9 @@ $( ".languagecheck" ).on( "click", countLanguageChecked );
 
 function alertLanguage(){
     if(countLanguage < 1){
-        $('#customSubmitBtn').prop( "disabled", true );
         $('#langAlert').css( "display", "block" );
     }
     else {
-        $('#customSubmitBtn').prop( "disabled", false );
         $('#langAlert').css( "display", "none" );
     }
 }
@@ -531,11 +521,9 @@ $( ".extensioncheck" ).on( "click", countExtensionChecked );
 
 function alertExtention(){
     if( ($("#extensionBlock").css("display") == "block") &&  countExtension < 1){
-        $('#customSubmitBtn').prop( "disabled", true );
         $('#extensionAlert').css( "display", "block" );
     }
     else {
-        $('#customSubmitBtn').prop( "disabled", false );
         $('#extensionAlert').css( "display", "none" );
     }
 }
@@ -557,11 +545,9 @@ $( ".payShowcheck" ).on( "click", countPayShowChecked );
 
 function alertPayShow(){
     if( ($("#paymentMethShowcase").css("display") == "block") &&  countPayShow < 1){
-        $('#customSubmitBtn').prop( "disabled", true );
         $('#payShowAlert').css( "display", "block" );
     }
     else {
-        $('#customSubmitBtn').prop( "disabled", false );
         $('#payShowAlert').css( "display", "none" );
     }
 }
@@ -581,11 +567,9 @@ $( ".payStorecheck" ).on( "click", countPayStoreChecked );
 //Alert if no Payment methods (Store) selected (if displayed) when submitting the form
 function alertPayStore(){
     if( ($("#paymentMethStore").is(":visible") == true) &&  countPayStore < 1){
-        $('#customSubmitBtn').prop( "disabled", true );
         $('#payStoreAlert').css( "display", "block" );
     }
     else {
-        $('#customSubmitBtn').prop( "disabled", false );
         $('#payStoreAlert').css( "display", "none" );
     }
 }
@@ -593,4 +577,14 @@ $( ".payStorecheck" ).on( "click", alertPayStore );
 
 
 
-
+function disableSubmit(){
+    if(($("#langAlert").css("display") == "block") ||
+    ($("#extensionAlert").css("display") == "block") ||
+    ($("#payShowAlert").css("display") == "block") ||
+    ($("#payStoreAlert").css("display") == "block")){
+        $('#customSubmitBtn').prop( "disabled", true );
+    }
+    else{
+        $('#customSubmitBtn').prop( "disabled", false );
+    }
+}
