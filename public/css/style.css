@@ -1352,8 +1352,6 @@ Pricing Section style
     overflow: hidden;
     background-color: #fff;
     margin-bottom: 50px;
-    min-height: 600px;
-    max-height: 600px;
 }
 .pricing_body ul{
     width:100%;
@@ -1361,6 +1359,7 @@ Pricing Section style
     padding:10px;
     list-style: none;
     text-align: center;
+    height: 380px;
 }
 .pricing_body ul li{
     line-height: 2rem;

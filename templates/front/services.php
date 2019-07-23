@@ -288,46 +288,43 @@ ob_start();
             <script> 
 
 
-    //FIXME a dégager si je zappe AJAX
-                    //test en local ( = sans passer par un fichier extern)
-                    // let data1 = '{"allPacks":[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]';
-                    // let allPacksTest = JSON.parse(data1);
-                    // console.log(allPacksTest);
-                    // console.log(allPacksTest.packNameServices);
+    // //FIXME a dégager si je zappe AJAX
+    //                
 
-            //             let url = 'src/controller/DisplayController/displayServices';
-            // // ajaxGet('./packTest.JSON', function (data){
-            //     ajaxGet(url, function (data){
+    //                     let url = './src/controller/DisplayController.php/displayServices';
+    //                     // let url = './TESTAJAX/my-json.php';
 
-            //             console.log(data);
+    //             ajaxGet(url, function (data){
 
-            //             // let test = '[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]s';
-            //             // let testParse = JSON.parse(test);
-            //             // console.log(testParse);
+    //                     console.log(data);
 
-            //             let allPacks = JSON.parse(data);
-            //             console.log(allPacks);
+    //                     // let test = '[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]s';
+    //                     // let testParse = JSON.parse(test);
+    //                     // console.log(testParse);
 
-                        // // console.log(allPacks[0].packNameServices) ; 
-                        // document.getElementById("pack1Name").innerHTML = allPacks[0].packNameServices;
-                        // document.getElementById("pack1Price").innerHTML = allPacks[0].packPriceServices + ' €';
-                        // document.getElementById("pack2Name").innerHTML = allPacks[1].packNameServices;
-                        // document.getElementById("pack2Price").innerHTML = allPacks[1].packPriceServices + ' €';
-                        // document.getElementById("pack3Name").innerHTML = allPacks[2].packNameServices;
-                        // document.getElementById("pack3Price").innerHTML = allPacks[2].packPriceServices + ' €';
+    //                     let allPacks = JSON.parse(data);
+    //                     console.log(allPacks);
+
+    //                     // console.log(allPacks[0].packNameServices) ;
+    //                     document.getElementById("pack1Name").innerHTML = allPacks[0].packNameServices;
+    //                     document.getElementById("pack1Price").innerHTML = allPacks[0].packPriceServices + ' €';
+    //                     // document.getElementById("pack2Name").innerHTML = allPacks[1].packNameServices;
+    //                     // document.getElementById("pack2Price").innerHTML = allPacks[1].packPriceServices + ' €';
+    //                     // document.getElementById("pack3Name").innerHTML = allPacks[2].packNameServices;
+    //                     // document.getElementById("pack3Price").innerHTML = allPacks[2].packPriceServices + ' €';
 
 
 
-                        //ne fonctionne pas avec une boucle car il faudrait que chacun de mes pack soit un objet ? 
-                        // allPacks.forEach((pack) => {
+    //                     // ne fonctionne pas avec une boucle car il faudrait que chacun de mes pack soit un objet ? 
+    //                     // allPacks.forEach((pack) => {
 
-                        // //  console.log(pack.packNameServices) ;  
-                        // // document.getElementById("tesssst").innerHTML = pack.packNameServices;
+    //                     //  console.log(pack.packNameServices) ;  
+    //                     // document.getElementById("tesssst").innerHTML = pack.packNameServices;
 
-                        // $('.tesssst').text(pack.packNameServices)
+    //                     // $('.tesssst').text(pack.packNameServices)
 
-                        // });
-                    // });
+    //                     // });
+    //                 });
             </script>
 
 
@@ -340,7 +337,7 @@ ob_start();
                                 <div class="pricing_item">
                                     <div class="pricing_top_border"></div>
                                     <div class="pricing_head p-top-30 p-bottom-100 text-center">
-                                        <h3 class="text-uppercase" id="pack1Name"> <?= $packName1 ?></h3>
+                                        <h3 class="text-uppercase" id="pack1Name"><?= $packName1 ?></h3>
                                     </div>
                                     <div class="pricing_price_border text-center">
                                         <div class="pricing_price">
@@ -432,13 +429,13 @@ ob_start();
                                                 <strong>full online presence</strong></li>
                                             <li><span class="text-princing"></span> Complete customer
                                             <strong>database</strong></li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                            <li><span class="text-princing"></span> Website up to <strong>50</strong> pages
                                             </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                            <li><span class="text-princing"></span> Website up to <strong>500</strong> products
                                             </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                            <li><span class="text-princing"></span> <strong>Stat analysis</strong> tools
                                             </li>
-                                            <li><span class="text-princing"></span> Lorem <strong>impsum</strong>
+                                            <li><span class="text-princing"></span> Choose between several <strong>designs</strong>
                                             </li>
                                         </ul>
                                         <div class="text-center">

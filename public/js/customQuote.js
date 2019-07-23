@@ -1,6 +1,6 @@
-//Get services array 
+//Get services array
 function fillArray() {
-    
+
     let arrayId = [];
 
     let siteTypeId = document.getElementById("siteType").value;
