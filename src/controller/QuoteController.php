@@ -309,7 +309,7 @@ class QuoteController
 
     public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
-        //Need to implode arrays to save them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ?
+        //Need to implode arrays to save them in DB
         $languages = implode(", ",array_values($languages));
         $extensions = implode(", ",array_values($extensions));
         $paymentMtdShowcase = implode(", ",array_values($paymentMtdShowcase));
@@ -325,7 +325,7 @@ class QuoteController
     public function sendCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
 
-        //Need to implode arrays to ssave them in DB FIXME : duplicate avec sendCustomQuote, mettre ça dans une methode appelé avant dans l'index ?
+        //Need to implode arrays to save them in DB
         $languages = implode(", ",array_values($languages));
         $extensions = implode(", ",array_values($extensions));
         $paymentMtdShowcase = implode(", ",array_values($paymentMtdShowcase));
