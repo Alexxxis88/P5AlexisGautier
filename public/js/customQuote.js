@@ -42,6 +42,12 @@ function fillArray() {
 
 
 
+
+
+
+
+
+
 //Display total price
 let grandTotal = "";
 let totalInput = "";
@@ -49,274 +55,114 @@ let totalCheckboxe = "";
 
 //get the total of all SELECT inputs
 function getSelectValue() {
-    let siteType = document.getElementById("siteType").value;
-    switch (siteType) {
-    case "Showcase Website":
-        siteType = 500;
-        break;
-    case "Webstore":
-        siteType = 800;
-        break;
-    case "Showcase Website + Webstore":
-        siteType = 1000;
-        break;
-    case "Redesign - Showcase Website":
-        siteType = 300;
-        break;
-    case "Redesign - Webstore":
-        siteType = 300;
-        break;
-    case "Redesign - Showcase Website + Webstore":
-        siteType = 300;
-        break;
-    default:
-        siteType = 0;
-    }
+    let siteType = Number($("option:selected", "#siteType").attr("data-price"))
+    let design = Number($("option:selected", "#design").attr("data-price"))
+    let writingContent = Number($("option:selected", "#writingContent").attr("data-price"))
+    let visualContent = Number($("option:selected", "#visualContent").attr("data-price"))
+    let maintenance = Number($("option:selected", "#maintenance").attr("data-price"))
+    let host = Number($("option:selected", "#host").attr("data-price"))
+    let deadlineSelect = Number($("option:selected", "#deadlineSelect").attr("data-price"))
+    let pageNb = Number($("option:selected", "#pageNb").attr("data-price"))
+    let loginShowcaseYN = Number($("option:selected", "#loginShowcaseYN").attr("data-price"))
+    let productNb = Number($("option:selected", "#productNb").attr("data-price"))
 
-    let design = document.getElementById("design").value;
-    switch (design) {
-    case "Standard Design":
-        design = 100;
-        break;
-    case "Custom Design":
-        design = 50;
-        break;
-    case "Custom + Design":
-        design = 500;
-        break;
-    default:
-        design = 0;
-    }
+    totalInput = siteType + design + writingContent + visualContent + maintenance + host + deadlineSelect + pageNb + loginShowcaseYN + productNb;
 
-    let writingContent = document.getElementById("writingContent").value;
-    switch (writingContent) {
-    case "YesWriting":
-        writingContent = 200;
-        break;
-    case "NoWriting":
-        writingContent = 0;
-        break;
-    default:
-        writingContent = 0;
-    }
+        // //FIXME : virer TOUS les consoles log
+        // console.log( 'valeur siteType ' + siteType);
+        // console.log('type siteType ' + typeof(siteType));
 
-    let visualContent = document.getElementById("visualContent").value;
-    switch (visualContent) {
-    case "YesVisual":
-        visualContent = 100;
-        break;
-    case "NoVisual":
-        visualContent = 0;
-        break;
-    default:
-        visualContent = 0;
-    }
-
-    let maintenance = document.getElementById("maintenance").value;
-    switch (maintenance) {
-    case "No Maintenance":
-        maintenance = 0;
-        break;
-    case "Minimal Maintenance":
-        maintenance = 100;
-        break;
-    case "Regular Maintenance":
-        maintenance = 200;
-        break;
-    case "Premium Maintenance":
-        maintenance = 400;
-        break;
-    case "Gold Maintenance":
-        maintenance = 1500;
-        break;
-    default:
-        maintenance = 0;
-    }
-
-    let host = document.getElementById("host").value;
-    switch (host) {
-    case "No Host":
-        host = 0;
-        break;
-    case "Standard Host":
-        host = 50;
-        break;
-    case "Premium Host":
-        host = 100;
-        break;
-    default:
-        host = 0;
-    }
-
-    let deadlineSelect = document.getElementById("deadlineSelect").value;
-    switch (deadlineSelect) {
-    case "No Deadline":
-        deadlineSelect = 0;
-        break;
-    case "Express +":
-        deadlineSelect = 1000;
-        break;
-    case "Express":
-        deadlineSelect = 800;
-        break;
-    case "Fast":
-        deadlineSelect = 400;
-        break;
-    case "Regular":
-        deadlineSelect = 50;
-        break;
-    case "Slow":
-        deadlineSelect = 0;
-        break;
-    default:
-        deadlineSelect = 0;
-    }
-
-    let pageNb = document.getElementById("pageNb").value;
-    switch (pageNb) {
-    case "- 10 pages":
-        pageNb = 0;
-        break;
-    case "10 - 50 pages":
-        pageNb = 20;
-        break;
-    case "50 - 100 pages":
-        pageNb = 30;
-        break;
-    case "100 - 200 pages":
-        pageNb = 40;
-        break;
-    case "200 - 500 pages":
-        pageNb = 50;
-        break;
-    case "+ 500 pages":
-        pageNb = 60;
-        break;
-    default:
-        pageNb = 0;
-    }
-
-    let loginShowcaseYN = document.getElementById("loginShowcaseYN").value;
-    switch (loginShowcaseYN) {
-    case "Yes Login":
-        loginShowcaseYN = 100;
-        break;
-    case "No Login":
-        loginShowcaseYN = 0;
-        break;
-    default:
-        loginShowcaseYN = 0;
-    }
-
-    let productNb = document.getElementById("productNb").value;
-    switch (productNb) {
-    case "- 10 products":
-        productNb = 0;
-        break;
-    case "10 - 100 products":
-        productNb = 20;
-        break;
-    case "100 - 200 products":
-        productNb = 30;
-        break;
-    case "200 - 500 products":
-        productNb = 40;
-        break;
-    case "+ 500 products":
-        productNb = 50;
-        break;
-    default:
-        productNb = 0;
-    }
-
-
-    totalInput = Number(siteType + design + writingContent + visualContent + maintenance + host + deadlineSelect +
-        pageNb + loginShowcaseYN + productNb);
+        // console.log( 'valeur design ' + design);
+        // console.log('type design ' + typeof(design));
+        // console.log( 'valeur totalInput ' + totalInput);
+        // console.log('type totalInput ' + typeof(totalInput));
 };
+
+
+
 
 
 //Checkbox values need to be redefine for JS only to display correct price : it has to be .text() and not .val() otherwise the value taken by PHP / MYSQL will be the wrong one
 
     //Options
-    $("#blogOpt").text("200");
-    $("#chatOpt").text("150");
-    $("#contactFormOpt").text("150");
-    $("#newsletterOpt").text("70");
-    $("#appointOpt").text("150");
-    $("#searchOpt").text("150");
-    $("#quoteOpt").text("150");
-    $("#invoiceOpt").text("150");
-    $("#socialOpt").text("150");
-    $("#statsOpt").text("150");
-    $("#calendarOpt").text("150");
-    $("#newsOpt").text("150");
-    $("#adminPannelOpt").text("150");
-    $("#ratingsOpt").text("150");
-    $("#surveyOpt").text("150");
+    $("#blogOpt").text(Number($("#blogOpt").attr("data-price")));
+    $("#chatOpt").text(Number($("#chatOpt").attr("data-price")));
+    $("#contactFormOpt").text(Number($("#contactFormOpt").attr("data-price")));
+    $("#newsletterOpt").text(Number($("#newsletterOpt").attr("data-price")));
+    $("#appointOpt").text(Number($("#appointOpt").attr("data-price")));
+    $("#searchOpt").text(Number($("#searchOpt").attr("data-price")));
+    $("#quoteOpt").text(Number($("#quoteOpt").attr("data-price")));
+    $("#invoiceOpt").text(Number($("#invoiceOpt").attr("data-price")));
+    $("#socialOpt").text(Number($("#socialOpt").attr("data-price")));
+    $("#statsOpt").text(Number($("#statsOpt").attr("data-price")));
+    $("#calendarOpt").text(Number($("#calendarOpt").attr("data-price")));
+    $("#newsOpt").text(Number($("#newsOpt").attr("data-price")));
+    $("#adminPannelOpt").text(Number($("#adminPannelOpt").attr("data-price")));
+    $("#ratingsOpt").text(Number($("#ratingsOpt").attr("data-price")));
+    $("#surveyOpt").text(Number($("#surveyOpt").attr("data-price")));
 
     //Languages
-    $("#french").text("0");
-    $("#english").text("50");
-    $("#bulgarian").text("100");
-    $("#croatian").text("100");
-    $("#czech").text("100");
-    $("#danish").text("100");
-    $("#dutch").text("100");
-    $("#estonian").text("100");
-    $("#finnish").text("100");
-    $("#german").text("100");
-    $("#greek").text("100");
-    $("#hungarian").text("100");
-    $("#italian").text("100");
-    $("#latvian").text("100");
-    $("#lithuanian").text("100");
-    $("#norwegian").text("100");
-    $("#portuguese").text("100");
-    $("#russian").text("100");
-    $("#serbian").text("100");
-    $("#slovak").text("100");
-    $("#slovene").text("100");
-    $("#spanish").text("100");
-    $("#swedish").text("100");
-    $("#swissGerman").text("100");
+    $("#french").text(Number($("#french").attr("data-price")));
+    $("#english").text(Number($("#english").attr("data-price")));
+    $("#bulgarian").text(Number($("#bulgarian").attr("data-price")));
+    $("#croatian").text(Number($("#croatian").attr("data-price")));
+    $("#czech").text(Number($("#czech").attr("data-price")));
+    $("#danish").text(Number($("#danish").attr("data-price")));
+    $("#dutch").text(Number($("#dutch").attr("data-price")));
+    $("#estonian").text(Number($("#estonian").attr("data-price")));
+    $("#finnish").text(Number($("#finnish").attr("data-price")));
+    $("#german").text(Number($("#german").attr("data-price")));
+    $("#greek").text(Number($("#greek").attr("data-price")));
+    $("#hungarian").text(Number($("#hungarian").attr("data-price")));
+    $("#italian").text(Number($("#italian").attr("data-price")));
+    $("#latvian").text(Number($("#latvian").attr("data-price")));
+    $("#lithuanian").text(Number($("#lithuanian").attr("data-price")));
+    $("#norwegian").text(Number($("#norwegian").attr("data-price")));
+    $("#portuguese").text(Number($("#portuguese").attr("data-price")));
+    $("#russian").text(Number($("#russian").attr("data-price")));
+    $("#serbian").text(Number($("#serbian").attr("data-price")));
+    $("#slovak").text(Number($("#slovak").attr("data-price")));
+    $("#slovene").text(Number($("#slovene").attr("data-price")));
+    $("#spanish").text(Number($("#spanish").attr("data-price")));
+    $("#swedish").text(Number($("#swedish").attr("data-price")));
+    $("#swissGerman").text(Number($("#swissGerman").attr("data-price")));
 
     //Extensions
-    $("#dotCom").text("20");
-    $("#dotFr").text("10");
-    $("#dotUk").text("10");
-    $("#dotDe").text("10");
+    $("#dotCom").text(Number($("#dotCom").attr("data-price")));
+    $("#dotFr").text(Number($("#dotFr").attr("data-price")));
+    $("#dotUk").text(Number($("#dotUk").attr("data-price")));
+    $("#dotDe").text(Number($("#dotDe").attr("data-price")));
 
     //Payment Methods Showcase
-    $("#2CheckoutShow").text("50");
-    $("#authorizeShow").text("50");
-    $("#amazonShow").text("50");
-    $("#bankWireShow").text("50");
-    $("#checkShow").text("50");
-    $("#creditCardPPShow").text("50");
-    $("#creditCardBkShow").text("50");
-    $("#paypalShow").text("50");
-    $("#paypalProShow").text("50");
-    $("#sagePayShow").text("50");
-    $("#skrillShow").text("50");
-    $("#squareShow").text("50");
-    $("#stripeShow").text("50");
+    $("#2CheckoutShow").text(Number($("#2CheckoutShow").attr("data-price")));
+    $("#authorizeShow").text(Number($("#authorizeShow").attr("data-price")));
+    $("#amazonShow").text(Number($("#amazonShow").attr("data-price")));
+    $("#bankWireShow").text(Number($("#bankWireShow").attr("data-price")));
+    $("#checkShow").text(Number($("#checkShow").attr("data-price")));
+    $("#creditCardPPShow").text(Number($("#creditCardPPShow").attr("data-price")));
+    $("#creditCardBkShow").text(Number($("#creditCardBkShow").attr("data-price")));
+    $("#paypalShow").text(Number($("#paypalShow").attr("data-price")));
+    $("#paypalProShow").text(Number($("#paypalProShow").attr("data-price")));
+    $("#sagePayShow").text(Number($("#sagePayShow").attr("data-price")));
+    $("#skrillShow").text(Number($("#skrillShow").attr("data-price")));
+    $("#squareShow").text(Number($("#squareShow").attr("data-price")));
+    $("#stripeShow").text(Number($("#stripeShow").attr("data-price")));
+
 
     //Payment Methods Store
-    $("#2CheckoutStore").text("50");
-    $("#authorizeStore").text("50");
-    $("#amazonStore").text("50");
-    $("#bankWireStore").text("50");
-    $("#checkStore").text("50");
-    $("#creditCardPPStore").text("50");
-    $("#creditCardBkStore").text("50");
-    $("#paypalStore").text("50");
-    $("#paypalProStore").text("50");
-    $("#sagePayStore").text("50");
-    $("#skrillStore").text("50");
-    $("#squareStore").text("50");
-    $("#stripeStore").text("50");
-
-
+    $("#2CheckoutStore").text(Number($("#2CheckoutStore").attr("data-price")));
+    $("#authorizeStore").text(Number($("#authorizeStore").attr("data-price")));
+    $("#amazonStore").text(Number($("#amazonStore").attr("data-price")));
+    $("#bankWireStore").text(Number($("#bankWireStore").attr("data-price")));
+    $("#checkStore").text(Number($("#checkStore").attr("data-price")));
+    $("#creditCardPPStore").text(Number($("#creditCardPPStore").attr("data-price")));
+    $("#creditCardBkStore").text(Number($("#creditCardBkStore").attr("data-price")));
+    $("#paypalStore").text(Number($("#paypalStore").attr("data-price")));
+    $("#paypalProStore").text(Number($("#paypalProStore").attr("data-price")));
+    $("#sagePayStore").text(Number($("#sagePayStore").attr("data-price")));
+    $("#skrillStore").text(Number($("#skrillStore").attr("data-price")));
+    $("#squareStore").text(Number($("#squareStore").attr("data-price")));
+    $("#stripeStore").text(Number($("#stripeStore").attr("data-price")));
 
 
 //get the total of all CHECKBOXES inputs
@@ -337,11 +183,20 @@ function getTotal() {
     document.getElementById("text-customQuote").innerHTML = grandTotal + " € ";
     document.getElementById("text-customQuoteWidget").innerHTML = grandTotal + " € ";
     // document.getElementById("price").value = grandTotal; FIXME : remove me car je ne me sers pas du champ price
+
+    //FIXME : remove me
+    // console.log( 'valeur grandtotal ' + grandTotal);
+    // console.log('type grandtotal ' + typeof(grandTotal));
+
 }
+
+
 
 
 //deselect all options choices when Website Type is changed
 function deselectAll(){
+
+    //FIXME : use Jquerry to factor the function
 
     //deselect inputs
     $("#design option:selected").prop("selected", false);
@@ -360,6 +215,7 @@ function deselectAll(){
     //reset dropdown option menu placeholder
     $(".menuPlaceholder").html("Please select <span class='caret'></span>")
 
+    //FIXME : use Jquerry to factor the function
     //hide elements
     document.getElementById("extensionBlock").style.display = "none";
     document.getElementById("deadlineBlock").style.display = "none";
@@ -371,34 +227,15 @@ function deselectAll(){
     //deselect checkboxes
     $("#french, #english, #bulgarian, #croatian, #czech, #danish, #dutch, #estonian, #finnish, #german, #greek, #hungarian, #italian, #latvian, #lithuanian, #norwegian, #portuguese, #russian, #serbian, #slovak, #slovene, #spanish, #swedish, #swissGerman, #dotCom, #dotFr, #dotUk, #dotDe, #blogOpt, #chatOpt, #contactFormOpt, #newsletterOpt, #appointOpt, #searchOpt, #quoteOpt, #invoiceOpt, #socialOpt, #statsOpt, #calendarOpt, #newsOpt, #adminPannelOpt, #ratingsOpt, #surveyOpt, #2CheckoutShow, #authorizeShow, #amazonShow, #bankWireShow, #checkShow, #creditCardPPShow, #creditCardBkShow, #paypalShow, #paypalProShow, #sagePayShow, #skrillShow, #squareShow, #stripeShow, #2CheckoutStore, #authorizeStore, #amazonStore, #bankWireStore, #checkStore, #creditCardPPStore, #creditCardBkStore, #paypalStore, #paypalProStore, #sagePayStore, #skrillStore, #squareStore, #stripeStore ").prop( "checked", false );
 
+    // needed here again to reset the price displayed
+    let siteType = Number($("option:selected", "#siteType").attr("data-price"))
 
-    let siteType = document.getElementById("siteType").value;
-    switch (siteType) {
-    case "Showcase Website":
-        siteType = 500;
-        break;
-    case "Webstore":
-        siteType = 800;
-        break;
-    case "Showcase Website + Webstore":
-        siteType = 1000;
-        break;
-    case "Redesign - Showcase Website":
-        siteType = 300;
-        break;
-    case "Redesign - Webstore":
-        siteType = 300;
-        break;
-    case "Redesign - Showcase Website + Webstore":
-        siteType = 300;
-        break;
-    default:
-        siteType = 0;
-    }
-
+    //FIXME : use Jquerry to factor the function
     //reset price display
     document.getElementById("text-customQuote").innerHTML = siteType + " € ";
     document.getElementById("text-customQuoteWidget").innerHTML = siteType + " € ";
+
+
     // document.getElementById("price").value = siteType; FIXME : remove me car je ne me sers pas du champ price
 
     //empty arrayService
@@ -576,7 +413,7 @@ function alertPayStore(){
 $( ".payStorecheck" ).on( "click", alertPayStore );
 
 
-
+//disable Submit button if any alert text displayed
 function disableSubmit(){
     if(($("#langAlert").css("display") == "block") ||
     ($("#extensionAlert").css("display") == "block") ||

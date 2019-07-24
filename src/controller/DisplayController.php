@@ -31,10 +31,10 @@ class DisplayController
     {
         $quoteManager = new QuoteManager();
         $allPacks = $quoteManager->displayPacks();
-        $allPacks = json_encode($allPacks);
         // echo $allPacks;
 
-        header('Location: index.php?action=messagesAdmin&page=1&sortBy=5');
+        // header('Content-Type: application/json');
+        $allPacks = json_encode($allPacks);
         return $allPacks;
 
     }

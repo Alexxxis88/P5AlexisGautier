@@ -1,7 +1,15 @@
 <?php
 $title = 'Custom Quote - So, how much?';
 ob_start();
+
+// //List of each service's price
+
+// $designStandard = $allCustom[30]['price'];
+
+require('customPriceList.php');
+
 ?>
+
 <div id="content-wrapper" class="noHeaderImg">
     <div class="row">
         <div class="col-md-10 center gap fade-down section-heading">
@@ -26,15 +34,18 @@ ob_start();
                                 <label for="siteType">Type of Website*</label>
                                 <select id="siteType" name="siteType" class="form-control" required
                                     onchange="fillArray(), getSelectValue(), myFunction4(), getTotal(), deselectAll(), disableSubmit()" >
-                                    <!-- I need de empty option line to respect W3C rules + i need the &nbsp; not to have an empty option without label (W3C error) and i need the Please Choose.. line with value at 0 for my total function to work fine -->
-                                    <option disabled hidden value="">&nbsp;</option>
-                                    <option label="Please choose..." value="" disabled selected hidden> </option>
-                                    <option value="Showcase Website">Showcase Website</option>
-                                    <option value="Webstore">Webstore</option>
-                                    <option value="Showcase Website + Webstore">Showcase Website + Webstore</option>
-                                    <option value="Redesign - Showcase Website">Redesign (Showcase Website)</option>
-                                    <option value="Redesign - Webstore">Redesign (Webstore)</option>
-                                    <option value="Redesign - Showcase Website + Webstore">Redesign (Showcase Website + Webstore)</option>
+                                    <!-- FIXME I need de empty option line to respect W3C rules + i need the &nbsp; not to have an empty option without label (W3C error) and i need the Please Choose.. line with value at 0 for my total function to work fine -->
+                                    <!-- old solution before trying to disable all inputs after changin site type-->
+                                    <!-- <option disabled hidden value="">&nbsp;</option>
+                                    <option label="Please choose..." value="0" disabled selected hidden> </option> -->
+
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $showcase ?>" value="Showcase Website" >Showcase Website</option>
+                                    <option data-price="<?= $webstore ?>" value="Webstore">Webstore</option>
+                                    <option data-price="<?= $showcaseWebstore ?>" value="Showcase Website + Webstore">Showcase Website + Webstore</option>
+                                    <option data-price="<?= $redesignShowcase ?>" value="Redesign - Showcase Website">Redesign (Showcase Website)</option>
+                                    <option data-price="<?= $redesignWebstore ?>" value="Redesign - Webstore">Redesign (Webstore)</option>
+                                    <option data-price="<?= $redesignShowcaseWebstore ?>" value="Redesign - Showcase Website + Webstore">Redesign (Showcase Website + Webstore)</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -45,53 +56,51 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal(), disableSubmit()">
                                         <li><input type="checkbox" id="blogOpt" name="options[]" class="checkBoxValue"
-                                                value="blog"><label for="blogOpt">Blog</label></li>
+                                                data-price="<?= $blog ?>" value="blog"><label for="blogOpt">Blog</label></li>
                                         <li><input type="checkbox" id="chatOpt" name="options[]" class="checkBoxValue"
-                                                value="chat"><label for="chatOpt">Chat Box</label></li>
+                                                data-price="<?= $chat ?>" value="chat"><label for="chatOpt">Chat Box</label></li>
                                         <li><input type="checkbox" id="contactFormOpt" name="options[]"
-                                                class="checkBoxValue" value="contact form"><label
+                                                class="checkBoxValue" data-price="<?= $contactForm ?>" value="contact form"><label
                                                 for="contactFormOpt">Contact Form</label></li>
                                         <li><input type="checkbox" id="newsletterOpt" name="options[]"
-                                                class="checkBoxValue" value="newsletter"><label
+                                                class="checkBoxValue" data-price="<?= $newsletter ?>" value="newsletter"><label
                                                 for="newsletterOpt">Newsletter</label></li>
                                         <li><input type="checkbox" id="appointOpt" name="options[]"
-                                                class="checkBoxValue" value="appointment plugin"><label
+                                                class="checkBoxValue" data-price="<?= $appointment ?>" value="appointment plugin"><label
                                                 for="appointOpt">Appointment plugin</label></li>
                                         <li><input type="checkbox" id="searchOpt" name="options[]"
-                                                class="checkBoxValue" value="search plugin"><label for="searchOpt">Search
+                                                class="checkBoxValue" data-price="<?= $searchPlug ?>" value="search plugin"><label for="searchOpt">Search
                                                 engine</label></li>
                                         <li><input type="checkbox" id="quoteOpt" name="options[]"
-                                                class="checkBoxValue" value="autoQuote plugin"><label for="quoteOpt">Automatic
+                                                class="checkBoxValue" data-price="<?= $autoQuote ?>" value="autoQuote plugin"><label for="quoteOpt">Automatic
                                                 quote plugin</label></li>
                                         <li><input type="checkbox" id="invoiceOpt" name="options[]"
-                                                class="checkBoxValue" value="invoice plugin"><label for="invoiceOpt">Invoice
+                                                class="checkBoxValue" data-price="<?= $invoicePlug ?>" value="invoice plugin"><label for="invoiceOpt">Invoice
                                                 plugin</label></li>
                                         <li><input type="checkbox" id="socialOpt" name="options[]"
-                                                class="checkBoxValue" value="social Network"><label for="socialOpt">Social
+                                                class="checkBoxValue" data-price="<?= $socialNetwork ?>" value="social Network"><label for="socialOpt">Social
                                                 Networks plugin</label></li>
                                         <li><input type="checkbox" id="statsOpt" name="options[]"
-                                                class="checkBoxValue" value="stats plugin"><label
+                                                class="checkBoxValue" data-price="<?= $statsPlug ?>" value="stats plugin"><label
                                                 for="statsOpt">Statistics</label></li>
                                         <li><input type="checkbox" id="calendarOpt" name="options[]"
-                                                class="checkBoxValue" value="calendar"><label
+                                                class="checkBoxValue" data-price="<?= $calendar ?>" value="calendar"><label
                                                 for="calendarOpt">Calendar</label></li>
                                         <li><input type="checkbox" id="newsOpt" name="options[]" class="checkBoxValue"
-                                                value="news plugin"><label for="newsOpt">News plugin</label></li>
+                                                data-price="<?= $news ?>" value="news plugin"><label for="newsOpt">News plugin</label></li>
                                         <li><input type="checkbox" id="adminPannelOpt" name="options[]"
-                                                class="checkBoxValue" value="admin pannel"><label
+                                                class="checkBoxValue" data-price="<?= $adminPannel ?>" value="admin pannel"><label
                                                 for="adminPannelOpt">Administration pannel</label></li>
                                         <li><input type="checkbox" id="ratingsOpt" name="options[]"
-                                                class="checkBoxValue" value="customer ratings"><label for="ratingsOpt">Customer
+                                                class="checkBoxValue" data-price="<?= $ratings ?>" value="customer ratings"><label for="ratingsOpt">Customer
                                                 ratings</label></li>
                                         <li><input type="checkbox" id="surveyOpt" name="options[]"
-                                                class="checkBoxValue" value="survey plugin"><label for="surveyOpt">Survey
+                                                class="checkBoxValue" data-price="<?= $survey ?>" value="survey plugin"><label for="surveyOpt">Survey
                                                 plugin</label></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
-                        
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class="btn-group ">
@@ -101,60 +110,60 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal(), disableSubmit()">
                                         <li><input type="checkbox" id="french" name="language[]" class="checkBoxValue languagecheck"
-                                                value="french"><label for="french">French</label></li>
+                                                data-price="<?= $french ?>" value="french"><label for="french">French</label></li>
                                         <li><input type="checkbox" id="english" name="language[]" class="checkBoxValue languagecheck"
-                                                value="english"><label for="english">English</label></li>
+                                                data-price="<?= $english ?>" value="english"><label for="english">English</label></li>
                                         <li><input type="checkbox" id="bulgarian" name="language[]"
-                                                class="checkBoxValue languagecheck" value="bulgarian"><label
+                                                class="checkBoxValue languagecheck" data-price="<?= $bulgarian ?>" value="bulgarian"><label
                                                 for="bulgarian">Bulgarian</label></li>
                                         <li><input type="checkbox" id="croatian" name="language[]"
-                                                class="checkBoxValue languagecheck" value="croatian"><label
+                                                class="checkBoxValue languagecheck" data-price="<?= $croatian ?>" value="croatian"><label
                                                 for="croatian">Croatian</label></li>
                                         <li><input type="checkbox" id="czech" name="language[]" class="checkBoxValue languagecheck"
-                                                value="czech"><label for="czech">Czech</label></li>
+                                                data-price="<?= $czech ?>" value="czech"><label for="czech">Czech</label></li>
                                         <li><input type="checkbox" id="danish" name="language[]" class="checkBoxValue languagecheck"
-                                                value="danish"><label for="danish">Danish</label></li>
+                                                data-price="<?= $danish ?>" value="danish"><label for="danish">Danish</label></li>
                                         <li><input type="checkbox" id="dutch" name="language[]" class="checkBoxValue languagecheck"
-                                                value="dutch"><label for="dutch">Dutch</label></li>
+                                                data-price="<?= $dutch ?>" value="dutch"><label for="dutch">Dutch</label></li>
                                         <li><input type="checkbox" id="estonian" name="language[]"
-                                                class="checkBoxValue languagecheck" value="estonian"><label
+                                                class="checkBoxValue languagecheck" data-price="<?= $estonian ?>" value="estonian"><label
                                                 for="estonian">Estonian</label></li>
                                         <li><input type="checkbox" id="finnish" name="language[]" class="checkBoxValue languagecheck"
-                                                value="finnish"><label for="finnish">Finnish</label></li>
+                                                data-price="<?= $finnish ?>" value="finnish"><label for="finnish">Finnish</label></li>
                                         <li><input type="checkbox" id="german" name="language[]" class="checkBoxValue languagecheck"
-                                                value="german"><label for="german">German</label></li>
+                                                data-price="<?= $german ?>" value="german"><label for="german">German</label></li>
                                         <li><input type="checkbox" id="greek" name="language[]" class="checkBoxValue languagecheck"
-                                                value="greek"><label for="greek">Greek</label></li>
+                                                data-price="<?= $greek ?>" value="greek"><label for="greek">Greek</label></li>
                                         <li><input type="checkbox" id="hungarian" name="language[]"
-                                                class="checkBoxValue languagecheck" value="hungarian"><label
+                                                class="checkBoxValue languagecheck" data-price="<?= $hungarian ?>" value="hungarian"><label
                                                 for="hungarian">Hungarian</label></li>
                                         <li><input type="checkbox" id="italian" name="language[]" class="checkBoxValue languagecheck"
-                                                value="italian"><label for="italian">Italian</label></li>
+                                                data-price="<?= $italian ?>" value="italian"><label for="italian">Italian</label></li>
                                         <li><input type="checkbox" id="latvian" name="language[]" class="checkBoxValue languagecheck"
-                                                value="latvian"><label for="latvian">Latvian</label></li>
+                                                data-price="<?= $latvian ?>" value="latvian"><label for="latvian">Latvian</label></li>
                                         <li><input type="checkbox" id="lithuanian" name="language[]"
-                                                class="checkBoxValue languagecheck" value="lithuanian"><label
+                                                class="checkBoxValue languagecheck" data-price="<?= $lithuanian ?>" value="lithuanian"><label
                                                 for="lithuanian">Lithuanian</label></li>
                                         <li><input type="checkbox" id="norwegian" name="language[]"
-                                                class="checkBoxValue languagecheck" value="norwegian"><label
+                                                class="checkBoxValue languagecheck" data-price="<?= $norwegian ?>" value="norwegian"><label
                                                 for="norwegian">Norwegian</label></li>
                                         <li><input type="checkbox" id="portuguese" name="language[]"
-                                                class="checkBoxValue languagecheck" value="portuguese"><label
+                                                class="checkBoxValue languagecheck" data-price="<?= $portuguese ?>" value="portuguese"><label
                                                 for="portuguese">Portuguese</label></li>
                                         <li><input type="checkbox" id="russian" name="language[]" class="checkBoxValue languagecheck"
-                                                value="russian"><label for="russian">Russian</label></li>
+                                                data-price="<?= $russian ?>" value="russian"><label for="russian">Russian</label></li>
                                         <li><input type="checkbox" id="serbian" name="language[]" class="checkBoxValue languagecheck"
-                                                value="serbian"><label for="serbian">Serbian</label></li>
+                                                data-price="<?= $serbian ?>" value="serbian"><label for="serbian">Serbian</label></li>
                                         <li><input type="checkbox" id="slovak" name="language[]" class="checkBoxValue languagecheck"
-                                                value="slovak"><label for="slovak">Slovak</label></li>
+                                                data-price="<?= $slovak ?>" value="slovak"><label for="slovak">Slovak</label></li>
                                         <li><input type="checkbox" id="slovene" name="language[]" class="checkBoxValue languagecheck"
-                                                value="slovene"><label for="slovene">Slovene</label></li>
+                                                data-price="<?= $slovene ?>" value="slovene"><label for="slovene">Slovene</label></li>
                                         <li><input type="checkbox" id="spanish" name="language[]" class="checkBoxValue languagecheck"
-                                                value="spanish"><label for="spanish">Spanish</label></li>
+                                                data-price="<?= $spanish ?>" value="spanish"><label for="spanish">Spanish</label></li>
                                         <li><input type="checkbox" id="swedish" name="language[]" class="checkBoxValue languagecheck"
-                                                value="swedish"><label for="swedish">Swedish</label></li>
+                                                data-price="<?= $swedish ?>" value="swedish"><label for="swedish">Swedish</label></li>
                                         <li><input type="checkbox" id="swissGerman" name="language[]"
-                                                class="checkBoxValue languagecheck" value="swissGerman"><label for="swissGerman">Swiss
+                                                class="checkBoxValue languagecheck" data-price="<?= $swissGerman ?>" value="swissGerman"><label for="swissGerman">Swiss
                                                 German</label></li>
                                     </ul>
                                 </div>
@@ -167,11 +176,11 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="Standard Design">Standard : nice, simple and efficient (I don't have a
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $standardDesign ?>" value="Standard Design">Standard : nice, simple and efficient (I don't have a
                                         visual identity guide)</option>
-                                    <option value="Custom Design">Custom : according to my visual identity guide</option>
-                                    <option value="Custom + Design">Custom + : Top of the range design. 100% tailor-made for me
+                                    <option data-price="<?= $customDesign ?>" value="Custom Design">Custom : according to my visual identity guide</option>
+                                    <option data-price="<?= $customPlusDesign ?>" value="Custom + Design">Custom + : Top of the range design. 100% tailor-made for me
                                     </option>
                                 </select>
                             </div>
@@ -186,9 +195,9 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="YesWriting">Yes</option>
-                                    <option value="NoWriting">No</option>
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $yesWriting ?>" value="YesWriting">Yes</option>
+                                    <option data-price="<?= $noWriting ?>" value="NoWriting">No</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -199,9 +208,9 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="YesVisual">Yes</option>
-                                    <option value="NoVisual">No</option>
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $yesVisual ?>" value="YesVisual">Yes</option>
+                                    <option data-price="<?= $noVisual ?>" value="NoVisual">No</option>
                                 </select>
                             </div>
                         </div>
@@ -214,15 +223,15 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="No Maintenance">I will do it myself</option>
-                                    <option value="Minimal Maintenance">I want a minimal plan (mininum maintance, no updates)
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $noMaintenance ?>" value="No Maintenance">I will do it myself</option>
+                                    <option data-price="<?= $minimalMaintenance ?>" value="Minimal Maintenance">I want a minimal plan (mininum maintance, no updates)
                                     </option>
-                                    <option value="Regular Maintenance">I want a regular plan (minimum maintenance, updated every
+                                    <option data-price="<?= $regularMaintenance ?>" value="Regular Maintenance">I want a regular plan (minimum maintenance, updated every
                                         year)</option>
-                                    <option value="Premium Maintenance">I want a premium plan (regular maintenance, updated every 3
+                                    <option data-price="<?= $premiumMaintenance ?>" value="Premium Maintenance">I want a premium plan (regular maintenance, updated every 3
                                         months)</option>
-                                    <option value="Gold Maintenance">I want a gold plan (priority maintenance, updated every
+                                    <option data-price="<?= $goldMaintenance ?>" value="Gold Maintenance">I want a gold plan (priority maintenance, updated every
                                         months)</option>
                                 </select>
                             </div>
@@ -234,10 +243,10 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="No Host">I will handle that myself </option>
-                                    <option value="Standard Host">I want a standard host</option>
-                                    <option value="Premium Host">I want a premium host (high traffic website)</option>
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $noHost ?>" value="No Host">I will handle that myself </option>
+                                    <option data-price="<?= $standardHost ?>" value="Standard Host">I want a standard host</option>
+                                    <option data-price="<?= $premiumHost ?>" value="Premium Host">I want a premium host (high traffic website)</option>
                                 </select>
                                 <small>Hosting will be handled by a professional third party. I will not host your
                                     website(s) on my personal server for logistical reasons.</small>
@@ -267,13 +276,13 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal(), disableSubmit()">
                                         <li><input type="checkbox" id="dotCom" name="extensions[]" class="checkBoxValue extensioncheck"
-                                                value=".com"><label for="dotCom">.com</label></li>
+                                                data-price="<?= $dotCom ?>" value=".com"><label for="dotCom">.com</label></li>
                                         <li><input type="checkbox" id="dotFr" name="extensions[]" class="checkBoxValue extensioncheck"
-                                                value=".fr"><label for="dotFr">.fr</label></li>
+                                                data-price="<?= $dotFr ?>" value=".fr"><label for="dotFr">.fr</label></li>
                                         <li><input type="checkbox" id="dotUk" name="extensions[]" class="checkBoxValue extensioncheck"
-                                                value=".uk"><label for="dotUk">.uk</label></li>
+                                                data-price="<?= $dotUk ?>" value=".uk"><label for="dotUk">.uk</label></li>
                                         <li><input type="checkbox" id="dotDe" name="extensions[]" class="checkBoxValue extensioncheck"
-                                                value=".de"><label for="dotDe">.de</label></li>
+                                                data-price="<?= $dotDe ?>" value=".de"><label for="dotDe">.de</label></li>
                                     </ul><br><br>
                                     <small>Check the full list of available extensions <a
                                             href="https://iwantmyname.com/domains"><strong>here</strong></a></small>
@@ -289,13 +298,13 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="No Deadline">No</option>
-                                    <option value="Express +">Less than 1 month (Express +)</option>
-                                    <option value="Express">Less than 2 months (Express)</option>
-                                    <option value="Fast">Less than 4 months (Fast)</option>
-                                    <option value="Regular">Less than 6 months (Regular)</option>
-                                    <option value="Slow">More than 6 months (Slow)</option>
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $noDeadline ?>" value="No Deadline">No</option>
+                                    <option data-price="<?= $expressPlus ?>" value="Express +">Less than 1 month (Express +)</option>
+                                    <option data-price="<?= $express ?>" value="Express">Less than 2 months (Express)</option>
+                                    <option data-price="<?= $fast ?>" value="Fast">Less than 4 months (Fast)</option>
+                                    <option data-price="<?= $regular ?>" value="Regular">Less than 6 months (Regular)</option>
+                                    <option data-price="<?= $slow ?>" value="Slow">More than 6 months (Slow)</option>
                                 </select>
                                 <small>From today to your deadline</small>
                             </div>
@@ -322,13 +331,13 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="- 10 pages">- 10</option>
-                                    <option value="10 - 50 pages">10 - 50</option>
-                                    <option value="50 - 100 pages">50 - 100</option>
-                                    <option value="100 - 200 pages">100 - 200</option>
-                                    <option value="200 - 500 pages">200 - 500</option>
-                                    <option value="+ 500 pages">+ 500</option>
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $minusTenPage ?>" value="- 10 pages">- 10</option>
+                                    <option data-price="<?= $tenPage ?>" value="10 - 50 pages">10 - 50</option>
+                                    <option data-price="<?= $fiftyPage ?>" value="50 - 100 pages">50 - 100</option>
+                                    <option data-price="<?= $undredPage ?>" value="100 - 200 pages">100 - 200</option>
+                                    <option data-price="<?= $twoUndredPage ?>" value="200 - 500 pages">200 - 500</option>
+                                    <option data-price="<?= $fiveUndredPage ?>" value="+ 500 pages">+ 500</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
@@ -341,9 +350,9 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="Yes Login">Yes</option>
-                                    <option value="No Login">No</option>
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $yesLogin ?>" value="Yes Login">Yes</option>
+                                    <option data-price="<?= $noLogin ?>" value="No Login">No</option>
                                 </select>
                             </div>
                         </div>
@@ -372,43 +381,43 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal(), disableSubmit()">
                                         <li><input type="checkbox" id="2CheckoutShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="2Checkout (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $twoCheckoutShow ?>" value="2Checkout (Showcase)"><label
                                                 for="2CheckoutShow">2Checkout</label></li>
                                         <li><input type="checkbox" id="authorizeShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Authorize.Ne (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $authorizeShow ?>" value="Authorize.Ne (Showcase)"><label
                                                 for="authorizeShow">Authorize.Net</label></li>
                                         <li><input type="checkbox" id="amazonShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Amazon Payment (Showcase)"><label for="amazonShow">Amazon
+                                                class="checkBoxValue payShowcheck" data-price="<?= $amazonShow ?>" value="Amazon Payment (Showcase)"><label for="amazonShow">Amazon
                                                 Payment</label></li>
                                         <li><input type="checkbox" id="bankWireShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Bank Wire (Showcase)"><label for="bankWireShow">Bank
+                                                class="checkBoxValue payShowcheck" data-price="<?= $wireShow ?>" value="Bank Wire (Showcase)"><label for="bankWireShow">Bank
                                                 Wire</label></li>
                                         <li><input type="checkbox" id="checkShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Check (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $checkShow ?>" value="Check (Showcase)"><label
                                                 for="checkShow">Check</label></li>
                                         <li><input type="checkbox" id="creditCardPPShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Credit Card (Through Paypal) (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $creditPaypalShow ?>" value="Credit Card (Through Paypal) (Showcase)"><label
                                                 for="creditCardPPShow">Credit Card (Through Paypal)</label></li>
                                         <li><input type="checkbox" id="creditCardBkShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Credit Card (Through Bank Api) (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $creditBankShow ?>" value="Credit Card (Through Bank Api) (Showcase)"><label
                                                 for="creditCardBkShow">Credit Card (Through Bank Api)</label></li>
                                         <li><input type="checkbox" id="paypalShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Paypal (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $paypalShow ?>" value="Paypal (Showcase)"><label
                                                 for="paypalShow">Paypal</label></li>
                                         <li><input type="checkbox" id="paypalProShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="PayPal Payments Pro (Showcase)"><label for="paypalProShow">PayPal
+                                                class="checkBoxValue payShowcheck" data-price="<?= $paypalProShow ?>" value="PayPal Payments Pro (Showcase)"><label for="paypalProShow">PayPal
                                                 Payments Pro</label></li>
                                         <li><input type="checkbox" id="sagePayShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="SagePay (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $sagePayShow ?>" value="SagePay (Showcase)"><label
                                                 for="sagePayShow">SagePay</label></li>
                                         <li><input type="checkbox" id="skrillShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Skrill (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $skrillShow ?>" value="Skrill (Showcase)"><label
                                                 for="skrillShow">Skrill</label></li>
                                         <li><input type="checkbox" id="squareShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Square (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $squareShow ?>" value="Square (Showcase)"><label
                                                 for="squareShow">Square</label></li>
                                         <li><input type="checkbox" id="stripeShow" name="paymentMtdShowcase[]"
-                                                class="checkBoxValue payShowcheck" value="Stripe (Showcase)"><label
+                                                class="checkBoxValue payShowcheck" data-price="<?= $stripeShow ?>" value="Stripe (Showcase)"><label
                                                 for="stripeShow">Stripe</label></li>
                                     </ul>
                                 </div>
@@ -433,12 +442,12 @@ ob_start();
                                     <!-- <option disabled hidden value="">&nbsp;</option>
                                     <option label="Please choose..." value="0" disabled selected hidden> </option> -->
 
-                                    <option label="Please choose..."> </option>
-                                    <option value="- 10 products">- 10</option>
-                                    <option value="10 - 100 products">10 - 100</option>
-                                    <option value="100 - 200 products">100 - 200</option>
-                                    <option value="200 - 500 products">200 - 500</option>
-                                    <option value="+ 500 products">+ 500</option>
+                                    <option data-price="0" label="Please choose..."> </option>
+                                    <option data-price="<?= $minusTenProd ?>" value="- 10 products">- 10</option>
+                                    <option data-price="<?= $tenProd ?>" value="10 - 100 products">10 - 100</option>
+                                    <option data-price="<?= $undredProd ?>" value="100 - 200 products">100 - 200</option>
+                                    <option data-price="<?= $twoUndredProd ?>" value="200 - 500 products">200 - 500</option>
+                                    <option data-price="<?= $fiveUndredProd ?>" value="+ 500 products">+ 500</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6" id="paymentMethStore">
@@ -450,43 +459,43 @@ ob_start();
                                             class="caret"></span></button>
                                     <ul class="dropdown-menu noclose" onchange="fillArray(), getTotal(), disableSubmit()">
                                     <li><input type="checkbox" id="2CheckoutStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="2Checkout (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $twoCheckoutStore ?>" value="2Checkout (Store)"><label
                                                 for="2CheckoutStore">2Checkout</label></li>
                                         <li><input type="checkbox" id="authorizeStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Authorize.Ne (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $authorizeStore ?>" value="Authorize.Ne (Store)"><label
                                                 for="authorizeStore">Authorize.Net</label></li>
                                         <li><input type="checkbox" id="amazonStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Amazon Payment (Store)"><label for="amazonStore">Amazon
+                                                class="checkBoxValue payStorecheck" data-price="<?= $amazonStore ?>" value="Amazon Payment (Store)"><label for="amazonStore">Amazon
                                                 Payment</label></li>
                                         <li><input type="checkbox" id="bankWireStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Bank Wire (Store)"><label for="bankWireStore">Bank
+                                                class="checkBoxValue payStorecheck" data-price="<?= $wireStore ?>" value="Bank Wire (Store)"><label for="bankWireStore">Bank
                                                 Wire</label></li>
                                         <li><input type="checkbox" id="checkStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Check (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $checkStore ?>" value="Check (Store)"><label
                                                 for="checkStore">Check</label></li>
                                         <li><input type="checkbox" id="creditCardPPStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Credit Card (Through Paypal) (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $creditPaypalStore ?>" value="Credit Card (Through Paypal) (Store)"><label
                                                 for="creditCardPPStore">Credit Card (Through Paypal)</label></li>
                                         <li><input type="checkbox" id="creditCardBkStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Credit Card (Through Bank Api) (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $creditBankStore ?>" value="Credit Card (Through Bank Api) (Store)"><label
                                                 for="creditCardBkStore">Credit Card (Through Bank Api)</label></li>
                                         <li><input type="checkbox" id="paypalStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Paypal (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $paypalStore ?>" value="Paypal (Store)"><label
                                                 for="paypalStore">Paypal</label></li>
                                         <li><input type="checkbox" id="paypalProStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="PayPal Payments Pro (Store)"><label for="paypalProStore">PayPal
+                                                class="checkBoxValue payStorecheck" data-price="<?= $paypalProStore ?>" value="PayPal Payments Pro (Store)"><label for="paypalProStore">PayPal
                                                 Payments Pro</label></li>
                                         <li><input type="checkbox" id="sagePayStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="SagePay (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $sagePayStore ?>" value="SagePay (Store)"><label
                                                 for="sagePayStore">SagePay</label></li>
                                         <li><input type="checkbox" id="skrillStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Skrill (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $skrillStore ?>" value="Skrill (Store)"><label
                                                 for="skrillStore">Skrill</label></li>
                                         <li><input type="checkbox" id="squareStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Square (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $squareStore ?>" value="Square (Store)"><label
                                                 for="squareStore">Square</label></li>
                                         <li><input type="checkbox" id="stripeStore" name="paymentMtdStore[]"
-                                                class="checkBoxValue payStorecheck" value="Stripe (Store)"><label
+                                                class="checkBoxValue payStorecheck" data-price="<?= $stripeStore ?>" value="Stripe (Store)"><label
                                                 for="stripeStore">Stripe</label></li>
                                     </ul>
                                 </div>

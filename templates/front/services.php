@@ -276,7 +276,7 @@ ob_start();
             </div>
             <!--Pricing Section-->
 
-            <?php  
+            <?php
                 $packName1 = $allPacks[0]['packNameServices'];
                 $packPrice1 = $allPacks[0]['packPriceServices'];
                 $packName2 = $allPacks[1]['packNameServices'];
@@ -285,11 +285,12 @@ ob_start();
                 $packPrice3 = $allPacks[2]['packPriceServices'];
              ?>
 
-            <script> 
 
 
+
+<script>
     // // //FIXME a dégager si je zappe AJAX
-    // //                
+    // //
 
     //                     let url = './src/controller/DisplayController/getJsonServices';
     //                     // let url = './TESTAJAX/my-json.php';
