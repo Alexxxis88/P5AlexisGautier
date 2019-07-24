@@ -2553,19 +2553,6 @@ img.author-box-image {
     color: #fff;
 }
 
-.tile-progress.tile-cyan {
-    background-color: #fff;
-    color: #202020;
-}
-
-.tile-progress.tile-cyan .tile-progressbar span {
-    background: #202020;
-}
-
-.tile-progress.tile-cyan .tile-footer {
-    background: #00b29e;
-    color: #fff;
-}
 
 .tile-progress {
     background-color: #fff;
@@ -2581,48 +2568,6 @@ img.author-box-image {
     color: #fff;
 }
 
-.tile-progress.tile-pink {
-    background-color: #fff;
-    color: #202020;
-}
-
-.tile-progress.tile-pink .tile-progressbar span {
-    background: #202020;
-}
-
-.tile-progress.tile-pink .tile-footer {
-    background: #ec3b83;
-    color: #fff;
-}
-
-.tile-progress.tile-blue {
-    background-color: #fff;
-    color: #202020;
-}
-
-.tile-progress.tile-blue .tile-progressbar span {
-    background: #202020;
-}
-
-.tile-progress.tile-blue .tile-footer {
-    background: #2f32ff;
-    color: #fff;
-}
-
-.tile-progress.tile-purple {
-    background-color: #fff;
-    color: #202020;
-}
-
-.tile-progress.tile-purple .tile-progressbar span {
-    background: #202020;
-}
-
-.tile-progress.tile-purple .tile-footer {
-    background: rgb(165, 9, 165);
-    color: #fff;
-}
-
 .tile-progress.tile-lightblue {
     background-color: #fff;
     color: #202020;
@@ -2634,20 +2579,6 @@ img.author-box-image {
 
 .tile-progress.tile-lightblue .tile-footer {
     background: rgb(74, 177, 211);
-    color: #fff;
-}
-
-.tile-progress.tile-orange {
-    background-color: #fff;
-    color: #202020;
-}
-
-.tile-progress.tile-orange .tile-progressbar span {
-    background: #202020;
-}
-
-.tile-progress.tile-orange .tile-footer {
-    background: orange;
     color: #fff;
 }
 

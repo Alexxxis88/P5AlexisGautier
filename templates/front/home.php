@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="tile-progress tile-cyan bounce-in">
+                        <div class="tile-progress tile-red bounce-in">
                             <div class="tile-header">
                                 <h3>CSS3</h3>
                                 <span>How about the look ? CSS3 handles that like no one else</span>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="tile-progress tile-primary bounce-in">
+                        <div class="tile-progress tile-red bounce-in">
                             <div class="tile-header">
                                 <h3>Javascript</h3>
                                 <span>Wow, everything is interactive. Say thanks to Javascript</span>
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="tile-progress tile-pink bounce-in">
+                        <div class="tile-progress tile-red bounce-in">
                             <div class="tile-header">
                                 <h3>PHP/MYSLQ</h3>
                                 <span>Storing and managing datas? This power couple does the job</span>
@@ -170,7 +170,7 @@
                 <div class="row">
                     <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
                     <div class="col-md-3">
-                        <div class="tile-progress tile-blue bounce-in">
+                        <div class="tile-progress tile-lightblue bounce-in">
                             <div class="tile-header">
                                 <h3>Wordpress</h3>
                                 <span>EVERYTHING you can think about can be made with it</span>
@@ -186,7 +186,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="tile-progress tile-purple bounce-in">
+                        <div class="tile-progress tile-lightblue bounce-in">
                             <div class="tile-header">
                                 <h3>Bootstrap</h3>
                                 <span>Helps me creating your beautiful design in a blink of an eye</span>
@@ -218,7 +218,7 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="tile-progress tile-orange bounce-in">
+                        <div class="tile-progress tile-lightblue bounce-in">
                             <div class="tile-header">
                                 <h3>Illustrator</h3>
                                 <span>The best tool and a great idea : all I need to create your logo</span>
