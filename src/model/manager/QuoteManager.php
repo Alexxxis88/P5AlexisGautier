@@ -6,7 +6,6 @@ class QuoteManager extends GlobalManager
 {
 
     //PACK QUOTES
-
     public function checkServicesPackQuote($packServiceName)
     {
         $req = $this->_db->prepare('SELECT * FROM packquoteservices WHERE packNameServices = ? ');
@@ -21,16 +20,12 @@ class QuoteManager extends GlobalManager
         $newPackQuoteDb->execute(array($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName));
     }
 
-
-
-    //FIXME : useless si ajax ?
     public function displayPacks()
     {
         $req = $this->_db->query('SELECT * FROM packquoteservices');
         $req->execute();
 
         $packs = array();
-
         while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
             $packs[] = $row;
 
@@ -38,30 +33,18 @@ class QuoteManager extends GlobalManager
         return $packs;
     }
 
-    //FIXME : useless si ajax ? 
     public function displayCustomServices()
     {
         $req = $this->_db->query('SELECT * FROM customquoteservices');
         $req->execute();
 
         $customServices = array();
-
         while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
             $customServices[] = $row;
 
         }
         return $customServices;
     }
-
-
-
-
-
-
-
-
-
-
 
     public function getPackQuotes($firstItem, $itemsPerPage)
     {
@@ -133,9 +116,7 @@ class QuoteManager extends GlobalManager
     }
 
 
-
     //CUSTOM QUOTES
-
     public function checkServicesCustomQuote($serviceName)
     {
         $req = $this->_db->prepare('SELECT * FROM customquoteservices WHERE serviceName = ? ');
@@ -200,8 +181,6 @@ class QuoteManager extends GlobalManager
         return $isThereCustomQuote;
     }
 
-
-    
     //display all custom services in BO
     public function getCustomServices()
     {

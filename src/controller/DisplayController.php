@@ -23,54 +23,15 @@ class DisplayController
         require('templates/front/home.php');
     }
 
-
-
-
-
-    public function getJsonServices()
-    {
-        $quoteManager = new QuoteManager();
-        $allPacks = $quoteManager->displayPacks();
-        // echo $allPacks;
-
-        // header('Content-Type: application/json');
-        $allPacks = json_encode($allPacks);
-        return $allPacks;
-
-    }
-
-
-    // public function getJsonCustom()
-    // {
-    //     $quoteManager = new QuoteManager();
-    //     $allcustomServices = $quoteManager->displayCustomServices();
-    //     $allcustomServices = json_encode($allcustomServices);
-    //     print_r($allcustomServices);
-    // }
-
-
-
-
     public function displayServices()
     {
         $quoteManager = new QuoteManager();
         $allPacks = $quoteManager->displayPacks();
 
-        //AJAX
-        // $allPacks = json_encode($allPacks);
-        // echo $allPacks;
-        // echo var_dump($allPacks);
-
-        // $json = '[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"99"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]';
-
-        // echo $json;
-
-
         require('templates/front/services.php');
     }
 
 
-    //FIXME : useless si ajax ?
     public function displayQuote()
     {
         $quoteManager = new QuoteManager();

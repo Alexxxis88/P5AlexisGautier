@@ -33,8 +33,6 @@ ob_start();
 </section>
 
 <div id="content-wrapper">
-    <!-- FIXME : duplicate content entre page d'accueil et page Services-->
-
     <section id="services" class="white">
         <div class="container">
             <div class="gap"></div>
@@ -46,9 +44,7 @@ ob_start();
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Website</h3>
-                            <p>Need a brand new website or to revamp your old one ? Either for the brand you just
-                                started, your company, local association or anything else : I can offer you the kind
-                                of services you need. </p>
+                            <p>Need a brand new website or to revamp your old one ? Either for the brand you just started, your company, local association or anything else : I can offer you the kind of services you need. </p>
                         </div>
                     </div>
                 </div>
@@ -59,9 +55,7 @@ ob_start();
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Webstore</h3>
-                            <p>You want to sell your products online ? Only a few items or a very large catalogue,
-                                it doesn't make a difference. I will create the webstore that suits your needs and
-                                help you boost these sales!</p>
+                            <p>You want to sell your products online ? Only a few items or a very large catalogue, it doesn't make a difference. I will create the webstore that suits your needs and help you boost these sales!</p>
                         </div>
                     </div>
                 </div>
@@ -72,8 +66,7 @@ ob_start();
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Blog</h3>
-                            <p>Food enthusiast, sports maniac, music lover ? Yes, there are millions of people who
-                                share your passion. I can develop the blog you dream of for all kinds of topics.</p>
+                            <p>Food enthusiast, sports maniac, music lover ? Yes, there are millions of people who share your passion. I can develop the blog you dream of for all kinds of topics.</p>
                         </div>
                     </div>
                 </div>
@@ -99,8 +92,7 @@ ob_start();
                         </div>
                         <div class="media-body fade-up">
                             <h3 class="media-heading">Webdesign</h3>
-                            <p>No idea about how you want your website to look like? I can help you with the whole
-                                design, creating a logo or tips about new trends in webdesign.</p>
+                            <p>No idea about how you want your website to look like? I can help you with the whole design, creating a logo or tips about new trends in webdesign.</p>
                         </div>
                     </div>
                 </div>

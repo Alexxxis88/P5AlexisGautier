@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
                 <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".webstore">Webstore</a></li>
                 <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".blog">Blog</a></li>
             </ul>
-            <ul class="portfolio-items col-3 isotope fade-up">
+            <ul class="portfolio-items col-3 isotope fade-up"> <!-- FIXME : affichage sur petit écran doit etre sur une colonne -->
                 <li class="portfolio-item website isotope-item">
                     <div class="item-inner">
                         <a data-toggle="modal" data-target="#webAgency"><img src="./public/images/portfolio/Dev/webAgency/webAgencyPrev.jpg" alt="Image de présentation Webagency">

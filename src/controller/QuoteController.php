@@ -9,7 +9,6 @@ use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
 class QuoteController
 {
     //PACK QUOTES
-
     //Check and gives back an array with correct prices and packname retrieved from DB
     public function servicesPackQuote($packServiceName)
     {
@@ -245,67 +244,32 @@ class QuoteController
     }
 
 
-
-
     //CUSTOM QUOTES
 
     //Check and gives back an array with correct prices retrieved from DB
     public function servicesCustomQuote($arrayServices)
     {
-
-        // echo '<h3>arrayServices avant de le convertir en tableau</h3> '; //FIXMECUSTOM : a virer
-        // echo var_dump($arrayServices); //FIXMECUSTOM : a virer
-
         $arrayServices = explode(",",$arrayServices);
-
-        // echo '<h3>arrayServices APRES l\'avoir converti en tableau</h3> '; //FIXMECUSTOM : a virer
-        // echo var_dump($arrayServices); //FIXMECUSTOM : a virer
-
         $allPrices = [];
-
         for($i = 0; $i < sizeof($arrayServices); $i++ )
         {
             $quoteManager = new QuoteManager();
             $returnValue = $quoteManager->checkServicesCustomQuote($arrayServices[$i]);
-
 
             //testing if packname is correct
             if($returnValue[0] == null){
                 throw new \Exception('There is a problem with this Custom Quote. Please try again'); //I stay vague not to inform a malicious user who tryed to edit the price how to make it work
             }
 
-
-            // echo '<h3>Les autres champs ayant pour serviceName ' . $arrayServices[$i] . ' récupérés depuis la BDD via checkServicesCustomQuote()</h3>  '; //FIXMECUSTOM : a virer
-            // // echo(implode(", ",array_values($returnValue))); //FIXMECUSTOM : a virer
-            // echo 'idServ :' . $returnValue['idServ'] . ' -- ' . ' serviceGroup : ' . $returnValue['serviceGroup'] . ' -- ' . ' serviceName : ' . $returnValue['serviceName'] . ' -- ' .' price :' . $returnValue['price']; //FIXMECUSTOM : a virer
-
-
             //All prices are gathered into an array to array_sum all values and get total price
             array_push($allPrices, $returnValue['price']);
         }
 
-        // echo '<h3>TOTAL PRICE</h3> '; //FIXMECUSTOM : a virer
-        // echo var_dump($allPrices); //FIXMECUSTOM : a virer
-
         $totalPrice = array_sum($allPrices);
-        // echo '<h1>prix calculé ' . $totalPrice . ' €</h1> '; //FIXMECUSTOM : a virer
-
         array_unshift($arrayServices, $totalPrice );
-
-        // echo '<h3>TOUTES LES INFOS</h3> '; //FIXMECUSTOM : a virer
-        // echo var_dump($arrayServices); //FIXMECUSTOM : a virer
 
         return  $arrayServices;
     }
-
-
-
-
-
-
-
-
-
 
     public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
@@ -318,8 +282,6 @@ class QuoteController
 
         $quoteManager = new QuoteManager();
         $quoteManager->insertNewCustomQuote(htmlspecialchars($siteType), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent), htmlspecialchars($imageName), htmlspecialchars($design), htmlspecialchars($writingContent), htmlspecialchars($visualContent), htmlspecialchars($maintenance), htmlspecialchars($host), htmlspecialchars($domainYN), htmlspecialchars($deadlineSelect), htmlspecialchars($pageNb), htmlspecialchars($loginShowcaseYN), htmlspecialchars($paymentShowcaseYN), htmlspecialchars($productNb), htmlspecialchars($languages), htmlspecialchars($extensions), htmlspecialchars($paymentMtdShowcase), htmlspecialchars($options), htmlspecialchars($paymentMtdStore));
-
-
     }
 
     public function sendCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
@@ -331,7 +293,6 @@ class QuoteController
         $paymentMtdShowcase = implode(", ",array_values($paymentMtdShowcase));
         $options = implode(", ",array_values($options));
         $paymentMtdStore = implode(", ",array_values($paymentMtdStore));
-
 
         date_default_timezone_set("Europe/Paris");
         $to  = 'jeangujeangu@gmail.com, '. htmlspecialchars($contactEmail) . '';
@@ -396,152 +357,145 @@ class QuoteController
         }
     }
 
-
     public function checkCustomQuoteFields($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
         $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
         //testing if siteType is correct
-        if ($_POST['siteType'] == "Showcase Website" OR $_POST['siteType'] == "Webstore" OR $_POST['siteType'] == "Showcase Website + Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website" OR $_POST['siteType'] == "Redesign - Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website + Webstore" ) {
+        if ($_POST['siteType'] == "Showcase Website" OR $_POST['siteType'] == "Webstore" OR $_POST['siteType'] == "Showcase Website + Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website" OR $_POST['siteType'] == "Redesign - Webstore" OR $_POST['siteType'] == "Redesign - Showcase Website + Webstore" )
+        {
+            //testing if project name at least 2 caracters
+            if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$#i", $_POST['project'])) {
+                //testing if structure is correct
+                if ($_POST['structure'] == "individual" OR $_POST['structure'] == "professional" OR $_POST['structure'] == "association" OR $_POST['structure'] == "other" ) {
 
-            // //testing if price is correct (value = minimum price with all minimum options selected = Redesign showcase w/ min options)
-            // if ($_POST['price'] > 400 ) { FIXMECUSTOM ; supprimer quand custom quote fonctionnera bien
+                    //testing if company name is correct
+                    if (preg_match("#(^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$)*#i", $_POST['company'])) {
 
-                //testing if project name at least 2 caracters
-                if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$#i", $_POST['project'])) {
-                    //testing if structure is correct
-                    if ($_POST['structure'] == "individual" OR $_POST['structure'] == "professional" OR $_POST['structure'] == "association" OR $_POST['structure'] == "other" ) {
+                        //testing if firstName only has authorised caracters
+                        if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['firstName'])) {
 
-                        //testing if company name is correct
-                        if (preg_match("#(^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$)*#i", $_POST['company'])) {
+                            //testing if lastName only has authorised caracters
+                            if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['lastName'])) {
+                                //testing if email is conform
+                                if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#i", $_POST['contactEmail'])) {
 
-                            //testing if firstName only has authorised caracters
-                            if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['firstName'])) {
+                                    //testing if phone is conform (not mandatory)
+                                    if (preg_match("#[0-9\.+_ -]*$#", $_POST['phone'])) {
 
-                                //testing if lastName only has authorised caracters
-                                if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['lastName'])) {
-                                    //testing if email is conform
-                                    if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#i", $_POST['contactEmail'])) {
+                                        //testing if address is conform
+                                        if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postalAddress'])) {
 
-                                        //testing if phone is conform (not mandatory)
-                                        if (preg_match("#[0-9\.+_ -]*$#", $_POST['phone'])) {
+                                            //testing if postcode is conform
+                                            if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postCode'])) {
 
-                                            //testing if address is conform
-                                            if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postalAddress'])) {
+                                                //testing if city is conform
+                                                if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['city'])) {
 
-                                                //testing if postcode is conform
-                                                if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postCode'])) {
+                                                    //testing if desing is correct
+                                                    if ($_POST['design'] == "Standard Design" OR $_POST['design'] == "Custom Design" OR $_POST['design'] == "Custom + Design") {
 
-                                                    //testing if city is conform
-                                                    if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['city'])) {
+                                                        //testing if writingContent is correct
+                                                        if ($_POST['writingContent'] == "YesWriting" OR $_POST['writingContent'] == "NoWriting") {
 
-                                                        //testing if desing is correct
-                                                        if ($_POST['design'] == "Standard Design" OR $_POST['design'] == "Custom Design" OR $_POST['design'] == "Custom + Design") {
+                                                            //testing if visualContent is correct
+                                                            if ($_POST['visualContent'] == "YesVisual" OR $_POST['visualContent'] == "NoVisual") {
 
-                                                            //testing if writingContent is correct
-                                                            if ($_POST['writingContent'] == "YesWriting" OR $_POST['writingContent'] == "NoWriting") {
+                                                                //testing if maintenance is correct
+                                                                if ($_POST['maintenance'] == "No Maintenance" OR $_POST['maintenance'] == "Minimal Maintenance" OR $_POST['maintenance'] == "Regular Maintenance" OR $_POST['maintenance'] == "Premium Maintenance" OR $_POST['maintenance'] == "Gold Maintenance") {
 
-                                                                //testing if visualContent is correct
-                                                                if ($_POST['visualContent'] == "YesVisual" OR $_POST['visualContent'] == "NoVisual") {
+                                                                    //testing if host is correct
+                                                                    if ($_POST['host'] == "No Host" OR $_POST['host'] == "Standard Host" OR $_POST['host'] == "Premium Host") {
 
-                                                                    //testing if maintenance is correct
-                                                                    if ($_POST['maintenance'] == "No Maintenance" OR $_POST['maintenance'] == "Minimal Maintenance" OR $_POST['maintenance'] == "Regular Maintenance" OR $_POST['maintenance'] == "Premium Maintenance" OR $_POST['maintenance'] == "Gold Maintenance") {
+                                                                        //testing if domainYN is correct
+                                                                        if ($_POST['domainYN'] == "No" OR $_POST['domainYN'] == "Yes" ) {
 
-                                                                        //testing if host is correct
-                                                                        if ($_POST['host'] == "No Host" OR $_POST['host'] == "Standard Host" OR $_POST['host'] == "Premium Host") {
+                                                                            //testing if deadlineSelect is correct
+                                                                            if ($_POST['deadlineSelect'] == "No Deadline" OR $_POST['deadlineSelect'] == "Express +" OR $_POST['deadlineSelect'] == "Express" OR $_POST['deadlineSelect'] == "Fast" OR $_POST['deadlineSelect'] == "Regular" OR $_POST['deadlineSelect'] == "Slow") {
 
-                                                                            //testing if domainYN is correct
-                                                                            if ($_POST['domainYN'] == "No" OR $_POST['domainYN'] == "Yes" ) {
+                                                                                //testing if deadline date is in the future
+                                                                                $today = date("Y-m-d");
+                                                                                if ($_POST['deadline'] > $today) {
 
-                                                                                //testing if deadlineSelect is correct
-                                                                                if ($_POST['deadlineSelect'] == "No Deadline" OR $_POST['deadlineSelect'] == "Express +" OR $_POST['deadlineSelect'] == "Express" OR $_POST['deadlineSelect'] == "Fast" OR $_POST['deadlineSelect'] == "Regular" OR $_POST['deadlineSelect'] == "Slow") {
+                                                                                    //testing if pageNb is correct
+                                                                                    if ($_POST['pageNb'] == '' OR $_POST['pageNb'] ==  '- 10 pages' OR $_POST['pageNb'] == '10 - 50 pages' OR $_POST['pageNb'] == '50 - 100 pages' OR $_POST['pageNb'] == '100 - 200' OR $_POST['pageNb'] == '200 - 500 pages' OR $_POST['pageNb'] == '+ 500 pages')
+                                                                                    {
+                                                                                        //testing if loginShowcaseYN is correct
+                                                                                        if ($_POST['loginShowcaseYN'] ==  '' OR $_POST['loginShowcaseYN'] ==  'Yes Login' OR $_POST['loginShowcaseYN'] == 'No Login') {
 
-                                                                                    //testing if deadline date is in the future
-                                                                                    $today = date("Y-m-d");
-                                                                                    if ($_POST['deadline'] > $today) {
+                                                                                            //testing if paymentShowcaseYN is correct
+                                                                                            if ($_POST['paymentShowcaseYN'] ==  '' OR  $_POST['paymentShowcaseYN'] ==  'Yes' OR $_POST['paymentShowcaseYN'] == 'No') {
 
-                                                                                        //testing if pageNb is correct
-                                                                                        if ($_POST['pageNb'] == '' OR $_POST['pageNb'] ==  '- 10 pages' OR $_POST['pageNb'] == '10 - 50 pages' OR $_POST['pageNb'] == '50 - 100 pages' OR $_POST['pageNb'] == '100 - 200' OR $_POST['pageNb'] == '200 - 500 pages' OR $_POST['pageNb'] == '+ 500 pages')
-                                                                                        {
-                                                                                            //testing if loginShowcaseYN is correct
-                                                                                            if ($_POST['loginShowcaseYN'] ==  '' OR $_POST['loginShowcaseYN'] ==  'Yes Login' OR $_POST['loginShowcaseYN'] == 'No Login') {
+                                                                                                //testing if productNb is correct
+                                                                                                if ($_POST['productNb'] ==  '' OR $_POST['productNb'] ==  '- 10 products' OR $_POST['productNb'] == '10 - 100 products' OR $_POST['productNb'] == '100 - 200 products' OR $_POST['productNb'] == '200 - 500 products' OR $_POST['productNb'] == '+ 500 products')
+                                                                                                {
+                                                                                                    return true;
 
-                                                                                                //testing if paymentShowcaseYN is correct
-                                                                                                if ($_POST['paymentShowcaseYN'] ==  '' OR  $_POST['paymentShowcaseYN'] ==  'Yes' OR $_POST['paymentShowcaseYN'] == 'No') {
-
-                                                                                                    //testing if productNb is correct
-                                                                                                    if ($_POST['productNb'] ==  '' OR $_POST['productNb'] ==  '- 10 products' OR $_POST['productNb'] == '10 - 100 products' OR $_POST['productNb'] == '100 - 200 products' OR $_POST['productNb'] == '200 - 500 products' OR $_POST['productNb'] == '+ 500 products')
-                                                                                                    {
-                                                                                                        return true;
-
-                                                                                                    }else {
-                                                                                                        throw new \Exception('Number of products for sale for Webstore is incorrect');
-                                                                                                    }
                                                                                                 }else {
-                                                                                                    throw new \Exception('Payment option for Showcase Website is incorrect');
+                                                                                                    throw new \Exception('Number of products for sale for Webstore is incorrect');
                                                                                                 }
                                                                                             }else {
-                                                                                                throw new \Exception('User login options is incorrect');
+                                                                                                throw new \Exception('Payment option for Showcase Website is incorrect');
                                                                                             }
                                                                                         }else {
-                                                                                            throw new \Exception('Number of page for Showcase Website is incorrect');
+                                                                                            throw new \Exception('User login options is incorrect');
                                                                                         }
                                                                                     }else {
-                                                                                        throw new \Exception('Deadline cannot be in the past');
+                                                                                        throw new \Exception('Number of page for Showcase Website is incorrect');
                                                                                     }
-                                                                                } else {
-                                                                                throw new \Exception('Deadline is incorrect');
+                                                                                }else {
+                                                                                    throw new \Exception('Deadline cannot be in the past');
                                                                                 }
                                                                             } else {
-                                                                            throw new \Exception('Domain name choice is incorrect');
+                                                                            throw new \Exception('Deadline is incorrect');
                                                                             }
                                                                         } else {
-                                                                        throw new \Exception('Host choice is incorrect');
+                                                                        throw new \Exception('Domain name choice is incorrect');
                                                                         }
                                                                     } else {
-                                                                    throw new \Exception('Maintenance choice is incorrect');
+                                                                    throw new \Exception('Host choice is incorrect');
                                                                     }
                                                                 } else {
-                                                                throw new \Exception('Visual content choice is incorrect');
+                                                                throw new \Exception('Maintenance choice is incorrect');
                                                                 }
                                                             } else {
-                                                            throw new \Exception('Writing content choice is incorrect');
+                                                            throw new \Exception('Visual content choice is incorrect');
                                                             }
                                                         } else {
-                                                        throw new \Exception('Design choice is incorrect');
+                                                        throw new \Exception('Writing content choice is incorrect');
                                                         }
                                                     } else {
-                                                    throw new \Exception('City is incorrect');
+                                                    throw new \Exception('Design choice is incorrect');
                                                     }
                                                 } else {
-                                                throw new \Exception('Post Code is incorrect');
+                                                throw new \Exception('City is incorrect');
                                                 }
                                             } else {
-                                            throw new \Exception('Address is incorrect');
+                                            throw new \Exception('Post Code is incorrect');
                                             }
                                         } else {
-                                            throw new \Exception('Phone number is incorrect');
+                                        throw new \Exception('Address is incorrect');
                                         }
                                     } else {
-                                        throw new \Exception('Email address is incorrect');
+                                        throw new \Exception('Phone number is incorrect');
                                     }
                                 } else {
-                                    throw new \Exception('Last Name is incorrect.');
+                                    throw new \Exception('Email address is incorrect');
                                 }
                             } else {
-                                throw new \Exception('First Name is incorrect.');
+                                throw new \Exception('Last Name is incorrect.');
                             }
                         } else {
-                            throw new \Exception('Company name is incorrect');
+                            throw new \Exception('First Name is incorrect.');
                         }
                     } else {
-                        throw new \Exception('Structure is incorrect');
+                        throw new \Exception('Company name is incorrect');
                     }
                 } else {
-                    throw new \Exception('Project name is incorrect');
+                    throw new \Exception('Structure is incorrect');
                 }
-            // } else {
-            //     throw new \Exception('Price is incorrect');
-            // } FIXME ; supprimer quand custom quote fonctionnera bien 
+            } else {
+                throw new \Exception('Project name is incorrect');
+            }
         } else {
             throw new \Exception('Site type is incorrect');
         }

@@ -51,7 +51,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- FIXME : duplicate content entre page d'accueil et page Services-->
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
@@ -100,7 +99,6 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
                     <div class="col-md-3">
                         <div class="tile-progress tile-red bounce-in">
                             <div class="tile-header">
@@ -168,7 +166,6 @@
                 </div>
                 <div class="gap"></div>
                 <div class="row">
-                    <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
                     <div class="col-md-3">
                         <div class="tile-progress tile-lightblue bounce-in">
                             <div class="tile-header">

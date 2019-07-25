@@ -37,7 +37,6 @@ function fillArray() {
 
     //fill the array
     document.getElementById("arrayServices").value = arrayId;
-    // console.log( arrayId); FIXMECUSTOM remove me
 };
 
 
@@ -68,14 +67,6 @@ function getSelectValue() {
 
     totalInput = siteType + design + writingContent + visualContent + maintenance + host + deadlineSelect + pageNb + loginShowcaseYN + productNb;
 
-        // //FIXME : virer TOUS les consoles log
-        // console.log( 'valeur siteType ' + siteType);
-        // console.log('type siteType ' + typeof(siteType));
-
-        // console.log( 'valeur design ' + design);
-        // console.log('type design ' + typeof(design));
-        // console.log( 'valeur totalInput ' + totalInput);
-        // console.log('type totalInput ' + typeof(totalInput));
 };
 
 
@@ -182,12 +173,6 @@ function getTotal() {
     grandTotal = totalInput + totalCheckboxe;
     document.getElementById("text-customQuote").innerHTML = grandTotal + " € ";
     document.getElementById("text-customQuoteWidget").innerHTML = grandTotal + " € ";
-    // document.getElementById("price").value = grandTotal; FIXME : remove me car je ne me sers pas du champ price
-
-    //FIXME : remove me
-    // console.log( 'valeur grandtotal ' + grandTotal);
-    // console.log('type grandtotal ' + typeof(grandTotal));
-
 }
 
 
@@ -234,9 +219,6 @@ function deselectAll(){
     //reset price display
     document.getElementById("text-customQuote").innerHTML = siteType + " € ";
     document.getElementById("text-customQuoteWidget").innerHTML = siteType + " € ";
-
-
-    // document.getElementById("price").value = siteType; FIXME : remove me car je ne me sers pas du champ price
 
     //empty arrayService
     document.getElementById("arrayServices").value = "";
