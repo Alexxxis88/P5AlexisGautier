@@ -6,9 +6,7 @@ use \AlexisGautier\PersonalWebsite\Controller\DisplayController;
 use \AlexisGautier\PersonalWebsite\Controller\MessageController;
 use \AlexisGautier\PersonalWebsite\Controller\QuoteController;
 
-
 //AUTOLOAD
-
 function classAutoLoad($class)
 {
     $parts = explode('\\', $class);
@@ -40,8 +38,6 @@ try {
         elseif ($_GET['action'] == 'services') {
             $displayController = new DisplayController;
             $displayController->displayServices();
-            $displayController->getJsonServices(); //FIXME : a virer si pas d'ajax pour services.php
-
 
             //Confirmation message quote request sent
             if (isset($_GET['success']) and $_GET['success'] == 1) {
@@ -51,8 +47,6 @@ try {
         elseif ($_GET['action'] == 'quote') {
             $displayController = new DisplayController;
             $displayController->displayQuote();
-            // $displayController->getJsonCustom();
-
 
             //Confirmation message quote request sent
             if (isset($_GET['success']) and $_GET['success'] == 1) {
@@ -218,7 +212,6 @@ try {
                     $_POST['phone'] = "";
                 }
 
-
                 $quoteController = new QuoteController;
 
                 if( $quoteController->checkPackQuoteFields($_POST['packName'],$_POST['price'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'],$_POST['deadline'], $_POST['messageContent']) == true){
@@ -272,8 +265,6 @@ try {
 
                 $quoteController = new QuoteController;
                 $quoteController->acceptDenyPackQuote($_GET['acceptPackQuote'], $_GET['packQuoteId']);
-
-
             } else {
                 throw new Exception('Missing invoice id or choice');
             }
@@ -345,8 +336,8 @@ try {
 
                 $quoteController = new QuoteController;
 
-                if( $quoteController->checkCustomQuoteFields($_POST['siteType'], $_POST['arrayServices'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']) == true){
-
+                if( $quoteController->checkCustomQuoteFields($_POST['siteType'], $_POST['arrayServices'], $_POST['project'], $_POST['structure'], $_POST['company'], $_POST['firstName'], $_POST['lastName'], $_POST['contactEmail'], $_POST['phone'], $_POST['postalAddress'],$_POST['postCode'], $_POST['city'], $_POST['country'], $_POST['deadline'], $_POST['messageContent'], $_POST['design'], $_POST['writingContent'], $_POST['visualContent'], $_POST['maintenance'], $_POST['host'], $_POST['domainYN'], $_POST['deadlineSelect'], $_POST['pageNb'], $_POST['loginShowcaseYN'], $_POST['paymentShowcaseYN'], $_POST['productNb'], $_POST['language'], $_POST['extensions'], $_POST['paymentMtdShowcase'], $_POST['options'], $_POST['paymentMtdStore']) == true)
+                {
                     //sending image to server, if any
                     $imageName =  $quoteController->imageQuote();
 
@@ -385,8 +376,8 @@ try {
         }
 
         elseif ($_GET['action'] == 'acceptCustomQuote') {
-            if (isset($_GET['customQuoteId']) && $_GET['customQuoteId'] > 0 && isset($_GET['acceptCustomQuote'])) {
-
+            if (isset($_GET['customQuoteId']) && $_GET['customQuoteId'] > 0 && isset($_GET['acceptCustomQuote']))
+            {
                 $messageController = new MessageController;
                 $messageController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
 
@@ -398,15 +389,13 @@ try {
         }
 
         elseif ($_GET['action'] == 'refuseCustomQuote') {
-            if (isset($_GET['customQuoteId']) && $_GET['customQuoteId'] > 0 && isset($_GET['acceptCustomQuote'])) {
-
+            if (isset($_GET['customQuoteId']) && $_GET['customQuoteId'] > 0 && isset($_GET['acceptCustomQuote']))
+            {
                 $messageController = new MessageController;
                 $messageController->sendAnswer($_POST['clientEmail'], $_POST['answerTopic'], $_POST['answerContent']);
 
                 $quoteController = new QuoteController;
                 $quoteController->acceptDenyCustomQuote($_GET['acceptCustomQuote'], $_GET['customQuoteId']);
-
-
             } else {
                 throw new Exception('Missing invoice id or choice');
             }
@@ -430,7 +419,6 @@ try {
 
 
         //MESSAGES MANAGEMENT
-
         elseif ($_GET['action'] == 'answerMessage') {
             if (isset($_GET['messageId']) && $_GET['messageId'] > 0) {
 
@@ -467,7 +455,6 @@ try {
             throw new \Exception('This page doesn\'t exist');
         }
     }
-
 
     //DEFAULT BEHAVIOR
     else {
