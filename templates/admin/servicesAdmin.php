@@ -4,7 +4,7 @@ ob_start();
 ?>
 <div class="container noHeaderImg"> <!-- DO NOT add a fade-up/down/bounce/flip class or modal when answering won't display correctly-->
     <section class="packServices">
-        <h2 class="titleManageCom titleMessages">Pack Services</h2>
+        <h2 class="titleMessages">Pack Services</h2>
         <hr>
         <?php
         if (!empty($packServicesList)) { //needed otherwise gives an error on the messagesAdmin.php when no archived message
@@ -31,7 +31,7 @@ ob_start();
     </section>
 
     <section class="customServices">
-        <h2 class="titleManageCom titleMessages">Custom Services</h2>
+        <h2 class="titleMessages">Custom Services</h2>
         <hr>
         <?php
         if (!empty($customServicesList)) { //needed otherwise gives an error on the messagesAdmin.php when no archived message

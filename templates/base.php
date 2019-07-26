@@ -38,22 +38,8 @@
         <script src="./public/js/respond.min.js"></script>
         <![endif]-->
 
+        <!-- Jquerry -->
         <script src="./public/js/jquery.js"></script>
-
-
-        <!-- Jquerry
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
-
-
-        <!-- Bootstrap
-            Latest compiled and minified CSS
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-
-            <!-- Optional theme
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
-
-            <!-- Latest compiled and minified JavaScript
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
 
         <!-- Font Awesome Icon -->
         <script src="https://kit.fontawesome.com/0e45521ec5.js"></script>
@@ -129,7 +115,6 @@
         </footer>
 
         <!-- My scripts -->
-        
         <script src="./public/js/browsers.js" ></script>
         <script src="./public/js/plugins.js"></script>
         <script src="./public/js/bootstrap.min.js"></script>

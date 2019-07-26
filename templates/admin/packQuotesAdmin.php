@@ -10,7 +10,7 @@ ob_start();
         <a href="index.php?action=packQuotesAdmin&page=<?= $_GET['page'] ?>&sortBy=99999999999999999999"><button class="btn btn-info btn-sm"><strong>All</strong></button></a></p>
         <?php include('templates/pagination.php'); ?>
 
-        <h2 class="titleManageCom titleMessages">Pack Quotes</h2>
+        <h2 class="titleMessages">Pack Quotes</h2>
         <hr>
         <?php
             if (!empty($packQuote)){ //needed otherwise gives an error on the packQuotesAdmin.php when no new message
@@ -38,7 +38,7 @@ ob_start();
                     $clientStatus = $packQuote[$i]->clientStatus();
                     ?>
                     <div <?php if ($quoteStatus == 0 && $accepted != 2) : echo 'class="newPackQuote"'; elseif ($accepted == 2) : echo 'class="refusedPackQuote"'; else : echo 'class="packQuote"'; endif; ?> >
-                        <p class="commentHead">Pack Quote n° <strong><?= $packQuoteId ?></strong>
+                        <p class="blockHead">Pack Quote n° <strong><?= $packQuoteId ?></strong>
                             <?php
                             //Status
                             if ($quoteStatus == 0 && $accepted == 1) : echo '&emsp; - &emsp; <i class="fas fa-history" style="color:white"> </i> Pending';
@@ -86,8 +86,8 @@ ob_start();
                         </div>
                         <button class="fas fa-search quoteMoreInfoBtn<?=$packQuoteId ?>"> More ...</button>
 
-                        <div class="manageComIcons">
-                            <div class="approvDelComs">
+                        <div class="manageIcons">
+                            <div class="AnsDelRef">
 
                             <!-- this script stays here because it uses PHP variables and can't work in Main.js -->
                             <script>

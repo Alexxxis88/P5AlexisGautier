@@ -10,7 +10,7 @@ ob_start();
         <a href="index.php?action=customQuotesAdmin&page=<?= $_GET['page'] ?>&sortBy=99999999999999999999"><button class="btn btn-info btn-sm"><strong>All</strong></button></a></p>
         <?php include('templates/pagination.php'); ?>
 
-        <h2 class="titleManageCom titleMessages">Custom Quotes</h2>
+        <h2 class="titleMessages">Custom Quotes</h2>
         <hr>
         <?php
             if (!empty($customQuote)){ //needed otherwise gives an error on the customQuotesAdmin.php when no new message
@@ -54,7 +54,7 @@ ob_start();
                     $clientStatus = $customQuote[$i]->clientStatus();
                     ?>
                     <div <?php if ($quoteStatus == 0 && $accepted != 2) : echo 'class="newCustomQuote"'; elseif ($accepted == 2) : echo 'class="refusedCustomQuote"'; else : echo 'class="customQuote"'; endif; ?> >
-                        <p class="commentHead">Custom Quote n° <strong><?= $customQuoteId ?></strong>
+                        <p class="blockHead">Custom Quote n° <strong><?= $customQuoteId ?></strong>
                             <?php
                             //Status
                             if ($quoteStatus == 0 && $accepted == 1) : echo '&emsp; - &emsp; <i class="fas fa-history" style="color:white"> </i> Pending';
@@ -125,8 +125,8 @@ ob_start();
                         </div>
                         <button class="fas fa-search quoteMoreInfoBtn<?=$customQuoteId ?>"> More ...</button>
 
-                        <div class="manageComIcons">
-                            <div class="approvDelComs">
+                        <div class="manageIcons">
+                            <div class="AnsDelRef">
 
                             <!-- this script stays here because it uses PHP variables and can't work in Main.js -->
                             <script>

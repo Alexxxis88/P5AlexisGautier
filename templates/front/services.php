@@ -13,7 +13,7 @@ ob_start();
 <script src="./public/js/ajax.js"></script>
 
 <section id="single-page-slider" class="no-margin">
-    <div class="carousel slide" data-ride="carousel">
+    <div class="carousel slide">
         <div class="carousel-inner">
             <div class="item active">
                 <div class="container">

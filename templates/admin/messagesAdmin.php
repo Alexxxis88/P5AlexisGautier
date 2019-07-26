@@ -5,9 +5,9 @@ ob_start();
 <div class="container noHeaderImg"> <!-- DO NOT add a fade-up/down/bounce/flip class or modal when answering won't display correctly-->
     <!-- NEW MESSAGES -->
     <section id="sectionNewMessages">
-        <div class="row manageComBtns newMessagesBtns">
+        <div class="row manageMsgBtns newMessagesBtns">
             <div class="col-md-12">
-            <a class="manageComBtn newMessagesBtn js-scrollTo" href="#sectionArchivedMessages"><i class="fas fa-anchor"></i> View archived messages</a>
+            <a class="manageMsgBtn newMessagesBtn js-scrollTo" href="#sectionArchivedMessages"><i class="fas fa-anchor"></i> View archived messages</a>
             </div>
         </div>
         <p>Display by
@@ -15,7 +15,7 @@ ob_start();
             <a href="index.php?action=messagesAdmin&page=<?= $_GET['page'] ?>&sortBy=10"><button class="btn btn-info btn-sm"><strong>10</strong></button></a>
             <a href="index.php?action=messagesAdmin&page=<?= $_GET['page'] ?>&sortBy=99999999999999999999"><button class="btn btn-info btn-sm"><strong>All</strong></button></a></p>
             <?php include('templates/pagination.php'); ?>
-        <h2 class="titleManageCom titleMessages">New Messages</h2>
+        <h2 class="titleMessages">New Messages</h2>
         <hr>
         <?php
             if (!empty($newMessages)){ //needed otherwise gives an error on the messagesAdmin.php when no new message
@@ -30,15 +30,15 @@ ob_start();
                     $flag = $newMessages[$i]->flag(); ?>
 
                     <div <?php if ($flag == 0) : echo 'class="newMesssage"'; else : echo 'class="answeredMessage"'; endif; ?> >
-                        <p class="commentHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
+                        <p class="blockHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
                         <?php if ($flag == 1) : echo '&emsp; - &emsp; <i class="fas fa-check" style="color:lightgreen"> </i> Answered'; endif; ?></p>
 
                         <p><Strong>Email : </Strong><?= $contactEmail?></p>
                         <p><Strong>Topic : </Strong><?= $topic?></p>
                         <!-- transform non html links in messageContent into clickable links-->
                         <p><strong>Message content :</strong> <?= nl2br($messageContent = preg_replace('#http[s]?://[a-z0-9._/-]+#i', '<a href="$0">$0</a>', $messageContent)) ?></p>
-                        <div class="manageComIcons">
-                            <div class="approvDelComs">
+                        <div class="manageIcons">
+                            <div class="AnsDelRef">
 
                             <?php if ($flag == 0) : ?>
                             <a class="answerBtn" data-toggle="modal" data-target="#answerModal<?= $messageId ?>"><i class="far fa-edit editBtns"></i> Answer</a>
@@ -95,12 +95,12 @@ ob_start();
 
     <!-- ARCHIVED MESSAGES -->
     <section id="sectionArchivedMessages">
-        <div class="row manageComBtns archivedMessagesBtns">
+        <div class="row manageMsgBtns archivedMessagesBtns">
             <div class="col-md-12">
-            <a class="manageComBtn archivedMessagesBtn js-scrollTo" href="#sectionNewMessages"><i class="fas fa-anchor"></i> View new messages</a>
+            <a class="manageMsgBtn archivedMessagesBtn js-scrollTo" href="#sectionNewMessages"><i class="fas fa-anchor"></i> View new messages</a>
             </div>
         </div>
-        <h2 class="titleManageCom titleMessages">Archived Messages</h2>
+        <h2 class="titleMessages">Archived Messages</h2>
         <hr>
         <?php
             if (!empty($archivedMessages)) { //needed otherwise gives an error on the messagesAdmin.php when no archived message
@@ -115,7 +115,7 @@ ob_start();
                     $flag = $archivedMessages[$i]->flag(); ?>
 
                     <div class="archivedMessage" >
-                        <p class="commentHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
+                        <p class="blockHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
                         <?php if ($flag == 1) : echo '&emsp; - &emsp; <i class="fas fa-check" style="color:lightgreen"> </i> Answered'; endif; ?>
                         </p>
 
@@ -123,7 +123,7 @@ ob_start();
                         <p><Strong>Topic : </Strong><?= $topic?></p>
                         <!-- transform non html links in messageContent into clickable links-->
                         <p><strong>Message content :</strong> <?= nl2br($messageContent = preg_replace('#http[s]?://[a-z0-9._/-]+#i', '<a href="$0">$0</a>', $messageContent)) ?></p>
-                        <div class="manageComIcons">
+                        <div class="manageIcons">
                             <a class="deleteBtn" href="index.php?action=deleteMessage&amp;messageId=<?= $messageId ?>" onclick="return confirm('Delete this message ?')"><i class="far fa-trash-alt"></i> Delete</a>
                         </div>
                     </div>

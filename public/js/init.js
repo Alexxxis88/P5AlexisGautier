@@ -92,34 +92,6 @@ jQuery(document).ready(function($){
 
 
 /*-----------------------------------------------------------------------------------*/
-/*  SEARCH BAR
-/*-----------------------------------------------------------------------------------*/
-jQuery(document).ready(function($){
-'use strict';
-  jQuery('#search-wrapper, #search-wrapper input').hide();
-
-	jQuery('span.search-trigger').click(function(){
-		jQuery('#search-wrapper').slideToggle(0, function() {
-			var check=$(this).is(":hidden");
-			if(check == true) {
-		  		jQuery('#search-wrapper input').fadeOut(600);
-			} else {
-				jQuery("#search-wrapper input").focus();
-				jQuery('#search-wrapper input').slideDown(200);
-			}
-		});
-	});
-
-  $('#main-slider .carousel-content').flexVerticalCenter({ cssAttribute: 'padding-top' });
-
-});
-
-/*-----------------------------------------------------------------------------------*/
-/*  NICESCROLL
-/*-----------------------------------------------------------------------------------*/
- 
-
-/*-----------------------------------------------------------------------------------*/
 /*  ANIMATE
 /*-----------------------------------------------------------------------------------*/
 jQuery(document).ready(function($){
@@ -162,56 +134,6 @@ $(function() {
 		}
 	});
 });
-
-/*-----------------------------------------------------------------------------------*/
-/*  CAROUSEL
-/*-----------------------------------------------------------------------------------*/
-$(document).ready(function() {
-'use strict';
-  //Set the carousel options
-  $('#quote-carousel').carousel({
-    pause: true,
-    interval: 4000,
-  });
-
-	$('#scroller').carousel({
-	    pause: true,
-	    interval: 4000,
-	});
-
-});
-
-/*-----------------------------------------------------------------------------------*/
-/*  CONTACT FORM
-/*-----------------------------------------------------------------------------------*/
-// jQuery(document).ready(function($){
-// 'use strict';
-
-//   $('#contactform').submit(function(){
-//     var action = $(this).attr('action');
-//     $("#message").slideUp(750,function() {
-//     $('#message').hide();
-//     $('#submit').attr('disabled','disabled');
-//     $.post(action, {
-//       firstName: $('#firstName').val(),
-//       lastName: $('#lastName').val(),
-//       contactEmail: $('#contactEmail').val(),
-//       topic: $('#topic').val(),
-//       comments: $('#messageContent').val()
-//     },
-//       function(data){
-//         document.getElementById('message').innerHTML = data;
-//         $('#message').slideDown('slow');
-//         $('#submit').removeAttr('disabled');
-//         if(data.match('success') != null) $('#contactform').slideUp('slow');
-//         $(window).trigger('resize');
-//       }
-//     );
-//     });
-//     return false;
-//   });
-  
-// });
 
 /*-----------------------------------------------------------------------------------*/
 /*  PRELOADER
