@@ -307,9 +307,9 @@ blockquote {
     width: 50%;
 }
 
-.portfolio-items.col-3 > li {
+/* .portfolio-items.col-3 > li {
     width: 33%;
-}
+} */
 
 .portfolio-items.col-4 > li {
     width: 25%;
@@ -337,7 +337,7 @@ blockquote {
 }
 
 .portfolio-item .item-inner h3{
-    font-size: 0.96vw;
+    font-size: 1vw;
 }
 
 .portfolio-item img {
@@ -361,7 +361,7 @@ blockquote {
 
 }
 
-.portfolio-item:hover h5,
+.portfolio-item:hover h3,
 .team-member:hover .team-content,
 .post:hover .content {
     -webkit-transition: all .5s ease-in-out;
@@ -3042,6 +3042,10 @@ textarea#messageContent {
     .pricing_price_resp h3{
         font-size:1.4rem;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    .portfolio-item .item-inner h3{
+        font-size: 100%;
     }
 
 }

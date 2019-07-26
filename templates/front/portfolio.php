@@ -40,8 +40,8 @@ jQuery(document).ready(function($){
                 <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".webstore">Webstore</a></li>
                 <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".blog">Blog</a></li>
             </ul>
-            <ul class="portfolio-items col-3 isotope fade-up"> <!-- FIXME : affichage sur petit écran doit etre sur une colonne -->
-                <li class="portfolio-item website isotope-item">
+            <ul class="portfolio-items col-md-12 isotope fade-up"> <!-- FIXME : affichage sur petit écran doit etre sur une colonne -->
+                <li class="portfolio-item col-lg-4 col-md-3 website isotope-item">
                     <div class="item-inner">
                         <a data-toggle="modal" data-target="#webAgency"><img src="./public/images/portfolio/Dev/webAgency/webAgencyPrev.jpg" alt="Image de présentation Webagency">
                         <h3>Webagency - Web Agency</h3>
@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
                         </div></a>
                     </div>
                 </li>
-                <li class="portfolio-item joomla website isotope-item">
+                <li class="portfolio-item col-lg-4 col-md-3 joomla website isotope-item">
                     <div class="item-inner">
                         <a data-toggle="modal" data-target="#strasbourg"><img src="./public/images/portfolio/Dev/strasbourg/strasbourgPrev.jpg" alt="Image de présentation Office de Tourisme de Strasbourg">
                         <h3>Strasbourg City</h3>
@@ -57,7 +57,7 @@ jQuery(document).ready(function($){
                         </div></a>
                     </div>
                 </li>
-                <li class="portfolio-item website isotope-item">
+                <li class="portfolio-item col-lg-4 col-md-3 website isotope-item">
                     <div class="item-inner">
                         <a data-toggle="modal" data-target="#bicloo"><img src="./public/images/portfolio/Dev/bicloo/biclooPrev.jpg" alt="Image de présentation Bicloo">
                         <h3>Bicloo - Bike reservation</h3>
@@ -65,7 +65,7 @@ jQuery(document).ready(function($){
                         </div></a>
                     </div>
                 </li>
-                <li class="portfolio-item joomla blog apps isotope-item">
+                <li class="portfolio-item col-lg-4 col-md-3 joomla blog apps isotope-item">
                     <div class="item-inner">
                         <a data-toggle="modal" data-target="#forteroche"><img src="./public/images/portfolio/Dev/forteroche/forterochePrev.jpg" alt="Image de présentation Jean Forteroche">
                         <h3>Jean Forteroche - Writer</h3>
@@ -73,7 +73,7 @@ jQuery(document).ready(function($){
                         </div></a>
                     </div>
                 </li>
-                <li class="portfolio-item joomla webstore isotope-item">
+                <li class="portfolio-item col-lg-4 col-md-3 joomla webstore isotope-item">
                     <div class="item-inner">
                         <a data-toggle="modal" data-target="#qchc"><img src="./public/images/portfolio/Dev/qchc/qchcPrev.jpg" alt="Image de présentation Quality Control records">
                         <h3>Quality Control - Label</h3>
