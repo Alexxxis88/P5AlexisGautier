@@ -45,7 +45,7 @@
         <script src="https://kit.fontawesome.com/0e45521ec5.js"></script>
 
         <!-- Custom stlylesheet -->
-        <link href="./public/css/style.css" rel="stylesheet" />
+        <link href="./public/css/style.min.css" rel="stylesheet" />
     </head>
 
     <body>
