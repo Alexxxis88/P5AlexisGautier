@@ -17,17 +17,19 @@ class QuoteController
 
         //testing if packname is correct
         if($returnPackValue == false){
-            throw new \Exception('There is a problem. Please try again'); //I stay vague not to inform a malicious user who tryed to edit the price how to make it work
+            throw new \Exception('There is a problem. Please try again');
         }
 
         return  $returnPackValue;
     }
+
 
     public function savePackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName)
     {
         $quoteManager = new QuoteManager();
         $quoteManager->insertNewPackQuote(htmlspecialchars($packName), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent), htmlspecialchars($imageName));
     }
+
 
     public function sendPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
@@ -69,6 +71,7 @@ class QuoteController
         }
     }
 
+
     public function imageQuote()
     {
         //checking if an attached file has been sent
@@ -105,92 +108,90 @@ class QuoteController
         }
     }
 
+
     public function checkPackQuoteFields($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         $accentedCharacters = "àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ";
 
-            //testing if project name at least 2 caracters
-            if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]+$#i", $_POST['project'])) {
-                //testing if structure is correct
-                if ($_POST['structure'] == "individual" OR $_POST['structure'] == "professional" OR $_POST['structure'] == "association" OR $_POST['structure'] == "other" ) {
+        //testing if project name at least 2 caracters
+        if (preg_match("#^[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#%\._-]+$#i", $_POST['project'])) {
+            //testing if structure is correct
+            if ($_POST['structure'] == "individual" OR $_POST['structure'] == "professional" OR $_POST['structure'] == "association" OR $_POST['structure'] == "other" ) {
 
-                    //testing if company name is correct
-                    if (preg_match("#(^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$)*#i", $_POST['company'])) {
+                //testing if company name is correct
+                if (preg_match("#(^[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]{1,}[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]*[' -]?[a-z0-9". $accentedCharacters ."\!'&+\#\$%\._-]+$)*#i", $_POST['company'])) {
 
-                        //testing if firstName only has authorised caracters
-                        if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['firstName'])) {
+                    //testing if firstName only has authorised caracters
+                    if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['firstName'])) {
 
-                            //testing if lastName only has authorised caracters
-                            if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['lastName'])) {
-                                //testing if email is conform
-                                if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#i", $_POST['contactEmail'])) {
+                        //testing if lastName only has authorised caracters
+                        if (preg_match("#^[a-z". $accentedCharacters ."]+[' -]?[a-z". $accentedCharacters ."]+$#i", $_POST['lastName'])) {
+                            //testing if email is conform
+                            if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#i", $_POST['contactEmail'])) {
 
-                                    //testing if phone is conform (not mandatory)
-                                    if (preg_match("#[0-9\.+_ -]*$#", $_POST['phone'])) {
+                                //testing if phone is conform (not mandatory)
+                                if (preg_match("#[0-9\.+_ -]*$#", $_POST['phone'])) {
 
-                                        //testing if address is conform
-                                        if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postalAddress'])) {
+                                    //testing if address is conform
+                                    if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postalAddress'])) {
 
-                                            //testing if postcode is conform
-                                            if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postCode'])) {
+                                        //testing if postcode is conform
+                                        if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['postCode'])) {
 
-                                                //testing if city is conform
-                                                if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['city'])) {
+                                            //testing if city is conform
+                                            if (preg_match("#^[a-z0-9\!,:;/\(\)'&+\#\$%\._ -]+$#i", $_POST['city'])) {
 
-                                                    //testing if deadline is in the future
-                                                    $today = date("Y-m-d");
-                                                    if ( $_POST['deadline'] > $today) {
+                                                //testing if deadline is in the future
+                                                $today = date("Y-m-d");
+                                                if ( $_POST['deadline'] > $today) {
 
-                                                        return true;
+                                                    return true;
 
-                                                    } else {
-                                                    throw new \Exception('Deadline cannot be in the past');
-                                                    }
                                                 } else {
-                                                throw new \Exception('City is incorrect');
+                                                throw new \Exception('Deadline cannot be in the past');
                                                 }
                                             } else {
-                                            throw new \Exception('Post Code is incorrect');
+                                            throw new \Exception('City is incorrect');
                                             }
                                         } else {
-                                        throw new \Exception('Address is incorrect');
+                                        throw new \Exception('Post Code is incorrect');
                                         }
                                     } else {
-                                        throw new \Exception('Phone number is incorrect');
+                                    throw new \Exception('Address is incorrect');
                                     }
                                 } else {
-                                    throw new \Exception('Email address is incorrect');
+                                    throw new \Exception('Phone number is incorrect');
                                 }
                             } else {
-                                throw new \Exception('Last Name is incorrect.');
+                                throw new \Exception('Email address is incorrect');
                             }
                         } else {
-                            throw new \Exception('First Name is incorrect.');
+                            throw new \Exception('Last Name is incorrect.');
                         }
                     } else {
-                        throw new \Exception('Company name is incorrect');
+                        throw new \Exception('First Name is incorrect.');
                     }
                 } else {
-                    throw new \Exception('Structure is incorrect');
+                    throw new \Exception('Company name is incorrect');
                 }
             } else {
-                throw new \Exception('Project name is incorrect');
+                throw new \Exception('Structure is incorrect');
             }
+        } else {
+            throw new \Exception('Project name is incorrect');
+        }
     }
+
 
     //BACKEND
     //display packquotes
     public function listPackQuotes()
     {
-        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $alertController = new AlertController();
+        $arrayAlert = $alertController->alertIcons();
+
         $messageManager = new MessageManager();
-        $isThereNewMessages = $messageManager->isThereNewMsg();
-
-        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $quoteManager = new QuoteManager();
-        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
-        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
-
 
         //Pagination
         $totalPages = $quoteManager->getTotalPagesPackQuotes();
@@ -219,6 +220,7 @@ class QuoteController
         require('templates/admin/packQuotesAdmin.php');
     }
 
+
     public function deletePackQuote($packQuoteId)
     {
         $quoteManager = new QuoteManager();
@@ -227,6 +229,7 @@ class QuoteController
         exit;
     }
 
+
     public function acceptDenyPackQuote($accepted, $packQuoteId)
     {
         $quoteManager = new QuoteManager();
@@ -234,6 +237,7 @@ class QuoteController
         header('Location: index.php?action=packQuotesAdmin&page=1&sortBy=5');
         exit;
     }
+
 
     public function updatePackQuoteStatus($quoteStatus, $packQuoteId)
     {
@@ -271,6 +275,7 @@ class QuoteController
         return  $arrayServices;
     }
 
+
     public function saveCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
         //Need to implode arrays to save them in DB
@@ -284,9 +289,9 @@ class QuoteController
         $quoteManager->insertNewCustomQuote(htmlspecialchars($siteType), htmlspecialchars($price), htmlspecialchars($project), htmlspecialchars($structure), htmlspecialchars($company), htmlspecialchars($firstName), htmlspecialchars($lastName), htmlspecialchars($contactEmail), htmlspecialchars($phone), htmlspecialchars($postalAddress), htmlspecialchars($postCode), htmlspecialchars($city), htmlspecialchars($country), htmlspecialchars($deadline), htmlspecialchars($messageContent), htmlspecialchars($imageName), htmlspecialchars($design), htmlspecialchars($writingContent), htmlspecialchars($visualContent), htmlspecialchars($maintenance), htmlspecialchars($host), htmlspecialchars($domainYN), htmlspecialchars($deadlineSelect), htmlspecialchars($pageNb), htmlspecialchars($loginShowcaseYN), htmlspecialchars($paymentShowcaseYN), htmlspecialchars($productNb), htmlspecialchars($languages), htmlspecialchars($extensions), htmlspecialchars($paymentMtdShowcase), htmlspecialchars($options), htmlspecialchars($paymentMtdStore));
     }
 
+
     public function sendCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
-
         //Need to implode arrays to save them in DB
         $languages = implode(", ",array_values($languages));
         $extensions = implode(", ",array_values($extensions));
@@ -356,6 +361,7 @@ class QuoteController
             throw new \Exception('There was a problem when sending your quote request. Please try again');
         }
     }
+
 
     public function checkCustomQuoteFields($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
@@ -505,14 +511,11 @@ class QuoteController
     //display customquotes
     public function listCustomQuotes()
     {
-        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
-        $messageManager = new MessageManager();
-        $isThereNewMessages = $messageManager->isThereNewMsg();
+        $alertController = new AlertController();
+        $arrayAlert = $alertController->alertIcons();
 
-        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $messageManager = new MessageManager();
         $quoteManager = new QuoteManager();
-        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
-        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
 
         //Pagination
         $totalPages = $quoteManager->getTotalPagesCustomQuotes();
@@ -541,6 +544,7 @@ class QuoteController
         require('templates/admin/customQuotesAdmin.php');
     }
 
+
     public function deleteCustomQuote($customQuoteId)
     {
         $quoteManager = new QuoteManager();
@@ -549,6 +553,7 @@ class QuoteController
         exit;
     }
 
+
     public function acceptDenyCustomQuote($accepted, $customQuoteId)
     {
         $quoteManager = new QuoteManager();
@@ -556,6 +561,7 @@ class QuoteController
         header('Location: index.php?action=customQuotesAdmin&page=1&sortBy=5');
         exit;
     }
+
 
     public function updateCustomQuoteStatus($quoteStatus, $customQuoteId)
     {
@@ -569,18 +575,12 @@ class QuoteController
     //GENERAL
     public function listServices()
     {
-        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
-        $messageManager = new MessageManager();
-        $isThereNewMessages = $messageManager->isThereNewMsg();
+        $alertController = new AlertController();
+        $arrayAlert = $alertController->alertIcons();
 
-        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $quoteManager = new QuoteManager();
-        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
-        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
-
         $packServicesList = $quoteManager->getPackServices();
         $customServicesList = $quoteManager->getCustomServices();
-
 
         require('templates/admin/servicesAdmin.php');
     }

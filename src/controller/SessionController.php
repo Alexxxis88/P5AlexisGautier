@@ -18,6 +18,7 @@ class SessionController
         }
     }
 
+    
     public function checkLog($email)
     {
         $sessionManager = new SessionManager();
@@ -47,6 +48,7 @@ class SessionController
         }
     }
 
+
     public function UpdatePassWord($newpass, $email)
     {
         $sessionManager = new SessionManager();
@@ -66,6 +68,7 @@ class SessionController
             return false;
         }
     }
+
 
     public function checkNewPassValidity($newPass)
     {
@@ -92,6 +95,7 @@ class SessionController
         }
 
     }
+
 
     public function killSession()
     {

@@ -65,21 +65,21 @@
 <!-- This script stays here because it uses PHP variables and can't work in Main.js -->
 <!-- Display new message alert -->
 <?php
-if ($isThereNewMessages == true ) { ?>
+if ($arrayAlert[0] == true ) { ?>
     <script>$('.msgAlert').css("color", "rgb(223, 57, 57)");</script>
 <?php }
 ?>
 
 <!-- Display pack quote request alert-->
 <?php
-if ($isThereNewPackQuotes == true ) { ?>
+if ($arrayAlert[1] == true ) { ?>
     <script>$('.packQuoteAlert').css("color", "rgb(223, 57, 57)");</script>
 <?php }
 ?>
 
 <!-- Display custom quote request alert-->
 <?php
-if ($isThereNewCustomQuotes == true ) { ?>
+if ($arrayAlert[2] == true ) { ?>
     <script>$('.customQuoteAlert').css("color", "rgb(223, 57, 57)");</script>
 <?php }
 ?>

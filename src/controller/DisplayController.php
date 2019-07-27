@@ -72,47 +72,20 @@ class DisplayController
 
     public function displayLogIn()
     {
-        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
-        $messageManager = new MessageManager();
-        $isThereNewMessages = $messageManager->isThereNewMsg();
-
-        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
-        $quoteManager = new QuoteManager();
-        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
-        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
+        $alertController = new AlertController();
+        $arrayAlert = $alertController->alertIcons();
 
         require('templates/admin/logIn.php');
     }
 
     public function displayUpdatePass()
     {
-        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
-        $messageManager = new MessageManager();
-        $isThereNewMessages = $messageManager->isThereNewMsg();
-
-        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
-        $quoteManager = new QuoteManager();
-        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
-        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
+        $alertController = new AlertController();
+        $arrayAlert = $alertController->alertIcons();
 
         $sessionController = new SessionController();
         $cookieOrSessionEmail = $sessionController->checkSession();
 
         require('templates/admin/updatePass.php');
     }
-
-    public function displayDashboard()
-    {
-        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
-        $messageManager = new MessageManager();
-        $isThereNewMessages = $messageManager->isThereNewMsg();
-
-        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
-        $quoteManager = new QuoteManager();
-        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
-        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
-
-        require('templates/admin/dashboard.php');
-    }
-
 }

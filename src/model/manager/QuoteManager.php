@@ -14,11 +14,13 @@ class QuoteManager extends GlobalManager
         return $packservices;
     }
 
+
     public function insertNewPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName)
     {
         $newPackQuoteDb = $this->_db->prepare('INSERT INTO packquotes( packName, price, project, structure, company, firstName, lastName, contactEmail, phone, postalAddress, postCode, city, country, deadline, messageContent, imageName, requestDate ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())');
         $newPackQuoteDb->execute(array($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName));
     }
+
 
     public function displayPacks()
     {
@@ -28,10 +30,10 @@ class QuoteManager extends GlobalManager
         $packs = array();
         while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
             $packs[] = $row;
-
         }
         return $packs;
     }
+
 
     public function displayCustomServices()
     {
@@ -41,10 +43,10 @@ class QuoteManager extends GlobalManager
         $customServices = array();
         while ($row = $req->fetch(\PDO::FETCH_ASSOC)) {
             $customServices[] = $row;
-
         }
         return $customServices;
     }
+
 
     public function getPackQuotes($firstItem, $itemsPerPage)
     {
@@ -61,6 +63,7 @@ class QuoteManager extends GlobalManager
         }
     }
 
+
     //Pagination
     public function getTotalPagesPackQuotes()
     {
@@ -68,6 +71,7 @@ class QuoteManager extends GlobalManager
         $returnTotalPagesPackQuotes= $req->fetch();
         return $returnTotalPagesPackQuotes;
     }
+
 
     public function erasePackQuote($packQuoteId)
     {
@@ -82,11 +86,13 @@ class QuoteManager extends GlobalManager
         $req->execute(array($accepted, $packQuoteId));
     }
 
+
     public function packQuoteStatus($quoteStatus, $packQuoteId)
     {
         $req = $this->_db->prepare('UPDATE packquotes SET quoteStatus = ? WHERE id = ?');
         $req->execute(array($quoteStatus, $packQuoteId));
     }
+
 
     //turn quotes icon (menuAdmin) in red if quotes to manage
     public function isThereNewPackQuote()
@@ -96,12 +102,14 @@ class QuoteManager extends GlobalManager
         return $isTherePackQuote;
     }
 
+
     //update service prices from BO
     public function newPackPrice($price, $idPack)
     {
         $req = $this->_db->prepare('UPDATE packquoteservices SET packPriceServices = ? WHERE idPack = ?');
         $req->execute(array($price, $idPack));
     }
+
 
     //display all pack services in BO
     public function getPackServices()
@@ -125,11 +133,13 @@ class QuoteManager extends GlobalManager
         return $services;
     }
 
+
     public function insertNewCustomQuote($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore)
     {
         $newCustomQuoteDb = $this->_db->prepare('INSERT INTO customquotes( siteType, price, project, structure, company, firstName, lastName, contactEmail, phone, postalAddress, postCode, city, country, deadline, messageContent, imageName, design, writingContent, visualContent, maintenance, host, domainYN, deadlineSelect, pageNb, loginShowcaseYN, paymentShowcaseYN, productNb, requestDate, languages, extensions, paymentMtdShowcase, options, paymentMtdStore  ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?, ?, ?, ?)');
         $newCustomQuoteDb->execute(array($siteType, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent, $imageName, $design, $writingContent, $visualContent, $maintenance, $host, $domainYN, $deadlineSelect, $pageNb, $loginShowcaseYN, $paymentShowcaseYN, $productNb, $languages, $extensions, $paymentMtdShowcase, $options, $paymentMtdStore));
     }
+
 
     public function getCustomQuotes($firstItem, $itemsPerPage)
     {
@@ -146,6 +156,7 @@ class QuoteManager extends GlobalManager
         }
     }
 
+
     //Pagination
     public function getTotalPagesCustomQuotes()
     {
@@ -153,6 +164,7 @@ class QuoteManager extends GlobalManager
         $returnTotalPagesCustomQuotes= $req->fetch();
         return $returnTotalPagesCustomQuotes;
     }
+
 
     public function eraseCustomQuote($customQuoteId)
     {
@@ -167,11 +179,13 @@ class QuoteManager extends GlobalManager
         $req->execute(array($accepted, $customQuoteId));
     }
 
+
     public function customQuoteStatus($quoteStatus, $customQuoteId)
     {
         $req = $this->_db->prepare('UPDATE customquotes SET quoteStatus = ? WHERE id = ?');
         $req->execute(array($quoteStatus, $customQuoteId));
     }
+
 
     //turn quotes icon (menuAdmin) in red if quotes to manage
     public function isThereNewCustomQuote()
@@ -180,6 +194,7 @@ class QuoteManager extends GlobalManager
         $isThereCustomQuote= $req->fetch();
         return $isThereCustomQuote;
     }
+
 
     //display all custom services in BO
     public function getCustomServices()
@@ -193,6 +208,7 @@ class QuoteManager extends GlobalManager
         }
     }
 
+    
     //update service prices from BO
     public function newCustomPrice($price, $idServ)
     {

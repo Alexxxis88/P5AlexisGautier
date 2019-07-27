@@ -12,11 +12,13 @@ class SessionManager extends GlobalManager
         return $checkLogIn;
     }
 
+
     public function UpdatePass($newpass, $email)
     {
         $UpdatePass = $this->_db->prepare('UPDATE members SET pass = ? WHERE email = ?');
         $UpdatePass->execute(array($newpass,$email));
     }
+
 
     public function checkPass($email)
     {
@@ -25,5 +27,4 @@ class SessionManager extends GlobalManager
         $checkPass = $check->fetch();
         return $checkPass;
     }
-
 }

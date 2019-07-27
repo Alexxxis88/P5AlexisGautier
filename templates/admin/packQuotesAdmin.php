@@ -122,9 +122,7 @@ ob_start();
                             <?php
                             ;
                             endif;
-                            ?>
-
-                            <?php
+                            
                             if ( $accepted == 1) :?>
                                 <form id="statusForm" action="index.php?action=updateQuoteStatus&amp;packQuoteId=<?= $packQuoteId ?>" method="post">
                                     <label for="statusPackQuote">Status :</label>

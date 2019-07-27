@@ -34,6 +34,7 @@ class MessageManager extends GlobalManager
         }
     }
 
+
     //Pagination
     public function getTotalPagesMessages()
     {
@@ -53,6 +54,7 @@ class MessageManager extends GlobalManager
             return $archivedMessage;
         }
     }
+
 
     public function eraseMessage($messageId)
     {
@@ -74,6 +76,7 @@ class MessageManager extends GlobalManager
         $msgAnswered->execute(array($messageId));
     }
 
+    
     //turn messages icon (menuAdmin) in red if messages to manage ( if flag == 0 exists at least once)
     public function isThereNewMsg()
     {

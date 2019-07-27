@@ -96,11 +96,6 @@ try {
             $displayController->displayCheck();
             $displayController->displayUpdatePass();
         }
-        elseif ($_GET['action'] == 'dashboard') {
-            $displayController = new DisplayController;
-            $displayController->displayCheck();
-            $displayController->displayDashboard();
-        }
         elseif ($_GET['action'] == 'servicesList') {
             $displayController = new DisplayController;
             $displayController->displayCheck();

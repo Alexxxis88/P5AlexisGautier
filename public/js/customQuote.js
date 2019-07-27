@@ -40,13 +40,6 @@ function fillArray() {
 };
 
 
-
-
-
-
-
-
-
 //Display total price
 let grandTotal = "";
 let totalInput = "";
@@ -67,7 +60,6 @@ function getSelectValue() {
 
     totalInput = siteType + design + writingContent + visualContent + maintenance + host + deadlineSelect + pageNb + loginShowcaseYN + productNb;
 };
-
 
 
 //Checkbox values need to be redefine for JS only to display correct price : it has to be .text() and not .val() otherwise the value taken by PHP / MYSQL will be the wrong one
@@ -231,9 +223,9 @@ function myFunction5() {
         $("#extensionBlock, #extensionAlert").css("display", "block");
     } else if (domainYN == "No") {
         $("#extensionBlock, #extensionAlert").css("display", "none");
-
     }
 }
+
 
 //display / hide Showcase website / Webstore sections
 function myFunction4() {
@@ -266,7 +258,6 @@ $(window).scroll(function() {
     $("#customQuoteWidget").fadeIn("fast");
     }
 });
-
 
 
 //CHECKBOX counters

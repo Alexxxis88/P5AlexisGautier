@@ -2,7 +2,6 @@
 // --- Internet Explorer disclaimer ---- //
 // ------------------------------------- //
 
-
 const isIE = window.navigator.msPointerEnabled; // Internet Explorer/Edge ≥ 10
 const isIEless = /*@cc_on!@*/false; // Internet Explorer/Edge ≤ 10
 

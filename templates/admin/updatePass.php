@@ -1,7 +1,6 @@
 <?php
 $title = 'Alexis Gautier - Update Password';
 ob_start();
-
 ?>
 <div class="container fade-up">
     <div class="row">

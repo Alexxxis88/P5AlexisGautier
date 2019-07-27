@@ -1,15 +1,8 @@
 <?php
 $title = 'Custom Quote - So, how much?';
 ob_start();
-
-// //List of each service's price
-
-// $designStandard = $allCustom[30]['price'];
-
 require('customPriceList.php');
-
 ?>
-
 <div id="content-wrapper" class="noHeaderImg">
     <div class="row">
         <div class="col-md-10 center gap fade-down section-heading">

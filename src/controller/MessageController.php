@@ -4,6 +4,7 @@ namespace AlexisGautier\PersonalWebsite\Controller;
 
 use \AlexisGautier\PersonalWebsite\Model\Manager\MessageManager;
 use \AlexisGautier\PersonalWebsite\Model\Manager\QuoteManager;
+use \AlexisGautier\PersonalWebsite\Controller\AlertController;
 
 
 class MessageController
@@ -60,9 +61,7 @@ class MessageController
         } else {
         throw new \Exception('There was a problem when sending your message. Please try again');
         }
-
     }
-
 
 
     public function saveMessage($firstName, $lastName, $contactEmail, $topic, $messageContent)
@@ -72,20 +71,15 @@ class MessageController
     }
 
 
-
     //BACKEND
     //display new, answered and archived messages
     public function listAllMessages()
     {
-        //messages to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
+        $alertController = new AlertController();
+        $arrayAlert = $alertController->alertIcons();
+
         $messageManager = new MessageManager();
-        $isThereNewMessages = $messageManager->isThereNewMsg();
-
-        //quotes to manage red icon //FIXME : comment factoriser pour ne pas le copier coller mille fois
         $quoteManager = new QuoteManager();
-        $isThereNewPackQuotes = $quoteManager->isThereNewPackQuote();
-        $isThereNewCustomQuotes = $quoteManager->isThereNewCustomQuote();
-
 
         //Pagination
         $totalPages = $messageManager->getTotalPagesMessages();
@@ -168,6 +162,4 @@ class MessageController
         $messageManager = new MessageManager();
         $messageManager->insertAnswer($messageId, htmlspecialchars($answerContent));
     }
-
-
 }

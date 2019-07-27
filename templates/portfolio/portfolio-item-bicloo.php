@@ -66,7 +66,7 @@ ob_start();
                             </div>
                         </div>
                     </div>
-                </div><!--/.col-md-8-->
+                </div>
                 <aside class="col-sm-4 col-sm-8">
                     <div class="widget tags widget-resp bounce-in">
                         <a href="http://ocr.straightandalert.com/LocationVelo/index.html"><img class="responsiveMockup" src="./public/images/portfolio/Dev/bicloo/biclooResp.png" style="width:250px" alt="Responsive Bicloo réservation de vélo"><br><i class="far fa-eye"></i> View website</a>

@@ -38,7 +38,6 @@ $(document).ready(function () {
 
 // ----- MANAGE PACK QUOTE ----- //
 
-
 // displays a message box if no pack quotes
 if ((!$.trim($(".newPackQuote").html()).length) && (!$.trim($(".packQuote").html()).length)) {
     $(".noPackQuote").css("display", "block");

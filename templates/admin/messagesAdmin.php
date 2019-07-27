@@ -118,9 +118,9 @@ ob_start();
                         <p class="blockHead">Sent by <strong><?= $firstName . ' ' . $lastName ?></strong> on <?= $messageDate ?>
                         <?php if ($flag == 1) : echo '&emsp; - &emsp; <i class="fas fa-check" style="color:lightgreen"> </i> Answered'; endif; ?>
                         </p>
-
                         <p><Strong>Email : </Strong><?= $contactEmail?></p>
                         <p><Strong>Topic : </Strong><?= $topic?></p>
+                        
                         <!-- transform non html links in messageContent into clickable links-->
                         <p><strong>Message content :</strong> <?= nl2br($messageContent = preg_replace('#http[s]?://[a-z0-9._/-]+#i', '<a href="$0">$0</a>', $messageContent)) ?></p>
                         <div class="manageIcons">
