@@ -66,10 +66,7 @@ function getSelectValue() {
     let productNb = Number($("option:selected", "#productNb").attr("data-price"))
 
     totalInput = siteType + design + writingContent + visualContent + maintenance + host + deadlineSelect + pageNb + loginShowcaseYN + productNb;
-
 };
-
-
 
 
 
@@ -139,7 +136,6 @@ function getSelectValue() {
     $("#squareShow").text(Number($("#squareShow").attr("data-price")));
     $("#stripeShow").text(Number($("#stripeShow").attr("data-price")));
 
-
     //Payment Methods Store
     $("#2CheckoutStore").text(Number($("#2CheckoutStore").attr("data-price")));
     $("#authorizeStore").text(Number($("#authorizeStore").attr("data-price")));
@@ -168,46 +164,26 @@ $(".checkBoxValue").change(function () {
     }
 });
 
-//display the grand total //FIXME : use Jquerry to factor the function
+//display the grand total
 function getTotal() {
     grandTotal = totalInput + totalCheckboxe;
-    document.getElementById("text-customQuote").innerHTML = grandTotal + " € ";
-    document.getElementById("text-customQuoteWidget").innerHTML = grandTotal + " € ";
+   $("#text-customQuote, #text-customQuoteWidget").text(grandTotal + " € ");
 }
-
-
 
 
 //deselect all options choices when Website Type is changed
 function deselectAll(){
 
-    //FIXME : use Jquerry to factor the function
-
     //deselect inputs
-    $("#design option:selected").prop("selected", false);
-    $("#writingContent option:selected").prop("selected", false);
-    $("#visualContent option:selected").prop("selected", false);
-    $("#maintenance option:selected").prop("selected", false);
-    $("#host option:selected").prop("selected", false);
-    $("#domainYN option:selected").prop("selected", false);
-    $("#deadlineSelect option:selected").prop("selected", false);
+    $("#design option:selected, #writingContent option:selected, #visualContent option:selected, #maintenance option:selected, #host option:selected, #domainYN option:selected, #deadlineSelect option:selected, #pageNb option:selected, #loginShowcaseYN option:selected, #paymentShowcaseYN option:selected, #productNb option:selected  ").prop("selected", false);
     $("#deadline").val("");
-    $("#pageNb option:selected").prop("selected", false);
-    $("#loginShowcaseYN option:selected").prop("selected", false);
-    $("#paymentShowcaseYN option:selected").prop("selected", false);
-    $("#productNb option:selected").prop("selected", false);
 
     //reset dropdown option menu placeholder
     $(".menuPlaceholder").html("Please select <span class='caret'></span>")
 
-    //FIXME : use Jquerry to factor the function
     //hide elements
-    document.getElementById("extensionBlock").style.display = "none";
-    document.getElementById("deadlineBlock").style.display = "none";
-    document.getElementById("paymentMethShowcase").style.display = "none";
-    document.getElementById("langAlert").style.display = "block";
-    document.getElementById("extensionAlert").style.display = "none";
-    document.getElementById("payShowAlert").style.display = "none";
+    $("#extensionBlock, #deadlineBlock, #paymentMethShowcase, #extensionAlert, #payShowAlert").css("display", "none");
+    $("#langAlert").css("display", "block");
 
     //deselect checkboxes
     $("#french, #english, #bulgarian, #croatian, #czech, #danish, #dutch, #estonian, #finnish, #german, #greek, #hungarian, #italian, #latvian, #lithuanian, #norwegian, #portuguese, #russian, #serbian, #slovak, #slovene, #spanish, #swedish, #swissGerman, #dotCom, #dotFr, #dotUk, #dotDe, #blogOpt, #chatOpt, #contactFormOpt, #newsletterOpt, #appointOpt, #searchOpt, #quoteOpt, #invoiceOpt, #socialOpt, #statsOpt, #calendarOpt, #newsOpt, #adminPannelOpt, #ratingsOpt, #surveyOpt, #2CheckoutShow, #authorizeShow, #amazonShow, #bankWireShow, #checkShow, #creditCardPPShow, #creditCardBkShow, #paypalShow, #paypalProShow, #sagePayShow, #skrillShow, #squareShow, #stripeShow, #2CheckoutStore, #authorizeStore, #amazonStore, #bankWireStore, #checkStore, #creditCardPPStore, #creditCardBkStore, #paypalStore, #paypalProStore, #sagePayStore, #skrillStore, #squareStore, #stripeStore ").prop( "checked", false );
@@ -215,26 +191,22 @@ function deselectAll(){
     // needed here again to reset the price displayed
     let siteType = Number($("option:selected", "#siteType").attr("data-price"))
 
-    //FIXME : use Jquerry to factor the function
     //reset price display
-    document.getElementById("text-customQuote").innerHTML = siteType + " € ";
-    document.getElementById("text-customQuoteWidget").innerHTML = siteType + " € ";
+    $("#text-customQuote, #text-customQuoteWidget").text(siteType + " € ");
 
     //empty arrayService
     document.getElementById("arrayServices").value = "";
 }
 
 
-//FIXME : factoriser les changements d'affichage avec jquerry pour regrouper les display none / block
 //display / hide Payment options for Showcase website
 function myFunction2() {
-    let paymentShowcaseYN = document.getElementById("paymentShowcaseYN").value;
+    let paymentShowcaseYN = $("#paymentShowcaseYN").val();
     if (paymentShowcaseYN == "Yes") {
-        document.getElementById("paymentMethShowcase").style.display = "block";
-        document.getElementById("payShowAlert").style.display = "block";
+        $("#paymentMethShowcase, #payShowAlert").css("display", "block");
     } else if (paymentShowcaseYN == "No") {
-        document.getElementById("paymentMethShowcase").style.display = "none";
-        document.getElementById("payShowAlert").style.display = "none";
+        $("#paymentMethShowcase, #payShowAlert").css("display", "none");
+
     }
 }
 
@@ -254,38 +226,31 @@ function myFunction3() {
 
 //display / hide extensions list for Showcase website
 function myFunction5() {
-    let domainYN = document.getElementById("domainYN").value;
+    let domainYN = $("#domainYN").val();
     if (domainYN == "Yes") {
-        document.getElementById("extensionBlock").style.display = "block";
-        document.getElementById("extensionAlert").style.display = "block";
+        $("#extensionBlock, #extensionAlert").css("display", "block");
     } else if (domainYN == "No") {
-        document.getElementById("extensionBlock").style.display = "none";
-        document.getElementById("extensionAlert").style.display = "none";
+        $("#extensionBlock, #extensionAlert").css("display", "none");
+
     }
 }
 
 //display / hide Showcase website / Webstore sections
 function myFunction4() {
-    let siteTypeDisplay = document.getElementById("siteType")
-        .value; //FIXME, pourquoi ça ne marche pas avec innerHTML ? tester en Jquery?
+    let siteTypeDisplay = $("#siteType").val();
     if (siteTypeDisplay == "Showcase Website" || siteTypeDisplay == "Redesign - Showcase Website") {
-        document.getElementById("showcaseSection").style.display = "block";
-        document.getElementById("webstoreSection").style.display = "none";
-        document.getElementById("payStoreAlert").style.display = "none";
+        $("#showcaseSection").css("display", "block");
+        $("#webstoreSection, #payStoreAlert").css("display", "none");
 
     } else if (siteTypeDisplay == "Webstore" || siteTypeDisplay == "Redesign - Webstore" ) {
-        document.getElementById("showcaseSection").style.display = "none";
-        document.getElementById("webstoreSection").style.display = "block";
-        document.getElementById("payStoreAlert").style.display = "block";
+        $("#showcaseSection").css("display", "none");
+        $("#webstoreSection, #payStoreAlert").css("display", "block");
 
     } else if (siteTypeDisplay == "Showcase Website + Webstore" || siteTypeDisplay == "Redesign - Showcase Website + Webstore") {
-        document.getElementById("showcaseSection").style.display = "block";
-        document.getElementById("webstoreSection").style.display = "block";
-        document.getElementById("payStoreAlert").style.display = "block";
+        $("#showcaseSection, #webstoreSection, #payStoreAlert").css("display", "block");
 
     } else {
-        document.getElementById("showcaseSection").style.display = "none";
-        document.getElementById("webstoreSection").style.display = "none";
+        $("#showcaseSection, #webstoreSection, #payStoreAlert").css("display", "none");
     }
 }
 
