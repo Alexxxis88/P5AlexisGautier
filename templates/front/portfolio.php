@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
                 <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".webstore">Webstore</a></li>
                 <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".blog">Blog</a></li>
             </ul>
-            <ul class="portfolio-items col-md-12 isotope fade-up"> <!-- FIXME : affichage sur petit écran doit etre sur une colonne -->
+            <ul class="portfolio-items col-md-12 isotope fade-up">
                 <li class="portfolio-item col-lg-4 col-md-3 website isotope-item">
                     <div class="item-inner">
                         <a data-toggle="modal" data-target="#webAgency"><img src="./public/images/portfolio/Dev/webAgency/webAgencyPrev.jpg" alt="Image de présentation Webagency">
@@ -86,8 +86,7 @@ jQuery(document).ready(function($){
     </section>
 </div>
 
-<!-- FIXME : trouver un moyen de factoriser les modales ? ou les mettre dans des fichiers a part-->
-
+<!-- Portofolio items modal boxes-->
 <div class="modal fade" id="webAgency" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

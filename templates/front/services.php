@@ -10,8 +10,6 @@ ob_start();
         ]);
     });
 </script>
-<script src="./public/js/ajax.js"></script>
-
 <section id="single-page-slider" class="no-margin">
     <div class="carousel slide">
         <div class="carousel-inner">
@@ -31,7 +29,6 @@ ob_start();
         </div>
     </div>
 </section>
-
 <div id="content-wrapper">
     <section id="services" class="white">
         <div class="container">
@@ -122,7 +119,6 @@ ob_start();
         </div>
         <div class="container">
             <div class="row">
-                <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
                 <div class="col-md-3">
                     <div class="tile-progress tile-red bounce-in">
                         <div class="tile-header">
@@ -190,7 +186,6 @@ ob_start();
             </div>
             <div class="gap"></div>
             <div class="row">
-                <!-- FIXME : trouver un moyen de factoriser l'affichage progressif des bars, voir fonction dans main.js-->
                 <div class="col-md-3">
                     <div class="tile-progress tile-lightblue bounce-in">
                         <div class="tile-header">
@@ -258,6 +253,7 @@ ob_start();
             </div>
         </div>
     </section>
+
     <section id="pricing" class="white">
         <div class="container">
             <div class="center fade-down section-heading">
@@ -266,8 +262,6 @@ ob_start();
                 <p>I have several packs that should suit all your needs.
                     <bR>Otherwise, ask for a custom quote!</p>
             </div>
-            <!--Pricing Section-->
-
             <?php
                 $packName1 = $allPacks[0]['packNameServices'];
                 $packPrice1 = $allPacks[0]['packPriceServices'];
@@ -276,52 +270,6 @@ ob_start();
                 $packName3 = $allPacks[2]['packNameServices'];
                 $packPrice3 = $allPacks[2]['packPriceServices'];
              ?>
-
-
-
-
-<script>
-    // // //FIXME a dégager si je zappe AJAX
-    // //
-
-    //                     let url = './src/controller/DisplayController/getJsonServices';
-    //                     // let url = './TESTAJAX/my-json.php';
-
-    //             ajaxGet(url, function (data){
-
-    //                     console.log(data);
-
-    //                     // let test = '[{"idPack":"1","packNameServices":"Showcase Website","packPriceServices":"1000"},{"idPack":"2","packNameServices":"Webstore","packPriceServices":"2000"},{"idPack":"3","packNameServices":"Showcase Website + Webstore","packPriceServices":"2500"}]s';
-    //                     // let testParse = JSON.parse(test);
-    //                     // console.log(testParse);
-
-    //                     let allPacks = JSON.parse(data);
-    //                     console.log(allPacks);
-
-    //                     // console.log(allPacks[0].packNameServices) ;
-    //                     document.getElementById("pack1Name").innerHTML = allPacks[0].packNameServices;
-    //                     document.getElementById("pack1Price").innerHTML = allPacks[0].packPriceServices + ' €';
-    //                     // document.getElementById("pack2Name").innerHTML = allPacks[1].packNameServices;
-    //                     // document.getElementById("pack2Price").innerHTML = allPacks[1].packPriceServices + ' €';
-    //                     // document.getElementById("pack3Name").innerHTML = allPacks[2].packNameServices;
-    //                     // document.getElementById("pack3Price").innerHTML = allPacks[2].packPriceServices + ' €';
-
-
-
-    //                     // ne fonctionne pas avec une boucle car il faudrait que chacun de mes pack soit un objet ? 
-    //                     // allPacks.forEach((pack) => {
-
-    //                     //  console.log(pack.packNameServices) ;  
-    //                     // document.getElementById("tesssst").innerHTML = pack.packNameServices;
-
-    //                     // $('.tesssst').text(pack.packNameServices)
-
-    //                     // });
-    //                 });
-            </script>
-
-
-
             <section id="pricing_body" class="pricing lightbg">
                 <div class="container">
                     <div class="row">
@@ -520,11 +468,6 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="structure">Structure*</label>
                             <select id="structure" name="structure" class="form-control" required>
-                                <!-- add required only if whole section displayed -->
-                                <!-- old solution before trying to disable all inputs after changin site type-->
-                                <!-- <option disabled hidden value="">&nbsp;</option>
-                                <option label="Please choose..." value="0" disabled selected hidden> </option> -->
-
                                 <option label="Please choose..."> </option>
                                 <option value="individual">Individual</option>
                                 <option value="professional">Professional</option>
@@ -577,11 +520,6 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="country">Country*</label>
                             <select id="country" name="country" class="form-control" required>
-                                <!-- add required only if whole section displayed -->
-                                <!-- old solution before trying to disable all inputs after changin site type-->
-                                <!-- <option disabled hidden value="">&nbsp;</option>
-                                <option label="Please choose..." value="0" disabled selected hidden> </option> -->
-
                                 <option label="Please choose..."> </option>
                                 <option value="AFG">Afghanistan</option>
                                 <option value="ALA">Åland Islands</option>
@@ -901,11 +839,6 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="structure2">Structure*</label>
                             <select id="structure2" name="structure" class="form-control" required>
-                                <!-- add required only if whole section displayed -->
-                                <!-- old solution before trying to disable all inputs after changin site type-->
-                                <!-- <option disabled hidden value="">&nbsp;</option>
-                                <option label="Please choose..." value="0" disabled selected hidden> </option> -->
-
                                 <option label="Please choose..."> </option>
                                 <option value="individual">Individual</option>
                                 <option value="professional">Professional</option>
@@ -958,11 +891,6 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="country2">Country*</label>
                             <select id="country2" name="country" class="form-control" required>
-                                <!-- add required only if whole section displayed -->
-                                <!-- old solution before trying to disable all inputs after changin site type-->
-                                <!-- <option disabled hidden value="">&nbsp;</option>
-                                <option label="Please choose..." value="0" disabled selected hidden> </option> -->
-
                                 <option label="Please choose..."> </option>
                                 <option value="AFG">Afghanistan</option>
                                 <option value="ALA">Åland Islands</option>
@@ -1282,11 +1210,6 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="structure3">Structure*</label>
                             <select id="structure3" name="structure" class="form-control" required>
-                                <!-- add required only if whole section displayed -->
-                                <!-- old solution before trying to disable all inputs after changin site type-->
-                                <!-- <option disabled hidden value="">&nbsp;</option>
-                                <option label="Please choose..." value="0" disabled selected hidden> </option> -->
-
                                 <option label="Please choose..."> </option>
                                 <option value="individual">Individual</option>
                                 <option value="professional">Professional</option>
@@ -1339,11 +1262,6 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
                         <div class="form-group col-md-6">
                             <label for="country3">Country*</label>
                             <select id="country3" name="country" class="form-control" required>
-                                <!-- add required only if whole section displayed -->
-                                <!-- old solution before trying to disable all inputs after changin site type-->
-                                <!-- <option disabled hidden value="">&nbsp;</option>
-                                <option label="Please choose..." value="0" disabled selected hidden> </option> -->
-
                                 <option label="Please choose..."> </option>
                                 <option value="AFG">Afghanistan</option>
                                 <option value="ALA">Åland Islands</option>
@@ -1627,7 +1545,7 @@ ou alors utiliser un input caché (problème WCAG / W3C ?) avec le numéro du pa
         </div>
     </div>
 </div>
-<!-- Needs to stay here and not in base.php or functions included in main.js otherwise gives 567 console JS errors on quote.php -->
+<!-- Needs to stay here and not in base.php or functions included in main.js otherwise gives console JS errors on quote.php -->
 <script src="./public/js/services.js"></script>
 <?php
 $content = ob_get_clean();
