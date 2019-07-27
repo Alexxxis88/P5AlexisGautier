@@ -159,7 +159,7 @@ blockquote {
     text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
     text-transform: uppercase;
     letter-spacing: -1px;
-    margin-top: 30px;
+    margin-top: 25%;
 }
 
 #main-slider .carousel .btn {
@@ -172,7 +172,6 @@ blockquote {
     text-transform: uppercase;
     padding: 10px 15px;
     text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
-    /* z-index: 10px; */
 }
 
 #main-slider .carousel .btn:hover {
@@ -182,9 +181,10 @@ blockquote {
 
 #main-slider .carousel .boxed {
     padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.6);
     display: inline-block;
     text-transform: uppercase;
+    border-radius: 5px;
 }
 
 #main-slider .carousel .item {
