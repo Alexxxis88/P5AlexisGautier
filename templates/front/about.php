@@ -49,40 +49,7 @@ ob_start();
                 <hr>
                 <p>A few words from people I worked with</p>
             </div>
-            <div class="row fade-up">
-                <div class="col-md-6">
-                    <div class="testimonial-list-item">
-                    <img class="pull-left img-responsive quote-author-list" src="./public/images/about/opinion1.jpg" alt="Portrait Mélanie Petiot">
-                        <blockquote>
-                            <p>An oral fluency that made his defense a pleasant moment to listen to. All the elements could be presented allowing a 360 ° presentation! Project & presentation of very good quality: bravo!</p>
-                            <small>Mélanie Petiot | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
-                        </blockquote>
-                    </div>
-                    <div class="testimonial-list-item">
-                    <img class="pull-left img-responsive quote-author-list" src="./public/images/about/opinion2.jpg" alt="Portrait Fabien Rahaingomanana">
-                        <blockquote>
-                            <p>The project is well done, witness the answers to the subsidiary questions as well as the explanations provided throughout the defense.</p>
-                            <small>Fabien Rahaingomanana | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="testimonial-list-item">
-                    <img class="pull-left img-responsive quote-author-list" src="./public/images/about/opinion4.jpg" alt="Portrait Aurélien Antonio">
-                        <blockquote>
-                            <p>Very good work both at the code level and at the presentation level. Alexis did a great job, going beyond what was asked. Good reflection on the areas of improvement.</p>
-                            <small>Aurélien Antonio | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
-                        </blockquote>
-                    </div>
-                    <div class="testimonial-list-item">
-                    <img class="pull-left img-responsive quote-author-list" src="./public/images/about/opinion3.jpg" alt="Portrait Cédric Law-Dune">
-                        <blockquote>
-                            <p>Very good contextualization and explanation of the code. His oral was structured and professional. When to his code, it is optimized and commented.</p>
-                            <small>Cédric Law-Dune | Examiner at <cite title="Source Title">Openclassrooms</cite></small>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
+        <div class="row fade-up opinionBlock">
         </div>
     </section>
 </div>
@@ -90,3 +57,6 @@ ob_start();
 $content = ob_get_clean();
 require('templates/base.php');
 ?>
+<script src="./public/js/ajax.js"></script>
+<script src="./public/js/opinions.js"></script>
+

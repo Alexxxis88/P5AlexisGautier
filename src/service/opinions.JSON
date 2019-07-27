@@ -1,0 +1,30 @@
+[
+    {
+        "person":"Mélanie Petiot",
+        "image" : "opinion1.jpg",
+        "role":"Examiner",
+        "company":"Openclassrooms",
+        "words":"An oral fluency that made his defense a pleasant moment to listen to. All the elements could be presented allowing a 360 ° presentation! Project & presentation of very good quality: bravo!"
+    },
+    {
+        "person":"Aurélien Antonio",
+        "image" : "opinion4.jpg",
+        "role":"Examiner",
+        "company":"Openclassrooms",
+        "words":"Very good work both at the code level and at the presentation level. Alexis did a great job, going beyond what was asked. Good reflection on the areas of improvement."
+    },
+    {
+        "person":"Fabien Rahaingomanana",
+        "image" : "opinion2.jpg",
+        "role":"Examiner",
+        "company":"Openclassrooms",
+        "words":"The project is well done, witness the answers to the subsidiary questions as well as the explanations provided throughout the defense."
+    },
+    {
+        "person":"Cédric Law-Dune",
+        "image" : "opinion3.jpg",
+        "role":"Examiner",
+        "company":"Openclassrooms",
+        "words":"Very good contextualization and explanation of the code. His oral was structured and professional. When to his code, it is optimized and commented."
+    }
+]
