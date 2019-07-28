@@ -9,24 +9,24 @@
         <!-- Favico -->
         <link rel="icon" href="./public/images/ico/favicon.ico" type="image/x-icon">
 
-        <link href="./public/css/bootstrap.min.css" rel="stylesheet">
-        <link href="./public/css/prettyPhoto.css" rel="stylesheet">
-        <link href="./public/css/animate.css" rel="stylesheet">
-        <link href="./public/css/dropdowns-enhancement.css" rel="stylesheet">
+        <link href="./public/css/min/bootstrap.min.css" rel="stylesheet">
+        <link href="./public/css/min/prettyPhoto.min.css" rel="stylesheet">
+        <link href="./public/css/min/animate.min.css" rel="stylesheet">
+        <link href="./public/css/min/dropdowns-enhancement.min.css" rel="stylesheet">
 
         <!--[if lt IE 9]>
-        <script src="./public/js/html5shiv.js"></script>
-        <script src="./public/js/respond.min.js"></script>
+        <script src="./public/js/min/html5shiv.min.js"></script>
+        <script src="./public/js/min/respond.min.js"></script>
         <![endif]-->
 
         <!-- Jquerry -->
-        <script src="./public/js/jquery.js"></script>
+        <script src="./public/js/min/jquery.min.js"></script>
 
         <!-- Font Awesome Icon -->
         <script src="https://kit.fontawesome.com/0e45521ec5.js"></script>
 
         <!-- Custom stlylesheet -->
-        <link href="./public/css/style.min.css" rel="stylesheet" />
+        <link href="./public/css/min/style.min.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Back to top button anchor -->
@@ -59,14 +59,14 @@
         </footer>
 
         <!-- My scripts -->
-        <script src="./public/js/browsers.js" ></script>
-        <script src="./public/js/plugins.js"></script>
-        <script src="./public/js/bootstrap.min.js"></script>
-        <script src="./public/js/jquery.prettyPhoto.js"></script>
-        <script src="./public/js/init.js"></script>
-        <script src="./public/js/main.js"></script>
+        <script src="./public/js/min/browsers.min.js" ></script>
+        <script src="./public/js/min/plugins.min.js"></script>
+        <script src="./public/js/min/bootstrap.min.js"></script>
+        <script src="./public/js/min/jquery.prettyPhoto.min.js"></script>
+        <script src="./public/js/min/init.min.js"></script>
+        <script src="./public/js/min/main.min.js"></script>
 
         <!-- Has to be loaded here because regular boostrap dropdown menus have been modified for custom quote-->
-        <script src="./public/js/dropdowns-enhancement.js"></script>
+        <script src="./public/js/min/dropdowns-enhancement.min.js"></script>
     </body>
 </html>

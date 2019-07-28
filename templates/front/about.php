@@ -57,6 +57,6 @@ ob_start();
 $content = ob_get_clean();
 require('templates/base.php');
 ?>
-<script src="./public/js/ajax.js"></script>
-<script src="./public/js/opinions.js"></script>
+<script src="./public/js/min/ajax.min.js"></script>
+<script src="./public/js/min/opinions.min.js"></script>
 

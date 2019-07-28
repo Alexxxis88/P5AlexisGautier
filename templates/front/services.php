@@ -797,7 +797,7 @@ ob_start();
 </div>
 
 <!-- Needs to stay here and not in base.php or functions included in main.js otherwise gives console JS errors on quote.php -->
-<script src="./public/js/services.js"></script>
+<script src="./public/js/min/services.min.js"></script>
 <script>
 //Populate modal box packname / price fields depending on chosen pack - needs to stay here because uses PHP variables
     $("#devpack1Btn").on("click",function(){

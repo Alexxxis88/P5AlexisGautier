@@ -1,4 +1,4 @@
-// Skills bars FIXME : les bars sont déja chargées quand je scroll, trouver comme faire pour attendre que le bloc s'affiche puis charger les bars
+// Skills bars
 $( document ).ready(function() {
     var elem = document.getElementById("myBarHTML");
     var width = 1;

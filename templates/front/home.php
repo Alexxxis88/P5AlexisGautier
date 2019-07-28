@@ -271,7 +271,7 @@ jQuery(document).ready(function($){
     </section>
 </div>
 <!-- Needs to stay here and not in base.php or functions included in main.js otherwise gives 567 console JS errors on quote.php -->
-<script src="./public/js/services.js"></script>
+<script src="./public/js/min/services.min.js"></script>
 <?php
 $content = ob_get_clean();
 require('templates/base.php');
