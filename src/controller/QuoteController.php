@@ -34,7 +34,7 @@ class QuoteController
     public function sendPackQuote($packName, $price, $project, $structure, $company, $firstName, $lastName, $contactEmail, $phone, $postalAddress, $postCode, $city, $country, $deadline, $messageContent)
     {
         date_default_timezone_set("Europe/Paris");
-        $to  = 'jeangujeangu@gmail.com, '. htmlspecialchars($contactEmail) . '';
+        $to  = 'alexisxgautier@gmail.com, '. htmlspecialchars($contactEmail) . '';
         $topic = 'Quote resquest for a ' . htmlspecialchars($packName);
         $message = '
         <html>
@@ -300,7 +300,7 @@ class QuoteController
         $paymentMtdStore = implode(", ",array_values($paymentMtdStore));
 
         date_default_timezone_set("Europe/Paris");
-        $to  = 'jeangujeangu@gmail.com, '. htmlspecialchars($contactEmail) . '';
+        $to  = 'alexisxgautier@gmail.com, '. htmlspecialchars($contactEmail) . '';
         $topic = 'Quote resquest for a custom ' . htmlspecialchars($siteType);
         $message = '
         <html>

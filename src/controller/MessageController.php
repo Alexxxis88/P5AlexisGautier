@@ -40,7 +40,7 @@ class MessageController
 
     public function sendMessage($firstName, $lastName, $contactEmail, $topic, $messageContent)
     {
-        $to  = 'contact@straightandalert.com, '. htmlspecialchars($contactEmail) . '';
+        $to  = 'alexisxgautier@gmail.com, '. htmlspecialchars($contactEmail) . '';
         $message = '
         <html>
             <body>
