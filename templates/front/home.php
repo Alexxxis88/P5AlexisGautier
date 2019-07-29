@@ -43,7 +43,7 @@ jQuery(document).ready(function($){
             <div class="row">
                 <div class="col-md-12">
                     <div class="center gap fade-down section-heading">
-                        <h3 class="main-title">How can I help you ?</h3>
+                        <h3 class="main-title">How can I help?</h3>
                         <hr>
                         <div class="gap"></div>
                         <h4 class="serviceSubtitle">You need a Website | Webstore | Blog ?</h4>
