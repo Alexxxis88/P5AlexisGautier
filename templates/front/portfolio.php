@@ -35,10 +35,10 @@ jQuery(document).ready(function($){
         <div class="container">
             <div class="gap"></div>
             <ul class="portfolio-filter fade-down center">
-                <li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>
-                <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".website">Website</a></li>
-                <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".webstore">Webstore</a></li>
-                <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".blog">Blog</a></li>
+                <li><a class="btn btn-portfolio btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>
+                <li><a class="btn btn-portfolio btn-outlined btn-primary" href="#" data-filter=".website">Website</a></li>
+                <li><a class="btn btn-portfolio btn-outlined btn-primary" href="#" data-filter=".webstore">Webstore</a></li>
+                <li><a class="btn btn-portfolio btn-outlined btn-primary" href="#" data-filter=".blog">Blog</a></li>
             </ul>
             <ul class="portfolio-items col-md-12 isotope fade-up">
                 <li class="portfolio-item col-lg-4 col-md-3 website isotope-item">

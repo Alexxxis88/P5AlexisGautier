@@ -254,7 +254,6 @@ blockquote {
 }
 
 .rightColPortfolio{
-    border-right : 1px solid rgb(194, 194, 194);
     padding: 0 50px 0 50px;
 }
 
@@ -272,6 +271,7 @@ blockquote {
 
 .portfolio-filter > li {
     display: inline-block;
+   
 }
 
 .portfolio-filter > li a.active {
@@ -2300,6 +2300,10 @@ textarea#messageContent {
         display:none;
     }
 
+    .rightColPortfolio{
+        border-right : 1px solid rgb(194, 194, 194);
+    }
+
 }
 
 @media all and (max-width: 992px) {
@@ -2375,12 +2379,27 @@ textarea#messageContent {
     #main-slider .carousel-inner .item .row .col-sm-12 {
         height: 100vh;
     }
+
+
 }
 
 @media all and (max-width: 768px) {
     #content-wrapper {
         margin-bottom: 0 !important;
     }
+
+    #main-slider .carousel h3 {
+        font-size: 30px;
+        margin-top: 50%;
+    }
+
+    .homeBtn{
+        text-align: center !important;
+        font-size:0.5em !important;
+        margin : 0 0 10px 0 !important;
+        border: 1px solid white !important;
+    }
+
     #footer-wrapper {
         position: relative !important;
     }
@@ -2404,6 +2423,11 @@ textarea#messageContent {
         width:35px;
         margin : 0 2px;
         text-align: center;
+    }
+
+    .btn-portfolio{
+        font-size:6px; 
+        padding : 8px 12px;
     }
 
 }
