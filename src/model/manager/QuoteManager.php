@@ -208,7 +208,6 @@ class QuoteManager extends GlobalManager
         }
     }
 
-    
     //update service prices from BO
     public function newCustomPrice($price, $idServ)
     {
