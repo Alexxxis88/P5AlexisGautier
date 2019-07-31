@@ -2117,7 +2117,6 @@ textarea#messageContent {
 /*  PRELOADER
 /*-----------------------------------------------------------------------------------*/
 
-
 #preloader {
     position: fixed;
     left: 0;
@@ -2126,7 +2125,7 @@ textarea#messageContent {
     width: 100%;
     height: 100%;
     overflow: visible;
-    background: #f5f5f5 url('../images/loading.gif') no-repeat center center;
+    background: rgba(248,248,248,0.5) url('../images/loading.gif') no-repeat center center;
 }
 
 .navbar-header h1 {

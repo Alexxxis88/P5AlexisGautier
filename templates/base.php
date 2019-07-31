@@ -82,15 +82,6 @@
         <!-- Displays a message if user is not using Javascript -->
         <noscript>
                 <h1>You need to activate Javascript to use this website !</h1>
-                <h2>How to activate JavaScript ?</h2>
-                <p>Chrome : <a href="http://aboutjavascript.com/fr/how-to-enable-javascript-in-chrome.html">see tutoriall</a></p>
-                <p>Firefox : <a href="http://aboutjavascript.com/fr/how-to-enable-javascript-in-firefox.html">see tutoriall</a></p>
-                <p>Internet Explorer : <a href="http://aboutjavascript.com/fr/how-to-enable-javascript-in-internet-explorer.html">see tutoriall</a></p>
-                <p>Edge : <a href="https://assistance.orange.fr/ordinateurs-peripheriques/depanner/probleme-de-navigation/impossible-de-naviguer/edge/microsoft-edge-activer-javascript_201172-745288">see tutoriall</a></p>
-                <p>Opera : <a href="http://aboutjavascript.com/fr/how-to-enable-javascript-in-opera.html">see tutoriall</a></p>
-                <p>Safari : <a href="http://aboutjavascript.com/fr/how-to-enable-javascript-in-safari.html">see tutoriall</a></p>
-                <p>Safari iOS : <a href="http://aboutjavascript.com/fr/how-to-enable-javascript-in-safari.html#ios">see tutoriall</a></p>
-                <p>Android : <a href="http://aboutjavascript.com/fr/how-to-enable-javascript-in-android.html">see tutoriall</a></p>
         </noscript>
 
         <?= $content ?>
