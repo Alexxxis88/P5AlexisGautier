@@ -81,7 +81,7 @@
 
         <!-- Displays a message if user is not using Javascript -->
         <noscript>
-                <h1>You need to activate Javascript to use this website !</h1>
+                <h2>You need to activate Javascript to use this website !</h2>
         </noscript>
 
         <?= $content ?>

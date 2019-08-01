@@ -1335,13 +1335,10 @@ noscript{
     top:15%;
 }
 
-noscript h1,noscript a{
+noscript h2,noscript a{
     color:yellow;
 }
 
-noscript h2, noscript p{
-    color:white;
-}
 
 .errorPage{
     margin:20vh 0;
